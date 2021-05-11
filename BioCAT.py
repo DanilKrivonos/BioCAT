@@ -2,6 +2,7 @@ import argparse
 import os 
 import random
 import numpy as np
+import sys
 from random import shuffle
 from subprocess import call 
 from json import load
@@ -31,7 +32,7 @@ parser.add_argument('-antismash',
 parser.add_argument('-genome', 
                     type=str, 
                     help='Fasta file with nucleotide sequence', 
-                    required=True)
+                    default=None)
 parser.add_argument('-out', 
                     type=str, 
                     help='Output directory, example: ./MY_path', 
@@ -42,9 +43,17 @@ parser.add_argument('-delta',
                     default=3)
 args = parser.parse_args()
 
+if args.genome == None and args.antismash == 'No':
+    
+    print('Error: Give a fasta or an antismash json!')
+    sys.exit()
+
 output = args.out + '/BioCAT_output/'
-genome = args.genome
-fasta = open(genome)
+
+if args.genome != None:
+    genome = args.genome
+    fasta = open(genome)
+
 #announce funtions
 #Findind Euler tour
 def iterator(current_node, graph, tour):
@@ -375,7 +384,13 @@ subtrate_stack = ['ser', 'thr', 'dhpg', 'hpg', 'gly', 'ala', 'val', 'leu', 'ile'
                   'glu', 'gln', 'aad', 'phe', 'trp', 'phg', 'tyr', 'bht', 'orn', 'lys', 'arg', 'cys', 'dhb', 'sal', 'nan']
 
 #making working directiry
-call('mkdir {}'.format(output), shell=True)
+try:
+
+    os.mkdir(output)
+
+except FileExistsError:
+
+    print('The output directory already exists')
 
 if args.smiles != None:
 
@@ -394,14 +409,15 @@ else:
 
 with open('{}/Results.bed'.format(output), 'w') as bad_out:
 
-    bad_out.write('Name of organism\tMiBiG ID\tSubstance\tCoordinates of cluster\tStrain\tPresumptive sequence\th-score\n')
+    bad_out.write('Name of organism\tPotentialy MiBiG ID\tSubstance\tCoordinates of cluster\tStrain\tPresumptive sequence\th-score\n')
 
     for smi in range(len(smile_list)):
 
         smiles = '"' + smile_list[smi] + '"'
+        idsmi = '"' + ids[smi] + '"'
         #run rBUN
         print('Hydrolizing of substrate with rBAN ...')
-        call('java -jar rBAN-1.0.jar -inputId {} -inputSmiles {} -outputFolder {} -discoveryMode'.format(ids[smi], smiles, output), shell=True)
+        call('java -jar rBAN-1.0.jar -inputId {} -inputSmiles {} -outputFolder {} -discoveryMode'.format(idsmi, smiles, output), shell=True)
 
     
 
@@ -416,7 +432,14 @@ with open('{}/Results.bed'.format(output), 'w') as bad_out:
         if args.antismash == 'No':
             
             anti_out = output + 'antismash_result/'
-            call('mkdir {}'.format(anti_out), shell=True)
+            try:
+                
+                os.mkdir(anti_out)
+
+            except FileExistsError:
+
+                print('The output directory already exists')
+
             call('antismash {} --cb-general --cb-knownclusters --output-dir {} --genefinding-tool prodigal'.format(genome, anti_out), shell=True)
             json_path = anti_out + ('.').join(os.path.split(genome)[1].split('.')[0: -1]) + '.json'
         else:
@@ -437,7 +460,6 @@ with open('{}/Results.bed'.format(output), 'w') as bad_out:
         #Recording final output
         table = read_csv(output + 'table.tsv', sep='\t')
 
-        
         for file in files:
             
             try:
@@ -467,6 +489,7 @@ with open('{}/Results.bed'.format(output), 'w') as bad_out:
                 continue
 
             EPs = make_combine(new_EP, BGC)
+            print(EPs, '\\,[pkwp[vmpovoui')
             print(file, EPs, sep='\n')
             for v in EPs:
                 

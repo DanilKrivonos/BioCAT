@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>BAG50506.1</td>
+              <td>putative_transposase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000780/1">BGC0000780</a></td>
+              <td>Saccharide</td>
+              <td>35.0</td>
+              <td>70.5</td>
+              <td>112.0</td>
+              <td>1.1e-24</td>
+          </tr>
+    
+          <tr>
+              <td>AAB92607.1</td>
+              <td>TnpA</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000557/1">BGC0000557</a></td>
+              <td>RiPP:Lanthipeptide</td>
+              <td>35.0</td>
+              <td>67.9</td>
+              <td>104.0</td>
+              <td>3e-22</td>
+          </tr>
+    
+          <tr>
+              <td>AAD44200.1</td>
+              <td>IS1601-D</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000362/1">BGC0000362</a></td>
+              <td>NRP</td>
+              <td>29.0</td>
+              <td>95.3</td>
+              <td>91.0</td>
+              <td>2.7e-18</td>
+          </tr>
+    
+          <tr>
+              <td>AAD44216.1</td>
+              <td>transposase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000362/1">BGC0000362</a></td>
+              <td>NRP</td>
+              <td>29.0</td>
+              <td>95.3</td>
+              <td>91.0</td>
+              <td>2.7e-18</td>
+          </tr>
+    
+          <tr>
+              <td>AAD44235.1</td>
+              <td>IS1601-D</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000362/1">BGC0000362</a></td>
+              <td>NRP</td>
+              <td>29.0</td>
+              <td>95.3</td>
+              <td>91.0</td>
+              <td>2.7e-18</td>
+          </tr>
+    
+          <tr>
+              <td>AIU53932.1</td>
+              <td>putative_transposase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000607/1">BGC0000607</a></td>
+              <td>RiPP:Thiopeptide</td>
+              <td>32.0</td>
+              <td>80.3</td>
+              <td>90.0</td>
+              <td>4.6e-18</td>
+          </tr>
+    
+          <tr>
+              <td>AAD44223.1</td>
+              <td>IS1601-D</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000362/1">BGC0000362</a></td>
+              <td>NRP</td>
+              <td>29.0</td>
+              <td>95.3</td>
+              <td>89.0</td>
+              <td>7.8e-18</td>
+          </tr>
+    
+          <tr>
+              <td>YP_002539408.1</td>
+              <td>transposase,_putative</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001555/1">BGC0001555</a></td>
+              <td>RiPP</td>
+              <td>59.0</td>
+              <td>27.8</td>
+              <td>81.0</td>
+              <td>1.6e-15</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>

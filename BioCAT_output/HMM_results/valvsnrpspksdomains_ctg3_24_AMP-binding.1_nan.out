@@ -1,0 +1,81 @@
+# hmmsearch :: search profile(s) against a sequence database
+# HMMER 3.3.2 (Nov 2020); http://hmmer.org/
+# Copyright (C) 2020 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query HMM file:                  ./HMM//val/val.hmm
+# target sequence database:        .//BioCAT_output//substrates_fasta/nrpspksdomains_ctg3_24_AMP-binding.1_nan.fasta
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       val  [M=400]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence                                            Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------                                            -----------
+    1.7e-44  137.8   0.0    2.9e-43  133.8   0.0    2.0  1  BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan  
+
+
+Domain annotation for each sequence (and alignments):
+>> BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  133.8   0.0   2.9e-43   2.9e-43       1     396 [.       1     431 [.       1     434 [] 0.82
+
+  Alignments for each domain:
+  == domain 1  score: 133.8 bits;  conditional E-value: 2.9e-43
+                                                  val   1 FeeqaartpdavAvvsgeeeltY..aeLneranrlarrLlergvrpedrValllersl 56 
+                                                          F++++a  pd  A+v ++++l Y  ++L +  +  ar+Ll+ g++++dr ++ ++  +
+  BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan   1 FDHTVALYPDGEALVVRHQQLRYtwQQLADTVDLHARALLALGLQTGDRLGIWAPNCA 58 
+                                                          77889999999998877666654338******************************** PP
+
+                                                  val  57 elvvalLavlkagaaYvpldpeyPaerlefiledagakllltdakleekl........ 106
+                                                          +  +++ a +k+g + v ++p+y ++ le++l+++g+++l+ + + +++         
+  BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan  59 QWCISQFASAKIGVILVNINPAYRSSELEYVLKQSGCQWLVCAGAFKTSDyhamlqgl 116
+                                                          ****************************************999876665567889999 PP
+
+                                                  val 107 ....................eklpvleldde............aleeesee....dla 128
+                                                                              +   v++ld++            +    +++    +l+
+  BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan 117 vpelaeqsigqlqserlpdlR--GVISLDAQppsgflpwsqlaD---LANSvsveQLN 169
+                                                          999988777777666655321..334444447788887774442...22223233555 PP
+
+                                                  val 129 lpeaavsaeslayvmYTSGsTGkPKGvlvehravvrLvkdn.eyaeleaedrvllasp 185
+                                                            +++ + ++ + + YTSG+TG PKG + +h ++++      e   l+a+dr+++  p
+  BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan 170 ERQNSLHFDQPVNIQYTSGTTGFPKGATLSHYNILNNGYMVgESLGLSADDRLVIPVP 227
+                                                          56677889**************************974333323346999999999998 PP
+
+                                                  val 186 l..aFDastleiwvpLLnGgtlvvadpeelldleelaelleeekvtvlwltaglFnql 241
+                                                          l  +F + + +  +++ +G t+ ++ p++ +d+    ++++eek t+l+   ++F  +
+  BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan 228 LyhCFGMVMGN-LGCITHGSTM-IY-PNDAFDPLLTLTTVAEEKATALYGVPTMFIAM 282
+                                                          72255554444.4566666655.55.688899999999******************** PP
+
+                                                  val 242 aeedpea...laglrellvGGdvlspaavrrvlealpelqlvngYGpTEtTtFatthe 296
+                                                           ++  +a   l++lr+ +++G     +++rrv++++   ++  +YG TEt   +  + 
+  BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan 283 LDQPQRAdfdLSTLRTGIMAGATCPIEVMRRVISEMHMNEVQIAYGMTETSPVSLQTG 340
+                                                          *9987744448999999**********************************9998877 PP
+
+                                                  val 297 itaaeeeeesvpiGrpiantrvyvldealqpvpvgvvGeLyigGdgvargYlnrpelt 354
+                                                           +++  e +   +Gr   + +  ++dea+++vp g++GeL+  G +v  gY+n+p+ t
+  BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan 341 PSDE-LELRVTTVGRTQPQLESKIIDEAGNLVPRGTIGELCTRGYSVMLGYWNNPQGT 397
+                                                          7433.3457999********************************************** PP
+
+                                                  val 355 aerFvadpfseepgarlYrTGDlvrwradgtleflgRkDdqv 396
+                                                          ae           +a +  TGDl+ ++++g +   gR+ d +
+  BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan 398 AEAID--------QAGWMHTGDLASMNDEGYVCIAGRNKDMI 431
+                                                          *9873........345779******************98765 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (400 nodes)
+Target sequences:                          1  (434 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.01u 0.00s 00:00:00.01 Elapsed: 00:00:00.01
+# Mc/sec: 9.64
+//
+[ok]

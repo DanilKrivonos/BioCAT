@@ -1,0 +1,901 @@
+ClusterBlast scores for NZ_LIRD01000002
+
+Table of genes, locations, strands and annotations of query cluster:
+ctg3_1885	2244699	2245152	+		
+ctg3_1886	2245255	2245708	+		
+ctg3_1887	2245857	2246316	+		
+ctg3_1888	2246312	2246654	+		
+ctg3_1889	2246623	2247562	-		
+ctg3_1890	2247630	2248518	+		
+ctg3_1891	2248647	2249406	-		
+ctg3_1892	2249398	2250238	-		
+ctg3_1893	2250300	2250507	-		
+ctg3_1894	2250689	2252024	-		
+ctg3_1895	2252354	2253278	-		
+ctg3_1896	2253502	2254546	-		
+ctg3_1897	2254762	2255212	+		
+
+
+Significant hits: 
+1. NZ_LIRD01000002	Pseudomonas sp. In5 P.sp_In5_contig_2, whole genome shotgun sequence
+2. NZ_LIUV01000007	Pseudomonas sp. 655 contig_7, whole genome shotgun sequence
+3. NZ_FNPW01000017	Pseudomonas sp. NFIX28, whole genome shotgun sequence
+4. NZ_FMXV01000002	Pseudomonas sp. NFACC13-1, whole genome shotgun sequence
+5. NZ_LHVC01000005	Pseudomonas chlororaphis subsp. chlororaphis strain LMG 5004 PREFIX_contig_5, whole genome shotgun sequence
+6. NZ_CP027656	Pseudomonas chlororaphis subsp. piscium strain ZJU60 chromosome, complete genome
+7. NZ_FNOA01000004	Pseudomonas sp. NFACC14, whole genome shotgun sequence
+8. NZ_LT629761	Pseudomonas chlororaphis strain DSM 21509 genome assembly, chromosome: I
+9. NZ_FMUZ01000025	Pseudomonas sp. NFACC37-1, whole genome shotgun sequence
+10. NZ_CM001559	Pseudomonas chlororaphis subsp. aureofaciens 30-84 chromosome, whole genome shotgun sequence
+11. NZ_FOVS01000005	Pseudomonas sp. NFACC24-1, whole genome shotgun sequence
+12. NZ_CP025261	Pseudomonas sp. 09C 129 chromosome
+13. NZ_FOXG01000005	Pseudomonas sp. NFPP07, whole genome shotgun sequence
+14. NZ_FOKH01000024	Pseudomonas sp. NFIX10, whole genome shotgun sequence
+15. NZ_FPJC01000001	Pseudomonas sp. NFACC04-2, whole genome shotgun sequence
+16. NZ_FMTK01000005	Pseudomonas sp. NFACC56-3, whole genome shotgun sequence
+17. NZ_AYUD01000017	Pseudomonas chlororaphis subsp. aurantiaca PB-St2 scaffold3, whole genome shotgun sequence
+18. NZ_CP008696	Pseudomonas chlororaphis strain PA23, complete genome
+19. NZ_FNTT01000002	Pseudomonas kilonensis strain BS3780, whole genome shotgun sequence
+20. NZ_CP012831	Pseudomonas fluorescens strain FW300-N2C3, complete genome
+21. NZ_AWWJ01000035	Pseudomonas chlororaphis YL-1 contig35, whole genome shotgun sequence
+22. NZ_LHVB01000011	Pseudomonas chlororaphis subsp. aureofaciens strain CD PREFIX_contig_11, whole genome shotgun sequence
+23. NZ_LT629738	Pseudomonas chlororaphis strain ATCC 13985 genome assembly, chromosome: I
+24. NZ_CP011110	Pseudomonas chlororaphis strain PCL1606, complete genome
+25. NZ_JZXC01000004	Pseudomonas kilonensis strain 1855-344 contig4, whole genome shotgun sequence
+26. NZ_LT629691	Pseudomonas thivervalensis strain BS3779 genome assembly, chromosome: I
+27. NZ_FOAE01000001	Pseudomonas sp. NFACC41-3, whole genome shotgun sequence
+28. NZ_LT629747	Pseudomonas chlororaphis strain LMG 21630 genome assembly, chromosome: I
+29. NZ_CM001490	Pseudomonas chlororaphis O6 chromosome, whole genome shotgun sequence
+30. NZ_AP014623	Pseudomonas chlororaphis subsp. aurantiaca DNA, complete genome, strain: StFRB508
+31. NZ_CP010892	Pseudomonas sp. MRSN12121, complete genome
+32. NZ_CP025309	Pseudomonas chlororaphis strain Lzh-T5 chromosome, complete genome
+33. NZ_CP009290	Pseudomonas chlororaphis subsp. aurantiaca strain JD37, complete genome
+34. NZ_FPKK01000005	Pseudomonas sp. NFACC43, whole genome shotgun sequence
+35. NZ_AHAY01000257	Pseudomonas chlororaphis subsp. chlororaphis GP72 contig257, whole genome shotgun sequence
+36. NZ_LHVG01000018	Pseudomonas kilonensis strain P12 PREFIX_contig_17, whole genome shotgun sequence
+37. NZ_MUOA01000074	Pseudomonas sp. A25(2017) strain A25 NODE_14_length_139126_cov_6.06408_ID_27, whole genome shotgun sequence
+38. NZ_ATLN01000125	Pseudomonas sp. CFII68 soap_scaffs_II68.Contig104, whole genome shotgun sequence
+39. NZ_FODL01000006	Pseudomonas sp. NFACC39-1, whole genome shotgun sequence
+40. NZ_FOPO01000005	Pseudomonas sp. NFACC45, whole genome shotgun sequence
+41. NZ_FMUL01000010	Pseudomonas sp. NFACC32-1, whole genome shotgun sequence
+42. NZ_FPIV01000004	Pseudomonas sp. NFACC09-4, whole genome shotgun sequence
+43. NZ_FPKL01000008	Pseudomonas sp. NFACC49-2, whole genome shotgun sequence
+44. NZ_LT707064	Pseudomonas sp. 7SR1 genome assembly, chromosome: I
+45. NZ_LT707062	Pseudomonas sp. A214 genome assembly, chromosome: I
+46. NZ_LHVL01000013	Pseudomonas sp. Pf153 PREFIX_contig_13, whole genome shotgun sequence
+47. NZ_LHVF01000011	Pseudomonas thivervalensis strain PITR2 PREFIX_contig_11, whole genome shotgun sequence
+48. NZ_JNCR01000021	Pseudomonas brassicacearum strain LZ-4 contig21, whole genome shotgun sequence
+49. NZ_LT707063	Pseudomonas sp. B10 genome assembly, chromosome: I
+50. NZ_CM002330	Pseudomonas moraviensis R28-S chromosome, whole genome shotgun sequence
+
+
+Details:
+
+>>
+1. NZ_LIRD01000002
+Source: Pseudomonas sp. In5 P.sp_In5_contig_2, whole genome shotgun sequence
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 13
+Cumulative BLAST score: 6394
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1885	AL066_RS14345	100	293	100.0	1.6e-77
+ctg3_1885	AL066_RS14350	79	240	100.0	1.6e-61
+ctg3_1886	AL066_RS14350	100	296	100.0	1.4e-78
+ctg3_1886	AL066_RS14345	79	238	100.0	3.5e-61
+ctg3_1887	AL066_RS14355	100	303	100.0	1.5e-80
+ctg3_1888	AL066_RS14360	100	242	100.0	3.1e-62
+ctg3_1889	AL066_RS14365	100	581	95.83333333333334	7.9e-164
+ctg3_1890	AL066_RS14370	100	542	89.83050847457628	2.9e-152
+ctg3_1891	AL066_RS14375	100	515	100.0	2.5e-144
+ctg3_1892	AL066_RS14380	100	566	100.0	1.4e-159
+ctg3_1893	AL066_RS14385	100	92	100.0	1.9e-17
+ctg3_1894	AL066_RS14390	100	912	100.0	2.1e-263
+ctg3_1895	AL066_RS14395	100	609	100.0	2e-172
+ctg3_1896	AL066_RS14400	100	654	94.23631123919309	4.8e-186
+ctg3_1897	AL066_RS14405	100	311	100.0	7.3e-83
+
+
+
+>>
+2. NZ_LIUV01000007
+Source: Pseudomonas sp. 655 contig_7, whole genome shotgun sequence
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 13
+Cumulative BLAST score: 5915
+
+Table of genes, locations, strands and annotations of subject cluster:
+AM274_RS14205	AM274_RS14205	82357	83255	-	LysR_family_transcriptional_regulator
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1885	AM274_RS14185	100	293	100.0	1.6e-77
+ctg3_1885	AM274_RS14190	79	240	100.0	1.6e-61
+ctg3_1886	AM274_RS14190	100	296	100.0	1.4e-78
+ctg3_1886	AM274_RS14185	79	238	100.0	3.5e-61
+ctg3_1887	AM274_RS14195	100	303	100.0	1.5e-80
+ctg3_1888	AM274_RS14200	96	226	100.0	1.4e-57
+ctg3_1889	AM274_RS14205	96	159	28.205128205128204	7.4e-37
+ctg3_1890	AM274_RS14210	98	530	89.83050847457628	1.2e-148
+ctg3_1891	AM274_RS14215	98	507	100.0	6.9e-142
+ctg3_1892	AM274_RS14220	97	553	100.0	1.6e-155
+ctg3_1893	AM274_RS14225	99	91	100.0	4.1e-17
+ctg3_1894	AM274_RS14230	99	907	100.0	6.8e-262
+ctg3_1895	AM274_RS14235	100	608	100.0	4.5e-172
+ctg3_1896	AM274_RS14240	100	653	94.23631123919309	1.1e-185
+ctg3_1897	AM274_RS14245	100	311	100.0	7.3e-83
+
+
+
+>>
+3. NZ_FNPW01000017
+Source: Pseudomonas sp. NFIX28, whole genome shotgun sequence
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 837
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	BLV20_RS26460	67	340	97.22222222222221	1.9e-91
+ctg3_1892	BLV20_RS26465	80	443	94.26523297491039	1.3e-122
+ctg3_1893	BLV20_RS26470	67	54	63.23529411764706	7.3e-06
+
+
+
+>>
+4. NZ_FMXV01000002
+Source: Pseudomonas sp. NFACC13-1, whole genome shotgun sequence
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 833
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	BLQ55_RS02900	64	324	98.4126984126984	1.4e-86
+ctg3_1892	BLQ55_RS02905	80	454	96.05734767025089	7.6e-126
+ctg3_1893	BLQ55_RS02910	66	55	73.52941176470588	2.5e-06
+
+
+
+>>
+5. NZ_LHVC01000005
+Source: Pseudomonas chlororaphis subsp. chlororaphis strain LMG 5004 PREFIX_contig_5, whole genome shotgun sequence
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 830
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	AD657_RS13005	64	327	98.01587301587301	1.3e-87
+ctg3_1892	AD657_RS13000	80	449	94.98207885304659	3.2e-124
+ctg3_1893	AD657_RS12995	67	54	63.23529411764706	7.3e-06
+
+
+
+>>
+6. NZ_CP027656
+Source: Pseudomonas chlororaphis subsp. piscium strain ZJU60 chromosome, complete genome
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 830
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	C6Q18_RS13010	63	321	98.01587301587301	1.2e-85
+ctg3_1892	C6Q18_RS13005	80	455	97.1326164874552	4.5e-126
+ctg3_1893	C6Q18_RS13000	67	54	63.23529411764706	7.3e-06
+
+
+
+>>
+7. NZ_FNOA01000004
+Source: Pseudomonas sp. NFACC14, whole genome shotgun sequence
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 829
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	BLU85_RS09735	65	324	98.4126984126984	1.1e-86
+ctg3_1892	BLU85_RS09730	80	450	96.05734767025089	1.9e-124
+ctg3_1893	BLU85_RS09725	66	55	73.52941176470588	2.5e-06
+
+
+
+>>
+8. NZ_LT629761
+Source: Pseudomonas chlororaphis strain DSM 21509 genome assembly, chromosome: I
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 829
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	BLU06_RS22795	65	322	98.01587301587301	4.1e-86
+ctg3_1892	BLU06_RS22800	81	453	94.26523297491039	2.2e-125
+ctg3_1893	BLU06_RS22805	67	54	63.23529411764706	7.3e-06
+
+
+
+>>
+9. NZ_FMUZ01000025
+Source: Pseudomonas sp. NFACC37-1, whole genome shotgun sequence
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 826
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	BLP82_RS22030	65	326	98.4126984126984	2.8e-87
+ctg3_1892	BLP82_RS22025	78	445	96.05734767025089	4.6e-123
+ctg3_1893	BLP82_RS22020	66	55	73.52941176470588	2.5e-06
+
+
+
+>>
+10. NZ_CM001559
+Source: Pseudomonas chlororaphis subsp. aureofaciens 30-84 chromosome, whole genome shotgun sequence
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 826
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	PCHL3084_RS13560	64	324	97.22222222222221	1.1e-86
+ctg3_1892	PCHL3084_RS13555	80	448	94.98207885304659	4.2e-124
+ctg3_1893	PCHL3084_RS13550	67	54	63.23529411764706	7.3e-06
+
+
+
+>>
+11. NZ_FOVS01000005
+Source: Pseudomonas sp. NFACC24-1, whole genome shotgun sequence
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 825
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	BM317_RS07465	65	324	98.4126984126984	8.2e-87
+ctg3_1892	BM317_RS07460	79	446	96.05734767025089	1.6e-123
+ctg3_1893	BM317_RS07455	66	55	73.52941176470588	2.5e-06
+
+
+
+>>
+12. NZ_CP025261
+Source: Pseudomonas sp. 09C 129 chromosome
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 825
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	CXQ81_RS15750	64	324	97.22222222222221	1.1e-86
+ctg3_1892	CXQ81_RS15745	80	447	94.98207885304659	1.2e-123
+ctg3_1893	CXQ81_RS15740	67	54	63.23529411764706	7.3e-06
+
+
+
+>>
+13. NZ_FOXG01000005
+Source: Pseudomonas sp. NFPP07, whole genome shotgun sequence
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 825
+
+Table of genes, locations, strands and annotations of subject cluster:
+BM019_RS13755	BM019_RS13755	9747	10466	+	ADP-ribose_pyrophosphatase
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	BM019_RS13770	63	323	97.22222222222221	2.4e-86
+ctg3_1892	BM019_RS13765	80	448	94.98207885304659	4.2e-124
+ctg3_1893	BM019_RS13760	67	54	63.23529411764706	7.3e-06
+
+
+
+>>
+14. NZ_FOKH01000024
+Source: Pseudomonas sp. NFIX10, whole genome shotgun sequence
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 825
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	BM321_RS20915	64	317	98.4126984126984	1.3e-84
+ctg3_1892	BM321_RS20920	80	453	96.05734767025089	1.3e-125
+ctg3_1893	BM321_RS20925	66	55	73.52941176470588	2.5e-06
+
+
+
+>>
+15. NZ_FPJC01000001
+Source: Pseudomonas sp. NFACC04-2, whole genome shotgun sequence
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 825
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	BT125_RS00825	65	317	98.4126984126984	1.7e-84
+ctg3_1892	BT125_RS00830	80	453	96.05734767025089	1.7e-125
+ctg3_1893	BT125_RS00835	66	55	73.52941176470588	2.5e-06
+
+
+
+>>
+16. NZ_FMTK01000005
+Source: Pseudomonas sp. NFACC56-3, whole genome shotgun sequence
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 824
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	BLO80_RS10245	64	315	98.4126984126984	6.5e-84
+ctg3_1892	BLO80_RS10240	80	452	96.05734767025089	2.9e-125
+ctg3_1893	BLO80_RS10235	67	57	75.0	6.6e-07
+
+
+
+>>
+17. NZ_AYUD01000017
+Source: Pseudomonas chlororaphis subsp. aurantiaca PB-St2 scaffold3, whole genome shotgun sequence
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 823
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	U724_RS44575	65	328	98.01587301587301	7.5e-88
+ctg3_1892	U724_RS44580	80	441	94.26523297491039	5.1e-122
+ctg3_1893	U724_RS44585	67	54	63.23529411764706	7.3e-06
+
+
+
+>>
+18. NZ_CP008696
+Source: Pseudomonas chlororaphis strain PA23, complete genome
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 823
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	EY04_RS12525	64	320	96.82539682539682	1.6e-85
+ctg3_1892	EY04_RS12520	80	449	94.98207885304659	2.5e-124
+ctg3_1893	EY04_RS12515	67	54	63.23529411764706	7.3e-06
+
+
+
+>>
+19. NZ_FNTT01000002
+Source: Pseudomonas kilonensis strain BS3780, whole genome shotgun sequence
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 823
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	BLU72_RS25475	64	318	98.4126984126984	5.9e-85
+ctg3_1892	BLU72_RS25480	80	450	96.05734767025089	1.9e-124
+ctg3_1893	BLU72_RS25485	66	55	73.52941176470588	2.5e-06
+
+
+
+>>
+20. NZ_CP012831
+Source: Pseudomonas fluorescens strain FW300-N2C3, complete genome
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 823
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	AO356_RS24855	64	318	98.4126984126984	7.7e-85
+ctg3_1892	AO356_RS24850	80	450	96.05734767025089	1.9e-124
+ctg3_1893	AO356_RS24845	66	55	73.52941176470588	2.5e-06
+
+
+
+>>
+21. NZ_AWWJ01000035
+Source: Pseudomonas chlororaphis YL-1 contig35, whole genome shotgun sequence
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 822
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	P637_RS0108235	64	322	96.82539682539682	4.1e-86
+ctg3_1892	P637_RS0108240	81	446	94.26523297491039	2.7e-123
+ctg3_1893	P637_RS0108245	67	54	63.23529411764706	7.3e-06
+
+
+
+>>
+22. NZ_LHVB01000011
+Source: Pseudomonas chlororaphis subsp. aureofaciens strain CD PREFIX_contig_11, whole genome shotgun sequence
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 822
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	AD678_RS13530	64	321	96.82539682539682	9.1e-86
+ctg3_1892	AD678_RS13525	81	447	94.26523297491039	1.2e-123
+ctg3_1893	AD678_RS13520	67	54	63.23529411764706	7.3e-06
+
+
+
+>>
+23. NZ_LT629738
+Source: Pseudomonas chlororaphis strain ATCC 13985 genome assembly, chromosome: I
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 822
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	BLU44_RS14560	64	319	96.82539682539682	2.6e-85
+ctg3_1892	BLU44_RS14565	80	449	94.98207885304659	3.2e-124
+ctg3_1893	BLU44_RS14570	67	54	63.23529411764706	7.3e-06
+
+
+
+>>
+24. NZ_CP011110
+Source: Pseudomonas chlororaphis strain PCL1606, complete genome
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 822
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	PCL1606_RS16590	62	317	97.61904761904762	1e-84
+ctg3_1892	PCL1606_RS16595	80	451	97.1326164874552	6.5e-125
+ctg3_1893	PCL1606_RS16600	67	54	66.17647058823529	7.3e-06
+
+
+
+>>
+25. NZ_JZXC01000004
+Source: Pseudomonas kilonensis strain 1855-344 contig4, whole genome shotgun sequence
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 822
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	VP02_RS06095	64	316	98.4126984126984	2.9e-84
+ctg3_1892	VP02_RS06100	80	451	96.05734767025089	4.9e-125
+ctg3_1893	VP02_RS06105	66	55	73.52941176470588	2.5e-06
+
+
+
+>>
+26. NZ_LT629691
+Source: Pseudomonas thivervalensis strain BS3779 genome assembly, chromosome: I
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 822
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	BLS29_RS03710	64	316	98.4126984126984	3.8e-84
+ctg3_1892	BLS29_RS03705	80	451	96.05734767025089	8.4e-125
+ctg3_1893	BLS29_RS03700	66	55	73.52941176470588	2.5e-06
+
+
+
+>>
+27. NZ_FOAE01000001
+Source: Pseudomonas sp. NFACC41-3, whole genome shotgun sequence
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 821
+
+Table of genes, locations, strands and annotations of subject cluster:
+BMY68_RS05500	BMY68_RS05500	1190296	1191217	+	GDP-mannose_pyrophosphatase_NudK
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	BMY68_RS05515	64	326	97.22222222222221	2.2e-87
+ctg3_1892	BMY68_RS05510	79	441	94.98207885304659	5.1e-122
+ctg3_1893	BMY68_RS05505	67	54	63.23529411764706	7.3e-06
+
+
+
+>>
+28. NZ_LT629747
+Source: Pseudomonas chlororaphis strain LMG 21630 genome assembly, chromosome: I
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 821
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	BLU83_RS18895	63	320	98.01587301587301	2e-85
+ctg3_1892	BLU83_RS18900	81	447	94.26523297491039	1.2e-123
+ctg3_1893	BLU83_RS18905	67	54	63.23529411764706	5.6e-06
+
+
+
+>>
+29. NZ_CM001490
+Source: Pseudomonas chlororaphis O6 chromosome, whole genome shotgun sequence
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 821
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	PCHLO6_RS13960	64	319	96.42857142857143	3.5e-85
+ctg3_1892	PCHLO6_RS13955	81	448	94.26523297491039	7.1e-124
+ctg3_1893	PCHLO6_RS13950	67	54	63.23529411764706	7.3e-06
+
+
+
+>>
+30. NZ_AP014623
+Source: Pseudomonas chlororaphis subsp. aurantiaca DNA, complete genome, strain: StFRB508
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 821
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	PCAU_RS13015	63	317	98.01587301587301	1e-84
+ctg3_1892	PCAU_RS13010	79	450	97.4910394265233	1.9e-124
+ctg3_1893	PCAU_RS13005	67	54	63.23529411764706	5.6e-06
+
+
+
+>>
+31. NZ_CP010892
+Source: Pseudomonas sp. MRSN12121, complete genome
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 821
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	TO66_RS13505	61	316	97.61904761904762	2.2e-84
+ctg3_1892	TO66_RS13500	80	451	97.1326164874552	6.5e-125
+ctg3_1893	TO66_RS13495	67	54	66.17647058823529	7.3e-06
+
+
+
+>>
+32. NZ_CP025309
+Source: Pseudomonas chlororaphis strain Lzh-T5 chromosome, complete genome
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 820
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	CXP47_RS13100	64	320	96.82539682539682	1.6e-85
+ctg3_1892	CXP47_RS13095	80	446	94.98207885304659	2.7e-123
+ctg3_1893	CXP47_RS13090	67	54	63.23529411764706	7.3e-06
+
+
+
+>>
+33. NZ_CP009290
+Source: Pseudomonas chlororaphis subsp. aurantiaca strain JD37, complete genome
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 820
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	JM49_RS16805	63	317	98.01587301587301	1.3e-84
+ctg3_1892	JM49_RS16810	81	449	94.26523297491039	2.5e-124
+ctg3_1893	JM49_RS16815	67	54	63.23529411764706	5.6e-06
+
+
+
+>>
+34. NZ_FPKK01000005
+Source: Pseudomonas sp. NFACC43, whole genome shotgun sequence
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 820
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	BT179_RS11205	65	316	98.01587301587301	2.2e-84
+ctg3_1892	BT179_RS11210	80	450	96.415770609319	1.1e-124
+ctg3_1893	BT179_RS11215	64	54	73.52941176470588	7.3e-06
+
+
+
+>>
+35. NZ_AHAY01000257
+Source: Pseudomonas chlororaphis subsp. chlororaphis GP72 contig257, whole genome shotgun sequence
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 819
+
+Table of genes, locations, strands and annotations of subject cluster:
+MOK_RS31760	MOK_RS31760	1	177	+	TetR_family_transcriptional_regulator
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	MOK_RS0125045	63	319	98.01587301587301	4.5e-85
+ctg3_1892	MOK_RS0125040	80	446	94.98207885304659	1.6e-123
+ctg3_1893	MOK_RS0125035	67	54	63.23529411764706	7.3e-06
+
+
+
+>>
+36. NZ_LHVG01000018
+Source: Pseudomonas kilonensis strain P12 PREFIX_contig_17, whole genome shotgun sequence
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 819
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	AD661_RS12100	64	316	98.4126984126984	3.8e-84
+ctg3_1892	AD661_RS12095	80	448	96.05734767025089	5.5e-124
+ctg3_1893	AD661_RS12090	66	55	73.52941176470588	2.5e-06
+
+
+
+>>
+37. NZ_MUOA01000074
+Source: Pseudomonas sp. A25(2017) strain A25 NODE_14_length_139126_cov_6.06408_ID_27, whole genome shotgun sequence
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 819
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	B0E42_RS19015	63	312	98.4126984126984	3.2e-83
+ctg3_1892	B0E42_RS19010	80	452	96.05734767025089	3.8e-125
+ctg3_1893	B0E42_RS19005	66	55	73.52941176470588	2.5e-06
+
+
+
+>>
+38. NZ_ATLN01000125
+Source: Pseudomonas sp. CFII68 soap_scaffs_II68.Contig104, whole genome shotgun sequence
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 817
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	CFII68_RS02045	63	312	98.4126984126984	4.2e-83
+ctg3_1892	CFII68_RS02040	80	451	96.05734767025089	6.5e-125
+ctg3_1893	CFII68_RS02035	64	54	73.52941176470588	7.3e-06
+
+
+
+>>
+39. NZ_FODL01000006
+Source: Pseudomonas sp. NFACC39-1, whole genome shotgun sequence
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 817
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	BMY45_RS14620	64	307	98.4126984126984	1.8e-81
+ctg3_1892	BMY45_RS14625	79	456	97.4910394265233	1.5e-126
+ctg3_1893	BMY45_RS14630	66	54	73.52941176470588	4.3e-06
+
+
+
+>>
+40. NZ_FOPO01000005
+Source: Pseudomonas sp. NFACC45, whole genome shotgun sequence
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 817
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	BM132_RS11855	64	307	98.4126984126984	1.8e-81
+ctg3_1892	BM132_RS11850	79	456	97.4910394265233	2e-126
+ctg3_1893	BM132_RS11845	66	54	73.52941176470588	4.3e-06
+
+
+
+>>
+41. NZ_FMUL01000010
+Source: Pseudomonas sp. NFACC32-1, whole genome shotgun sequence
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 813
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	BLP99_RS16895	64	314	98.01587301587301	1.1e-83
+ctg3_1892	BLP99_RS16900	80	445	96.415770609319	4.6e-123
+ctg3_1893	BLP99_RS16905	64	54	73.52941176470588	7.3e-06
+
+
+
+>>
+42. NZ_FPIV01000004
+Source: Pseudomonas sp. NFACC09-4, whole genome shotgun sequence
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 813
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	BT131_RS08060	64	314	98.01587301587301	1.1e-83
+ctg3_1892	BT131_RS08055	80	445	96.415770609319	6e-123
+ctg3_1893	BT131_RS08050	64	54	73.52941176470588	7.3e-06
+
+
+
+>>
+43. NZ_FPKL01000008
+Source: Pseudomonas sp. NFACC49-2, whole genome shotgun sequence
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 813
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	BT205_RS10910	64	314	98.01587301587301	1.1e-83
+ctg3_1892	BT205_RS10915	80	445	96.415770609319	4.6e-123
+ctg3_1893	BT205_RS10920	64	54	73.52941176470588	7.3e-06
+
+
+
+>>
+44. NZ_LT707064
+Source: Pseudomonas sp. 7SR1 genome assembly, chromosome: I
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 813
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	BW992_RS21500	64	314	98.01587301587301	1.1e-83
+ctg3_1892	BW992_RS21505	80	445	96.415770609319	4.6e-123
+ctg3_1893	BW992_RS21510	64	54	73.52941176470588	7.3e-06
+
+
+
+>>
+45. NZ_LT707062
+Source: Pseudomonas sp. A214 genome assembly, chromosome: I
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 812
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	BW979_RS19430	63	306	98.4126984126984	2.3e-81
+ctg3_1892	BW979_RS19435	79	451	97.4910394265233	8.4e-125
+ctg3_1893	BW979_RS19440	66	55	73.52941176470588	3.3e-06
+
+
+
+>>
+46. NZ_LHVL01000013
+Source: Pseudomonas sp. Pf153 PREFIX_contig_13, whole genome shotgun sequence
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 811
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	AD666_RS09220	64	313	98.4126984126984	2.5e-83
+ctg3_1892	AD666_RS09215	80	443	94.6236559139785	2.3e-122
+ctg3_1893	AD666_RS09210	66	55	73.52941176470588	2.5e-06
+
+
+
+>>
+47. NZ_LHVF01000011
+Source: Pseudomonas thivervalensis strain PITR2 PREFIX_contig_11, whole genome shotgun sequence
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 811
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	AD660_RS13780	63	308	98.4126984126984	6.1e-82
+ctg3_1892	AD660_RS13785	79	448	96.05734767025089	4.2e-124
+ctg3_1893	AD660_RS13790	66	55	73.52941176470588	2.5e-06
+
+
+
+>>
+48. NZ_JNCR01000021
+Source: Pseudomonas brassicacearum strain LZ-4 contig21, whole genome shotgun sequence
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 809
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1891	LZ4_RS18210	63	303	98.4126984126984	2.6e-80
+ctg3_1892	LZ4_RS18205	79	451	97.4910394265233	4.9e-125
+ctg3_1893	LZ4_RS18200	66	55	73.52941176470588	3.3e-06
+
+
+
+>>
+49. NZ_LT707063
+Source: Pseudomonas sp. B10 genome assembly, chromosome: I
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 4
+Cumulative BLAST score: 1024
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1885	BXA01_RS02000	48	131	98.66666666666667	8e-29
+ctg3_1886	BXA01_RS02000	52	139	98.66666666666667	2.2e-31
+ctg3_1891	BXA01_RS01990	63	307	99.20634920634922	1.4e-81
+ctg3_1892	BXA01_RS01995	81	447	94.6236559139785	1.2e-123
+
+
+
+>>
+50. NZ_CM002330
+Source: Pseudomonas moraviensis R28-S chromosome, whole genome shotgun sequence
+Type: bacteriocin
+Number of proteins with BLAST hits to this cluster: 4
+Cumulative BLAST score: 1022
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_1885	PMO01_RS13085	48	131	98.66666666666667	6.1e-29
+ctg3_1886	PMO01_RS13085	52	140	98.66666666666667	1.7e-31
+ctg3_1891	PMO01_RS13095	63	305	99.20634920634922	4e-81
+ctg3_1892	PMO01_RS13090	80	446	95.3405017921147	1.6e-123
+

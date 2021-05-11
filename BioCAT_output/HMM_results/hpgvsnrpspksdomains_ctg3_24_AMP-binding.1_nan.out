@@ -1,0 +1,81 @@
+# hmmsearch :: search profile(s) against a sequence database
+# HMMER 3.3.2 (Nov 2020); http://hmmer.org/
+# Copyright (C) 2020 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query HMM file:                  ./HMM//hpg/hpg.hmm
+# target sequence database:        .//BioCAT_output//substrates_fasta/nrpspksdomains_ctg3_24_AMP-binding.1_nan.fasta
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       hpg  [M=393]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence                                            Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------                                            -----------
+      4e-30   90.6   0.0    1.9e-29   88.4   0.0    1.8  1  BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan  
+
+
+Domain annotation for each sequence (and alignments):
+>> BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   88.4   0.0   1.9e-29   1.9e-29       1     392 [.       1     433 [.       1     434 [] 0.83
+
+  Alignments for each domain:
+  == domain 1  score: 88.4 bits;  conditional E-value: 1.9e-29
+                                                  hpg   1 farqvarapdavavvdgdrel..syaeldeeadrlagkLaargvrrgdrvavvlersa 56 
+                                                          f++ va  pd  a+v  +++l  ++++l+++ d  a++L a g++ gdr+++    +a
+  BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan   1 FDHTVALYPDGEALVVRHQQLryTWQQLADTVDLHARALLALGLQTGDRLGIWAPNCA 58 
+                                                          667778888877777766666115689******************************* PP
+
+                                                  hpg  57 dlvvallavlkaGaayvPvdaayPaervelvladagaalvvcseatrdavldgvev.v 113
+                                                          +  ++ +a  k G   v ++ ay  + +e vl+++g +++vc+ a +++  +++ + +
+  BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan  59 QWCISQFASAKIGVILVNINPAYRSSELEYVLKQSGCQWLVCAGAFKTSDYHAMLQgL 116
+                                                          *******************************************999987776433313 PP
+
+                                                  hpg 114 vvde........................................paveeaaaeaaavs 131
+                                                          v +                                         ++v+ ++ +  + s
+  BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan 117 VPELaeqsigqlqserlpdlrgvisldaqppsgflpwsqladlaNSVSVEQLNERQNS 174
+                                                          33225568999**************************999988766666777788888 PP
+
+                                                  hpg 132 vaaedlaYvmytsGstGvPkgvavphgsvaa...LagdpgwsvgpgdavLlhap..ha 184
+                                                          ++ ++   + ytsG tG Pkg +++h ++ +   ++g ++    ++d++++  p  h+
+  BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan 175 LHFDQPVNIQYTSGTTGFPKGATLSHYNILNngyMVG-ESLGLSADDRLVIPVPlyHC 231
+                                                          999999***********************97342444.44567788888888775588 PP
+
+                                                  hpg 185 fDisllelWvpLvsGarvvvaepgavdaealrelvae.gvtavhltaGlfrvlaeeap 241
+                                                          f + + +l    ++ +  ++ +++a d     ++vae + ta++    +f ++ ++  
+  BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan 232 FGMVMGNLG--CITHGSTMIYPNDAFDPLLTLTTVAEeKATALYGVPTMFIAMLDQPQ 287
+                                                          888877774..4666667889999***9887777777699999999999999999877 PP
+
+                                                  hpg 242 esfaglrevltG...GDvvpaaavervreacpdvrvrhlYGPtevtlcatwhllepga 296
+                                                           +   l  + tG   G   p + ++rv +++    v+  YG te++  + +   +++ 
+  BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan 288 RADFDLSTLRTGimaGATCPIEVMRRVISEMHMNEVQIAYGMTETSPVSLQTGPSDEL 345
+                                                          77555555544444499****************************9877665544444 PP
+
+                                                  hpg 297 evgsvlPiGrplagrrvyvLdafLrpvppgvtGelylaGaGlarGYlgraaltaerfv 354
+                                                          e  +v  +Gr   +    ++d++ + vp g+ Gel   G  +  GY ++++ tae   
+  BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan 346 E-LRVTTVGRTQPQLESKIIDEAGNLVPRGTIGELCTRGYSVMLGYWNNPQGTAEAI- 401
+                                                          4.36889**********************************************9964. PP
+
+                                                  hpg 355 adpfaagermYrtGDlarwtedgeLvfagraDdqvkir 392
+                                                               ++     tGDla ++++g +  agr  d + ir
+  BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan 402 ----DQAGW-MHTGDLASMNDEGYVCIAGRNKDMI-IR 433
+                                                          ....33444.47******************87654.56 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (393 nodes)
+Target sequences:                          1  (434 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.02u 0.00s 00:00:00.02 Elapsed: 00:00:00.01
+# Mc/sec: 8.83
+//
+[ok]

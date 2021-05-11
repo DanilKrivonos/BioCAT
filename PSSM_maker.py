@@ -1,5 +1,6 @@
 import numpy as np
 from subprocess import call 
+import os
 from os import listdir
 from pandas import read_csv
 from Bio.SearchIO import parse
@@ -66,8 +67,13 @@ def PSSM_make(search, aminochain, out, delta, hmms='./HMM/', neg='./negative.tsv
 
     #Making directory for PSSMs
     PSSMs_out = output + 'PSSM/'
-    call('mkdir {}'.format(PSSMs_out), shell=True)
+    try:
 
+        os.mkdir('{}'.format(PSSMs_out))
+
+    except FileExistsError:
+
+        print('The output directory already exists')
     #Recording PSSMs
     for substance in subst_eval.keys():
         print('For {}'.format(substance))

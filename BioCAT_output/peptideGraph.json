@@ -1,0 +1,3010 @@
+{
+  "id" : "Unknown",
+  "isomericSmiles" : "CCCCCCCCCC(CC(=O)NC(=CC)C(=O)N1CCCC1C(=O)NC(C)C(=O)NC(C)C(=O)NC(C)C(=O)NC(C(C)C)C(=O)NC(C)C(=O)NC(=CC)C(=O)NC(CO)C(=O)NC(C(C)C)C(=O)NC(C(C)CC)C(=O)NC(=C)C(=O)NC(C)C(=O)NC(C(C)C)C(=O)NC(C)C(=O)NC(C(C)C)C(=O)NC(=CC)C(=O)NC2C(OC(=O)C(NC(=O)C(NC(=O)C(NC(=O)C(NC2=O)C)CCN)CO)C(C)CC)C)O",
+  "canonicalSmiles" : null,
+  "coverage" : 1.0,
+  "correctness" : 0.0,
+  "missingMonomers" : 0,
+  "monomericGraph" : {
+    "monomericGraph" : {
+      "monomers" : [ {
+        "monomer" : {
+          "index" : 1,
+          "atoms" : [ 115, 116, 117, 135, 118, 147, 136 ],
+          "bonds" : [ 116, 117, 136, 118, 148, 137 ],
+          "monomer" : {
+            "id" : 769,
+            "cid" : "205",
+            "monomer" : "aThr/Thr",
+            "codes" : [ "aThr", "D-aThr", "D-Thr", "Thr" ],
+            "names" : [ "allo-Threonine", "D-allo-Threonine", "D-Threonine", "Threonine" ],
+            "smiles" : "CC(O)C(N)C(=O)O",
+            "mwHeavyAtoms" : 109.98781786,
+            "isNew" : false,
+            "isIdentified" : true,
+            "compounds" : null,
+            "compoundsCount" : 0
+          }
+        }
+      }, {
+        "monomer" : {
+          "index" : 2,
+          "atoms" : [ 119, 120, 121, 122, 143, 144, 145, 146 ],
+          "bonds" : [ 120, 121, 122, 144, 145, 146, 147 ],
+          "monomer" : {
+            "id" : 449,
+            "cid" : "791",
+            "monomer" : "Ile/aIle",
+            "codes" : [ "aIle", "D-aIle", "D-Ile", "Ile" ],
+            "names" : [ "allo-Isoleucine", "D-allo-Isoleucine", "D-Isoleucine", "Isoleucine" ],
+            "smiles" : "CCC(C)C(N)C(=O)O",
+            "mwHeavyAtoms" : 117.99290324,
+            "isNew" : false,
+            "isIdentified" : true,
+            "compounds" : null,
+            "compoundsCount" : 0
+          }
+        }
+      }, {
+        "monomer" : {
+          "index" : 3,
+          "atoms" : [ 48, 49, 50, 51, 52 ],
+          "bonds" : [ 49, 50, 51, 52 ],
+          "monomer" : {
+            "id" : 771,
+            "cid" : "602",
+            "monomer" : "Ala",
+            "codes" : [ "Ala", "D-Ala" ],
+            "names" : [ "Alanine", "D-Alanine" ],
+            "smiles" : "CC(N)C(=O)O",
+            "mwHeavyAtoms" : 81.99290324,
+            "isNew" : false,
+            "isIdentified" : true,
+            "compounds" : null,
+            "compoundsCount" : 0
+          }
+        }
+      }, {
+        "monomer" : {
+          "index" : 4,
+          "atoms" : [ 41, 42, 43, 46, 44, 45, 47 ],
+          "bonds" : [ 42, 43, 46, 44, 45, 47 ],
+          "monomer" : {
+            "id" : 853,
+            "cid" : "1182",
+            "monomer" : "Val",
+            "codes" : [ "D-Val", "Val" ],
+            "names" : [ "D-Valine", "Valine" ],
+            "smiles" : "CC(C)C(N)C(=O)O",
+            "mwHeavyAtoms" : 105.99290324,
+            "isNew" : false,
+            "isIdentified" : true,
+            "compounds" : null,
+            "compoundsCount" : 0
+          }
+        }
+      }, {
+        "monomer" : {
+          "index" : 5,
+          "atoms" : [ 80, 81, 82, 83, 84 ],
+          "bonds" : [ 81, 82, 83, 84 ],
+          "monomer" : {
+            "id" : 371,
+            "cid" : "123991",
+            "monomer" : "dh-Ala",
+            "codes" : [ "dh-Ala" ],
+            "names" : [ "dehydroalanine" ],
+            "smiles" : "C=C(N)C(=O)O",
+            "mwHeavyAtoms" : 81.99290324,
+            "isNew" : false,
+            "isIdentified" : true,
+            "compounds" : null,
+            "compoundsCount" : 0
+          }
+        }
+      }, {
+        "monomer" : {
+          "index" : 6,
+          "atoms" : [ 72, 73, 74, 78, 75, 76, 79, 77 ],
+          "bonds" : [ 73, 74, 78, 75, 76, 79, 77 ],
+          "monomer" : {
+            "id" : 449,
+            "cid" : "791",
+            "monomer" : "Ile/aIle",
+            "codes" : [ "aIle", "D-aIle", "D-Ile", "Ile" ],
+            "names" : [ "allo-Isoleucine", "D-allo-Isoleucine", "D-Isoleucine", "Isoleucine" ],
+            "smiles" : "CCC(C)C(N)C(=O)O",
+            "mwHeavyAtoms" : 117.99290324,
+            "isNew" : false,
+            "isIdentified" : true,
+            "compounds" : null,
+            "compoundsCount" : 0
+          }
+        }
+      }, {
+        "monomer" : {
+          "index" : 7,
+          "atoms" : [ 36, 37, 38, 39, 40 ],
+          "bonds" : [ 37, 38, 39, 40 ],
+          "monomer" : {
+            "id" : 771,
+            "cid" : "602",
+            "monomer" : "Ala",
+            "codes" : [ "Ala", "D-Ala" ],
+            "names" : [ "Alanine", "D-Alanine" ],
+            "smiles" : "CC(N)C(=O)O",
+            "mwHeavyAtoms" : 81.99290324,
+            "isNew" : false,
+            "isIdentified" : true,
+            "compounds" : null,
+            "compoundsCount" : 0
+          }
+        }
+      }, {
+        "monomer" : {
+          "index" : 8,
+          "atoms" : [ 90, 91, 92, 95, 93, 94, 96 ],
+          "bonds" : [ 91, 92, 95, 93, 94, 96 ],
+          "monomer" : {
+            "id" : 853,
+            "cid" : "1182",
+            "monomer" : "Val",
+            "codes" : [ "D-Val", "Val" ],
+            "names" : [ "D-Valine", "Valine" ],
+            "smiles" : "CC(C)C(N)C(=O)O",
+            "mwHeavyAtoms" : 105.99290324,
+            "isNew" : false,
+            "isIdentified" : true,
+            "compounds" : null,
+            "compoundsCount" : 0
+          }
+        }
+      }, {
+        "monomer" : {
+          "index" : 9,
+          "atoms" : [ 85, 86, 87, 88, 89 ],
+          "bonds" : [ 86, 87, 88, 89 ],
+          "monomer" : {
+            "id" : 771,
+            "cid" : "602",
+            "monomer" : "Ala",
+            "codes" : [ "Ala", "D-Ala" ],
+            "names" : [ "Alanine", "D-Alanine" ],
+            "smiles" : "CC(N)C(=O)O",
+            "mwHeavyAtoms" : 81.99290324,
+            "isNew" : false,
+            "isIdentified" : true,
+            "compounds" : null,
+            "compoundsCount" : 0
+          }
+        }
+      }, {
+        "monomer" : {
+          "index" : 10,
+          "atoms" : [ 123, 124, 125, 126, 141, 142 ],
+          "bonds" : [ 124, 125, 126, 142, 143 ],
+          "monomer" : {
+            "id" : 270,
+            "cid" : "617",
+            "monomer" : "Ser",
+            "codes" : [ "D-Ser", "Ser" ],
+            "names" : [ "D-Serine", "Serine" ],
+            "smiles" : "NC(CO)C(=O)O",
+            "mwHeavyAtoms" : 97.98781786,
+            "isNew" : false,
+            "isIdentified" : true,
+            "compounds" : null,
+            "compoundsCount" : 0
+          }
+        }
+      }, {
+        "monomer" : {
+          "index" : 11,
+          "atoms" : [ 130, 129, 127, 138, 128, 139, 140 ],
+          "bonds" : [ 130, 129, 139, 128, 140, 141 ],
+          "monomer" : {
+            "id" : 175,
+            "cid" : "470",
+            "monomer" : "Dab",
+            "codes" : [ "Dab", "D-Dab" ],
+            "names" : [ "2,4-diaminobutyric acid", "D-2,4-diaminobutyric acid" ],
+            "smiles" : "NCCC(N)C(=O)O",
+            "mwHeavyAtoms" : 107.99597724,
+            "isNew" : false,
+            "isIdentified" : true,
+            "compounds" : null,
+            "compoundsCount" : 0
+          }
+        }
+      }, {
+        "monomer" : {
+          "index" : 12,
+          "atoms" : [ 26, 27, 28, 29, 30 ],
+          "bonds" : [ 27, 28, 29, 30 ],
+          "monomer" : {
+            "id" : 771,
+            "cid" : "602",
+            "monomer" : "Ala",
+            "codes" : [ "Ala", "D-Ala" ],
+            "names" : [ "Alanine", "D-Alanine" ],
+            "smiles" : "CC(N)C(=O)O",
+            "mwHeavyAtoms" : 81.99290324,
+            "isNew" : false,
+            "isIdentified" : true,
+            "compounds" : null,
+            "compoundsCount" : 0
+          }
+        }
+      }, {
+        "monomer" : {
+          "index" : 13,
+          "atoms" : [ 19, 20, 23, 21, 22, 24, 25 ],
+          "bonds" : [ 19, 23, 20, 22, 24, 21, 25 ],
+          "monomer" : {
+            "id" : 679,
+            "cid" : "614",
+            "monomer" : "Pro",
+            "codes" : [ "D-Pro", "Pro" ],
+            "names" : [ "D-Proline", "Proline" ],
+            "smiles" : "O=C(O)C1CCCN1",
+            "mwHeavyAtoms" : 105.99290324,
+            "isNew" : false,
+            "isIdentified" : true,
+            "compounds" : null,
+            "compoundsCount" : 0
+          }
+        }
+      }, {
+        "monomer" : {
+          "index" : 14,
+          "atoms" : [ 59, 60, 61, 63, 62, 64 ],
+          "bonds" : [ 60, 61, 63, 62, 64 ],
+          "monomer" : {
+            "id" : 270,
+            "cid" : "617",
+            "monomer" : "Ser",
+            "codes" : [ "D-Ser", "Ser" ],
+            "names" : [ "D-Serine", "Serine" ],
+            "smiles" : "NC(CO)C(=O)O",
+            "mwHeavyAtoms" : 97.98781786,
+            "isNew" : false,
+            "isIdentified" : true,
+            "compounds" : null,
+            "compoundsCount" : 0
+          }
+        }
+      }, {
+        "monomer" : {
+          "index" : 15,
+          "atoms" : [ 53, 54, 55, 57, 56, 58 ],
+          "bonds" : [ 54, 55, 57, 56, 58 ],
+          "monomer" : {
+            "id" : 384,
+            "cid" : "3082167",
+            "monomer" : "dhAbu",
+            "codes" : [ "dhAbu" ],
+            "names" : [ "2,3-dehydro-2-aminobutyric acid" ],
+            "smiles" : "CC=C(N)C(=O)O",
+            "mwHeavyAtoms" : 93.99290324,
+            "isNew" : false,
+            "isIdentified" : true,
+            "compounds" : null,
+            "compoundsCount" : 0
+          }
+        }
+      }, {
+        "monomer" : {
+          "index" : 16,
+          "atoms" : [ 31, 32, 33, 34, 35 ],
+          "bonds" : [ 32, 33, 34, 35 ],
+          "monomer" : {
+            "id" : 771,
+            "cid" : "602",
+            "monomer" : "Ala",
+            "codes" : [ "Ala", "D-Ala" ],
+            "names" : [ "Alanine", "D-Alanine" ],
+            "smiles" : "CC(N)C(=O)O",
+            "mwHeavyAtoms" : 81.99290324,
+            "isNew" : false,
+            "isIdentified" : true,
+            "compounds" : null,
+            "compoundsCount" : 0
+          }
+        }
+      }, {
+        "monomer" : {
+          "index" : 17,
+          "atoms" : [ 102, 103, 104, 107, 105, 106, 108 ],
+          "bonds" : [ 103, 104, 107, 105, 106, 108 ],
+          "monomer" : {
+            "id" : 853,
+            "cid" : "1182",
+            "monomer" : "Val",
+            "codes" : [ "D-Val", "Val" ],
+            "names" : [ "D-Valine", "Valine" ],
+            "smiles" : "CC(C)C(N)C(=O)O",
+            "mwHeavyAtoms" : 105.99290324,
+            "isNew" : false,
+            "isIdentified" : true,
+            "compounds" : null,
+            "compoundsCount" : 0
+          }
+        }
+      }, {
+        "monomer" : {
+          "index" : 18,
+          "atoms" : [ 97, 98, 99, 100, 101 ],
+          "bonds" : [ 98, 99, 100, 101 ],
+          "monomer" : {
+            "id" : 771,
+            "cid" : "602",
+            "monomer" : "Ala",
+            "codes" : [ "Ala", "D-Ala" ],
+            "names" : [ "Alanine", "D-Alanine" ],
+            "smiles" : "CC(N)C(=O)O",
+            "mwHeavyAtoms" : 81.99290324,
+            "isNew" : false,
+            "isIdentified" : true,
+            "compounds" : null,
+            "compoundsCount" : 0
+          }
+        }
+      }, {
+        "monomer" : {
+          "index" : 19,
+          "atoms" : [ 13, 14, 15, 17, 16, 18 ],
+          "bonds" : [ 13, 14, 16, 15, 17 ],
+          "monomer" : {
+            "id" : 384,
+            "cid" : "3082167",
+            "monomer" : "dhAbu",
+            "codes" : [ "dhAbu" ],
+            "names" : [ "2,3-dehydro-2-aminobutyric acid" ],
+            "smiles" : "CC=C(N)C(=O)O",
+            "mwHeavyAtoms" : 93.99290324,
+            "isNew" : false,
+            "isIdentified" : true,
+            "compounds" : null,
+            "compoundsCount" : 0
+          }
+        }
+      }, {
+        "monomer" : {
+          "index" : 20,
+          "atoms" : [ 65, 66, 67, 70, 68, 69, 71 ],
+          "bonds" : [ 66, 67, 70, 68, 69, 71 ],
+          "monomer" : {
+            "id" : 853,
+            "cid" : "1182",
+            "monomer" : "Val",
+            "codes" : [ "D-Val", "Val" ],
+            "names" : [ "D-Valine", "Valine" ],
+            "smiles" : "CC(C)C(N)C(=O)O",
+            "mwHeavyAtoms" : 105.99290324,
+            "isNew" : false,
+            "isIdentified" : true,
+            "compounds" : null,
+            "compoundsCount" : 0
+          }
+        }
+      }, {
+        "monomer" : {
+          "index" : 21,
+          "atoms" : [ 134, 133, 131, 137, 132 ],
+          "bonds" : [ 134, 133, 138, 132 ],
+          "monomer" : {
+            "id" : 771,
+            "cid" : "602",
+            "monomer" : "Ala",
+            "codes" : [ "Ala", "D-Ala" ],
+            "names" : [ "Alanine", "D-Alanine" ],
+            "smiles" : "CC(N)C(=O)O",
+            "mwHeavyAtoms" : 81.99290324,
+            "isNew" : false,
+            "isIdentified" : true,
+            "compounds" : null,
+            "compoundsCount" : 0
+          }
+        }
+      }, {
+        "monomer" : {
+          "index" : 22,
+          "atoms" : [ 109, 110, 111, 113, 112, 114 ],
+          "bonds" : [ 110, 111, 113, 112, 114 ],
+          "monomer" : {
+            "id" : 384,
+            "cid" : "3082167",
+            "monomer" : "dhAbu",
+            "codes" : [ "dhAbu" ],
+            "names" : [ "2,3-dehydro-2-aminobutyric acid" ],
+            "smiles" : "CC=C(N)C(=O)O",
+            "mwHeavyAtoms" : 93.99290324,
+            "isNew" : false,
+            "isIdentified" : true,
+            "compounds" : null,
+            "compoundsCount" : 0
+          }
+        }
+      }, {
+        "monomer" : {
+          "index" : 23,
+          "atoms" : [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 148, 11, 12 ],
+          "bonds" : [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 149, 10, 11 ],
+          "monomer" : {
+            "id" : 156,
+            "cid" : "94216",
+            "monomer" : "C12:0-OH(3)",
+            "codes" : [ "C12:0-OH(3)" ],
+            "names" : [ "3-hydroxy-dodecanoic acid" ],
+            "smiles" : "CCCCCCCCCC(O)CC(=O)O",
+            "mwHeavyAtoms" : 191.98474386,
+            "isNew" : false,
+            "isIdentified" : true,
+            "compounds" : null,
+            "compoundsCount" : 0
+          }
+        }
+      } ],
+      "bonds" : [ {
+        "bond" : {
+          "bondTypes" : [ "ESTER" ],
+          "index" : 1,
+          "atomicIndexes" : [ 119 ],
+          "monomers" : [ 1, 2 ]
+        }
+      }, {
+        "bond" : {
+          "bondTypes" : [ "AMINO" ],
+          "index" : 2,
+          "atomicIndexes" : [ 48 ],
+          "monomers" : [ 3, 4 ]
+        }
+      }, {
+        "bond" : {
+          "bondTypes" : [ "AMINO" ],
+          "index" : 3,
+          "atomicIndexes" : [ 80 ],
+          "monomers" : [ 5, 6 ]
+        }
+      }, {
+        "bond" : {
+          "bondTypes" : [ "AMINO" ],
+          "index" : 4,
+          "atomicIndexes" : [ 41 ],
+          "monomers" : [ 4, 7 ]
+        }
+      }, {
+        "bond" : {
+          "bondTypes" : [ "AMINO" ],
+          "index" : 5,
+          "atomicIndexes" : [ 90 ],
+          "monomers" : [ 8, 9 ]
+        }
+      }, {
+        "bond" : {
+          "bondTypes" : [ "AMINO" ],
+          "index" : 6,
+          "atomicIndexes" : [ 127 ],
+          "monomers" : [ 10, 11 ]
+        }
+      }, {
+        "bond" : {
+          "bondTypes" : [ "AMINO" ],
+          "index" : 7,
+          "atomicIndexes" : [ 26 ],
+          "monomers" : [ 12, 13 ]
+        }
+      }, {
+        "bond" : {
+          "bondTypes" : [ "AMINO" ],
+          "index" : 8,
+          "atomicIndexes" : [ 59 ],
+          "monomers" : [ 14, 15 ]
+        }
+      }, {
+        "bond" : {
+          "bondTypes" : [ "AMINO" ],
+          "index" : 9,
+          "atomicIndexes" : [ 36 ],
+          "monomers" : [ 7, 16 ]
+        }
+      }, {
+        "bond" : {
+          "bondTypes" : [ "AMINO" ],
+          "index" : 10,
+          "atomicIndexes" : [ 102 ],
+          "monomers" : [ 17, 18 ]
+        }
+      }, {
+        "bond" : {
+          "bondTypes" : [ "AMINO" ],
+          "index" : 11,
+          "atomicIndexes" : [ 18 ],
+          "monomers" : [ 13, 19 ]
+        }
+      }, {
+        "bond" : {
+          "bondTypes" : [ "AMINO" ],
+          "index" : 12,
+          "atomicIndexes" : [ 65 ],
+          "monomers" : [ 20, 14 ]
+        }
+      }, {
+        "bond" : {
+          "bondTypes" : [ "AMINO" ],
+          "index" : 13,
+          "atomicIndexes" : [ 72 ],
+          "monomers" : [ 6, 20 ]
+        }
+      }, {
+        "bond" : {
+          "bondTypes" : [ "AMINO" ],
+          "index" : 14,
+          "atomicIndexes" : [ 123 ],
+          "monomers" : [ 2, 10 ]
+        }
+      }, {
+        "bond" : {
+          "bondTypes" : [ "AMINO" ],
+          "index" : 15,
+          "atomicIndexes" : [ 85 ],
+          "monomers" : [ 9, 5 ]
+        }
+      }, {
+        "bond" : {
+          "bondTypes" : [ "AMINO" ],
+          "index" : 16,
+          "atomicIndexes" : [ 135 ],
+          "monomers" : [ 21, 1 ]
+        }
+      }, {
+        "bond" : {
+          "bondTypes" : [ "AMINO" ],
+          "index" : 17,
+          "atomicIndexes" : [ 109 ],
+          "monomers" : [ 22, 17 ]
+        }
+      }, {
+        "bond" : {
+          "bondTypes" : [ "AMINO" ],
+          "index" : 18,
+          "atomicIndexes" : [ 97 ],
+          "monomers" : [ 18, 8 ]
+        }
+      }, {
+        "bond" : {
+          "bondTypes" : [ "AMINO" ],
+          "index" : 19,
+          "atomicIndexes" : [ 53 ],
+          "monomers" : [ 15, 3 ]
+        }
+      }, {
+        "bond" : {
+          "bondTypes" : [ "AMINO" ],
+          "index" : 20,
+          "atomicIndexes" : [ 131 ],
+          "monomers" : [ 11, 21 ]
+        }
+      }, {
+        "bond" : {
+          "bondTypes" : [ "AMINO" ],
+          "index" : 21,
+          "atomicIndexes" : [ 12 ],
+          "monomers" : [ 19, 23 ]
+        }
+      }, {
+        "bond" : {
+          "bondTypes" : [ "AMINO" ],
+          "index" : 22,
+          "atomicIndexes" : [ 115 ],
+          "monomers" : [ 1, 22 ]
+        }
+      }, {
+        "bond" : {
+          "bondTypes" : [ "AMINO" ],
+          "index" : 23,
+          "atomicIndexes" : [ 31 ],
+          "monomers" : [ 16, 12 ]
+        }
+      } ]
+    }
+  },
+  "atomicGraph" : {
+    "atomicGraph" : {
+      "atoms" : [ {
+        "res" : 156,
+        "cdk_idx" : 0,
+        "name" : "C",
+        "hydrogens" : 3,
+        "matchIdx" : 23,
+        "x" : -87.02686979185229,
+        "y" : 1.728711131618892,
+        "monName" : "C12:0-OH(3)"
+      }, {
+        "res" : 156,
+        "cdk_idx" : 1,
+        "name" : "C",
+        "hydrogens" : 2,
+        "matchIdx" : 23,
+        "x" : -85.91393432793708,
+        "y" : 0.7230398865492859,
+        "monName" : "C12:0-OH(3)"
+      }, {
+        "res" : 156,
+        "cdk_idx" : 2,
+        "name" : "C",
+        "hydrogens" : 2,
+        "matchIdx" : 23,
+        "x" : -84.48652974989368,
+        "y" : 1.184034648537669,
+        "monName" : "C12:0-OH(3)"
+      }, {
+        "res" : 156,
+        "cdk_idx" : 3,
+        "name" : "C",
+        "hydrogens" : 2,
+        "matchIdx" : 23,
+        "x" : -83.37359428597847,
+        "y" : 0.17836340346806268,
+        "monName" : "C12:0-OH(3)"
+      }, {
+        "res" : 156,
+        "cdk_idx" : 4,
+        "name" : "C",
+        "hydrogens" : 2,
+        "matchIdx" : 23,
+        "x" : -81.94618970793506,
+        "y" : 0.6393581654564457,
+        "monName" : "C12:0-OH(3)"
+      }, {
+        "res" : 156,
+        "cdk_idx" : 5,
+        "name" : "C",
+        "hydrogens" : 2,
+        "matchIdx" : 23,
+        "x" : -80.83325424401986,
+        "y" : -0.3663130796131604,
+        "monName" : "C12:0-OH(3)"
+      }, {
+        "res" : 156,
+        "cdk_idx" : 6,
+        "name" : "C",
+        "hydrogens" : 2,
+        "matchIdx" : 23,
+        "x" : -79.40584966597645,
+        "y" : 0.09468168237522268,
+        "monName" : "C12:0-OH(3)"
+      }, {
+        "res" : 156,
+        "cdk_idx" : 7,
+        "name" : "C",
+        "hydrogens" : 2,
+        "matchIdx" : 23,
+        "x" : -78.29291420206124,
+        "y" : -0.9109895626943835,
+        "monName" : "C12:0-OH(3)"
+      }, {
+        "res" : 156,
+        "cdk_idx" : 8,
+        "name" : "C",
+        "hydrogens" : 2,
+        "matchIdx" : 23,
+        "x" : -76.86550962401783,
+        "y" : -0.4499948007060004,
+        "monName" : "C12:0-OH(3)"
+      }, {
+        "res" : 156,
+        "cdk_idx" : 9,
+        "name" : "C",
+        "hydrogens" : 1,
+        "matchIdx" : 23,
+        "x" : -75.75257416010263,
+        "y" : -1.4556660457756048,
+        "monName" : "C12:0-OH(3)"
+      }, {
+        "res" : 156,
+        "cdk_idx" : 10,
+        "name" : "C",
+        "hydrogens" : 2,
+        "matchIdx" : 23,
+        "x" : -74.32516958205922,
+        "y" : -0.9946712837872191,
+        "monName" : "C12:0-OH(3)"
+      }, {
+        "res" : 156,
+        "cdk_idx" : 11,
+        "name" : "C",
+        "hydrogens" : 0,
+        "matchIdx" : 23,
+        "x" : -73.21223411814401,
+        "y" : -2.00034252885682,
+        "monName" : "C12:0-OH(3)"
+      }, {
+        "res" : 156,
+        "cdk_idx" : 12,
+        "name" : "O",
+        "hydrogens" : 0,
+        "matchIdx" : 23,
+        "x" : -73.52670323227221,
+        "y" : -3.4670085359148084,
+        "monName" : "C12:0-OH(3)"
+      }, {
+        "res" : 384,
+        "cdk_idx" : 13,
+        "name" : "N",
+        "hydrogens" : 1,
+        "matchIdx" : 19,
+        "x" : -71.7848295401006,
+        "y" : -1.539347766868429,
+        "monName" : "dhAbu"
+      }, {
+        "res" : 384,
+        "cdk_idx" : 14,
+        "name" : "C",
+        "hydrogens" : 0,
+        "matchIdx" : 19,
+        "x" : -70.6718940761854,
+        "y" : -2.5450190119380243,
+        "monName" : "dhAbu"
+      }, {
+        "res" : 384,
+        "cdk_idx" : 15,
+        "name" : "C",
+        "hydrogens" : 1,
+        "matchIdx" : 19,
+        "x" : -70.98636319031358,
+        "y" : -4.011685018996016,
+        "monName" : "dhAbu"
+      }, {
+        "res" : 384,
+        "cdk_idx" : 16,
+        "name" : "C",
+        "hydrogens" : 3,
+        "matchIdx" : 19,
+        "x" : -72.41376776835699,
+        "y" : -4.472679780984414,
+        "monName" : "dhAbu"
+      }, {
+        "res" : 384,
+        "cdk_idx" : 17,
+        "name" : "C",
+        "hydrogens" : 0,
+        "matchIdx" : 19,
+        "x" : -69.24448949814199,
+        "y" : -2.084024249949626,
+        "monName" : "dhAbu"
+      }, {
+        "res" : 384,
+        "cdk_idx" : 18,
+        "name" : "O",
+        "hydrogens" : 0,
+        "matchIdx" : 19,
+        "x" : -68.13155403422678,
+        "y" : -3.0896954950192237,
+        "monName" : "dhAbu"
+      }, {
+        "res" : 679,
+        "cdk_idx" : 19,
+        "name" : "N",
+        "hydrogens" : 0,
+        "matchIdx" : 13,
+        "x" : -68.9300203840138,
+        "y" : -0.6173582428916339,
+        "monName" : "Pro"
+      }, {
+        "res" : 679,
+        "cdk_idx" : 20,
+        "name" : "C",
+        "hydrogens" : 2,
+        "matchIdx" : 13,
+        "x" : -69.93081862969683,
+        "y" : 0.49480310845887987,
+        "monName" : "Pro"
+      }, {
+        "res" : 679,
+        "cdk_idx" : 21,
+        "name" : "C",
+        "hydrogens" : 2,
+        "matchIdx" : 13,
+        "x" : -69.18379361631816,
+        "y" : 1.7980504485239206,
+        "monName" : "Pro"
+      }, {
+        "res" : 679,
+        "cdk_idx" : 22,
+        "name" : "C",
+        "hydrogens" : 2,
+        "matchIdx" : 13,
+        "x" : -67.71651561779355,
+        "y" : 1.486449301148625,
+        "monName" : "Pro"
+      }, {
+        "res" : 679,
+        "cdk_idx" : 23,
+        "name" : "C",
+        "hydrogens" : 1,
+        "matchIdx" : 13,
+        "x" : -67.55382827208695,
+        "y" : -0.00999075028909957,
+        "monName" : "Pro"
+      }, {
+        "res" : 679,
+        "cdk_idx" : 24,
+        "name" : "C",
+        "hydrogens" : 0,
+        "matchIdx" : 13,
+        "x" : -66.25467001303579,
+        "y" : -0.7597826000308604,
+        "monName" : "Pro"
+      }, {
+        "res" : 679,
+        "cdk_idx" : 25,
+        "name" : "O",
+        "hydrogens" : 0,
+        "matchIdx" : 13,
+        "x" : -66.2544296729371,
+        "y" : -2.259782580776406,
+        "monName" : "Pro"
+      }, {
+        "res" : 771,
+        "cdk_idx" : 26,
+        "name" : "N",
+        "hydrogens" : 1,
+        "matchIdx" : 12,
+        "x" : -64.95575209408332,
+        "y" : -0.009574469027073262,
+        "monName" : "Ala"
+      }, {
+        "res" : 771,
+        "cdk_idx" : 27,
+        "name" : "C",
+        "hydrogens" : 1,
+        "matchIdx" : 12,
+        "x" : -63.65659383503217,
+        "y" : -0.7593663187688269,
+        "monName" : "Ala"
+      }, {
+        "res" : 771,
+        "cdk_idx" : 28,
+        "name" : "C",
+        "hydrogens" : 3,
+        "matchIdx" : 12,
+        "x" : -63.65635349493348,
+        "y" : -2.2593662995143724,
+        "monName" : "Ala"
+      }, {
+        "res" : 771,
+        "cdk_idx" : 29,
+        "name" : "C",
+        "hydrogens" : 0,
+        "matchIdx" : 12,
+        "x" : -62.35767591607971,
+        "y" : -0.009158187765035075,
+        "monName" : "Ala"
+      }, {
+        "res" : 771,
+        "cdk_idx" : 30,
+        "name" : "O",
+        "hydrogens" : 0,
+        "matchIdx" : 12,
+        "x" : -62.357916256178406,
+        "y" : 1.4908417929805104,
+        "monName" : "Ala"
+      }, {
+        "res" : 771,
+        "cdk_idx" : 31,
+        "name" : "N",
+        "hydrogens" : 1,
+        "matchIdx" : 16,
+        "x" : -61.058517657028545,
+        "y" : -0.7589500375067887,
+        "monName" : "Ala"
+      }, {
+        "res" : 771,
+        "cdk_idx" : 32,
+        "name" : "C",
+        "hydrogens" : 1,
+        "matchIdx" : 16,
+        "x" : -59.75959973807608,
+        "y" : -0.008741906502996888,
+        "monName" : "Ala"
+      }, {
+        "res" : 771,
+        "cdk_idx" : 33,
+        "name" : "C",
+        "hydrogens" : 3,
+        "matchIdx" : 16,
+        "x" : -59.75984007817478,
+        "y" : 1.4912580742425487,
+        "monName" : "Ala"
+      }, {
+        "res" : 771,
+        "cdk_idx" : 34,
+        "name" : "C",
+        "hydrogens" : 0,
+        "matchIdx" : 16,
+        "x" : -58.46044147902492,
+        "y" : -0.7585337562447505,
+        "monName" : "Ala"
+      }, {
+        "res" : 771,
+        "cdk_idx" : 35,
+        "name" : "O",
+        "hydrogens" : 0,
+        "matchIdx" : 16,
+        "x" : -58.46020113892622,
+        "y" : -2.2585337369902962,
+        "monName" : "Ala"
+      }, {
+        "res" : 771,
+        "cdk_idx" : 36,
+        "name" : "N",
+        "hydrogens" : 1,
+        "matchIdx" : 7,
+        "x" : -57.16152356007246,
+        "y" : -0.0083256252409587,
+        "monName" : "Ala"
+      }, {
+        "res" : 771,
+        "cdk_idx" : 37,
+        "name" : "C",
+        "hydrogens" : 1,
+        "matchIdx" : 7,
+        "x" : -55.8623653010213,
+        "y" : -0.7581174749827123,
+        "monName" : "Ala"
+      }, {
+        "res" : 771,
+        "cdk_idx" : 38,
+        "name" : "C",
+        "hydrogens" : 3,
+        "matchIdx" : 7,
+        "x" : -55.8621249609226,
+        "y" : -2.2581174557282577,
+        "monName" : "Ala"
+      }, {
+        "res" : 771,
+        "cdk_idx" : 39,
+        "name" : "C",
+        "hydrogens" : 0,
+        "matchIdx" : 7,
+        "x" : -54.56344738206884,
+        "y" : -0.007909343978920513,
+        "monName" : "Ala"
+      }, {
+        "res" : 771,
+        "cdk_idx" : 40,
+        "name" : "O",
+        "hydrogens" : 0,
+        "matchIdx" : 7,
+        "x" : -54.563687722167536,
+        "y" : 1.492090636766625,
+        "monName" : "Ala"
+      }, {
+        "res" : 853,
+        "cdk_idx" : 41,
+        "name" : "N",
+        "hydrogens" : 1,
+        "matchIdx" : 4,
+        "x" : -53.264289123017676,
+        "y" : -0.7577011937206741,
+        "monName" : "Val"
+      }, {
+        "res" : 853,
+        "cdk_idx" : 42,
+        "name" : "C",
+        "hydrogens" : 1,
+        "matchIdx" : 4,
+        "x" : -51.965371204065214,
+        "y" : -0.007493062716882326,
+        "monName" : "Val"
+      }, {
+        "res" : 853,
+        "cdk_idx" : 43,
+        "name" : "C",
+        "hydrogens" : 1,
+        "matchIdx" : 4,
+        "x" : -51.96561154416391,
+        "y" : 1.4925069180286632,
+        "monName" : "Val"
+      }, {
+        "res" : 853,
+        "cdk_idx" : 44,
+        "name" : "C",
+        "hydrogens" : 3,
+        "matchIdx" : 4,
+        "x" : -53.264769803215074,
+        "y" : 2.2422987677704156,
+        "monName" : "Val"
+      }, {
+        "res" : 853,
+        "cdk_idx" : 45,
+        "name" : "C",
+        "hydrogens" : 3,
+        "matchIdx" : 4,
+        "x" : -50.66669362521145,
+        "y" : 2.242715049032456,
+        "monName" : "Val"
+      }, {
+        "res" : 853,
+        "cdk_idx" : 46,
+        "name" : "C",
+        "hydrogens" : 0,
+        "matchIdx" : 4,
+        "x" : -50.66621294501405,
+        "y" : -0.7572849124586359,
+        "monName" : "Val"
+      }, {
+        "res" : 853,
+        "cdk_idx" : 47,
+        "name" : "O",
+        "hydrogens" : 0,
+        "matchIdx" : 4,
+        "x" : -50.66597260491535,
+        "y" : -2.2572848932041816,
+        "monName" : "Val"
+      }, {
+        "res" : 771,
+        "cdk_idx" : 48,
+        "name" : "N",
+        "hydrogens" : 1,
+        "matchIdx" : 3,
+        "x" : -49.36729502606159,
+        "y" : -0.007076781454844139,
+        "monName" : "Ala"
+      }, {
+        "res" : 771,
+        "cdk_idx" : 49,
+        "name" : "C",
+        "hydrogens" : 1,
+        "matchIdx" : 3,
+        "x" : -48.06813676701043,
+        "y" : -0.7568686311965978,
+        "monName" : "Ala"
+      }, {
+        "res" : 771,
+        "cdk_idx" : 50,
+        "name" : "C",
+        "hydrogens" : 3,
+        "matchIdx" : 3,
+        "x" : -48.06789642691173,
+        "y" : -2.256868611942143,
+        "monName" : "Ala"
+      }, {
+        "res" : 771,
+        "cdk_idx" : 51,
+        "name" : "C",
+        "hydrogens" : 0,
+        "matchIdx" : 3,
+        "x" : -46.76921884805797,
+        "y" : -0.0066605001928059515,
+        "monName" : "Ala"
+      }, {
+        "res" : 771,
+        "cdk_idx" : 52,
+        "name" : "O",
+        "hydrogens" : 0,
+        "matchIdx" : 3,
+        "x" : -46.76945918815667,
+        "y" : 1.4933394805527396,
+        "monName" : "Ala"
+      }, {
+        "res" : 384,
+        "cdk_idx" : 53,
+        "name" : "N",
+        "hydrogens" : 1,
+        "matchIdx" : 15,
+        "x" : -45.470060589006806,
+        "y" : -0.7564523499345596,
+        "monName" : "dhAbu"
+      }, {
+        "res" : 384,
+        "cdk_idx" : 54,
+        "name" : "C",
+        "hydrogens" : 0,
+        "matchIdx" : 15,
+        "x" : -44.171142670054344,
+        "y" : -0.006244218930767764,
+        "monName" : "dhAbu"
+      }, {
+        "res" : 384,
+        "cdk_idx" : 55,
+        "name" : "C",
+        "hydrogens" : 1,
+        "matchIdx" : 15,
+        "x" : -44.17138301015304,
+        "y" : 1.4937557618147776,
+        "monName" : "dhAbu"
+      }, {
+        "res" : 384,
+        "cdk_idx" : 56,
+        "name" : "C",
+        "hydrogens" : 3,
+        "matchIdx" : 15,
+        "x" : -45.470541269204205,
+        "y" : 2.24354761155653,
+        "monName" : "dhAbu"
+      }, {
+        "res" : 384,
+        "cdk_idx" : 57,
+        "name" : "C",
+        "hydrogens" : 0,
+        "matchIdx" : 15,
+        "x" : -42.87198441100318,
+        "y" : -0.7560360686725214,
+        "monName" : "dhAbu"
+      }, {
+        "res" : 384,
+        "cdk_idx" : 58,
+        "name" : "O",
+        "hydrogens" : 0,
+        "matchIdx" : 15,
+        "x" : -42.871744070904484,
+        "y" : -2.256036049418067,
+        "monName" : "dhAbu"
+      }, {
+        "res" : 270,
+        "cdk_idx" : 59,
+        "name" : "N",
+        "hydrogens" : 1,
+        "matchIdx" : 14,
+        "x" : -41.57306649205072,
+        "y" : -0.005827937668729577,
+        "monName" : "Ser"
+      }, {
+        "res" : 270,
+        "cdk_idx" : 60,
+        "name" : "C",
+        "hydrogens" : 1,
+        "matchIdx" : 14,
+        "x" : -40.27390823299956,
+        "y" : -0.7556197874104832,
+        "monName" : "Ser"
+      }, {
+        "res" : 270,
+        "cdk_idx" : 61,
+        "name" : "C",
+        "hydrogens" : 2,
+        "matchIdx" : 14,
+        "x" : -40.27366789290086,
+        "y" : -2.255619768156029,
+        "monName" : "Ser"
+      }, {
+        "res" : 270,
+        "cdk_idx" : 62,
+        "name" : "O",
+        "hydrogens" : 1,
+        "matchIdx" : 14,
+        "x" : -41.57258581185332,
+        "y" : -3.005827899159823,
+        "monName" : "Ser"
+      }, {
+        "res" : 270,
+        "cdk_idx" : 63,
+        "name" : "C",
+        "hydrogens" : 0,
+        "matchIdx" : 14,
+        "x" : -38.9749903140471,
+        "y" : -0.00541165640669139,
+        "monName" : "Ser"
+      }, {
+        "res" : 270,
+        "cdk_idx" : 64,
+        "name" : "O",
+        "hydrogens" : 0,
+        "matchIdx" : 14,
+        "x" : -38.9752306541458,
+        "y" : 1.4945883243388542,
+        "monName" : "Ser"
+      }, {
+        "res" : 853,
+        "cdk_idx" : 65,
+        "name" : "N",
+        "hydrogens" : 1,
+        "matchIdx" : 20,
+        "x" : -37.67583205499594,
+        "y" : -0.755203506148445,
+        "monName" : "Val"
+      }, {
+        "res" : 853,
+        "cdk_idx" : 66,
+        "name" : "C",
+        "hydrogens" : 1,
+        "matchIdx" : 20,
+        "x" : -36.376914136043474,
+        "y" : -0.004995375144653202,
+        "monName" : "Val"
+      }, {
+        "res" : 853,
+        "cdk_idx" : 67,
+        "name" : "C",
+        "hydrogens" : 1,
+        "matchIdx" : 20,
+        "x" : -36.377154476142174,
+        "y" : 1.4950046056008923,
+        "monName" : "Val"
+      }, {
+        "res" : 853,
+        "cdk_idx" : 68,
+        "name" : "C",
+        "hydrogens" : 3,
+        "matchIdx" : 20,
+        "x" : -35.07823655718971,
+        "y" : 2.245212736604686,
+        "monName" : "Val"
+      }, {
+        "res" : 853,
+        "cdk_idx" : 69,
+        "name" : "C",
+        "hydrogens" : 3,
+        "matchIdx" : 20,
+        "x" : -37.676312735193335,
+        "y" : 2.2447964553426436,
+        "monName" : "Val"
+      }, {
+        "res" : 853,
+        "cdk_idx" : 70,
+        "name" : "C",
+        "hydrogens" : 0,
+        "matchIdx" : 20,
+        "x" : -35.07775587699231,
+        "y" : -0.7547872248864052,
+        "monName" : "Val"
+      }, {
+        "res" : 853,
+        "cdk_idx" : 71,
+        "name" : "O",
+        "hydrogens" : 0,
+        "matchIdx" : 20,
+        "x" : -35.077515536893614,
+        "y" : -2.254787205631951,
+        "monName" : "Val"
+      }, {
+        "res" : 449,
+        "cdk_idx" : 72,
+        "name" : "N",
+        "hydrogens" : 1,
+        "matchIdx" : 6,
+        "x" : -33.77883795803985,
+        "y" : -0.004579093882611129,
+        "monName" : "Ile/aIle"
+      }, {
+        "res" : 449,
+        "cdk_idx" : 73,
+        "name" : "C",
+        "hydrogens" : 1,
+        "matchIdx" : 6,
+        "x" : -32.47967969898869,
+        "y" : -0.7543709436243596,
+        "monName" : "Ile/aIle"
+      }, {
+        "res" : 449,
+        "cdk_idx" : 74,
+        "name" : "C",
+        "hydrogens" : 1,
+        "matchIdx" : 6,
+        "x" : -32.47943935888999,
+        "y" : -2.2543709243699053,
+        "monName" : "Ile/aIle"
+      }, {
+        "res" : 449,
+        "cdk_idx" : 75,
+        "name" : "C",
+        "hydrogens" : 3,
+        "matchIdx" : 6,
+        "x" : -33.77835727784245,
+        "y" : -3.004579055373699,
+        "monName" : "Ile/aIle"
+      }, {
+        "res" : 449,
+        "cdk_idx" : 76,
+        "name" : "C",
+        "hydrogens" : 2,
+        "matchIdx" : 6,
+        "x" : -31.18028109983883,
+        "y" : -3.0041627741116574,
+        "monName" : "Ile/aIle"
+      }, {
+        "res" : 449,
+        "cdk_idx" : 77,
+        "name" : "C",
+        "hydrogens" : 3,
+        "matchIdx" : 6,
+        "x" : -29.881363180886368,
+        "y" : -2.253954643107866,
+        "monName" : "Ile/aIle"
+      }, {
+        "res" : 449,
+        "cdk_idx" : 78,
+        "name" : "C",
+        "hydrogens" : 0,
+        "matchIdx" : 6,
+        "x" : -31.180761780036228,
+        "y" : -0.004162812620561063,
+        "monName" : "Ile/aIle"
+      }, {
+        "res" : 449,
+        "cdk_idx" : 79,
+        "name" : "O",
+        "hydrogens" : 0,
+        "matchIdx" : 6,
+        "x" : -31.18100212013493,
+        "y" : 1.4958371681249845,
+        "monName" : "Ile/aIle"
+      }, {
+        "res" : 371,
+        "cdk_idx" : 80,
+        "name" : "N",
+        "hydrogens" : 1,
+        "matchIdx" : 5,
+        "x" : -29.881603520985063,
+        "y" : -0.7539546623623078,
+        "monName" : "dh-Ala"
+      }, {
+        "res" : 371,
+        "cdk_idx" : 81,
+        "name" : "C",
+        "hydrogens" : 0,
+        "matchIdx" : 5,
+        "x" : -28.582685602032605,
+        "y" : -0.0037465313585092197,
+        "monName" : "dh-Ala"
+      }, {
+        "res" : 371,
+        "cdk_idx" : 82,
+        "name" : "C",
+        "hydrogens" : 2,
+        "matchIdx" : 5,
+        "x" : -28.58292594213131,
+        "y" : 1.4962534493870363,
+        "monName" : "dh-Ala"
+      }, {
+        "res" : 371,
+        "cdk_idx" : 83,
+        "name" : "C",
+        "hydrogens" : 0,
+        "matchIdx" : 5,
+        "x" : -27.28352734298144,
+        "y" : -0.753538381100256,
+        "monName" : "dh-Ala"
+      }, {
+        "res" : 371,
+        "cdk_idx" : 84,
+        "name" : "O",
+        "hydrogens" : 0,
+        "matchIdx" : 5,
+        "x" : -27.283287002882734,
+        "y" : -2.2535383618458016,
+        "monName" : "dh-Ala"
+      }, {
+        "res" : 771,
+        "cdk_idx" : 85,
+        "name" : "N",
+        "hydrogens" : 1,
+        "matchIdx" : 9,
+        "x" : -25.98460942402898,
+        "y" : -0.0033302500964573767,
+        "monName" : "Ala"
+      }, {
+        "res" : 771,
+        "cdk_idx" : 86,
+        "name" : "C",
+        "hydrogens" : 1,
+        "matchIdx" : 9,
+        "x" : -24.685451164977817,
+        "y" : -0.7531220998382041,
+        "monName" : "Ala"
+      }, {
+        "res" : 771,
+        "cdk_idx" : 87,
+        "name" : "C",
+        "hydrogens" : 3,
+        "matchIdx" : 9,
+        "x" : -24.68521082487911,
+        "y" : -2.2531220805837497,
+        "monName" : "Ala"
+      }, {
+        "res" : 771,
+        "cdk_idx" : 88,
+        "name" : "C",
+        "hydrogens" : 0,
+        "matchIdx" : 9,
+        "x" : -23.38653324602536,
+        "y" : -0.0029139688344055337,
+        "monName" : "Ala"
+      }, {
+        "res" : 771,
+        "cdk_idx" : 89,
+        "name" : "O",
+        "hydrogens" : 0,
+        "matchIdx" : 9,
+        "x" : -23.386773586124065,
+        "y" : 1.49708601191114,
+        "monName" : "Ala"
+      }, {
+        "res" : 853,
+        "cdk_idx" : 90,
+        "name" : "N",
+        "hydrogens" : 1,
+        "matchIdx" : 8,
+        "x" : -22.087374986974194,
+        "y" : -0.7527058185761523,
+        "monName" : "Val"
+      }, {
+        "res" : 853,
+        "cdk_idx" : 91,
+        "name" : "C",
+        "hydrogens" : 1,
+        "matchIdx" : 8,
+        "x" : -20.788457068021735,
+        "y" : -0.0024976875723536907,
+        "monName" : "Val"
+      }, {
+        "res" : 853,
+        "cdk_idx" : 92,
+        "name" : "C",
+        "hydrogens" : 1,
+        "matchIdx" : 8,
+        "x" : -20.78869740812044,
+        "y" : 1.4975022931731918,
+        "monName" : "Val"
+      }, {
+        "res" : 853,
+        "cdk_idx" : 93,
+        "name" : "C",
+        "hydrogens" : 3,
+        "matchIdx" : 8,
+        "x" : -19.489779489167983,
+        "y" : 2.2477104241769905,
+        "monName" : "Val"
+      }, {
+        "res" : 853,
+        "cdk_idx" : 94,
+        "name" : "C",
+        "hydrogens" : 3,
+        "matchIdx" : 8,
+        "x" : -22.087855667171606,
+        "y" : 2.247294142914937,
+        "monName" : "Val"
+      }, {
+        "res" : 853,
+        "cdk_idx" : 95,
+        "name" : "C",
+        "hydrogens" : 0,
+        "matchIdx" : 8,
+        "x" : -19.48929880897057,
+        "y" : -0.7522895373141004,
+        "monName" : "Val"
+      }, {
+        "res" : 853,
+        "cdk_idx" : 96,
+        "name" : "O",
+        "hydrogens" : 0,
+        "matchIdx" : 8,
+        "x" : -19.489058468871864,
+        "y" : -2.252289518059646,
+        "monName" : "Val"
+      }, {
+        "res" : 771,
+        "cdk_idx" : 97,
+        "name" : "N",
+        "hydrogens" : 1,
+        "matchIdx" : 18,
+        "x" : -18.190380890018112,
+        "y" : -0.0020814063103018476,
+        "monName" : "Ala"
+      }, {
+        "res" : 771,
+        "cdk_idx" : 98,
+        "name" : "C",
+        "hydrogens" : 1,
+        "matchIdx" : 18,
+        "x" : -16.891222630966947,
+        "y" : -0.7518732560520486,
+        "monName" : "Ala"
+      }, {
+        "res" : 771,
+        "cdk_idx" : 99,
+        "name" : "C",
+        "hydrogens" : 3,
+        "matchIdx" : 18,
+        "x" : -16.89098229086824,
+        "y" : -2.251873236797594,
+        "monName" : "Ala"
+      }, {
+        "res" : 771,
+        "cdk_idx" : 100,
+        "name" : "C",
+        "hydrogens" : 0,
+        "matchIdx" : 18,
+        "x" : -15.592304712014489,
+        "y" : -0.0016651250482500046,
+        "monName" : "Ala"
+      }, {
+        "res" : 771,
+        "cdk_idx" : 101,
+        "name" : "O",
+        "hydrogens" : 0,
+        "matchIdx" : 18,
+        "x" : -15.592545052113193,
+        "y" : 1.4983348556972955,
+        "monName" : "Ala"
+      }, {
+        "res" : 853,
+        "cdk_idx" : 102,
+        "name" : "N",
+        "hydrogens" : 1,
+        "matchIdx" : 17,
+        "x" : -14.293146452963324,
+        "y" : -0.7514569747899951,
+        "monName" : "Val"
+      }, {
+        "res" : 853,
+        "cdk_idx" : 103,
+        "name" : "C",
+        "hydrogens" : 1,
+        "matchIdx" : 17,
+        "x" : -12.994228534010865,
+        "y" : -0.0012488437861941648,
+        "monName" : "Val"
+      }, {
+        "res" : 853,
+        "cdk_idx" : 104,
+        "name" : "C",
+        "hydrogens" : 1,
+        "matchIdx" : 17,
+        "x" : -12.994468874109574,
+        "y" : 1.4987511369593514,
+        "monName" : "Val"
+      }, {
+        "res" : 853,
+        "cdk_idx" : 105,
+        "name" : "C",
+        "hydrogens" : 3,
+        "matchIdx" : 17,
+        "x" : -11.695550955157115,
+        "y" : 2.2489592679631523,
+        "monName" : "Val"
+      }, {
+        "res" : 853,
+        "cdk_idx" : 106,
+        "name" : "C",
+        "hydrogens" : 3,
+        "matchIdx" : 17,
+        "x" : -14.293627133160738,
+        "y" : 2.248542986701096,
+        "monName" : "Val"
+      }, {
+        "res" : 853,
+        "cdk_idx" : 107,
+        "name" : "C",
+        "hydrogens" : 0,
+        "matchIdx" : 17,
+        "x" : -11.6950702749597,
+        "y" : -0.7510406935279369,
+        "monName" : "Val"
+      }, {
+        "res" : 853,
+        "cdk_idx" : 108,
+        "name" : "O",
+        "hydrogens" : 0,
+        "matchIdx" : 17,
+        "x" : -11.694829934860993,
+        "y" : -2.2510406742734825,
+        "monName" : "Val"
+      }, {
+        "res" : 384,
+        "cdk_idx" : 109,
+        "name" : "N",
+        "hydrogens" : 1,
+        "matchIdx" : 22,
+        "x" : -10.396152356007244,
+        "y" : -8.32562524133662E-4,
+        "monName" : "dhAbu"
+      }, {
+        "res" : 384,
+        "cdk_idx" : 110,
+        "name" : "C",
+        "hydrogens" : 0,
+        "matchIdx" : 22,
+        "x" : -9.096994096956077,
+        "y" : -0.7506244122658741,
+        "monName" : "dhAbu"
+      }, {
+        "res" : 384,
+        "cdk_idx" : 111,
+        "name" : "C",
+        "hydrogens" : 1,
+        "matchIdx" : 22,
+        "x" : -9.096753756857368,
+        "y" : -2.2506243930114196,
+        "monName" : "dhAbu"
+      }, {
+        "res" : 384,
+        "cdk_idx" : 112,
+        "name" : "C",
+        "hydrogens" : 3,
+        "matchIdx" : 22,
+        "x" : -7.797595497806202,
+        "y" : -3.0004162427531624,
+        "monName" : "dhAbu"
+      }, {
+        "res" : 384,
+        "cdk_idx" : 113,
+        "name" : "C",
+        "hydrogens" : 0,
+        "matchIdx" : 22,
+        "x" : -7.7980761780036225,
+        "y" : -4.1628126206849636E-4,
+        "monName" : "dhAbu"
+      }, {
+        "res" : 384,
+        "cdk_idx" : 114,
+        "name" : "O",
+        "hydrogens" : 0,
+        "matchIdx" : 22,
+        "x" : -7.798316518102336,
+        "y" : 1.499583699483477,
+        "monName" : "dhAbu"
+      }, {
+        "res" : 769,
+        "cdk_idx" : 115,
+        "name" : "N",
+        "hydrogens" : 1,
+        "matchIdx" : 1,
+        "x" : -6.498917918952454,
+        "y" : -0.7502081310038071,
+        "monName" : "aThr/Thr"
+      }, {
+        "res" : 769,
+        "cdk_idx" : 116,
+        "name" : "C",
+        "hydrogens" : 1,
+        "matchIdx" : 1,
+        "x" : -5.2,
+        "y" : 0.0,
+        "monName" : "aThr/Thr"
+      }, {
+        "res" : 769,
+        "cdk_idx" : 117,
+        "name" : "C",
+        "hydrogens" : 1,
+        "matchIdx" : 1,
+        "x" : -5.2,
+        "y" : 1.5,
+        "monName" : "aThr/Thr"
+      }, {
+        "res" : 769,
+        "cdk_idx" : 118,
+        "name" : "O",
+        "hydrogens" : 0,
+        "matchIdx" : 1,
+        "x" : -3.9,
+        "y" : 2.25,
+        "monName" : "aThr/Thr"
+      }, {
+        "res" : 449,
+        "cdk_idx" : 119,
+        "name" : "C",
+        "hydrogens" : 0,
+        "matchIdx" : 2,
+        "x" : -3.9,
+        "y" : 3.75,
+        "monName" : "Ile/aIle"
+      }, {
+        "res" : 449,
+        "cdk_idx" : 120,
+        "name" : "O",
+        "hydrogens" : 0,
+        "matchIdx" : 2,
+        "x" : -5.198917918952454,
+        "y" : 4.500208131003808,
+        "monName" : "Ile/aIle"
+      }, {
+        "res" : 449,
+        "cdk_idx" : 121,
+        "name" : "C",
+        "hydrogens" : 1,
+        "matchIdx" : 2,
+        "x" : -2.6,
+        "y" : 4.5,
+        "monName" : "Ile/aIle"
+      }, {
+        "res" : 449,
+        "cdk_idx" : 122,
+        "name" : "N",
+        "hydrogens" : 1,
+        "matchIdx" : 2,
+        "x" : -1.3,
+        "y" : 3.75,
+        "monName" : "Ile/aIle"
+      }, {
+        "res" : 270,
+        "cdk_idx" : 123,
+        "name" : "C",
+        "hydrogens" : 0,
+        "matchIdx" : 10,
+        "x" : 0.0,
+        "y" : 4.5,
+        "monName" : "Ser"
+      }, {
+        "res" : 270,
+        "cdk_idx" : 124,
+        "name" : "O",
+        "hydrogens" : 0,
+        "matchIdx" : 10,
+        "x" : 4.592425496802575E-16,
+        "y" : 6.0,
+        "monName" : "Ser"
+      }, {
+        "res" : 270,
+        "cdk_idx" : 125,
+        "name" : "C",
+        "hydrogens" : 1,
+        "matchIdx" : 10,
+        "x" : 1.3,
+        "y" : 3.75,
+        "monName" : "Ser"
+      }, {
+        "res" : 270,
+        "cdk_idx" : 126,
+        "name" : "N",
+        "hydrogens" : 1,
+        "matchIdx" : 10,
+        "x" : 1.3,
+        "y" : 2.25,
+        "monName" : "Ser"
+      }, {
+        "res" : 175,
+        "cdk_idx" : 127,
+        "name" : "C",
+        "hydrogens" : 0,
+        "matchIdx" : 11,
+        "x" : 2.6,
+        "y" : 1.5,
+        "monName" : "Dab"
+      }, {
+        "res" : 175,
+        "cdk_idx" : 128,
+        "name" : "O",
+        "hydrogens" : 0,
+        "matchIdx" : 11,
+        "x" : 3.8989179189524545,
+        "y" : 2.2502081310038067,
+        "monName" : "Dab"
+      }, {
+        "res" : 175,
+        "cdk_idx" : 129,
+        "name" : "C",
+        "hydrogens" : 1,
+        "matchIdx" : 11,
+        "x" : 2.6,
+        "y" : -0.0,
+        "monName" : "Dab"
+      }, {
+        "res" : 175,
+        "cdk_idx" : 130,
+        "name" : "N",
+        "hydrogens" : 1,
+        "matchIdx" : 11,
+        "x" : 1.3,
+        "y" : -0.75,
+        "monName" : "Dab"
+      }, {
+        "res" : 771,
+        "cdk_idx" : 131,
+        "name" : "C",
+        "hydrogens" : 0,
+        "matchIdx" : 21,
+        "x" : 0.0,
+        "y" : 0.0,
+        "monName" : "Ala"
+      }, {
+        "res" : 771,
+        "cdk_idx" : 132,
+        "name" : "O",
+        "hydrogens" : 0,
+        "matchIdx" : 21,
+        "x" : 4.592425496802575E-16,
+        "y" : 1.5,
+        "monName" : "Ala"
+      }, {
+        "res" : 771,
+        "cdk_idx" : 133,
+        "name" : "C",
+        "hydrogens" : 1,
+        "matchIdx" : 21,
+        "x" : -1.3,
+        "y" : -0.75,
+        "monName" : "Ala"
+      }, {
+        "res" : 771,
+        "cdk_idx" : 134,
+        "name" : "N",
+        "hydrogens" : 1,
+        "matchIdx" : 21,
+        "x" : -2.6,
+        "y" : 0.0,
+        "monName" : "Ala"
+      }, {
+        "res" : 769,
+        "cdk_idx" : 135,
+        "name" : "C",
+        "hydrogens" : 0,
+        "matchIdx" : 1,
+        "x" : -3.9,
+        "y" : -0.75,
+        "monName" : "aThr/Thr"
+      }, {
+        "res" : 769,
+        "cdk_idx" : 136,
+        "name" : "O",
+        "hydrogens" : 0,
+        "matchIdx" : 1,
+        "x" : -3.9000000000000004,
+        "y" : -2.25,
+        "monName" : "aThr/Thr"
+      }, {
+        "res" : 771,
+        "cdk_idx" : 137,
+        "name" : "C",
+        "hydrogens" : 3,
+        "matchIdx" : 21,
+        "x" : -1.3000000000000003,
+        "y" : -2.25,
+        "monName" : "Ala"
+      }, {
+        "res" : 175,
+        "cdk_idx" : 138,
+        "name" : "C",
+        "hydrogens" : 2,
+        "matchIdx" : 11,
+        "x" : 3.898917918952454,
+        "y" : -0.7502081310038073,
+        "monName" : "Dab"
+      }, {
+        "res" : 175,
+        "cdk_idx" : 139,
+        "name" : "C",
+        "hydrogens" : 2,
+        "matchIdx" : 11,
+        "x" : 5.198076178003623,
+        "y" : -4.162812620697176E-4,
+        "monName" : "Dab"
+      }, {
+        "res" : 175,
+        "cdk_idx" : 140,
+        "name" : "N",
+        "hydrogens" : 2,
+        "matchIdx" : 11,
+        "x" : 6.496994096956076,
+        "y" : -0.7506244122658784,
+        "monName" : "Dab"
+      }, {
+        "res" : 270,
+        "cdk_idx" : 141,
+        "name" : "C",
+        "hydrogens" : 2,
+        "matchIdx" : 10,
+        "x" : 2.5989179189524547,
+        "y" : 4.500208131003807,
+        "monName" : "Ser"
+      }, {
+        "res" : 270,
+        "cdk_idx" : 142,
+        "name" : "O",
+        "hydrogens" : 1,
+        "matchIdx" : 10,
+        "x" : 3.898076178003622,
+        "y" : 3.7504162812620674,
+        "monName" : "Ser"
+      }, {
+        "res" : 449,
+        "cdk_idx" : 143,
+        "name" : "C",
+        "hydrogens" : 1,
+        "matchIdx" : 2,
+        "x" : -2.5999999999999996,
+        "y" : 6.0,
+        "monName" : "Ile/aIle"
+      }, {
+        "res" : 449,
+        "cdk_idx" : 144,
+        "name" : "C",
+        "hydrogens" : 3,
+        "matchIdx" : 2,
+        "x" : -1.3009618943233412,
+        "y" : 6.749999999999999,
+        "monName" : "Ile/aIle"
+      }, {
+        "res" : 449,
+        "cdk_idx" : 145,
+        "name" : "C",
+        "hydrogens" : 2,
+        "matchIdx" : 2,
+        "x" : -3.8990381056766577,
+        "y" : 6.75,
+        "monName" : "Ile/aIle"
+      }, {
+        "res" : 449,
+        "cdk_idx" : 146,
+        "name" : "C",
+        "hydrogens" : 3,
+        "matchIdx" : 2,
+        "x" : -5.198076211353316,
+        "y" : 5.999999999999999,
+        "monName" : "Ile/aIle"
+      }, {
+        "res" : 769,
+        "cdk_idx" : 147,
+        "name" : "C",
+        "hydrogens" : 3,
+        "matchIdx" : 1,
+        "x" : -6.498917918952454,
+        "y" : 2.250208131003808,
+        "monName" : "aThr/Thr"
+      }, {
+        "res" : 156,
+        "cdk_idx" : 148,
+        "name" : "O",
+        "hydrogens" : 1,
+        "matchIdx" : 23,
+        "x" : -76.06704327423083,
+        "y" : -2.9223320528335934,
+        "monName" : "C12:0-OH(3)"
+      } ],
+      "bonds" : [ {
+        "arity" : 1,
+        "res" : 156,
+        "cdk_idx" : 0,
+        "matchIdx" : 0,
+        "atoms" : [ 0, 1 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 156,
+        "cdk_idx" : 1,
+        "matchIdx" : 0,
+        "atoms" : [ 1, 2 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 156,
+        "cdk_idx" : 2,
+        "matchIdx" : 0,
+        "atoms" : [ 2, 3 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 156,
+        "cdk_idx" : 3,
+        "matchIdx" : 0,
+        "atoms" : [ 3, 4 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 156,
+        "cdk_idx" : 4,
+        "matchIdx" : 0,
+        "atoms" : [ 4, 5 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 156,
+        "cdk_idx" : 5,
+        "matchIdx" : 0,
+        "atoms" : [ 5, 6 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 156,
+        "cdk_idx" : 6,
+        "matchIdx" : 0,
+        "atoms" : [ 6, 7 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 156,
+        "cdk_idx" : 7,
+        "matchIdx" : 0,
+        "atoms" : [ 7, 8 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 156,
+        "cdk_idx" : 8,
+        "matchIdx" : 0,
+        "atoms" : [ 8, 9 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 156,
+        "cdk_idx" : 9,
+        "matchIdx" : 0,
+        "atoms" : [ 9, 10 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 156,
+        "cdk_idx" : 10,
+        "matchIdx" : 0,
+        "atoms" : [ 10, 11 ],
+        "bondType" : null
+      }, {
+        "arity" : 2,
+        "res" : 156,
+        "cdk_idx" : 11,
+        "matchIdx" : 0,
+        "atoms" : [ 11, 12 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : null,
+        "cdk_idx" : 12,
+        "matchIdx" : 21,
+        "atoms" : [ 11, 13 ],
+        "bondType" : "AMINO"
+      }, {
+        "arity" : 1,
+        "res" : 384,
+        "cdk_idx" : 13,
+        "matchIdx" : 0,
+        "atoms" : [ 13, 14 ],
+        "bondType" : null
+      }, {
+        "arity" : 2,
+        "res" : 384,
+        "cdk_idx" : 14,
+        "matchIdx" : 0,
+        "atoms" : [ 14, 15 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 384,
+        "cdk_idx" : 15,
+        "matchIdx" : 0,
+        "atoms" : [ 15, 16 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 384,
+        "cdk_idx" : 16,
+        "matchIdx" : 0,
+        "atoms" : [ 14, 17 ],
+        "bondType" : null
+      }, {
+        "arity" : 2,
+        "res" : 384,
+        "cdk_idx" : 17,
+        "matchIdx" : 0,
+        "atoms" : [ 17, 18 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : null,
+        "cdk_idx" : 18,
+        "matchIdx" : 11,
+        "atoms" : [ 17, 19 ],
+        "bondType" : "AMINO"
+      }, {
+        "arity" : 1,
+        "res" : 679,
+        "cdk_idx" : 19,
+        "matchIdx" : 0,
+        "atoms" : [ 19, 20 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 679,
+        "cdk_idx" : 20,
+        "matchIdx" : 0,
+        "atoms" : [ 20, 21 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 679,
+        "cdk_idx" : 21,
+        "matchIdx" : 0,
+        "atoms" : [ 21, 22 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 679,
+        "cdk_idx" : 22,
+        "matchIdx" : 0,
+        "atoms" : [ 22, 23 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 679,
+        "cdk_idx" : 23,
+        "matchIdx" : 0,
+        "atoms" : [ 19, 23 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 679,
+        "cdk_idx" : 24,
+        "matchIdx" : 0,
+        "atoms" : [ 23, 24 ],
+        "bondType" : null
+      }, {
+        "arity" : 2,
+        "res" : 679,
+        "cdk_idx" : 25,
+        "matchIdx" : 0,
+        "atoms" : [ 24, 25 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : null,
+        "cdk_idx" : 26,
+        "matchIdx" : 7,
+        "atoms" : [ 24, 26 ],
+        "bondType" : "AMINO"
+      }, {
+        "arity" : 1,
+        "res" : 771,
+        "cdk_idx" : 27,
+        "matchIdx" : 0,
+        "atoms" : [ 26, 27 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 771,
+        "cdk_idx" : 28,
+        "matchIdx" : 0,
+        "atoms" : [ 27, 28 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 771,
+        "cdk_idx" : 29,
+        "matchIdx" : 0,
+        "atoms" : [ 27, 29 ],
+        "bondType" : null
+      }, {
+        "arity" : 2,
+        "res" : 771,
+        "cdk_idx" : 30,
+        "matchIdx" : 0,
+        "atoms" : [ 29, 30 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : null,
+        "cdk_idx" : 31,
+        "matchIdx" : 23,
+        "atoms" : [ 29, 31 ],
+        "bondType" : "AMINO"
+      }, {
+        "arity" : 1,
+        "res" : 771,
+        "cdk_idx" : 32,
+        "matchIdx" : 0,
+        "atoms" : [ 31, 32 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 771,
+        "cdk_idx" : 33,
+        "matchIdx" : 0,
+        "atoms" : [ 32, 33 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 771,
+        "cdk_idx" : 34,
+        "matchIdx" : 0,
+        "atoms" : [ 32, 34 ],
+        "bondType" : null
+      }, {
+        "arity" : 2,
+        "res" : 771,
+        "cdk_idx" : 35,
+        "matchIdx" : 0,
+        "atoms" : [ 34, 35 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : null,
+        "cdk_idx" : 36,
+        "matchIdx" : 9,
+        "atoms" : [ 34, 36 ],
+        "bondType" : "AMINO"
+      }, {
+        "arity" : 1,
+        "res" : 771,
+        "cdk_idx" : 37,
+        "matchIdx" : 0,
+        "atoms" : [ 36, 37 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 771,
+        "cdk_idx" : 38,
+        "matchIdx" : 0,
+        "atoms" : [ 37, 38 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 771,
+        "cdk_idx" : 39,
+        "matchIdx" : 0,
+        "atoms" : [ 37, 39 ],
+        "bondType" : null
+      }, {
+        "arity" : 2,
+        "res" : 771,
+        "cdk_idx" : 40,
+        "matchIdx" : 0,
+        "atoms" : [ 39, 40 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : null,
+        "cdk_idx" : 41,
+        "matchIdx" : 4,
+        "atoms" : [ 39, 41 ],
+        "bondType" : "AMINO"
+      }, {
+        "arity" : 1,
+        "res" : 853,
+        "cdk_idx" : 42,
+        "matchIdx" : 0,
+        "atoms" : [ 41, 42 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 853,
+        "cdk_idx" : 43,
+        "matchIdx" : 0,
+        "atoms" : [ 42, 43 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 853,
+        "cdk_idx" : 44,
+        "matchIdx" : 0,
+        "atoms" : [ 43, 44 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 853,
+        "cdk_idx" : 45,
+        "matchIdx" : 0,
+        "atoms" : [ 43, 45 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 853,
+        "cdk_idx" : 46,
+        "matchIdx" : 0,
+        "atoms" : [ 42, 46 ],
+        "bondType" : null
+      }, {
+        "arity" : 2,
+        "res" : 853,
+        "cdk_idx" : 47,
+        "matchIdx" : 0,
+        "atoms" : [ 46, 47 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : null,
+        "cdk_idx" : 48,
+        "matchIdx" : 2,
+        "atoms" : [ 46, 48 ],
+        "bondType" : "AMINO"
+      }, {
+        "arity" : 1,
+        "res" : 771,
+        "cdk_idx" : 49,
+        "matchIdx" : 0,
+        "atoms" : [ 48, 49 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 771,
+        "cdk_idx" : 50,
+        "matchIdx" : 0,
+        "atoms" : [ 49, 50 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 771,
+        "cdk_idx" : 51,
+        "matchIdx" : 0,
+        "atoms" : [ 49, 51 ],
+        "bondType" : null
+      }, {
+        "arity" : 2,
+        "res" : 771,
+        "cdk_idx" : 52,
+        "matchIdx" : 0,
+        "atoms" : [ 51, 52 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : null,
+        "cdk_idx" : 53,
+        "matchIdx" : 19,
+        "atoms" : [ 51, 53 ],
+        "bondType" : "AMINO"
+      }, {
+        "arity" : 1,
+        "res" : 384,
+        "cdk_idx" : 54,
+        "matchIdx" : 0,
+        "atoms" : [ 53, 54 ],
+        "bondType" : null
+      }, {
+        "arity" : 2,
+        "res" : 384,
+        "cdk_idx" : 55,
+        "matchIdx" : 0,
+        "atoms" : [ 54, 55 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 384,
+        "cdk_idx" : 56,
+        "matchIdx" : 0,
+        "atoms" : [ 55, 56 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 384,
+        "cdk_idx" : 57,
+        "matchIdx" : 0,
+        "atoms" : [ 54, 57 ],
+        "bondType" : null
+      }, {
+        "arity" : 2,
+        "res" : 384,
+        "cdk_idx" : 58,
+        "matchIdx" : 0,
+        "atoms" : [ 57, 58 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : null,
+        "cdk_idx" : 59,
+        "matchIdx" : 8,
+        "atoms" : [ 57, 59 ],
+        "bondType" : "AMINO"
+      }, {
+        "arity" : 1,
+        "res" : 270,
+        "cdk_idx" : 60,
+        "matchIdx" : 0,
+        "atoms" : [ 59, 60 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 270,
+        "cdk_idx" : 61,
+        "matchIdx" : 0,
+        "atoms" : [ 60, 61 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 270,
+        "cdk_idx" : 62,
+        "matchIdx" : 0,
+        "atoms" : [ 61, 62 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 270,
+        "cdk_idx" : 63,
+        "matchIdx" : 0,
+        "atoms" : [ 60, 63 ],
+        "bondType" : null
+      }, {
+        "arity" : 2,
+        "res" : 270,
+        "cdk_idx" : 64,
+        "matchIdx" : 0,
+        "atoms" : [ 63, 64 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : null,
+        "cdk_idx" : 65,
+        "matchIdx" : 12,
+        "atoms" : [ 63, 65 ],
+        "bondType" : "AMINO"
+      }, {
+        "arity" : 1,
+        "res" : 853,
+        "cdk_idx" : 66,
+        "matchIdx" : 0,
+        "atoms" : [ 65, 66 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 853,
+        "cdk_idx" : 67,
+        "matchIdx" : 0,
+        "atoms" : [ 66, 67 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 853,
+        "cdk_idx" : 68,
+        "matchIdx" : 0,
+        "atoms" : [ 67, 68 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 853,
+        "cdk_idx" : 69,
+        "matchIdx" : 0,
+        "atoms" : [ 67, 69 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 853,
+        "cdk_idx" : 70,
+        "matchIdx" : 0,
+        "atoms" : [ 66, 70 ],
+        "bondType" : null
+      }, {
+        "arity" : 2,
+        "res" : 853,
+        "cdk_idx" : 71,
+        "matchIdx" : 0,
+        "atoms" : [ 70, 71 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : null,
+        "cdk_idx" : 72,
+        "matchIdx" : 13,
+        "atoms" : [ 70, 72 ],
+        "bondType" : "AMINO"
+      }, {
+        "arity" : 1,
+        "res" : 449,
+        "cdk_idx" : 73,
+        "matchIdx" : 0,
+        "atoms" : [ 72, 73 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 449,
+        "cdk_idx" : 74,
+        "matchIdx" : 0,
+        "atoms" : [ 73, 74 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 449,
+        "cdk_idx" : 75,
+        "matchIdx" : 0,
+        "atoms" : [ 74, 75 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 449,
+        "cdk_idx" : 76,
+        "matchIdx" : 0,
+        "atoms" : [ 74, 76 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 449,
+        "cdk_idx" : 77,
+        "matchIdx" : 0,
+        "atoms" : [ 76, 77 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 449,
+        "cdk_idx" : 78,
+        "matchIdx" : 0,
+        "atoms" : [ 73, 78 ],
+        "bondType" : null
+      }, {
+        "arity" : 2,
+        "res" : 449,
+        "cdk_idx" : 79,
+        "matchIdx" : 0,
+        "atoms" : [ 78, 79 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : null,
+        "cdk_idx" : 80,
+        "matchIdx" : 3,
+        "atoms" : [ 78, 80 ],
+        "bondType" : "AMINO"
+      }, {
+        "arity" : 1,
+        "res" : 371,
+        "cdk_idx" : 81,
+        "matchIdx" : 0,
+        "atoms" : [ 80, 81 ],
+        "bondType" : null
+      }, {
+        "arity" : 2,
+        "res" : 371,
+        "cdk_idx" : 82,
+        "matchIdx" : 0,
+        "atoms" : [ 81, 82 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 371,
+        "cdk_idx" : 83,
+        "matchIdx" : 0,
+        "atoms" : [ 81, 83 ],
+        "bondType" : null
+      }, {
+        "arity" : 2,
+        "res" : 371,
+        "cdk_idx" : 84,
+        "matchIdx" : 0,
+        "atoms" : [ 83, 84 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : null,
+        "cdk_idx" : 85,
+        "matchIdx" : 15,
+        "atoms" : [ 83, 85 ],
+        "bondType" : "AMINO"
+      }, {
+        "arity" : 1,
+        "res" : 771,
+        "cdk_idx" : 86,
+        "matchIdx" : 0,
+        "atoms" : [ 85, 86 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 771,
+        "cdk_idx" : 87,
+        "matchIdx" : 0,
+        "atoms" : [ 86, 87 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 771,
+        "cdk_idx" : 88,
+        "matchIdx" : 0,
+        "atoms" : [ 86, 88 ],
+        "bondType" : null
+      }, {
+        "arity" : 2,
+        "res" : 771,
+        "cdk_idx" : 89,
+        "matchIdx" : 0,
+        "atoms" : [ 88, 89 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : null,
+        "cdk_idx" : 90,
+        "matchIdx" : 5,
+        "atoms" : [ 88, 90 ],
+        "bondType" : "AMINO"
+      }, {
+        "arity" : 1,
+        "res" : 853,
+        "cdk_idx" : 91,
+        "matchIdx" : 0,
+        "atoms" : [ 90, 91 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 853,
+        "cdk_idx" : 92,
+        "matchIdx" : 0,
+        "atoms" : [ 91, 92 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 853,
+        "cdk_idx" : 93,
+        "matchIdx" : 0,
+        "atoms" : [ 92, 93 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 853,
+        "cdk_idx" : 94,
+        "matchIdx" : 0,
+        "atoms" : [ 92, 94 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 853,
+        "cdk_idx" : 95,
+        "matchIdx" : 0,
+        "atoms" : [ 91, 95 ],
+        "bondType" : null
+      }, {
+        "arity" : 2,
+        "res" : 853,
+        "cdk_idx" : 96,
+        "matchIdx" : 0,
+        "atoms" : [ 95, 96 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : null,
+        "cdk_idx" : 97,
+        "matchIdx" : 18,
+        "atoms" : [ 95, 97 ],
+        "bondType" : "AMINO"
+      }, {
+        "arity" : 1,
+        "res" : 771,
+        "cdk_idx" : 98,
+        "matchIdx" : 0,
+        "atoms" : [ 97, 98 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 771,
+        "cdk_idx" : 99,
+        "matchIdx" : 0,
+        "atoms" : [ 98, 99 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 771,
+        "cdk_idx" : 100,
+        "matchIdx" : 0,
+        "atoms" : [ 98, 100 ],
+        "bondType" : null
+      }, {
+        "arity" : 2,
+        "res" : 771,
+        "cdk_idx" : 101,
+        "matchIdx" : 0,
+        "atoms" : [ 100, 101 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : null,
+        "cdk_idx" : 102,
+        "matchIdx" : 10,
+        "atoms" : [ 100, 102 ],
+        "bondType" : "AMINO"
+      }, {
+        "arity" : 1,
+        "res" : 853,
+        "cdk_idx" : 103,
+        "matchIdx" : 0,
+        "atoms" : [ 102, 103 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 853,
+        "cdk_idx" : 104,
+        "matchIdx" : 0,
+        "atoms" : [ 103, 104 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 853,
+        "cdk_idx" : 105,
+        "matchIdx" : 0,
+        "atoms" : [ 104, 105 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 853,
+        "cdk_idx" : 106,
+        "matchIdx" : 0,
+        "atoms" : [ 104, 106 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 853,
+        "cdk_idx" : 107,
+        "matchIdx" : 0,
+        "atoms" : [ 103, 107 ],
+        "bondType" : null
+      }, {
+        "arity" : 2,
+        "res" : 853,
+        "cdk_idx" : 108,
+        "matchIdx" : 0,
+        "atoms" : [ 107, 108 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : null,
+        "cdk_idx" : 109,
+        "matchIdx" : 17,
+        "atoms" : [ 107, 109 ],
+        "bondType" : "AMINO"
+      }, {
+        "arity" : 1,
+        "res" : 384,
+        "cdk_idx" : 110,
+        "matchIdx" : 0,
+        "atoms" : [ 109, 110 ],
+        "bondType" : null
+      }, {
+        "arity" : 2,
+        "res" : 384,
+        "cdk_idx" : 111,
+        "matchIdx" : 0,
+        "atoms" : [ 110, 111 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 384,
+        "cdk_idx" : 112,
+        "matchIdx" : 0,
+        "atoms" : [ 111, 112 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 384,
+        "cdk_idx" : 113,
+        "matchIdx" : 0,
+        "atoms" : [ 110, 113 ],
+        "bondType" : null
+      }, {
+        "arity" : 2,
+        "res" : 384,
+        "cdk_idx" : 114,
+        "matchIdx" : 0,
+        "atoms" : [ 113, 114 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : null,
+        "cdk_idx" : 115,
+        "matchIdx" : 22,
+        "atoms" : [ 113, 115 ],
+        "bondType" : "AMINO"
+      }, {
+        "arity" : 1,
+        "res" : 769,
+        "cdk_idx" : 116,
+        "matchIdx" : 0,
+        "atoms" : [ 115, 116 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 769,
+        "cdk_idx" : 117,
+        "matchIdx" : 0,
+        "atoms" : [ 116, 117 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 769,
+        "cdk_idx" : 118,
+        "matchIdx" : 0,
+        "atoms" : [ 117, 118 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : null,
+        "cdk_idx" : 119,
+        "matchIdx" : 1,
+        "atoms" : [ 118, 119 ],
+        "bondType" : "ESTER"
+      }, {
+        "arity" : 2,
+        "res" : 449,
+        "cdk_idx" : 120,
+        "matchIdx" : 0,
+        "atoms" : [ 119, 120 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 449,
+        "cdk_idx" : 121,
+        "matchIdx" : 0,
+        "atoms" : [ 119, 121 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 449,
+        "cdk_idx" : 122,
+        "matchIdx" : 0,
+        "atoms" : [ 121, 122 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : null,
+        "cdk_idx" : 123,
+        "matchIdx" : 14,
+        "atoms" : [ 122, 123 ],
+        "bondType" : "AMINO"
+      }, {
+        "arity" : 2,
+        "res" : 270,
+        "cdk_idx" : 124,
+        "matchIdx" : 0,
+        "atoms" : [ 123, 124 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 270,
+        "cdk_idx" : 125,
+        "matchIdx" : 0,
+        "atoms" : [ 123, 125 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 270,
+        "cdk_idx" : 126,
+        "matchIdx" : 0,
+        "atoms" : [ 125, 126 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : null,
+        "cdk_idx" : 127,
+        "matchIdx" : 6,
+        "atoms" : [ 126, 127 ],
+        "bondType" : "AMINO"
+      }, {
+        "arity" : 2,
+        "res" : 175,
+        "cdk_idx" : 128,
+        "matchIdx" : 0,
+        "atoms" : [ 127, 128 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 175,
+        "cdk_idx" : 129,
+        "matchIdx" : 0,
+        "atoms" : [ 127, 129 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 175,
+        "cdk_idx" : 130,
+        "matchIdx" : 0,
+        "atoms" : [ 129, 130 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : null,
+        "cdk_idx" : 131,
+        "matchIdx" : 20,
+        "atoms" : [ 130, 131 ],
+        "bondType" : "AMINO"
+      }, {
+        "arity" : 2,
+        "res" : 771,
+        "cdk_idx" : 132,
+        "matchIdx" : 0,
+        "atoms" : [ 131, 132 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 771,
+        "cdk_idx" : 133,
+        "matchIdx" : 0,
+        "atoms" : [ 131, 133 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 771,
+        "cdk_idx" : 134,
+        "matchIdx" : 0,
+        "atoms" : [ 133, 134 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : null,
+        "cdk_idx" : 135,
+        "matchIdx" : 16,
+        "atoms" : [ 134, 135 ],
+        "bondType" : "AMINO"
+      }, {
+        "arity" : 1,
+        "res" : 769,
+        "cdk_idx" : 136,
+        "matchIdx" : 0,
+        "atoms" : [ 116, 135 ],
+        "bondType" : null
+      }, {
+        "arity" : 2,
+        "res" : 769,
+        "cdk_idx" : 137,
+        "matchIdx" : 0,
+        "atoms" : [ 135, 136 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 771,
+        "cdk_idx" : 138,
+        "matchIdx" : 0,
+        "atoms" : [ 133, 137 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 175,
+        "cdk_idx" : 139,
+        "matchIdx" : 0,
+        "atoms" : [ 129, 138 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 175,
+        "cdk_idx" : 140,
+        "matchIdx" : 0,
+        "atoms" : [ 138, 139 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 175,
+        "cdk_idx" : 141,
+        "matchIdx" : 0,
+        "atoms" : [ 139, 140 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 270,
+        "cdk_idx" : 142,
+        "matchIdx" : 0,
+        "atoms" : [ 125, 141 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 270,
+        "cdk_idx" : 143,
+        "matchIdx" : 0,
+        "atoms" : [ 141, 142 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 449,
+        "cdk_idx" : 144,
+        "matchIdx" : 0,
+        "atoms" : [ 121, 143 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 449,
+        "cdk_idx" : 145,
+        "matchIdx" : 0,
+        "atoms" : [ 143, 144 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 449,
+        "cdk_idx" : 146,
+        "matchIdx" : 0,
+        "atoms" : [ 143, 145 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 449,
+        "cdk_idx" : 147,
+        "matchIdx" : 0,
+        "atoms" : [ 145, 146 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 769,
+        "cdk_idx" : 148,
+        "matchIdx" : 0,
+        "atoms" : [ 117, 147 ],
+        "bondType" : null
+      }, {
+        "arity" : 1,
+        "res" : 156,
+        "cdk_idx" : 149,
+        "matchIdx" : 0,
+        "atoms" : [ 9, 148 ],
+        "bondType" : null
+      } ]
+    }
+  },
+  "monomersNames" : [ "aThr/Thr", "Ile/aIle", "Ala", "Val", "dh-Ala", "Ile/aIle", "Ala", "Val", "Ala", "Ser", "Dab", "Ala", "Pro", "Ser", "dhAbu", "Ala", "Val", "Ala", "dhAbu", "Val", "Ala", "dhAbu", "C12:0-OH(3)" ]
+}

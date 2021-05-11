@@ -1,0 +1,63 @@
+# hmmsearch :: search profile(s) against a sequence database
+# HMMER 3.3.2 (Nov 2020); http://hmmer.org/
+# Copyright (C) 2020 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query HMM file:                  ./HMM//dhb/dhb.hmm
+# target sequence database:        .//BioCAT_output//substrates_fasta/nrpspksdomains_ctg3_664_AMP-binding.2_pro.fasta
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       dhb  [M=404]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence                                             Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------                                             -----------
+    1.6e-21   62.3   0.0    4.2e-14   37.9   0.0    2.8  2  BGC0001760_nrpspksdomains_ctg3_664_AMP-binding.2_pro  
+
+
+Domain annotation for each sequence (and alignments):
+>> BGC0001760_nrpspksdomains_ctg3_664_AMP-binding.2_pro  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   20.5   0.2     8e-09     8e-09       6     112 ..       8     114 ..       3     212 .. 0.78
+   2 !   37.9   0.0   4.2e-14   4.2e-14     330     402 ..     326     406 ..     316     408 .. 0.87
+
+  Alignments for each domain:
+  == domain 1  score: 20.5 bits;  conditional E-value: 8e-09
+                                                   dhb   6 apdriAvvagerrlsyaelderadrlaaglae.lglkagd....rvvvqlpniaefv 57 
+                                                           +pd++A+vag++rlsyael+  ad+l+a l e   l ++d    +vv+ l  ++e +
+  BGC0001760_nrpspksdomains_ctg3_664_AMP-binding.2_pro   8 TPDATALVAGQQRLSYAELNGLADTLTAILIErYPLPTQDntplHVVMFLEASVEHI 64 
+                                                           699***********************99987725788888444459999******** PP
+
+                                                   dhb  58 vvlfallrlGvlpvlalpahraleiehlvelaeavayvvsdeekgfderelaeel 112
+                                                           v+l+al++l  + v   p+   +  ++++e+a+++ +++s++++        e+l
+  BGC0001760_nrpspksdomains_ctg3_664_AMP-binding.2_pro  65 VALLALAKLNLTAVPLDPGYPLAVQRQVLEQANPHCLLFSTATEAA-----LENL 114
+                                                           **********999999999999999999999999999886655432.....2233 PP
+
+  == domain 2  score: 37.9 bits;  conditional E-value: 4.2e-14
+                                                   dhb 330 evrvvdeegeevapgeeGelltrGPYtirGYyraeehnaraF....tedg....fYr 378
+                                                            +++vde++++v++g  G ll+ GP   r Y  +++ n+  F    +++g    fYr
+  BGC0001760_nrpspksdomains_ctg3_664_AMP-binding.2_pro 326 RLLLVDEHDRPVPNGSRGYLLVAGPMISRCYLADPALNTARFielpQAEGdtrlFYR 382
+                                                           5789**************************************555423555666*** PP
+
+                                                   dhb 379 tGDlvrltedgnlvveGRakdqin 402
+                                                           tGDl+  +++g l+  GR+ +qi+
+  BGC0001760_nrpspksdomains_ctg3_664_AMP-binding.2_pro 383 TGDLAWADPEGCLHYLGRDDQQIK 406
+                                                           ********************9996 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (404 nodes)
+Target sequences:                          1  (409 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.01u 0.00s 00:00:00.01 Elapsed: 00:00:00.01
+# Mc/sec: 11.28
+//
+[ok]

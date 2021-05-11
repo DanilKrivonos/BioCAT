@@ -1,0 +1,81 @@
+# hmmsearch :: search profile(s) against a sequence database
+# HMMER 3.3.2 (Nov 2020); http://hmmer.org/
+# Copyright (C) 2020 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query HMM file:                  ./HMM//orn/orn.hmm
+# target sequence database:        .//BioCAT_output//substrates_fasta/nrpspksdomains_ctg3_24_AMP-binding.1_nan.fasta
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       orn  [M=407]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence                                            Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------                                            -----------
+    8.4e-45  139.1   0.0    1.1e-44  138.7   0.0    1.2  1  BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan  
+
+
+Domain annotation for each sequence (and alignments):
+>> BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  138.7   0.0   1.1e-44   1.1e-44       1     401 [.       1     429 [.       1     434 [] 0.83
+
+  Alignments for each domain:
+  == domain 1  score: 138.7 bits;  conditional E-value: 1.1e-44
+                                                  orn   1 feeqaertpeavAvvveeerltY..relneranrlArtLraegvgresvvaillersv 56 
+                                                          f+++++  p+  A vv++++l Y  ++l +  +  Ar+L a g+++++  +i++   +
+  BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan   1 FDHTVALYPDGEALVVRHQQLRYtwQQLADTVDLHARALLALGLQTGDRLGIWAPNCA 58 
+                                                          677888999999999999988663379******************************* PP
+
+                                                  orn  57 elvvavLavlkaGgayvPldpdyPaeRiaylledsgakvlltqeelke.raeallgel 113
+                                                          +  ++ +a  k G   v ++p y +  ++y+l++sg + l+   + k+ + +a+l+ l
+  BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan  59 QWCISQFASAKIGVILVNINPAYRSSELEYVLKQSGCQWLVCAGAFKTsDYHAMLQGL 116
+                                                          **************************************99996665552333333222 PP
+
+                                                  orn 114 eellalddeasyeeeaanle...................................... 133
+                                                            + +l +++  + +++ l                                       
+  BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan 117 --VPELAEQSIGQLQSERLPdlrgvisldaqppsgflpwsqladlansvsveqlnerq 172
+                                                          ..23444444444444444455566666777777777777777777777777665544 PP
+
+                                                  orn 134 keaepedlaYviyTSGttGkPkgvmvehrslvsaaaawrreyrLdeepvrlLqlA.sl 190
+                                                          ++ + +++  + yTSGttG Pkg++++h ++ +  +   ++  L+ ++  ++ +    
+  BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan 173 NSLHFDQPVNIQYTSGTTGFPKGATLSHYNILNNGYMVGESLGLSADDRLVIPVPlYH 230
+                                                          555556999***********************99888888888887444444443145 PP
+
+                                                  orn 191 sfDvfvgdlvraLlnGGtlvivpkddrldparlyelieeervtifestpalivplley 248
+                                                           f + +g+l   +++G t++    +d +dp   ++++ ee+ t+++ +p++ +++l++
+  BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan 231 CFGMVMGNL-GCITHGSTMIY--PNDAFDPLLTLTTVAEEKATALYGVPTMFIAMLDQ 285
+                                                          899999997.5899****975..56789****************************** PP
+
+                                                  orn 249 veeekldlsslkllivgsdslkvedyrrlqerfgsklriinsYGvtEatidssfyeee 306
+                                                           ++++ dls+l++ i+++ ++  e +rr+ + ++   ++  +YG+tE++  +s   ++
+  BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan 286 PQRADFDLSTLRTGIMAGATCPIEVMRRVISEMH-MNEVQIAYGMTETS-PVSLQTGP 341
+                                                          *****************************99995.5567779*****87.78999999 PP
+
+                                                  orn 307 lekleesgavpiGkplpnaklyildaelepvPvGvlGeLvigGagvarGYlnrpelta 364
+                                                          +++le  + + +G+  p+ +  i+d++ ++vP G +GeL+  G +v  GY+n+p+ ta
+  BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan 342 SDELE-LRVTTVGRTQPQLESKIIDEAGNLVPRGTIGELCTRGYSVMLGYWNNPQGTA 398
+                                                          99995.5999************************************************ PP
+
+                                                  orn 365 ekFvdnpfaagerlYrTGDlarwledGnveflGRiDn 401
+                                                          e   +  +       +TGDla  +++G v   GR  +
+  BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan 399 EAIDQAGW------MHTGDLASMNDEGYVCIAGRNKD 429
+                                                          98765544......48******************754 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (407 nodes)
+Target sequences:                          1  (434 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.00u 0.00s 00:00:00.00 Elapsed: 00:00:00.00
+# Mc/sec: 20.82
+//
+[ok]

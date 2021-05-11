@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>CCM43853.1</td>
+              <td>bacterial_regulatory,_Fis_family_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001127/1">BGC0001127</a></td>
+              <td>NRP</td>
+              <td>37.0</td>
+              <td>93.3</td>
+              <td>180.0</td>
+              <td>3.4e-45</td>
+          </tr>
+    
+          <tr>
+              <td>AAQ90169.1</td>
+              <td>PltR</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000128/1">BGC0000128</a></td>
+              <td>Polyketide</td>
+              <td>33.0</td>
+              <td>92.0</td>
+              <td>150.0</td>
+              <td>4.9e-36</td>
+          </tr>
+    
+          <tr>
+              <td>ABU70366.1</td>
+              <td>hypothetical_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001890/1">BGC0001890</a></td>
+              <td>NRP</td>
+              <td>30.0</td>
+              <td>92.9</td>
+              <td>138.0</td>
+              <td>1.5e-32</td>
+          </tr>
+    
+          <tr>
+              <td>CAL80827.1</td>
+              <td>LysR:LysR_substrate_binding_domain</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000997/1">BGC0000997</a></td>
+              <td>NRP + Polyketide</td>
+              <td>32.0</td>
+              <td>92.6</td>
+              <td>133.0</td>
+              <td>4.8e-31</td>
+          </tr>
+    
+          <tr>
+              <td>CAL80819.1</td>
+              <td>LysR-type_regulator</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000997/1">BGC0000997</a></td>
+              <td>NRP + Polyketide</td>
+              <td>31.0</td>
+              <td>91.7</td>
+              <td>131.0</td>
+              <td>1.8e-30</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>

@@ -1,0 +1,1151 @@
+ClusterBlast scores for NZ_LIRD01000002
+
+Table of genes, locations, strands and annotations of query cluster:
+ctg3_16	14210	14657	+		
+ctg3_17	14694	15846	-		
+ctg3_18	16328	16670	-		
+ctg3_19	16800	17451	+		
+ctg3_20	17490	19440	-		
+ctg3_21	19439	20252	-		
+ctg3_22	20357	21965	-		
+ctg3_23	21977	23141	-		
+ctg3_24	23480	25178	+		
+ctg3_25	25316	26069	-		
+ctg3_26	26190	27093	-		
+ctg3_27	27727	28627	-		
+ctg3_28	28763	29165	-		
+ctg3_29	29378	30308	-		
+ctg3_30	30462	31692	+		
+ctg3_31	31846	33187	-		
+ctg3_32	33379	34192	-		
+ctg3_33	34490	35141	+		
+ctg3_34	35242	36934	+		
+
+
+Significant hits: 
+1. NZ_LFBU01000001	Marinobacter subterrani strain JG233 contig1, whole genome shotgun sequence
+2. NZ_CP010537	Cupriavidus basilensis strain 4G11 chromosome secondary, complete sequence
+3. NZ_CP011937	Bacillus methylotrophicus strain CBMB205, complete genome
+4. NZ_LSAZ01000041	Bacillus nakamurai strain NRRL B-41091 Bacillus-sp-B-41091_contig_5, whole genome shotgun sequence
+5. NZ_BDMA01000075	Pseudomonas resinovorans strain MO-1, whole genome shotgun sequence
+6. NZ_MSXV01000050	Pseudomonas sp. PA15(2017) strain PA15 NODE_128_length_351620_cov_34.540184, whole genome shotgun sequence
+7. NZ_FNDG01000012	Pseudomonas flavescens strain LMG 18387, whole genome shotgun sequence
+8. NZ_CP014864	Microbulbifer thermotolerans strain DAU221 chromosome, complete genome
+9. NZ_FOKT01000004	Microbulbifer thermotolerans strain DSM 19189, whole genome shotgun sequence
+10. NZ_CP023168	Bacillus paralicheniformis strain 14DA11 chromosome, complete genome
+11. NZ_CP023665	Bacillus paralicheniformis strain Bac84 chromosome, complete genome
+12. NZ_CP010524	Bacillus paralicheniformis strain BL-09, complete genome
+13. NZ_JXAP01000002	Bacillus sp. MSP5.4 contig00002, whole genome shotgun sequence
+14. NZ_KE819959	Bacillus sp. SB47 scaffold00001, whole genome shotgun sequence
+15. NC_021362	Bacillus paralicheniformis ATCC 9945a, complete genome
+16. NZ_CP020352	Bacillus paralicheniformis strain MDJK30 chromosome, complete genome
+17. NZ_CP021500	Bacillus atrophaeus strain SRCM101359 chromosome, complete genome
+18. NZ_LQYR01000003	Bacillus vallismortis strain B4144_201601 NODE_4, whole genome shotgun sequence
+19. NZ_CP023666	Bacillus paralicheniformis strain Bac48 chromosome, complete genome
+20. NZ_KB933398	Lysinibacillus sphaericus OT4b.31 Ls31_scaffold1, whole genome shotgun sequence
+21. NZ_CP022653	Bacillus atrophaeus strain GQJK17 chromosome, complete genome
+22. NZ_LSBB01000020	Bacillus atrophaeus strain NRRL NRS 213 Bacillus_atrophaeus_NRS_213_contig_6, whole genome shotgun sequence
+23. NZ_BDDH01000002	Bacillus atrophaeus strain DJHJ8, whole genome shotgun sequence
+24. NZ_CP014840	Bacillus subtilis subsp. globigii strain ATCC 49760 chromosome, complete genome
+25. NZ_CP011802	Bacillus atrophaeus UCMB-5137 genome
+26. NC_014976	Bacillus subtilis BSn5, complete genome
+27. NZ_CP021985	Bacillus subtilis strain SR1 genome
+28. NZ_CP017314	Bacillus subtilis strain BS38, complete genome
+29. NZ_CP017112	Bacillus subtilis strain BS16045, complete genome
+30. NZ_CP022391	Bacillus subtilis strain GS 188 genome
+31. NZ_JPNZ01000001	Bacillus subtilis strain GXA-28 Contig01, whole genome shotgun sequence
+32. NZ_LN649259	Bacillus subtilis genome assembly BS49Ch, chromosome : I
+33. NZ_CP010406	Bacillus sp. Pc3, complete genome
+34. NZ_CP026610	Bacillus velezensis strain CGMCC 11640 chromosome, complete genome
+35. NZ_CP020722	Bacillus subtilis strain Bs-115 chromosome, complete genome
+36. NZ_CP022890	Bacillus subtilis strain DKU_NT_02 chromosome, complete genome
+37. NZ_CP020367	Bacillus subtilis strain GQJK2 chromosome, complete genome
+38. NC_017190	Bacillus amyloliquefaciens LL3, complete genome
+39. NC_017191	Bacillus amyloliquefaciens XH7, complete genome
+40. NZ_CP021921	Bacillus subtilis subsp. subtilis strain SRCM101392 chromosome, complete genome
+41. NZ_CP022891	Bacillus subtilis strain DKU_NT_03 chromosome, complete genome
+42. NZ_AUWK01000006	Bacillus amyloliquefaciens HB-26 contig6, whole genome shotgun sequence
+43. NZ_LSZL01000053	Bacillus velezensis strain AP194 Contig9, whole genome shotgun sequence
+44. NZ_LLZA01000001	Bacillus velezensis strain KACC 18228 contig_1, whole genome shotgun sequence
+45. NZ_CP014783	Bacillus amyloliquefaciens strain B15 chromosome, complete genome
+46. NZ_CP018295	Bacillus subtilis strain J-5, complete genome
+47. NZ_CP023748	Bacillus velezensis strain LABIM40 chromosome, complete genome
+48. NZ_CP007244	Bacillus amyloliquefaciens subsp. plantarum TrigoCor1448, complete genome
+49. NZ_LVYH01000004	Bacillus subtilis subsp. subtilis strain ALBA01 scaffold4.1, whole genome shotgun sequence
+50. NZ_MBPE01000066	Bacillus subtilis strain MB378 NODE_8_length_130429_cov_68.5222_ID_15, whole genome shotgun sequence
+
+
+Details:
+
+>>
+1. NZ_LFBU01000001
+Source: Marinobacter subterrani strain JG233 contig1, whole genome shotgun sequence
+Type: t3pks
+Number of proteins with BLAST hits to this cluster: 7
+Cumulative BLAST score: 3729
+
+Table of genes, locations, strands and annotations of subject cluster:
+msub_RS08550	msub_RS08550	1821732	1822677	+	serine_protease
+msub_RS21035	msub_RS21035	1822818	1823060	+	hypothetical_protein
+msub_RS21040	msub_RS21040	1841095	1841190	-	glyoxalase
+msub_RS21045	msub_RS21045	1841175	1841490	-	hypothetical_protein
+msub_RS08670	msub_RS08670	1842366	1843918	+	IS3_family_transposase
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	msub_RS08515	50	560	95.68567026194145	3e-157
+ctg3_21	msub_RS08510	47	230	97.03703703703704	2.3e-58
+ctg3_22	msub_RS08505	76	841	100.0	5.6e-242
+ctg3_23	msub_RS08500	76	602	98.70801033591732	3.1e-170
+ctg3_23	msub_RS08485	35	253	96.89922480620154	2.7e-65
+ctg3_24	msub_RS08530	61	711	98.93805309734513	9.2e-203
+ctg3_27	msub_RS08520	66	395	98.99665551839465	4.5e-108
+ctg3_28	msub_RS08495	55	137	98.49624060150376	9.8e-31
+
+
+
+>>
+2. NZ_CP010537
+Source: Cupriavidus basilensis strain 4G11 chromosome secondary, complete sequence
+Type: terpene
+Number of proteins with BLAST hits to this cluster: 5
+Cumulative BLAST score: 2802
+
+Table of genes, locations, strands and annotations of subject cluster:
+RR42_RS38890	RR42_RS38890	1401223	1401447	+	hypothetical_protein
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	RR42_RS26895	54	650	102.92758089368259	2.2e-184
+ctg3_21	RR42_RS26900	42	201	96.29629629629629	8.6e-50
+ctg3_22	RR42_RS26905	71	772	100.0	4.1e-221
+ctg3_23	RR42_RS26910	71	552	100.25839793281655	2.9e-155
+ctg3_24	RR42_RS26915	55	627	97.34513274336283	1.3e-177
+
+
+
+>>
+3. NZ_CP011937
+Source: Bacillus methylotrophicus strain CBMB205, complete genome
+Type: transatpks-nrps
+Number of proteins with BLAST hits to this cluster: 7
+Cumulative BLAST score: 2047
+
+Table of genes, locations, strands and annotations of subject cluster:
+AAV34_RS10040	AAV34_RS10040	1947206	1947413	+	hypothetical_protein
+AAV34_RS10120	AAV34_RS10120	1995942	1996836	-	UTP--glucose-1-phosphate_uridylyltransferase
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	AAV34_RS10090	49	418	68.25885978428352	1.1e-114
+ctg3_22	AAV34_RS10110	36	306	92.14953271028037	4.9e-81
+ctg3_23	AAV34_RS10080	42	300	97.67441860465115	2.6e-79
+ctg3_24	AAV34_RS10085	48	541	95.929203539823	9.6e-152
+ctg3_26	AAV34_RS09975	31	64	41.0	2.4e-08
+ctg3_27	AAV34_RS10100	44	252	98.66220735785953	6.2e-65
+ctg3_30	AAV34_RS10080	31	166	96.33251833740832	7.9e-39
+
+
+
+>>
+4. NZ_LSAZ01000041
+Source: Bacillus nakamurai strain NRRL B-41091 Bacillus-sp-B-41091_contig_5, whole genome shotgun sequence
+Type: transatpks-nrps
+Number of proteins with BLAST hits to this cluster: 7
+Cumulative BLAST score: 2040
+
+Table of genes, locations, strands and annotations of subject cluster:
+AXI59_RS17230	AXI59_RS17230	499078	500502	-	transporter
+AXI59_RS17330	AXI59_RS17330	519247	520677	-	non-ribosomal_peptide_synthase
+AXI59_RS17355	AXI59_RS17355	525724	526453	+	hypothetical_protein
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	AXI59_RS17305	50	419	67.4884437596302	6.3e-115
+ctg3_22	AXI59_RS17285	37	311	92.89719626168224	2e-82
+ctg3_23	AXI59_RS17315	41	297	97.67441860465115	2.8e-78
+ctg3_24	AXI59_RS17310	49	546	95.929203539823	3e-153
+ctg3_26	AXI59_RS17395	31	61	41.0	2.6e-07
+ctg3_27	AXI59_RS17295	44	248	98.66220735785953	8.9e-64
+ctg3_30	AXI59_RS17315	31	158	96.33251833740832	1.7e-36
+
+
+
+>>
+5. NZ_BDMA01000075
+Source: Pseudomonas resinovorans strain MO-1, whole genome shotgun sequence
+Type: lassopeptide
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 3645
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	MnOB_RS21200	79	965	94.76117103235747	2.4e-279
+ctg3_21	MnOB_RS21205	77	399	97.77777777777777	2.8e-109
+ctg3_22	MnOB_RS21210	90	970	100.0	7.9e-281
+ctg3_23	MnOB_RS21215	79	636	100.0	2e-180
+ctg3_27	MnOB_RS21195	81	483	98.66220735785953	1.6e-134
+ctg3_28	MnOB_RS21220	78	192	93.98496240601504	3.4e-47
+
+
+
+>>
+6. NZ_MSXV01000050
+Source: Pseudomonas sp. PA15(2017) strain PA15 NODE_128_length_351620_cov_34.540184, whole genome shotgun sequence
+Type: nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 3359
+
+Table of genes, locations, strands and annotations of subject cluster:
+BVH03_RS16510	BVH03_RS16510	187586	188204	-	RNA_polymerase_subunit_sigma
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	BVH03_RS16690	72	848	93.99075500770417	5.5e-244
+ctg3_21	BVH03_RS16695	70	359	98.88888888888889	4.2e-97
+ctg3_22	BVH03_RS16700	85	935	100.0	2.2e-270
+ctg3_23	BVH03_RS16705	74	576	100.25839793281655	1.8e-162
+ctg3_27	BVH03_RS16685	79	468	98.66220735785953	5.5e-130
+ctg3_28	BVH03_RS16710	73	173	90.97744360902256	1.2e-41
+
+
+
+>>
+7. NZ_FNDG01000012
+Source: Pseudomonas flavescens strain LMG 18387, whole genome shotgun sequence
+Type: nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 3345
+
+Table of genes, locations, strands and annotations of subject cluster:
+BLR94_RS16210	BLR94_RS16210	106870	107381	+	oxidoreductase
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	BLR94_RS16230	74	867	94.45300462249615	1.1e-249
+ctg3_21	BLR94_RS16235	71	360	98.14814814814815	1.9e-97
+ctg3_22	BLR94_RS16240	85	929	100.0	2e-268
+ctg3_23	BLR94_RS16245	74	576	100.25839793281655	3.2e-162
+ctg3_27	BLR94_RS16225	72	439	99.66555183946488	3.6e-121
+ctg3_28	BLR94_RS16250	71	174	92.4812030075188	9.5e-42
+
+
+
+>>
+8. NZ_CP014864
+Source: Microbulbifer thermotolerans strain DAU221 chromosome, complete genome
+Type: nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 2810
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	A3224_RS01655	51	611	102.92758089368259	1.5e-172
+ctg3_21	A3224_RS01650	49	241	95.55555555555556	9.8e-62
+ctg3_22	A3224_RS01645	73	790	99.4392523364486	1.5e-226
+ctg3_23	A3224_RS01640	76	618	99.48320413436691	7.2e-175
+ctg3_27	A3224_RS01660	68	399	98.66220735785953	4.1e-109
+ctg3_28	A3224_RS01635	64	151	90.22556390977444	8.6e-35
+
+
+
+>>
+9. NZ_FOKT01000004
+Source: Microbulbifer thermotolerans strain DSM 19189, whole genome shotgun sequence
+Type: nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 2807
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	BM155_RS08185	51	611	102.92758089368259	1.5e-172
+ctg3_21	BM155_RS08180	49	241	95.55555555555556	9.8e-62
+ctg3_22	BM155_RS08175	73	790	99.4392523364486	1.5e-226
+ctg3_23	BM155_RS08170	76	618	99.48320413436691	7.2e-175
+ctg3_27	BM155_RS08190	68	399	98.66220735785953	4.1e-109
+ctg3_28	BM155_RS08165	63	148	90.22556390977444	7.3e-34
+
+
+
+>>
+10. NZ_CP023168
+Source: Bacillus paralicheniformis strain 14DA11 chromosome, complete genome
+Type: nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 2015
+
+Table of genes, locations, strands and annotations of subject cluster:
+CK945_RS11025	CK945_RS11025	2135058	2135680	+	hypothetical_protein
+CK945_RS11085	CK945_RS11085	2148304	2155958	+	non-ribosomal_peptide_synthetase
+CK945_RS11105	CK945_RS11105	2182167	2185969	+	non-ribosomal_peptide_synthase
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	CK945_RS11110	48	412	68.41294298921417	1e-112
+ctg3_22	CK945_RS11130	38	319	93.27102803738318	9.6e-85
+ctg3_23	CK945_RS11075	41	292	97.67441860465115	5.3e-77
+ctg3_24	CK945_RS11080	51	560	95.929203539823	2e-157
+ctg3_27	CK945_RS11120	47	278	100.0	8e-73
+ctg3_30	CK945_RS11075	32	154	84.59657701711491	2.4e-35
+
+
+
+>>
+11. NZ_CP023665
+Source: Bacillus paralicheniformis strain Bac84 chromosome, complete genome
+Type: nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 2014
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	CP943_RS11050	48	412	68.41294298921417	1e-112
+ctg3_22	CP943_RS11030	38	319	93.27102803738318	9.6e-85
+ctg3_23	CP943_RS11085	41	292	97.67441860465115	5.3e-77
+ctg3_24	CP943_RS11080	51	559	95.929203539823	4.5e-157
+ctg3_27	CP943_RS11040	47	278	100.0	8e-73
+ctg3_30	CP943_RS11085	32	154	84.59657701711491	3.1e-35
+
+
+
+>>
+12. NZ_CP010524
+Source: Bacillus paralicheniformis strain BL-09, complete genome
+Type: nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 2013
+
+Table of genes, locations, strands and annotations of subject cluster:
+SC10_RS10985	SC10_RS10985	2193673	2201326	-	non-ribosomal_peptide_synthetase
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	SC10_RS10970	48	411	68.41294298921417	1.3e-112
+ctg3_22	SC10_RS10950	38	319	93.27102803738318	9.6e-85
+ctg3_23	SC10_RS11010	41	292	97.67441860465115	5.3e-77
+ctg3_24	SC10_RS11005	51	559	95.929203539823	3.4e-157
+ctg3_27	SC10_RS10960	47	278	100.0	8e-73
+ctg3_30	SC10_RS11010	32	154	84.59657701711491	3.1e-35
+
+
+
+>>
+13. NZ_JXAP01000002
+Source: Bacillus sp. MSP5.4 contig00002, whole genome shotgun sequence
+Type: nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 2013
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	SC78_RS06010	47	411	69.02927580893683	2.3e-112
+ctg3_22	SC78_RS05990	37	317	93.27102803738318	2.1e-84
+ctg3_23	SC78_RS06045	41	292	97.67441860465115	5.3e-77
+ctg3_24	SC78_RS06040	51	559	95.929203539823	3.4e-157
+ctg3_27	SC78_RS06000	47	280	100.0	2.8e-73
+ctg3_30	SC78_RS06045	32	154	84.59657701711491	3.1e-35
+
+
+
+>>
+14. NZ_KE819959
+Source: Bacillus sp. SB47 scaffold00001, whole genome shotgun sequence
+Type: nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 2012
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	M661_RS0109440	48	411	68.41294298921417	1.3e-112
+ctg3_22	M661_RS0109460	38	319	93.27102803738318	9.6e-85
+ctg3_23	M661_RS0109405	41	292	97.67441860465115	5.3e-77
+ctg3_24	M661_RS0109410	51	559	95.929203539823	4.5e-157
+ctg3_27	M661_RS0109450	47	277	100.0	2.3e-72
+ctg3_30	M661_RS0109405	32	154	84.59657701711491	3.1e-35
+
+
+
+>>
+15. NC_021362
+Source: Bacillus paralicheniformis ATCC 9945a, complete genome
+Type: nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 2012
+
+Table of genes, locations, strands and annotations of subject cluster:
+BALI_RS21855	BALI_RS21855	2130257	2130500	+	hypothetical_protein
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	BALI_RS10750	48	410	68.41294298921417	2.9e-112
+ctg3_22	BALI_RS10730	38	319	93.27102803738318	9.6e-85
+ctg3_23	BALI_RS10785	41	292	97.67441860465115	5.3e-77
+ctg3_24	BALI_RS10780	51	559	95.929203539823	3.4e-157
+ctg3_27	BALI_RS10740	47	278	100.0	8e-73
+ctg3_30	BALI_RS10785	32	154	84.59657701711491	3.1e-35
+
+
+
+>>
+16. NZ_CP020352
+Source: Bacillus paralicheniformis strain MDJK30 chromosome, complete genome
+Type: nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 2012
+
+Table of genes, locations, strands and annotations of subject cluster:
+BLMD_RS10770	BLMD_RS10770	2121399	2122254	-	ABC_transporter_ATP-binding_protein
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	BLMD_RS10830	48	410	68.41294298921417	2.9e-112
+ctg3_22	BLMD_RS10810	38	319	93.27102803738318	9.6e-85
+ctg3_23	BLMD_RS10865	41	292	97.67441860465115	5.3e-77
+ctg3_24	BLMD_RS10860	51	559	95.929203539823	3.4e-157
+ctg3_27	BLMD_RS10820	47	278	100.0	8e-73
+ctg3_30	BLMD_RS10865	32	154	84.59657701711491	3.1e-35
+
+
+
+>>
+17. NZ_CP021500
+Source: Bacillus atrophaeus strain SRCM101359 chromosome, complete genome
+Type: transatpks-nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 2007
+
+Table of genes, locations, strands and annotations of subject cluster:
+S101359_RS20865	S101359_RS20865	2023333	2023467	-	NADPH_dehydrogenase
+S101359_RS09945	S101359_RS09945	2024779	2025234	-	TetR_family_transcriptional_regulator
+S101359_RS10155	S101359_RS10155	2138086	2138590	-	hypothetical_protein
+S101359_RS10230	S101359_RS10230	2150377	2150593	-	hypothetical_protein
+S101359_RS10235	S101359_RS10235	2150597	2150846	-	hypothetical_protein
+S101359_RS10240	S101359_RS10240	2150917	2151091	+	hypothetical_protein
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	S101359_RS09990	49	415	67.79661016949152	1.6e-113
+ctg3_22	S101359_RS09970	37	314	91.58878504672897	3.1e-83
+ctg3_23	S101359_RS10000	41	299	97.67441860465115	7.4e-79
+ctg3_24	S101359_RS09995	50	559	95.57522123893806	5.8e-157
+ctg3_27	S101359_RS09980	45	256	97.32441471571906	3.3e-66
+ctg3_30	S101359_RS10000	32	164	82.15158924205379	2.3e-38
+
+
+
+>>
+18. NZ_LQYR01000003
+Source: Bacillus vallismortis strain B4144_201601 NODE_4, whole genome shotgun sequence
+Type: nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 2004
+
+Table of genes, locations, strands and annotations of subject cluster:
+B4144_RS00445	B4144_RS00445	2	3937	+	non-ribosomal_peptide_synthetase
+B4144_RS00510	B4144_RS00510	20065	20852	-	UTP--glucose-1-phosphate_uridylyltransferase
+B4144_RS00520	B4144_RS00520	21813	22028	+	malonyl_CoA-acyl_carrier_protein_transacylase
+B4144_RS00535	B4144_RS00535	25439	25834	-	acetylxylan_esterase
+B4144_RS00540	B4144_RS00540	26126	26317	+	TetR_family_transcriptional_regulator
+B4144_RS00550	B4144_RS00550	27838	28099	-	hypothetical_protein
+B4144_RS00555	B4144_RS00555	28084	29295	-	endoglucanase
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	B4144_RS00475	49	417	67.79661016949152	3.1e-114
+ctg3_22	B4144_RS00495	37	310	91.58878504672897	4.5e-82
+ctg3_23	B4144_RS00465	41	301	98.19121447028424	1.1e-79
+ctg3_24	B4144_RS00470	49	560	95.57522123893806	2.6e-157
+ctg3_27	B4144_RS00485	45	252	97.32441471571906	4.7e-65
+ctg3_30	B4144_RS00465	31	164	96.08801955990221	2.3e-38
+
+
+
+>>
+19. NZ_CP023666
+Source: Bacillus paralicheniformis strain Bac48 chromosome, complete genome
+Type: nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 2004
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	CP942_RS00890	47	409	68.41294298921417	8.6e-112
+ctg3_22	CP942_RS00910	38	316	93.27102803738318	8.1e-84
+ctg3_23	CP942_RS00855	40	291	97.67441860465115	1.5e-76
+ctg3_24	CP942_RS00860	51	555	95.929203539823	6.4e-156
+ctg3_27	CP942_RS00900	47	278	100.0	8e-73
+ctg3_30	CP942_RS00855	32	155	84.59657701711491	1.8e-35
+
+
+
+>>
+20. NZ_KB933398
+Source: Lysinibacillus sphaericus OT4b.31 Ls31_scaffold1, whole genome shotgun sequence
+Type: nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 2002
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	H131_RS04420	49	419	67.95069337442219	8.3e-115
+ctg3_22	H131_RS04440	38	313	92.89719626168224	4e-83
+ctg3_23	H131_RS04410	38	261	97.1576227390181	1.7e-67
+ctg3_24	H131_RS04415	49	540	94.69026548672566	2.1e-151
+ctg3_27	H131_RS04430	52	300	97.32441471571906	2e-79
+ctg3_30	H131_RS04410	32	169	96.33251833740832	9.4e-40
+
+
+
+>>
+21. NZ_CP022653
+Source: Bacillus atrophaeus strain GQJK17 chromosome, complete genome
+Type: transatpks-nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 2000
+
+Table of genes, locations, strands and annotations of subject cluster:
+BaGK_RS10410	BaGK_RS10410	2092830	2093210	-	TetR_family_transcriptional_regulator
+BaGK_RS10420	BaGK_RS10420	2094441	2095330	+	UTP--glucose-1-phosphate_uridylyltransferase
+BaGK_RS10525	BaGK_RS10525	2150751	2150903	+	transcriptional_regulator
+BaGK_RS10625	BaGK_RS10625	2206538	2207042	-	hypothetical_protein
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	BaGK_RS10455	49	415	67.79661016949152	1.6e-113
+ctg3_22	BaGK_RS10435	37	309	91.58878504672897	5.8e-82
+ctg3_23	BaGK_RS10465	41	299	97.67441860465115	7.4e-79
+ctg3_24	BaGK_RS10460	50	559	95.57522123893806	3.4e-157
+ctg3_27	BaGK_RS10445	45	254	97.32441471571906	1.2e-65
+ctg3_30	BaGK_RS10465	32	164	82.15158924205379	2.3e-38
+
+
+
+>>
+22. NZ_LSBB01000020
+Source: Bacillus atrophaeus strain NRRL NRS 213 Bacillus_atrophaeus_NRS_213_contig_6, whole genome shotgun sequence
+Type: nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 2000
+
+Table of genes, locations, strands and annotations of subject cluster:
+AXI57_RS18580	AXI57_RS18580	1027610	1027988	-	TetR_family_transcriptional_regulator
+AXI57_RS18585	AXI57_RS18585	1028393	1028794	+	acetylxylan_esterase
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	AXI57_RS18640	49	415	67.79661016949152	1.6e-113
+ctg3_22	AXI57_RS18620	37	311	91.96261682242991	2.6e-82
+ctg3_23	AXI57_RS18650	41	299	97.67441860465115	7.4e-79
+ctg3_24	AXI57_RS18645	49	558	95.57522123893806	7.6e-157
+ctg3_27	AXI57_RS18630	45	253	97.32441471571906	3.6e-65
+ctg3_30	AXI57_RS18650	32	164	82.15158924205379	2.3e-38
+
+
+
+>>
+23. NZ_BDDH01000002
+Source: Bacillus atrophaeus strain DJHJ8, whole genome shotgun sequence
+Type: transatpks-nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 1999
+
+Table of genes, locations, strands and annotations of subject cluster:
+A7P71_RS06910	A7P71_RS06910	1092809	1093186	-	TetR_family_transcriptional_regulator
+A7P71_RS06915	A7P71_RS06915	1093649	1094050	+	acetylxylan_esterase
+A7P71_RS06930	A7P71_RS06930	1097237	1097860	+	UTP--glucose-1-phosphate_uridylyltransferase
+A7P71_RS07105	A7P71_RS07105	1169954	1170137	-	hypothetical_protein
+A7P71_RS20315	A7P71_RS20315	1209077	1209516	-	DeoR_family_transcriptional_regulator
+A7P71_RS07185	A7P71_RS07185	1218390	1218631	-	hypothetical_protein
+A7P71_RS20320	A7P71_RS20320	1220006	1220413	-	hypothetical_protein
+A7P71_RS20325	A7P71_RS20325	1220512	1220788	-	hypothetical_protein
+A7P71_RS07220	A7P71_RS07220	1223262	1223429	+	transposase
+A7P71_RS07240	A7P71_RS07240	1226228	1226590	+	hypothetical_protein
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	A7P71_RS06965	49	415	67.79661016949152	1.6e-113
+ctg3_22	A7P71_RS06945	37	311	91.58878504672897	2.6e-82
+ctg3_23	A7P71_RS06975	41	297	97.67441860465115	2.2e-78
+ctg3_24	A7P71_RS06970	50	559	95.57522123893806	5.8e-157
+ctg3_27	A7P71_RS06955	45	254	97.32441471571906	1.6e-65
+ctg3_30	A7P71_RS06975	32	163	82.15158924205379	3.9e-38
+
+
+
+>>
+24. NZ_CP014840
+Source: Bacillus subtilis subsp. globigii strain ATCC 49760 chromosome, complete genome
+Type: transatpks-nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 1998
+
+Table of genes, locations, strands and annotations of subject cluster:
+A1D11_RS09890	A1D11_RS09890	1908875	1911333	+	DDE_transposase
+A1D11_RS20790	A1D11_RS20790	1912915	1914099	+	ribonucleoside-diphosphate_reductase_subunit_alpha
+A1D11_RS09910	A1D11_RS09910	1914763	1915695	+	class_1b_ribonucleoside-diphosphate_reductase_subunit_beta
+A1D11_RS20795	A1D11_RS20795	1915733	1915930	+	thiol_reductase_thioredoxin
+A1D11_RS20800	A1D11_RS20800	1916705	1917317	-	hypothetical_protein
+A1D11_RS09940	A1D11_RS09940	1919343	1920180	+	thymidylate_synthase
+A1D11_RS10075	A1D11_RS10075	1981360	1981731	-	site-specific_integrase
+A1D11_RS10205	A1D11_RS10205	2041059	2041850	-	UTP--glucose-1-phosphate_uridylyltransferase
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	A1D11_RS10170	49	416	67.79661016949152	4.1e-114
+ctg3_22	A1D11_RS10190	37	309	91.58878504672897	5.8e-82
+ctg3_23	A1D11_RS10160	41	298	97.67441860465115	1.3e-78
+ctg3_24	A1D11_RS10165	49	558	95.57522123893806	9.9e-157
+ctg3_27	A1D11_RS10180	45	253	97.32441471571906	2.8e-65
+ctg3_30	A1D11_RS10160	32	164	82.15158924205379	2.3e-38
+
+
+
+>>
+25. NZ_CP011802
+Source: Bacillus atrophaeus UCMB-5137 genome
+Type: transatpks-nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 1997
+
+Table of genes, locations, strands and annotations of subject cluster:
+D068_RS07615	D068_RS07615	1548911	1549291	-	TetR_family_transcriptional_regulator
+D068_RS07645	D068_RS07645	1554804	1555427	+	UTP--glucose-1-phosphate_uridylyltransferase
+D068_RS07715	D068_RS07715	1582421	1590055	-	non-ribosomal_peptide_synthetase
+D068_RS07770	D068_RS07770	1613875	1614105	-	hypothetical_protein
+D068_RS07775	D068_RS07775	1614117	1615825	-	terminase
+D068_RS07840	D068_RS07840	1623295	1623494	-	hypothetical_protein
+D068_RS20225	D068_RS20225	1640072	1640258	-	hypothetical_protein
+D068_RS20610	D068_RS20610	1679197	1679550	-	hypothetical_protein
+D068_RS20230	D068_RS20230	1691462	1691808	-	hypothetical_protein
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	D068_RS07680	49	415	67.79661016949152	1.6e-113
+ctg3_22	D068_RS07660	37	309	91.58878504672897	5.8e-82
+ctg3_23	D068_RS07690	41	299	97.67441860465115	7.4e-79
+ctg3_24	D068_RS07685	49	557	95.57522123893806	1.7e-156
+ctg3_27	D068_RS07670	45	253	97.32441471571906	3.6e-65
+ctg3_30	D068_RS07690	32	164	82.15158924205379	2.3e-38
+
+
+
+>>
+26. NC_014976
+Source: Bacillus subtilis BSn5, complete genome
+Type: nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 1995
+
+Table of genes, locations, strands and annotations of subject cluster:
+BSN5_RS00495	BSN5_RS00495	90023	100837	-	non-ribosomal_peptide_synthetase
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	BSN5_RS00455	46	407	68.7211093990755	3.3e-111
+ctg3_22	BSN5_RS00435	39	322	92.14953271028037	8.7e-86
+ctg3_23	BSN5_RS00465	41	294	97.67441860465115	2.4e-77
+ctg3_24	BSN5_RS00460	48	537	95.39823008849557	1.4e-150
+ctg3_27	BSN5_RS00445	46	262	97.32441471571906	7.8e-68
+ctg3_30	BSN5_RS00465	32	173	96.08801955990221	3.8e-41
+
+
+
+>>
+27. NZ_CP021985
+Source: Bacillus subtilis strain SR1 genome
+Type: nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 1995
+
+Table of genes, locations, strands and annotations of subject cluster:
+CDA59_RS00490	CDA59_RS00490	90023	95330	-	non-ribosomal_peptide_synthetase
+CDA59_RS00495	CDA59_RS00495	104582	106913	-	non-ribosomal_peptide_synthetase
+CDA59_RS00500	CDA59_RS00500	120464	120846	-	hypothetical_protein
+CDA59_RS00505	CDA59_RS00505	120966	121145	-	hypothetical_protein
+CDA59_RS00510	CDA59_RS00510	121373	123959	-	non-ribosomal_peptide_synthetase
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	CDA59_RS00455	46	407	68.7211093990755	3.3e-111
+ctg3_22	CDA59_RS00435	39	322	92.14953271028037	8.7e-86
+ctg3_23	CDA59_RS00465	41	294	97.67441860465115	1.8e-77
+ctg3_24	CDA59_RS00460	48	537	95.39823008849557	1.4e-150
+ctg3_27	CDA59_RS00445	46	262	97.32441471571906	7.8e-68
+ctg3_30	CDA59_RS00465	32	173	96.08801955990221	3.8e-41
+
+
+
+>>
+28. NZ_CP017314
+Source: Bacillus subtilis strain BS38, complete genome
+Type: nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 1993
+
+Table of genes, locations, strands and annotations of subject cluster:
+BSBS38_RS10190	BSBS38_RS10190	1924669	1926224	-	arabinoxylan_arabinofuranohydrolase
+BSBS38_RS10295	BSBS38_RS10295	1957576	1958726	-	IS3_family_transposase
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	BSBS38_RS10235	47	405	68.87519260400616	1.2e-110
+ctg3_22	BSBS38_RS10215	39	322	92.14953271028037	1.1e-85
+ctg3_23	BSBS38_RS10245	41	294	97.67441860465115	1.4e-77
+ctg3_24	BSBS38_RS10240	49	540	95.39823008849557	2.8e-151
+ctg3_27	BSBS38_RS10225	46	260	97.32441471571906	2.3e-67
+ctg3_30	BSBS38_RS10245	32	172	96.08801955990221	1.1e-40
+
+
+
+>>
+29. NZ_CP017112
+Source: Bacillus subtilis strain BS16045, complete genome
+Type: nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 1993
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	BS16045_RS09880	46	404	68.7211093990755	1.6e-110
+ctg3_22	BS16045_RS09860	38	320	92.14953271028037	3.3e-85
+ctg3_23	BS16045_RS09890	41	295	97.67441860465115	1.1e-77
+ctg3_24	BS16045_RS09885	49	538	95.39823008849557	8.1e-151
+ctg3_27	BS16045_RS09870	46	263	97.32441471571906	2.7e-68
+ctg3_30	BS16045_RS09890	32	173	96.08801955990221	5e-41
+
+
+
+>>
+30. NZ_CP022391
+Source: Bacillus subtilis strain GS 188 genome
+Type: nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 1993
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	CFK25_RS09670	46	404	68.7211093990755	1.6e-110
+ctg3_22	CFK25_RS09650	38	320	92.14953271028037	3.3e-85
+ctg3_23	CFK25_RS09680	41	295	97.67441860465115	1.1e-77
+ctg3_24	CFK25_RS09675	49	538	95.39823008849557	8.1e-151
+ctg3_27	CFK25_RS09660	46	263	97.32441471571906	2.7e-68
+ctg3_30	CFK25_RS09680	32	173	96.08801955990221	5e-41
+
+
+
+>>
+31. NZ_JPNZ01000001
+Source: Bacillus subtilis strain GXA-28 Contig01, whole genome shotgun sequence
+Type: nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 1993
+
+Table of genes, locations, strands and annotations of subject cluster:
+ZQL_RS15475	ZQL_RS15475	1151711	1156606	-	non-ribosomal_peptide_synthetase
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	ZQL_RS15510	46	404	68.7211093990755	1.6e-110
+ctg3_22	ZQL_RS15530	38	320	92.14953271028037	3.3e-85
+ctg3_23	ZQL_RS15500	41	295	97.67441860465115	1.1e-77
+ctg3_24	ZQL_RS15505	49	538	95.39823008849557	8.1e-151
+ctg3_27	ZQL_RS15520	46	263	97.32441471571906	2.7e-68
+ctg3_30	ZQL_RS15500	32	173	96.08801955990221	5e-41
+
+
+
+>>
+32. NZ_LN649259
+Source: Bacillus subtilis genome assembly BS49Ch, chromosome : I
+Type: nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 1993
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	VV34_RS10115	46	404	68.7211093990755	1.6e-110
+ctg3_22	VV34_RS10095	38	320	92.14953271028037	3.3e-85
+ctg3_23	VV34_RS10125	41	295	97.67441860465115	1.1e-77
+ctg3_24	VV34_RS10120	49	538	95.39823008849557	8.1e-151
+ctg3_27	VV34_RS10105	46	263	97.32441471571906	2.7e-68
+ctg3_30	VV34_RS10125	32	173	96.08801955990221	5e-41
+
+
+
+>>
+33. NZ_CP010406
+Source: Bacillus sp. Pc3, complete genome
+Type: bacteriocin-transatpks-nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 1992
+
+Table of genes, locations, strands and annotations of subject cluster:
+SB24_RS19315	SB24_RS19315	74968	75207	+	hypothetical_protein
+SB24_RS19320	SB24_RS19320	135514	135721	+	hypothetical_protein
+SB24_RS00610	SB24_RS00610	181303	182164	+	choline_esterase
+SB24_RS00675	SB24_RS00675	193861	194474	-	hypothetical_protein
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	SB24_RS00470	49	420	68.25885978428352	2.8e-115
+ctg3_22	SB24_RS00490	36	307	92.14953271028037	3.8e-81
+ctg3_23	SB24_RS00460	42	300	97.67441860465115	2.6e-79
+ctg3_24	SB24_RS00465	49	545	95.929203539823	5.1e-153
+ctg3_27	SB24_RS00480	44	252	98.66220735785953	6.2e-65
+ctg3_30	SB24_RS00460	31	168	96.33251833740832	2.1e-39
+
+
+
+>>
+34. NZ_CP026610
+Source: Bacillus velezensis strain CGMCC 11640 chromosome, complete genome
+Type: bacteriocin-transatpks-nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 1992
+
+Table of genes, locations, strands and annotations of subject cluster:
+C3Z10_RS09760	C3Z10_RS09760	1985794	1986655	-	choline_esterase
+C3Z10_RS09815	C3Z10_RS09815	2032237	2032444	-	hypothetical_protein
+C3Z10_RS09955	C3Z10_RS09955	2092750	2092989	-	hypothetical_protein
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	C3Z10_RS09905	49	420	68.25885978428352	2.8e-115
+ctg3_22	C3Z10_RS09885	36	307	92.14953271028037	3.8e-81
+ctg3_23	C3Z10_RS09915	42	300	97.67441860465115	2.6e-79
+ctg3_24	C3Z10_RS09910	49	545	95.929203539823	5.1e-153
+ctg3_27	C3Z10_RS09895	44	252	98.66220735785953	6.2e-65
+ctg3_30	C3Z10_RS09915	31	168	96.33251833740832	2.1e-39
+
+
+
+>>
+35. NZ_CP020722
+Source: Bacillus subtilis strain Bs-115 chromosome, complete genome
+Type: nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 1992
+
+Table of genes, locations, strands and annotations of subject cluster:
+B7470_RS21885	B7470_RS21885	4108219	4109766	-	arabinoxylan_arabinofuranohydrolase
+B7470_RS21960	B7470_RS21960	4124292	4127723	-	hypothetical_protein
+B7470_RS21970	B7470_RS21970	4135808	4137282	-	D-alanyl-D-alanine_carboxypeptidase/D-alanyl-D-alanine-endopeptidase
+B7470_RS21975	B7470_RS21975	4137316	4138291	-	aldose_epimerase
+B7470_RS21980	B7470_RS21980	4138423	4139808	-	MATE_family_efflux_transporter
+B7470_RS21985	B7470_RS21985	4140057	4140631	+	hypothetical_protein
+B7470_RS21990	B7470_RS21990	4140743	4141893	+	IS3_family_transposase
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	B7470_RS21930	47	405	68.87519260400616	1.2e-110
+ctg3_22	B7470_RS21910	39	322	92.14953271028037	1.1e-85
+ctg3_23	B7470_RS21940	41	294	97.67441860465115	1.8e-77
+ctg3_24	B7470_RS21935	49	539	95.39823008849557	3.7e-151
+ctg3_27	B7470_RS21920	46	260	97.32441471571906	2.3e-67
+ctg3_30	B7470_RS21940	32	172	96.08801955990221	8.5e-41
+
+
+
+>>
+36. NZ_CP022890
+Source: Bacillus subtilis strain DKU_NT_02 chromosome, complete genome
+Type: nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 1992
+
+Table of genes, locations, strands and annotations of subject cluster:
+CJZ70_RS10230	CJZ70_RS10230	1940667	1944505	+	non-ribosomal_peptide_synthase
+CJZ70_RS10305	CJZ70_RS10305	1959032	1960587	+	arabinoxylan_arabinofuranohydrolase
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	CJZ70_RS10260	47	405	68.87519260400616	1.2e-110
+ctg3_22	CJZ70_RS10280	39	322	92.14953271028037	1.1e-85
+ctg3_23	CJZ70_RS10250	41	294	97.67441860465115	1.8e-77
+ctg3_24	CJZ70_RS10255	49	539	95.39823008849557	3.7e-151
+ctg3_27	CJZ70_RS10270	46	260	97.32441471571906	2.3e-67
+ctg3_30	CJZ70_RS10250	32	172	96.08801955990221	8.5e-41
+
+
+
+>>
+37. NZ_CP020367
+Source: Bacillus subtilis strain GQJK2 chromosome, complete genome
+Type: nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 1992
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	BSK2_RS09790	46	404	68.7211093990755	2.1e-110
+ctg3_22	BSK2_RS09770	38	320	92.14953271028037	4.3e-85
+ctg3_23	BSK2_RS09800	41	295	97.67441860465115	1.1e-77
+ctg3_24	BSK2_RS09795	48	537	95.39823008849557	1.8e-150
+ctg3_27	BSK2_RS09780	47	265	97.32441471571906	9.2e-69
+ctg3_30	BSK2_RS09800	32	171	96.08801955990221	1.4e-40
+
+
+
+>>
+38. NC_017190
+Source: Bacillus amyloliquefaciens LL3, complete genome
+Type: transatpks-nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 1991
+
+Table of genes, locations, strands and annotations of subject cluster:
+LL3_RS09615	LL3_RS09615	1971929	1975734	-	non-ribosomal_peptide_synthase
+LL3_RS09675	LL3_RS09675	1993706	1995633	-	threonine--tRNA_ligase
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	LL3_RS09590	49	417	67.4884437596302	2.4e-114
+ctg3_22	LL3_RS09570	36	310	91.96261682242991	3.4e-82
+ctg3_23	LL3_RS09600	42	305	97.67441860465115	1e-80
+ctg3_24	LL3_RS09595	48	543	95.929203539823	2.5e-152
+ctg3_27	LL3_RS09580	45	247	97.32441471571906	2.6e-63
+ctg3_30	LL3_RS09600	31	169	96.33251833740832	9.4e-40
+
+
+
+>>
+39. NC_017191
+Source: Bacillus amyloliquefaciens XH7, complete genome
+Type: transatpks-nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 1991
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	BAXH7_RS07655	49	417	67.4884437596302	2.4e-114
+ctg3_22	BAXH7_RS07675	36	310	91.96261682242991	3.4e-82
+ctg3_23	BAXH7_RS07645	42	305	97.67441860465115	1e-80
+ctg3_24	BAXH7_RS07650	48	543	95.929203539823	2.5e-152
+ctg3_27	BAXH7_RS07665	45	247	97.32441471571906	2.6e-63
+ctg3_30	BAXH7_RS07645	31	169	96.33251833740832	9.4e-40
+
+
+
+>>
+40. NZ_CP021921
+Source: Bacillus subtilis subsp. subtilis strain SRCM101392 chromosome, complete genome
+Type: nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 1991
+
+Table of genes, locations, strands and annotations of subject cluster:
+S101392_RS10335	S101392_RS10335	2022557	2022860	-	hypothetical_protein
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	S101392_RS10320	47	406	68.87519260400616	7.2e-111
+ctg3_22	S101392_RS10300	39	322	92.14953271028037	6.6e-86
+ctg3_23	S101392_RS10330	41	293	97.67441860465115	4.1e-77
+ctg3_24	S101392_RS10325	48	536	95.39823008849557	4e-150
+ctg3_27	S101392_RS10310	46	262	97.32441471571906	6e-68
+ctg3_30	S101392_RS10330	32	172	96.08801955990221	1.1e-40
+
+
+
+>>
+41. NZ_CP022891
+Source: Bacillus subtilis strain DKU_NT_03 chromosome, complete genome
+Type: nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 1991
+
+Table of genes, locations, strands and annotations of subject cluster:
+CJZ71_RS00335	CJZ71_RS00335	53156	54425	-	glucuronoxylanase
+CJZ71_RS00340	CJZ71_RS00340	54556	56111	-	arabinoxylan_arabinofuranohydrolase
+CJZ71_RS00415	CJZ71_RS00415	70637	74475	-	non-ribosomal_peptide_synthase
+CJZ71_RS00490	CJZ71_RS00490	100012	100830	-	glutamate_5-kinase
+CJZ71_RS00495	CJZ71_RS00495	100864	101406	-	pyrroline-5-carboxylate_reductase
+CJZ71_RS00500	CJZ71_RS00500	101406	101555	+	glutamate_5-kinase
+CJZ71_RS00505	CJZ71_RS00505	101556	101906	-	pyrroline-5-carboxylate_reductase
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	CJZ71_RS00385	46	404	68.7211093990755	1.6e-110
+ctg3_22	CJZ71_RS00365	39	322	92.14953271028037	8.7e-86
+ctg3_23	CJZ71_RS00395	41	294	97.67441860465115	1.8e-77
+ctg3_24	CJZ71_RS00390	49	539	95.39823008849557	3.7e-151
+ctg3_27	CJZ71_RS00375	46	260	97.32441471571906	2.3e-67
+ctg3_30	CJZ71_RS00395	32	172	96.08801955990221	8.5e-41
+
+
+
+>>
+42. NZ_AUWK01000006
+Source: Bacillus amyloliquefaciens HB-26 contig6, whole genome shotgun sequence
+Type: transatpks-nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 1990
+
+Table of genes, locations, strands and annotations of subject cluster:
+N235_RS11795	N235_RS11795	255855	256753	-	choline_esterase
+N235_RS11970	N235_RS11970	328759	332623	-	non-ribosomal_peptide_synthetase
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	N235_RS11940	49	421	68.25885978428352	1.7e-115
+ctg3_22	N235_RS11920	36	307	92.14953271028037	3.8e-81
+ctg3_23	N235_RS11950	42	300	97.67441860465115	2.6e-79
+ctg3_24	N235_RS11945	48	544	95.929203539823	1.9e-152
+ctg3_27	N235_RS11930	44	252	98.66220735785953	6.2e-65
+ctg3_30	N235_RS11950	31	166	96.33251833740832	7.9e-39
+
+
+
+>>
+43. NZ_LSZL01000053
+Source: Bacillus velezensis strain AP194 Contig9, whole genome shotgun sequence
+Type: transatpks-nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 1990
+
+Table of genes, locations, strands and annotations of subject cluster:
+AY609_RS18740	AY609_RS18740	35	3922	+	non-ribosomal_peptide_synthetase
+AY609_RS18910	AY609_RS18910	75925	76786	+	choline_esterase
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	AY609_RS18770	49	421	68.25885978428352	1.7e-115
+ctg3_22	AY609_RS18790	36	307	92.14953271028037	3.8e-81
+ctg3_23	AY609_RS18760	42	300	97.67441860465115	2.6e-79
+ctg3_24	AY609_RS18765	49	544	95.929203539823	1.5e-152
+ctg3_27	AY609_RS18780	44	252	98.66220735785953	6.2e-65
+ctg3_30	AY609_RS18760	31	166	96.33251833740832	7.9e-39
+
+
+
+>>
+44. NZ_LLZA01000001
+Source: Bacillus velezensis strain KACC 18228 contig_1, whole genome shotgun sequence
+Type: transatpks-nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 1990
+
+Table of genes, locations, strands and annotations of subject cluster:
+AR441_RS00005	AR441_RS00005	1	4574	+	non-ribosomal_peptide_synthetase
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	AR441_RS00035	49	420	68.25885978428352	3.7e-115
+ctg3_22	AR441_RS00055	36	307	92.14953271028037	3.8e-81
+ctg3_23	AR441_RS00025	42	300	97.67441860465115	2.6e-79
+ctg3_24	AR441_RS00030	49	545	95.929203539823	6.7e-153
+ctg3_27	AR441_RS00045	44	252	98.66220735785953	6.2e-65
+ctg3_30	AR441_RS00025	31	166	96.33251833740832	7.9e-39
+
+
+
+>>
+45. NZ_CP014783
+Source: Bacillus amyloliquefaciens strain B15 chromosome, complete genome
+Type: bacteriocin-transatpks-nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 1989
+
+Table of genes, locations, strands and annotations of subject cluster:
+A1R12_RS19630	A1R12_RS19630	1870297	1870509	+	hypothetical_protein
+A1R12_RS09050	A1R12_RS09050	1880225	1881086	-	choline_esterase
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	A1R12_RS09195	49	421	68.25885978428352	1.3e-115
+ctg3_22	A1R12_RS09175	36	307	92.14953271028037	3.8e-81
+ctg3_23	A1R12_RS09205	42	300	97.67441860465115	2.6e-79
+ctg3_24	A1R12_RS09200	49	543	95.929203539823	3.3e-152
+ctg3_27	A1R12_RS09185	44	252	98.66220735785953	6.2e-65
+ctg3_30	A1R12_RS09205	31	166	96.33251833740832	7.9e-39
+
+
+
+>>
+46. NZ_CP018295
+Source: Bacillus subtilis strain J-5, complete genome
+Type: transatpks-nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 1989
+
+Table of genes, locations, strands and annotations of subject cluster:
+BHE96_RS09610	BHE96_RS09610	1995857	1996746	+	UTP--glucose-1-phosphate_uridylyltransferase
+BHE96_RS09690	BHE96_RS09690	2045295	2045534	-	hypothetical_protein
+BHE96_RS20670	BHE96_RS20670	2059649	2059849	-	hypothetical_protein
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	BHE96_RS09640	49	420	68.25885978428352	2.8e-115
+ctg3_22	BHE96_RS09620	36	307	91.96261682242991	3.8e-81
+ctg3_23	BHE96_RS09650	42	300	97.67441860465115	2.6e-79
+ctg3_24	BHE96_RS09645	48	544	95.929203539823	1.9e-152
+ctg3_27	BHE96_RS09630	44	252	98.66220735785953	6.2e-65
+ctg3_30	BHE96_RS09650	31	166	96.33251833740832	7.9e-39
+
+
+
+>>
+47. NZ_CP023748
+Source: Bacillus velezensis strain LABIM40 chromosome, complete genome
+Type: transatpks-nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 1989
+
+Table of genes, locations, strands and annotations of subject cluster:
+CQJ38_RS09485	CQJ38_RS09485	1940928	1951501	-	non-ribosomal_peptide_synthetase
+CQJ38_RS09490	CQJ38_RS09490	1951527	1959177	-	non-ribosomal_peptide_synthetase
+CQJ38_RS09505	CQJ38_RS09505	1974818	1975057	-	hypothetical_protein
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	CQJ38_RS09455	49	420	68.25885978428352	3.7e-115
+ctg3_22	CQJ38_RS09435	36	307	92.14953271028037	2.9e-81
+ctg3_23	CQJ38_RS09465	42	300	97.67441860465115	2.6e-79
+ctg3_24	CQJ38_RS09460	48	544	95.929203539823	1.5e-152
+ctg3_27	CQJ38_RS09445	44	252	98.66220735785953	8.1e-65
+ctg3_30	CQJ38_RS09465	31	166	96.33251833740832	7.9e-39
+
+
+
+>>
+48. NZ_CP007244
+Source: Bacillus amyloliquefaciens subsp. plantarum TrigoCor1448, complete genome
+Type: transatpks-nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 1989
+
+Table of genes, locations, strands and annotations of subject cluster:
+AJ82_RS19420	AJ82_RS19420	2010745	2010984	-	hypothetical_protein
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	AJ82_RS09340	49	419	68.25885978428352	6.3e-115
+ctg3_22	AJ82_RS09320	36	307	92.14953271028037	2.9e-81
+ctg3_23	AJ82_RS09350	42	300	97.67441860465115	2.6e-79
+ctg3_24	AJ82_RS09345	48	545	95.929203539823	6.7e-153
+ctg3_27	AJ82_RS09330	44	252	98.66220735785953	6.2e-65
+ctg3_30	AJ82_RS09350	31	166	96.33251833740832	7.9e-39
+
+
+
+>>
+49. NZ_LVYH01000004
+Source: Bacillus subtilis subsp. subtilis strain ALBA01 scaffold4.1, whole genome shotgun sequence
+Type: nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 1989
+
+Table of genes, locations, strands and annotations of subject cluster:
+A4S13_RS21765	A4S13_RS21765	401225	401380	-	resolvase
+A4S13_RS11020	A4S13_RS11020	418005	418275	-	TetR_family_transcriptional_regulator
+A4S13_RS21775	A4S13_RS21775	428757	429960	-	hypothetical_protein
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	A4S13_RS11000	46	406	68.7211093990755	5.5e-111
+ctg3_22	A4S13_RS10980	39	320	92.14953271028037	3.3e-85
+ctg3_23	A4S13_RS11010	41	295	97.67441860465115	1.1e-77
+ctg3_24	A4S13_RS11005	48	535	95.39823008849557	9e-150
+ctg3_27	A4S13_RS10990	46	260	97.32441471571906	2.3e-67
+ctg3_30	A4S13_RS11010	33	173	82.15158924205379	3.8e-41
+
+
+
+>>
+50. NZ_MBPE01000066
+Source: Bacillus subtilis strain MB378 NODE_8_length_130429_cov_68.5222_ID_15, whole genome shotgun sequence
+Type: nrps
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 1989
+
+Table of genes, locations, strands and annotations of subject cluster:
+BCM26_RS21800	BCM26_RS21800	49411	50678	-	glucuronoxylanase
+BCM26_RS21865	BCM26_RS21865	64153	64456	-	hypothetical_protein
+BCM26_RS21885	BCM26_RS21885	66889	70597	-	non-ribosomal_peptide_synthase
+BCM26_RS21890	BCM26_RS21890	70605	78286	-	non-ribosomal_peptide_synthetase
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	BCM26_RS21850	46	406	68.7211093990755	7.2e-111
+ctg3_22	BCM26_RS21830	39	321	92.14953271028037	2.5e-85
+ctg3_23	BCM26_RS21860	41	294	97.67441860465115	2.4e-77
+ctg3_24	BCM26_RS21855	49	536	95.39823008849557	3.1e-150
+ctg3_27	BCM26_RS21840	46	260	97.32441471571906	3e-67
+ctg3_30	BCM26_RS21860	32	172	96.08801955990221	8.5e-41
+

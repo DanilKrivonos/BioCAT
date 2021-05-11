@@ -1,0 +1,98 @@
+ClusterBlast scores for NZ_LIRD01000002
+
+Table of genes, locations, strands and annotations of query cluster:
+ctg3_16	14210	14657	+		
+ctg3_17	14694	15846	-		
+ctg3_18	16328	16670	-		
+ctg3_19	16800	17451	+		
+ctg3_20	17490	19440	-		
+ctg3_21	19439	20252	-		
+ctg3_22	20357	21965	-		
+ctg3_23	21977	23141	-		
+ctg3_24	23480	25178	+		
+ctg3_25	25316	26069	-		
+ctg3_26	26190	27093	-		
+ctg3_27	27727	28627	-		
+ctg3_28	28763	29165	-		
+ctg3_29	29378	30308	-		
+ctg3_30	30462	31692	+		
+ctg3_31	31846	33187	-		
+ctg3_32	33379	34192	-		
+ctg3_33	34490	35141	+		
+ctg3_34	35242	36934	+		
+
+
+Significant hits: 
+1. BGC0001095	fengycin
+2. BGC0000407	plipastatin
+3. BGC0001103	mycosubtilin
+
+
+Details:
+
+>>
+1. BGC0001095
+Source: fengycin
+Type: NRP
+Number of proteins with BLAST hits to this cluster: 2
+Cumulative BLAST score: 963
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	RBAM_018370	49	419	68.25885978428352	9.1e-117
+ctg3_24	RBAM_018380	48	544	95.929203539823	2.8e-154
+
+
+
+>>
+2. BGC0000407
+Source: plipastatin
+Type: NRP
+Number of proteins with BLAST hits to this cluster: 2
+Cumulative BLAST score: 940
+
+Table of genes, locations, strands and annotations of subject cluster:
+AEW31016.1	AEW31016.1	1	1392	+	putative_efflux_transporter
+AEW31017.1	AEW31017.1	1526	2503	+	putative_epimerase
+AEW31018.1	AEW31018.1	2537	4012	+	penicillin-binding_protein
+AEW31019.1	AEW31019.1	4394	12079	+	plipastatin_synthetase
+AEW31020.1	AEW31020.1	12104	19786	+	plipastatin_synthetase
+AEW31021.1	AEW31021.1	19804	27471	+	plipastatin_synthetase
+AEW31022.1	AEW31022.1	27497	38347	+	plipastatin_synthetase
+AEW31015.1	AEW31015.1	38355	42194	+	plipastatin_synthetase
+AEW31023.1	AEW31023.1	42302	42694	+	integral_inner_membrane_protein
+AEW31024.1	AEW31024.1	42830	44362	+	hypothetical_protein
+AEW31025.1	AEW31025.1	44943	46085	+	acyl-CoA_dehydrogenase
+AEW31026.1	AEW31026.1	46130	47779	+	short-chain_acyl-CoA_synthetase
+AEW31027.1	AEW31027.1	47789	49123	+	acetyl-CoA_carboxylase_biotin_carboxylase_subunit
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	AEW31027.1	46	405	68.7211093990755	1.8e-112
+ctg3_24	AEW31026.1	48	535	95.39823008849557	1.3e-151
+
+
+
+>>
+3. BGC0001103
+Source: mycosubtilin
+Type: NRP + Polyketide
+Number of proteins with BLAST hits to this cluster: 2
+Cumulative BLAST score: 935
+
+Table of genes, locations, strands and annotations of subject cluster:
+AAF08794.1	AAF08794.1	1938	3140	+	FenF
+AAF08795.1	AAF08795.1	3161	15076	+	MycA
+AAF08796.1	AAF08796.1	15133	31242	+	MycB
+AAF08797.1	AAF08797.1	31340	39169	+	MycC
+AAF08798.1	AAF08798.1	39339	39731	+	YngL
+AAF08799.1	AAF08799.1	39886	41418	+	YngK
+AAF08800.1	AAF08800.1	41925	43067	+	YngJ
+AAF08801.1	AAF08801.1	43110	44759	+	YngI
+AAF08802.1	AAF08802.1	44769	46103	+	YngH
+AAF08803.1	AAF08803.1	46118	46339	+	YngXX
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg3_20	AAF08802.1	47	400	68.7211093990755	5.7e-111
+ctg3_24	AAF08801.1	49	535	95.39823008849557	9.9e-152
+

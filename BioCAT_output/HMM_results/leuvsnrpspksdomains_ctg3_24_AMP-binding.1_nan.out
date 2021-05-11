@@ -1,0 +1,81 @@
+# hmmsearch :: search profile(s) against a sequence database
+# HMMER 3.3.2 (Nov 2020); http://hmmer.org/
+# Copyright (C) 2020 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query HMM file:                  ./HMM//leu/leu.hmm
+# target sequence database:        .//BioCAT_output//substrates_fasta/nrpspksdomains_ctg3_24_AMP-binding.1_nan.fasta
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       leu  [M=395]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence                                            Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------                                            -----------
+    8.4e-45  139.0   0.1    2.7e-43  134.0   0.1    2.0  1  BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan  
+
+
+Domain annotation for each sequence (and alignments):
+>> BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  134.0   0.1   2.7e-43   2.7e-43       4     394 ..       5     433 ..       2     434 .] 0.80
+
+  Alignments for each domain:
+  == domain 1  score: 134.0 bits;  conditional E-value: 2.7e-43
+                                                  leu   4 aaktpdalAvvaedqel..tYaeLneranrlArrLielgvkpddrvavllerslelvv 59 
+                                                          +a  pd  A+v ++q+l  t+++L + ++  Ar+L++lg++++dr ++ +   ++ ++
+  BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan   5 VALYPDGEALVVRHQQLryTWQQLADTVDLHARALLALGLQTGDRLGIWAPNCAQWCI 62 
+                                                          6777888888888777611668************************************ PP
+
+                                                  leu  60 alLavlkaGaayvpldpayPeeRlaylledsaaklvltqeelaerleelevp..vldl 115
+                                                          +  a  k+G   v + pay ++ l+y+l++s+ + +++  + +++  ++ ++  v +l
+  BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan  63 SQFASAKIGVILVNINPAYRSSELEYVLKQSGCQWLVCAGAFKTSDYHAMLQglVPEL 120
+                                                          **************************************99988766654444554455 PP
+
+                                                  leu 116 deaaweeeee......eenpavee.................................. 133
+                                                          +e+++ + ++      +                                         
+  BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan 121 AEQSIGQLQSerlpdlR------Gvisldaqppsgflpwsqladlansvsveqlnerq 172
+                                                          44444444432222220......13333344444556666666666667777777777 PP
+
+                                                  leu 134 aglssedlayviYTSGsTGkPKGvmvehrnlanlvkwhteafeltaedrvl.qvasla 190
+                                                          ++l+ ++ + + YTSG+TG PKG +++h n+ n   +  e+++l+a+dr++  v  ++
+  BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan 173 NSLHFDQPVNIQYTSGTTGFPKGATLSHYNILNNGYMVGESLGLSADDRLViPVPLYH 230
+                                                          78999******************************************99762566677 PP
+
+                                                  leu 191 FDasvweiwpaLaaGatlvlvpaeveedel.allewlaaqkitvsflptalaeallse 247
+                                                             +v+     ++ G+t++ +++  + d+l  l+++ +++   +  +pt+ +++l + 
+  BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan 231 CFGMVMGNLGCITHGSTMIYPND--AFDPLlTLTTVAEEKATALYGVPTMFIAMLDQP 286
+                                                          77889999999******977774..566674777777777777889999999888554 PP
+
+                                                  leu 248 elehp....tLrtlltGGdrl.....rqleek.lkfelvnnYGPtEatvvatsgevee 295
+                                                          +++      tLrt ++ G ++     r++ ++    e+  +YG tE++ v+ ++  ++
+  BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan 287 QRA-DfdlsTLRTGIMAGATCpievmRRVISEmHMNEVQIAYGMTETSPVSLQTGPSD 343
+                                                          432.234668888888899889999965555547889999********9987766668 PP
+
+                                                  leu 296 eeeegalsiGkpianarvyvldeqqqlvpvgvvGELyigGagvarGYlnrpeltaerF 353
+                                                          e e +++++G+   + +  ++de+++lvp g++GEL+  G +v+ GY+n+p+ tae  
+  BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan 344 ELELRVTTVGRTQPQLESKIIDEAGNLVPRGTIGELCTRGYSVMLGYWNNPQGTAEAI 401
+                                                          88999**************************************************985 PP
+
+                                                  leu 354 ledpfseepgarlYrtGDlarwladGtleylGRnDdqVkiR 394
+                                                           +++ +         tGDla ++++G +   GRn d + iR
+  BGC0001095_nrpspksdomains_ctg3_24_AMP-binding.1_nan 402 -DQAGW-------MHTGDLASMNDEGYVCIAGRNKDMI-IR 433
+                                                          .44443.......47*******************8766.55 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (395 nodes)
+Target sequences:                          1  (434 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.02u 0.00s 00:00:00.02 Elapsed: 00:00:00.01
+# Mc/sec: 8.79
+//
+[ok]

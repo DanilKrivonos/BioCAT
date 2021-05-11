@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>ABS74196.1</td>
+              <td>YngE</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001095/1">BGC0001095</a></td>
+              <td>NRP</td>
+              <td>36.0</td>
+              <td>80.9</td>
+              <td>248.0</td>
+              <td>2.3e-65</td>
+          </tr>
+    
+          <tr>
+              <td>ABY66032.1</td>
+              <td>methylmalonyl-CoA_decarboxylase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001008/1">BGC0001008</a></td>
+              <td>Polyketide:Iterative type I + Polyketide:Enediyne type I</td>
+              <td>31.0</td>
+              <td>95.2</td>
+              <td>239.0</td>
+              <td>1.4e-62</td>
+          </tr>
+    
+          <tr>
+              <td>ADG86308.1</td>
+              <td>acyl-CoA_decarboxylase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000190/1">BGC0000190</a></td>
+              <td>Polyketide</td>
+              <td>31.0</td>
+              <td>92.4</td>
+              <td>235.0</td>
+              <td>2.6e-61</td>
+          </tr>
+    
+          <tr>
+              <td>ADB02850.1</td>
+              <td>AzicG</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000202/1">BGC0000202</a></td>
+              <td>Polyketide</td>
+              <td>32.0</td>
+              <td>89.2</td>
+              <td>235.0</td>
+              <td>2.6e-61</td>
+          </tr>
+    
+          <tr>
+              <td>AOZ61215.1</td>
+              <td>methylmalonyl-CoA_decarboxylase_subunit_alpha</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001762/1">BGC0001762</a></td>
+              <td>Alkaloid</td>
+              <td>30.0</td>
+              <td>88.3</td>
+              <td>235.0</td>
+              <td>2.6e-61</td>
+          </tr>
+    
+          <tr>
+              <td>AEA30254.1</td>
+              <td>putative_carboxyltransferase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000429/1">BGC0000429</a></td>
+              <td>Polyketide + NRP:Cyclic depsipeptide</td>
+              <td>30.0</td>
+              <td>88.8</td>
+              <td>232.0</td>
+              <td>1.3e-60</td>
+          </tr>
+    
+          <tr>
+              <td>CAC37885.1</td>
+              <td>CpkK;_Acyl-CoA_carboxylase_beta-subunit</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000038/1">BGC0000038</a></td>
+              <td>Polyketide:Modular type I</td>
+              <td>30.0</td>
+              <td>94.2</td>
+              <td>232.0</td>
+              <td>1.7e-60</td>
+          </tr>
+    
+          <tr>
+              <td>BAV17019.1</td>
+              <td>putative_methylmalonyl-CoA_carboxyltransferase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001384/1">BGC0001384</a></td>
+              <td>Polyketide</td>
+              <td>30.0</td>
+              <td>93.7</td>
+              <td>232.0</td>
+              <td>1.7e-60</td>
+          </tr>
+    
+          <tr>
+              <td>QBF51801.1</td>
+              <td>carboxyl-transferase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001856/1">BGC0001856</a></td>
+              <td>Polyketide:Modular type I</td>
+              <td>31.0</td>
+              <td>88.1</td>
+              <td>232.0</td>
+              <td>1.7e-60</td>
+          </tr>
+    
+          <tr>
+              <td>AAZ77684.1</td>
+              <td>ChlJ</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000036/1">BGC0000036</a></td>
+              <td>Polyketide:Modular type I + Polyketide:Iterative type I + Saccharide:Oligosaccharide</td>
+              <td>31.0</td>
+              <td>88.8</td>
+              <td>231.0</td>
+              <td>3.8e-60</td>
+          </tr>
+    
+          <tr>
+              <td>CAF31370.1</td>
+              <td>putative_methyl_malonyl_Co-A_decarboxylase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000268/1">BGC0000268</a></td>
+              <td>Polyketide</td>
+              <td>29.0</td>
+              <td>94.6</td>
+              <td>231.0</td>
+              <td>3.8e-60</td>
+          </tr>
+    
+          <tr>
+              <td>AMX23325.1</td>
+              <td>putative_propionyl-CoA_carboxylase_beta_chain_5</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001500/1">BGC0001500</a></td>
+              <td>Polyketide</td>
+              <td>30.0</td>
+              <td>89.0</td>
+              <td>230.0</td>
+              <td>5e-60</td>
+          </tr>
+    
+          <tr>
+              <td>AGO50629.1</td>
+              <td>carboxyl_transferase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000229/1">BGC0000229</a></td>
+              <td>Polyketide:Type II + Saccharide:Hybrid/tailoring</td>
+              <td>30.0</td>
+              <td>93.5</td>
+              <td>230.0</td>
+              <td>8.5e-60</td>
+          </tr>
+    
+          <tr>
+              <td>ADE34513.1</td>
+              <td>ssfE</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000269/1">BGC0000269</a></td>
+              <td>Polyketide:Type II + Saccharide:Hybrid/tailoring</td>
+              <td>31.0</td>
+              <td>94.8</td>
+              <td>230.0</td>
+              <td>8.5e-60</td>
+          </tr>
+    
+          <tr>
+              <td>AAQ08909.1</td>
+              <td>putative_acyl_CoA_decarboxylase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000224/1">BGC0000224</a></td>
+              <td>Polyketide:Type II</td>
+              <td>31.0</td>
+              <td>99.1</td>
+              <td>228.0</td>
+              <td>3.2e-59</td>
+          </tr>
+    
+          <tr>
+              <td>ARO44649.1</td>
+              <td>decarboxylase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001769/1">BGC0001769</a></td>
+              <td>Polyketide</td>
+              <td>29.0</td>
+              <td>90.9</td>
+              <td>228.0</td>
+              <td>3.2e-59</td>
+          </tr>
+    
+          <tr>
+              <td>AAL15589.1</td>
+              <td>Sim11</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000270/1">BGC0000270</a></td>
+              <td>Polyketide</td>
+              <td>30.0</td>
+              <td>94.1</td>
+              <td>227.0</td>
+              <td>7.2e-59</td>
+          </tr>
+    
+          <tr>
+              <td>AAK06793.1</td>
+              <td>putative_decarboxylase_SimA12</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001072/1">BGC0001072</a></td>
+              <td>Saccharide + Polyketide:Modular type I + Polyketide:Type II + Other:Aminocoumarin</td>
+              <td>30.0</td>
+              <td>94.1</td>
+              <td>227.0</td>
+              <td>7.2e-59</td>
+          </tr>
+    
+          <tr>
+              <td>ABV83235.1</td>
+              <td>CppO</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000116/1">BGC0000116</a></td>
+              <td>Polyketide</td>
+              <td>31.0</td>
+              <td>88.5</td>
+              <td>225.0</td>
+              <td>1.6e-58</td>
+          </tr>
+    
+          <tr>
+              <td>AAM33659.1</td>
+              <td>putative_transcarboxylase_component_of_acyl-CoA_carboxylase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000230/1">BGC0000230</a></td>
+              <td>Polyketide:Type II</td>
+              <td>30.0</td>
+              <td>90.5</td>
+              <td>225.0</td>
+              <td>2.1e-58</td>
+          </tr>
+    
+          <tr>
+              <td>ABX71136.1</td>
+              <td>Lct53</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000238/1">BGC0000238</a></td>
+              <td>Polyketide</td>
+              <td>31.0</td>
+              <td>90.1</td>
+              <td>225.0</td>
+              <td>2.1e-58</td>
+          </tr>
+    
+          <tr>
+              <td>OWA01625.1</td>
+              <td>methylmalonyl-CoA_carboxyltransferase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001439/1">BGC0001439</a></td>
+              <td>Polyketide + Saccharide:Hybrid/tailoring</td>
+              <td>31.0</td>
+              <td>92.2</td>
+              <td>225.0</td>
+              <td>2.1e-58</td>
+          </tr>
+    
+          <tr>
+              <td>AAX98206.1</td>
+              <td>carboxylase/carboxyltransferase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000052/1">BGC0000052</a></td>
+              <td>Polyketide</td>
+              <td>30.0</td>
+              <td>90.7</td>
+              <td>225.0</td>
+              <td>2.7e-58</td>
+          </tr>
+    
+          <tr>
+              <td>ACN69978.1</td>
+              <td>acyl-CoA_carboxylase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000079/1">BGC0000079</a></td>
+              <td>Polyketide</td>
+              <td>31.0</td>
+              <td>88.5</td>
+              <td>225.0</td>
+              <td>2.7e-58</td>
+          </tr>
+    
+          <tr>
+              <td>AEE65461.1</td>
+              <td>carboxyl_transferase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000223/1">BGC0000223</a></td>
+              <td>Polyketide:Type II</td>
+              <td>30.0</td>
+              <td>89.6</td>
+              <td>224.0</td>
+              <td>3.6e-58</td>
+          </tr>
+    
+          <tr>
+              <td>BAC79026.1</td>
+              <td>decarboxylase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000245/1">BGC0000245</a></td>
+              <td>Polyketide</td>
+              <td>30.0</td>
+              <td>93.1</td>
+              <td>224.0</td>
+              <td>3.6e-58</td>
+          </tr>
+    
+          <tr>
+              <td>WP_004562633.1</td>
+              <td>acyl-CoA_carboxylase_subunit_beta</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0002009/1">BGC0002009</a></td>
+              <td>Polyketide</td>
+              <td>29.0</td>
+              <td>91.3</td>
+              <td>223.0</td>
+              <td>1e-57</td>
+          </tr>
+    
+          <tr>
+              <td>CAG14973.1</td>
+              <td>acetyl-CoA_carboxylase_complex,_beta-chain</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000253/1">BGC0000253</a></td>
+              <td>Polyketide:Type II</td>
+              <td>30.0</td>
+              <td>90.5</td>
+              <td>222.0</td>
+              <td>1.4e-57</td>
+          </tr>
+    
+          <tr>
+              <td>AWS21285.1</td>
+              <td>methylmalonyl-CoA_carboxyltransferase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001934/1">BGC0001934</a></td>
+              <td>Polyketide</td>
+              <td>30.0</td>
+              <td>91.8</td>
+              <td>221.0</td>
+              <td>3e-57</td>
+          </tr>
+    
+          <tr>
+              <td>AZY91998.1</td>
+              <td>putative_acyl-CoA_carboxylase_beta_subunit</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0002022/1">BGC0002022</a></td>
+              <td>Polyketide</td>
+              <td>30.0</td>
+              <td>91.8</td>
+              <td>221.0</td>
+              <td>3e-57</td>
+          </tr>
+    
+          <tr>
+              <td>WP_052482556.1</td>
+              <td>acyl-CoA_carboxylase_subunit_beta</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001596/1">BGC0001596</a></td>
+              <td>Polyketide</td>
+              <td>29.0</td>
+              <td>94.1</td>
+              <td>221.0</td>
+              <td>3.9e-57</td>
+          </tr>
+    
+          <tr>
+              <td>ANY10578.1</td>
+              <td>methylmalonyl-CoA_carboxyltransferase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001773/1">BGC0001773</a></td>
+              <td>Polyketide</td>
+              <td>30.0</td>
+              <td>91.6</td>
+              <td>220.0</td>
+              <td>5.1e-57</td>
+          </tr>
+    
+          <tr>
+              <td>AHN85650.1</td>
+              <td>Phn1</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000122/1">BGC0000122</a></td>
+              <td>Polyketide:Modular type I</td>
+              <td>29.0</td>
+              <td>88.5</td>
+              <td>218.0</td>
+              <td>2.5e-56</td>
+          </tr>
+    
+          <tr>
+              <td>CAJ88193.1</td>
+              <td>putative_propionyl-CoA_carboxylase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000151/1">BGC0000151</a></td>
+              <td>Polyketide:Modular type I + Saccharide:Hybrid/tailoring</td>
+              <td>29.0</td>
+              <td>79.2</td>
+              <td>210.0</td>
+              <td>5.3e-54</td>
+          </tr>
+    
+          <tr>
+              <td>ASA49569.1</td>
+              <td>acetyl-CoA_carboxylase_carboxyltransferase_subunit</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001730/1">BGC0001730</a></td>
+              <td>Polyketide</td>
+              <td>28.0</td>
+              <td>22.9</td>
+              <td>51.0</td>
+              <td>5.4e-06</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>

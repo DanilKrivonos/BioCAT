@@ -1,0 +1,76 @@
+# hmmsearch :: search profile(s) against a sequence database
+# HMMER 3.3.2 (Nov 2020); http://hmmer.org/
+# Copyright (C) 2020 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query HMM file:                  ./HMM//gly/gly.hmm
+# target sequence database:        .//BioCAT_output//substrates_fasta/nrpspksdomains_ctg3_710_AMP-binding.3_val.fasta
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       gly  [M=394]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence                                             Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------                                             -----------
+   2.3e-124  401.0   0.0   2.6e-124  400.8   0.0    1.0  1  BGC0000437_nrpspksdomains_ctg3_710_AMP-binding.3_val  
+
+
+Domain annotation for each sequence (and alignments):
+>> BGC0000437_nrpspksdomains_ctg3_710_AMP-binding.3_val  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  400.8   0.0  2.6e-124  2.6e-124       1     394 []       1     393 []       1     393 [] 0.93
+
+  Alignments for each domain:
+  == domain 1  score: 400.8 bits;  conditional E-value: 2.6e-124
+                                                   gly   1 feeqaartpdavAvvaedesltYaeLderanrlarlLraegvgpeelvavllersae 57 
+                                                           fe+q++++p+a+A v++ + ltY+eL+ ran+la++L   gv+p++ va+llers+e
+  BGC0000437_nrpspksdomains_ctg3_710_AMP-binding.3_val   1 FEAQVHAQPEATAAVHDTQMLTYNELNIRANQLAHHLIGLGVQPGDSVAILLERSLE 57 
+                                                           89******************************************************* PP
+
+                                                   gly  58 lvvalLavlkaGaaYvPldpeyPaeRlaymledaeaalllteeelaeelpeaeaevv 114
+                                                           l+++ La+lk  a+YvPld + P+eR  +m++d++a+++lt ++++  +p ++a++v
+  BGC0000437_nrpspksdomains_ctg3_710_AMP-binding.3_val  58 LLISQLAILKCAAVYVPLDFSAPTERQGFMVQDSGARMVLTLSTTT--VP-EDAKRV 111
+                                                           ****************************************987775..56.488999 PP
+
+                                                   gly 115 lldeeeleaaaeaeepeaavapeklaYviYTSGSTGrPKGvvvehralanflasmae 171
+                                                            ld+ +l  ++ +++p+ + ++e++aY++YTSGSTG+PKGv v+hra++ ++ + + 
+  BGC0000437_nrpspksdomains_ctg3_710_AMP-binding.3_val 112 DLDSVTL--DNLTTDPQLPQSSEAPAYIMYTSGSTGTPKGVLVPHRAINRLVIN-NG 165
+                                                           9998544..44455688889999************************9887776.67 PP
+
+                                                   gly 172 rlgltaedrllavttvsFDiaaLElflpLlsGarvvlasretvrdpealaalieesg 228
+                                                             +++a+dr+   ++ +FD ++L++++pLl+G++vv++++++   +e+ +al+ e++
+  BGC0000437_nrpspksdomains_ctg3_710_AMP-binding.3_val 166 YAEFNAQDRVAFASNPAFDASTLDVWAPLLNGGCVVIVEQDVLLSQERFSALLLEQK 222
+                                                           899****************************************************** PP
+
+                                                   gly 229 vtvmqaTPslwrllleagwkeelklr.vlvGGeaLpaelaeeLleraae..vwnlYG 282
+                                                           ++v+ +T  l++  ++   +   +lr ++vGG+ L++++  ++l+++a   ++n YG
+  BGC0000437_nrpspksdomains_ctg3_710_AMP-binding.3_val 223 ISVLWMTAGLFHQYAAGLMSVFGQLRyLIVGGDVLDPAVIGRVLKEGAPqhLLNGYG 279
+                                                           *************99544455555886889***********9999876445****** PP
+
+                                                   gly 283 PTEtTiwstaarve.eeeeavtiGrpiantrvyvldealrpvpvgvaGeLyiaGagl 338
+                                                           PTE+T +s++ +++ + e ++ iGrp+ ntr+y+ld +++pvp+gvaGeLyi+G+g+
+  BGC0000437_nrpspksdomains_ctg3_710_AMP-binding.3_val 280 PTEATTFSATYEIKkAGEGSIPIGRPVGNTRLYLLDPQGSPVPIGVAGELYIGGDGV 336
+                                                           **************767889************************************* PP
+
+                                                   gly 339 arGYlnrpeltaerFvadpfe.gagerlYrtGDlarwradgeleylgRaDeqvKlrG 394
+                                                           a+GYlnrpeltae+Fvadpf+ ++++ lYrtGDl rw +dg++eylgR+D+qvK+rG
+  BGC0000437_nrpspksdomains_ctg3_710_AMP-binding.3_val 337 AKGYLNRPELTAEKFVADPFStEPQALLYRTGDLGRWLPDGNVEYLGRNDDQVKIRG 393
+                                                           ********************9555999*****************************9 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (394 nodes)
+Target sequences:                          1  (393 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.01u 0.00s 00:00:00.01 Elapsed: 00:00:00.00
+# Mc/sec: 19.03
+//
+[ok]

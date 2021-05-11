@@ -1,0 +1,199 @@
+ClusterBlast scores for NZ_LIRD01000001
+
+Table of genes, locations, strands and annotations of query cluster:
+ctg1_947	1045973	1046867	-		
+ctg1_948	1046885	1047053	+		
+ctg1_949	1047381	1047852	-		
+ctg1_950	1048295	1049231	+		
+ctg1_951	1049408	1050215	+		
+ctg1_952	1050289	1050574	-		
+ctg1_953	1050644	1051187	-		
+ctg1_954	1051258	1053220	-		
+ctg1_955	1053329	1054127	-		
+ctg1_956	1054123	1055281	-		
+ctg1_957	1055304	1056921	-		
+ctg1_958	1056924	1057809	-		
+ctg1_959	1057821	1059624	-		
+ctg1_960	1059802	1060429	+		
+ctg1_961	1060521	1061316	+		
+ctg1_962	1061450	1062287	+		
+ctg1_963	1062293	1062425	+		
+ctg1_964	1062559	1063393	+		
+ctg1_965	1063545	1064559	+		
+ctg1_966	1064693	1065242	-		
+ctg1_967	1065614	1078598	+		
+ctg1_968	1078770	1079583	+		
+ctg1_969	1079675	1080446	-		
+ctg1_970	1080421	1081288	-		
+ctg1_971	1081287	1083027	-		
+ctg1_972	1083180	1083861	+		
+ctg1_973	1083857	1085183	+		
+ctg1_974	1085400	1085886	+		
+ctg1_975	1086029	1087442	+		
+ctg1_976	1087524	1087752	+		
+ctg1_977	1087926	1088898	-		
+ctg1_978	1088898	1089798	-		
+ctg1_979	1089797	1090661	-		
+ctg1_980	1090657	1091584	-		
+ctg1_981	1091619	1092192	-		
+ctg1_982	1092194	1092524	-		
+ctg1_983	1092520	1093063	-		
+ctg1_984	1093059	1094262	-		
+ctg1_985	1094682	1096104	+		
+ctg1_986	1096100	1096712	+		
+ctg1_987	1096837	1097704	-		
+
+
+Significant hits: 
+1. BGC0000413	pyoverdin
+2. BGC0002001	crochelin A
+3. BGC0000330	cupriachelin
+4. BGC0001189	taiwachelin
+5. BGC0000424	serobactin C / serobactin B / serobactin A
+6. BGC0001721	ornibactin
+7. BGC0000457	vicibactin
+
+
+Details:
+
+>>
+1. BGC0000413
+Source: pyoverdin
+Type: NRP
+Number of proteins with BLAST hits to this cluster: 18
+Cumulative BLAST score: 15360
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg1_966	PFL_4190	96	346	100.0	3.6e-95
+ctg1_967	PFL_4189	85	7448	100.34666050381327	0.0
+ctg1_968	PFL_4185	77	433	100.0	3.3e-121
+ctg1_969	PFL_4184	79	422	100.0	4.2e-118
+ctg1_970	PFL_4183	85	491	100.0	8.3e-139
+ctg1_971	PFL_4182	72	845	101.03626943005182	4.6e-245
+ctg1_972	PFL_4181	95	407	97.78761061946902	1.6e-113
+ctg1_973	PFL_4180	82	701	98.63945578231292	6.2e-202
+ctg1_975	PFL_4179	86	809	100.0	3.9e-234
+ctg1_976	PFL_4178	93	145	94.66666666666667	3.8e-35
+ctg1_977	PFL_4176	74	462	98.76160990712074	7.9e-130
+ctg1_978	PFL_4175	95	465	100.0	5.1e-131
+ctg1_979	PFL_4174	90	426	81.53310104529616	3.3e-119
+ctg1_980	PFL_4173	92	555	100.32467532467533	5e-158
+ctg1_981	PFL_4172	72	261	100.52631578947368	9.3e-70
+ctg1_982	PFL_4171	90	190	91.74311926605505	1.2e-48
+ctg1_983	PFL_4170	80	312	99.44444444444444	4.3e-85
+ctg1_984	PFL_4169	78	642	101.75	5.3e-184
+
+
+
+>>
+2. BGC0002001
+Source: crochelin A
+Type: NRP + Polyketide
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 1023
+
+Table of genes, locations, strands and annotations of subject cluster:
+Achr_RS25415	Achr_RS25415	813	1033	-	hypothetical_protein
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg1_966	Achr_RS19625	70	221	87.91208791208791	1e-57
+ctg1_975	Achr_RS19555	68	621	98.51063829787235	8.7e-178
+ctg1_976	Achr_RS19605	69	100	96.0	1.1e-21
+ctg1_976	Achr_RS19650	54	81	86.66666666666667	6.8e-16
+
+
+
+>>
+3. BGC0000330
+Source: cupriachelin
+Type: NRP:NRP siderophore
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 955
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg1_965	H16_B1681	46	277	91.0979228486647	2.2e-74
+ctg1_975	H16_B1692	66	592	94.04255319148936	4.3e-169
+ctg1_976	H16_B1689	60	86	84.0	2.8e-17
+
+
+
+>>
+4. BGC0001189
+Source: taiwachelin
+Type: NRP
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 527
+
+Table of genes, locations, strands and annotations of subject cluster:
+RALTA_B1233	RALTA_B1233	33971	34705	-	Transposase_fragment,_IS1111_family
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg1_965	RALTA_B1236	53	252	65.28189910979229	7.6e-67
+ctg1_966	RALTA_B1239	58	169	85.71428571428571	6e-42
+ctg1_976	RALTA_B1223	72	106	89.33333333333333	2e-23
+
+
+
+>>
+5. BGC0000424
+Source: serobactin C / serobactin B / serobactin A
+Type: NRP:NRP siderophore
+Number of proteins with BLAST hits to this cluster: 3
+Cumulative BLAST score: 506
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg1_965	Hsero_2347	53	259	71.2166172106825	8.2e-69
+ctg1_966	Hsero_2338	48	143	91.20879120879121	3.5e-34
+ctg1_976	Hsero_2339	64	104	93.33333333333333	5.7e-23
+
+
+
+>>
+6. BGC0001721
+Source: ornibactin
+Type: NRP
+Number of proteins with BLAST hits to this cluster: 2
+Cumulative BLAST score: 366
+
+Table of genes, locations, strands and annotations of subject cluster:
+AUD11988.1	AUD11988.1	1	1017	-	OrbL
+AUD11989.1	AUD11989.1	1017	1856	-	PvdF
+AUD11990.1	AUD11990.1	1916	4258	-	OrbA
+AUD11991.1	AUD11991.1	4203	5375	-	PvdA
+AUD11992.1	AUD11992.1	5612	6664	-	OrbK
+AUD11993.1	AUD11993.1	6654	11705	-	OrbJ
+AUD11994.1	AUD11994.1	11715	21164	-	OrbI
+AUD11995.1	AUD11995.1	21514	23415	+	OrbE
+AUD11996.1	AUD11996.1	23592	24629	-	OrbB
+AUD11997.1	AUD11997.1	24626	25426	-	OrbF
+AUD11998.1	AUD11998.1	25423	27513	-	OrbD
+AUD11999.1	AUD11999.1	27510	28358	-	OrbC
+AUD12000.1	AUD12000.1	28358	29365	-	OrbG
+AUD12001.1	AUD12001.1	29411	29767	-	OrbH
+AUD12002.1	AUD12002.1	29728	30395	-	OrbS
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg1_965	AUD11988.1	50	274	73.88724035608308	3.2e-73
+ctg1_976	AUD12001.1	58	92	89.33333333333333	3.8e-19
+
+
+
+>>
+7. BGC0000457
+Source: vicibactin
+Type: NRP
+Number of proteins with BLAST hits to this cluster: 2
+Cumulative BLAST score: 319
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg1_965	RHE_PF00459	51	249	66.76557863501483	8.4e-66
+ctg1_976	RHE_PF00458	48	70	84.0	1.2e-12
+

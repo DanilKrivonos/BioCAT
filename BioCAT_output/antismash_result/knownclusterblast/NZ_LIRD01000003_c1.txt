@@ -1,0 +1,112 @@
+ClusterBlast scores for NZ_LIRD01000003
+
+Table of genes, locations, strands and annotations of query cluster:
+ctg4_256	315122	316586	+		
+ctg4_257	316588	316825	-		
+ctg4_258	317041	317476	+		
+ctg4_259	317609	318380	-		
+ctg4_260	318743	319463	+		
+ctg4_261	319438	320248	+		
+ctg4_262	320228	320489	+		
+ctg4_263	320498	320753	+		
+ctg4_264	320749	321295	+		
+ctg4_265	321291	322971	+		
+ctg4_266	323060	323870	+		
+ctg4_267	323866	324814	+		
+ctg4_268	324794	326339	+		
+ctg4_269	326331	326757	+		
+ctg4_270	326753	327488	+		
+ctg4_271	327471	329814	+		
+ctg4_272	329810	330971	+		
+ctg4_273	330957	332205	+		
+ctg4_274	332201	332927	+		
+ctg4_275	332926	333547	+		
+ctg4_276	333543	334740	+		
+ctg4_277	334736	335195	+		
+ctg4_278	335194	335923	+		
+ctg4_279	335922	337149	+		
+ctg4_280	337178	337625	+		
+ctg4_281	337929	338808	-		
+ctg4_282	338800	339397	-		
+ctg4_283	339852	340236	+		
+ctg4_284	340273	340528	+		
+ctg4_285	340717	340909	-		
+ctg4_286	341059	341962	-		
+ctg4_287	342035	343355	+		
+ctg4_288	343531	344599	-		
+ctg4_289	344851	346270	-		
+ctg4_290	346303	350749	-		
+ctg4_291	351099	352689	-		
+ctg4_292	352699	353800	-		
+ctg4_293	353951	354443	-		
+ctg4_294	354474	356562	-		
+ctg4_295	356575	357103	-		
+
+
+Significant hits: 
+1. BGC0000837	APE Vf
+2. BGC0002008	aryl polyenes
+3. BGC0000836	APE Ec
+
+
+Details:
+
+>>
+1. BGC0000837
+Source: APE Vf
+Type: Other
+Number of proteins with BLAST hits to this cluster: 8
+Cumulative BLAST score: 2719
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg4_262	VF_0846	64	109	98.83720930232558	3.5e-24
+ctg4_263	VF_0847	51	82	92.85714285714286	4.4e-16
+ctg4_266	VF_0851	51	257	88.84758364312268	1.9e-68
+ctg4_268	VF_0852	63	617	99.41634241245137	1.8e-176
+ctg4_273	VF_0841	56	473	96.62650602409639	4.4e-133
+ctg4_276	VF_0857	50	362	98.99497487437185	8.1e-100
+ctg4_278	VF_0859	62	305	99.58677685950413	9.3e-83
+ctg4_279	VF_0860	60	514	99.75490196078431	1.3e-145
+
+
+
+>>
+2. BGC0002008
+Source: aryl polyenes
+Type: Other
+Number of proteins with BLAST hits to this cluster: 7
+Cumulative BLAST score: 1713
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg4_262	XDD1_RS16000	51	92	98.83720930232558	3.4e-19
+ctg4_263	XDD1_RS16005	54	86	92.85714285714286	3.1e-17
+ctg4_266	XDD1_RS16025	55	274	93.3085501858736	1.5e-73
+ctg4_269	XDD1_RS16030	46	129	87.2340425531915	5.3e-30
+ctg4_276	XDD1_RS16050	47	345	100.0	1e-94
+ctg4_278	XDD1_RS16060	61	299	100.0	3.9e-81
+ctg4_279	XDD1_RS16065	56	488	99.75490196078431	7.7e-138
+
+
+
+>>
+3. BGC0000836
+Source: APE Ec
+Type: Other
+Number of proteins with BLAST hits to this cluster: 7
+Cumulative BLAST score: 1685
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg4_262	c1200	54	97	98.83720930232558	1.4e-20
+ctg4_263	c1199	57	93	96.42857142857143	1.9e-19
+ctg4_266	c1194	56	246	81.78438661710037	4.4e-65
+ctg4_269	c1193	48	130	87.2340425531915	2.4e-30
+ctg4_276	c1189	50	350	99.2462311557789	4.1e-96
+ctg4_278	c1187	59	286	100.0	4.5e-77
+ctg4_279	c1186	54	483	99.50980392156863	4.2e-136
+

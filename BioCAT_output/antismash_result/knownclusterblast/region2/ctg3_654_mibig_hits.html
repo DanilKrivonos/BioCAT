@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>EFG04560.1</td>
+              <td>Carboxyethyl_arginine_synthase_isoenzyme_1</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000841/1">BGC0000841</a></td>
+              <td>Other:Non-NRP beta-lactam</td>
+              <td>27.0</td>
+              <td>99.1</td>
+              <td>164.0</td>
+              <td>4.4e-40</td>
+          </tr>
+    
+          <tr>
+              <td>EDY47122.1</td>
+              <td>carboxyethylarginine_synthetase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000845/1">BGC0000845</a></td>
+              <td>Other:Non-NRP beta-lactam</td>
+              <td>27.0</td>
+              <td>101.8</td>
+              <td>164.0</td>
+              <td>5.8e-40</td>
+          </tr>
+    
+          <tr>
+              <td>AFH74297.1</td>
+              <td>carboxyethylarginine_synthase_3</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001151/1">BGC0001151</a></td>
+              <td>Other:Non-NRP beta-lactam</td>
+              <td>28.0</td>
+              <td>101.5</td>
+              <td>162.0</td>
+              <td>1.7e-39</td>
+          </tr>
+    
+          <tr>
+              <td>ACR33042.1</td>
+              <td>pyruvate_oxidase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000495/1">BGC0000495</a></td>
+              <td>RiPP:Lanthipeptide</td>
+              <td>29.0</td>
+              <td>93.6</td>
+              <td>162.0</td>
+              <td>2.2e-39</td>
+          </tr>
+    
+          <tr>
+              <td>ADC45547.1</td>
+              <td>glyoxylate_carboligase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000093/1">BGC0000093</a></td>
+              <td>Polyketide</td>
+              <td>29.0</td>
+              <td>90.3</td>
+              <td>158.0</td>
+              <td>3.2e-38</td>
+          </tr>
+    
+          <tr>
+              <td>ALV82334.1</td>
+              <td>putative_acetolactate_synthase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001533/1">BGC0001533</a></td>
+              <td>Polyketide</td>
+              <td>30.0</td>
+              <td>97.2</td>
+              <td>158.0</td>
+              <td>3.2e-38</td>
+          </tr>
+    
+          <tr>
+              <td>CAE45665.1</td>
+              <td>putative_acetolactate_synthase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000031/1">BGC0000031</a></td>
+              <td>Polyketide:Modular type I</td>
+              <td>30.0</td>
+              <td>97.2</td>
+              <td>158.0</td>
+              <td>4.1e-38</td>
+          </tr>
+    
+          <tr>
+              <td>WP_041663513.1</td>
+              <td>thiamine_pyrophosphate-binding_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001819/1">BGC0001819</a></td>
+              <td>Polyketide</td>
+              <td>26.0</td>
+              <td>86.6</td>
+              <td>114.0</td>
+              <td>4e-25</td>
+          </tr>
+    
+          <tr>
+              <td>CAQ52617.1</td>
+              <td>benzoyl_formate_decarboxylase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001066/1">BGC0001066</a></td>
+              <td>Polyketide:Modular type I</td>
+              <td>25.0</td>
+              <td>103.3</td>
+              <td>112.0</td>
+              <td>2.6e-24</td>
+          </tr>
+    
+          <tr>
+              <td>AQZ26586.1</td>
+              <td>nitrophenylpyruvate_decarboxylase_ThDP-dependent</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001710/1">BGC0001710</a></td>
+              <td>NRP</td>
+              <td>27.0</td>
+              <td>90.6</td>
+              <td>111.0</td>
+              <td>3.4e-24</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>

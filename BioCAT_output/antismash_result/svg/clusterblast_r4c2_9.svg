@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0" y="0" height="230" width="800" viewBox="0 0 800 230" preserveAspectRatio="none"  >
+<g label="Query sequence" class="clusterblast-cluster"  >
+<text x="5" y="20" class="clusterblast-acc"  >
+Query sequence</text>
+<line x1="10" y1="35" x2="778.0" y2="35" style="stroke-width:1; stroke:grey; "  />
+<polygon points="47,40 310,40 315,35 310,30 47,30 47,40 " style="fill:#d81515; stroke-width:1; stroke:black; " description="&lt;b&gt;ctg4_577&lt;/b&gt;&lt;br&gt;ctg4 577&lt;br&gt;Location: 680926 - 689050" locus_tag="ctg4_577" class="clusterblast-orf" id="dummy-2_q0_0_all"  />
+<polygon points="320,40 326,40 331,35 326,30 320,30 320,40 " style="fill:#3cd815; stroke-width:1; stroke:black; " description="&lt;b&gt;ctg4_578&lt;/b&gt;&lt;br&gt;ctg4 578&lt;br&gt;Location: 689198 - 689537" locus_tag="ctg4_578" class="clusterblast-orf" id="dummy-2_q1_0_all"  />
+<polygon points="335,35 340,30 399,30 399,40 340,40 335,35 " style="fill:#1563d8; stroke-width:1; stroke:black; " description="&lt;b&gt;ctg4_579&lt;/b&gt;&lt;br&gt;ctg4 579&lt;br&gt;Location: 689672 - 691619" locus_tag="ctg4_579" class="clusterblast-orf" id="dummy-2_q2_0_all"  />
+<polygon points="400,35 405,30 423,30 423,40 405,40 400,35 " style="fill:#b115d8; stroke-width:1; stroke:black; " description="&lt;b&gt;ctg4_580&lt;/b&gt;&lt;br&gt;ctg4 580&lt;br&gt;Location: 691633 - 692326" locus_tag="ctg4_580" class="clusterblast-orf" id="dummy-2_q3_0_all"  />
+<polygon points="432,40 450,40 455,35 450,30 432,30 432,40 " style="fill:#d88a15; stroke-width:1; stroke:black; " description="&lt;b&gt;ctg4_581&lt;/b&gt;&lt;br&gt;ctg4 581&lt;br&gt;Location: 692593 - 693304" locus_tag="ctg4_581" class="clusterblast-orf" id="dummy-2_q4_0_all"  />
+<polygon points="481,40 501,40 506,35 501,30 481,30 481,40 " style="fill:#15d863; stroke-width:1; stroke:black; " description="&lt;b&gt;ctg4_582&lt;/b&gt;&lt;br&gt;ctg4 582&lt;br&gt;Location: 694088 - 694865" locus_tag="ctg4_582" class="clusterblast-orf" id="dummy-2_q5_0_all"  />
+<polygon points="506,40 532,40 537,35 532,30 506,30 506,40 " style="fill:#3c15d8; stroke-width:1; stroke:black; " description="&lt;b&gt;ctg4_583&lt;/b&gt;&lt;br&gt;ctg4 583&lt;br&gt;Location: 694861 - 695791" locus_tag="ctg4_583" class="clusterblast-orf" id="dummy-2_q6_0_all"  />
+<polygon points="537,40 645,40 650,35 645,30 537,30 537,40 " style="fill:#d8158a; stroke-width:1; stroke:black; " description="&lt;b&gt;ctg4_584&lt;/b&gt;&lt;br&gt;ctg4 584&lt;br&gt;Location: 695804 - 699215" locus_tag="ctg4_584" class="clusterblast-orf" id="dummy-2_q7_0_all"  />
+<polygon points="651,40 661,40 666,35 661,30 651,30 651,40 " style="fill:#b1d815; stroke-width:1; stroke:black; " description="&lt;b&gt;ctg4_585&lt;/b&gt;&lt;br&gt;ctg4 585&lt;br&gt;Location: 699237 - 699705" locus_tag="ctg4_585" class="clusterblast-orf" id="dummy-2_q8_0_all"  />
+<polygon points="671,35 676,30 733,30 733,40 676,40 671,35 " style="fill:#15d8d8; stroke-width:1; stroke:black; " description="&lt;b&gt;ctg4_586&lt;/b&gt;&lt;br&gt;ctg4 586&lt;br&gt;Location: 699851 - 701732" locus_tag="ctg4_586" class="clusterblast-orf" id="dummy-2_q9_0_all"  />
+</g>
+<g label="NZ_JSAL01000006" description="NZ_JSAL01000006_c6: Pseudomonas fluorescens strain H16 contig 6, whole genome... (71% of genes show similarity), other" class="clusterblast-cluster"  >
+<text x="5" y="70" class="clusterblast-acc"  >
+<a xlink:href="https://antismash-db.secondarymetabolites.org/go/NZ_JSAL01000006/6" target="_blank">NZ_JSAL01000006_c6</a>: Pseudomonas fluorescens strain H16 contig 6, whole genome... (71% of genes show similarity), other</text>
+<line x1="10" y1="85" x2="778.0" y2="85" style="stroke-width:1; stroke:grey; "  />
+</g>
+<g id="a2_000"  >
+<polygon points="0,90 163,90 168,85 163,80 0,80 0,90 " style="fill:#d81515; stroke-width:1; stroke:black; " description="&lt;b&gt;RY26_RS01760&lt;/b&gt;&lt;br&gt;type I secretion protein&lt;br&gt;Location: 23917 - 18821&lt;br&gt;&lt;br&gt;&lt;b&gt;BlastP hit with ctg4_577&lt;/b&gt;&lt;br&gt;Percentage identity: 83&lt;br&gt;Percentage coverage: 63&lt;br&gt;BLAST bit score: 2487&lt;br&gt;E-value: 0.0" locus_tag="RY26_RS01760" class="clusterblast-orf" id="dummy-2_h2_9_0"  />
+</g>
+<g id="a2_001"  >
+<polygon points="173,90 179,90 184,85 179,80 173,80 173,90 " style="fill:#3cd815; stroke-width:1; stroke:black; " description="&lt;b&gt;RY26_RS01755&lt;/b&gt;&lt;br&gt;hypothetical protein&lt;br&gt;Location: 18671 - 18333&lt;br&gt;&lt;br&gt;&lt;b&gt;BlastP hit with ctg4_578&lt;/b&gt;&lt;br&gt;Percentage identity: 90&lt;br&gt;Percentage coverage: 100&lt;br&gt;BLAST bit score: 193&lt;br&gt;E-value: 9.7e-48" locus_tag="RY26_RS01755" class="clusterblast-orf" id="dummy-2_h2_9_1"  />
+</g>
+<g id="a2_002"  >
+<polygon points="199,85 204,80 263,80 263,90 204,90 199,85 " style="fill:#1563d8; stroke-width:1; stroke:black; " description="&lt;b&gt;RY26_RS01750&lt;/b&gt;&lt;br&gt;GGDEF domain-containing protein&lt;br&gt;Location: 17864 - 15918&lt;br&gt;&lt;br&gt;&lt;b&gt;BlastP hit with ctg4_579&lt;/b&gt;&lt;br&gt;Percentage identity: 95&lt;br&gt;Percentage coverage: 100&lt;br&gt;BLAST bit score: 1180&lt;br&gt;E-value: 0.0" locus_tag="RY26_RS01750" class="clusterblast-orf" id="dummy-2_h2_9_2"  />
+</g>
+<g id="a2_003"  >
+<polygon points="264,85 269,80 287,80 287,90 269,90 264,85 " style="fill:#b115d8; stroke-width:1; stroke:black; " description="&lt;b&gt;RY26_RS01745&lt;/b&gt;&lt;br&gt;periplasmic protein&lt;br&gt;Location: 15903 - 15211&lt;br&gt;&lt;br&gt;&lt;b&gt;BlastP hit with ctg4_580&lt;/b&gt;&lt;br&gt;Percentage identity: 91&lt;br&gt;Percentage coverage: 100&lt;br&gt;BLAST bit score: 427&lt;br&gt;E-value: 1.1e-117" locus_tag="RY26_RS01745" class="clusterblast-orf" id="dummy-2_h2_9_3"  />
+</g>
+<g id="a2_004"  >
+<polygon points="293,90 312,90 317,85 312,80 293,80 293,90 " style="fill:#d88a15; stroke-width:1; stroke:black; " description="&lt;b&gt;RY26_RS01740&lt;/b&gt;&lt;br&gt;GntR family transcriptional regulator&lt;br&gt;Location: 15014 - 14304&lt;br&gt;&lt;br&gt;&lt;b&gt;BlastP hit with ctg4_581&lt;/b&gt;&lt;br&gt;Percentage identity: 82&lt;br&gt;Percentage coverage: 100&lt;br&gt;BLAST bit score: 381&lt;br&gt;E-value: 6.9e-104" locus_tag="RY26_RS01740" class="clusterblast-orf" id="dummy-2_h2_9_4"  />
+</g>
+<g id="a2_005"  >
+<polygon points="341,90 362,90 367,85 362,80 341,80 341,90 " style="fill:#15d863; stroke-width:1; stroke:black; " description="&lt;b&gt;RY26_RS01735&lt;/b&gt;&lt;br&gt;DUF3050 domain-containing protein&lt;br&gt;Location: 13559 - 12783&lt;br&gt;&lt;br&gt;&lt;b&gt;BlastP hit with ctg4_582&lt;/b&gt;&lt;br&gt;Percentage identity: 85&lt;br&gt;Percentage coverage: 100&lt;br&gt;BLAST bit score: 444&lt;br&gt;E-value: 9.5e-123" locus_tag="RY26_RS01735" class="clusterblast-orf" id="dummy-2_h2_9_5"  />
+</g>
+<g id="a2_006"  >
+<polygon points="367,90 392,90 397,85 392,80 367,80 367,90 " style="fill:#3c15d8; stroke-width:1; stroke:black; " description="&lt;b&gt;RY26_RS01730&lt;/b&gt;&lt;br&gt;aminobenzoate oxygenase&lt;br&gt;Location: 12786 - 11857&lt;br&gt;&lt;br&gt;&lt;b&gt;BlastP hit with ctg4_583&lt;/b&gt;&lt;br&gt;Percentage identity: 90&lt;br&gt;Percentage coverage: 100&lt;br&gt;BLAST bit score: 560&lt;br&gt;E-value: 1.4e-157" locus_tag="RY26_RS01730" class="clusterblast-orf" id="dummy-2_h2_9_6"  />
+</g>
+<g id="a2_007"  >
+<polygon points="398,90 505,90 510,85 505,80 398,80 398,90 " style="fill:#d8158a; stroke-width:1; stroke:black; " description="&lt;b&gt;RY26_RS01725&lt;/b&gt;&lt;br&gt;peptide transporter&lt;br&gt;Location: 11843 - 8451&lt;br&gt;&lt;br&gt;&lt;b&gt;BlastP hit with ctg4_584&lt;/b&gt;&lt;br&gt;Percentage identity: 79&lt;br&gt;Percentage coverage: 100&lt;br&gt;BLAST bit score: 1785&lt;br&gt;E-value: 0.0" locus_tag="RY26_RS01725" class="clusterblast-orf" id="dummy-2_h2_9_7"  />
+</g>
+<g id="a2_008"  >
+<polygon points="510,90 521,90 526,85 521,80 510,80 510,90 " style="fill:#b1d815; stroke-width:1; stroke:black; " description="&lt;b&gt;RY26_RS01720&lt;/b&gt;&lt;br&gt;SRPBCC family protein&lt;br&gt;Location: 8428 - 7961&lt;br&gt;&lt;br&gt;&lt;b&gt;BlastP hit with ctg4_585&lt;/b&gt;&lt;br&gt;Percentage identity: 87&lt;br&gt;Percentage coverage: 99&lt;br&gt;BLAST bit score: 279&lt;br&gt;E-value: 2.4e-73" locus_tag="RY26_RS01720" class="clusterblast-orf" id="dummy-2_h2_9_8"  />
+</g>
+<g id="a2_009"  >
+<polygon points="531,85 536,80 593,80 593,90 536,90 531,85 " style="fill:#15d8d8; stroke-width:1; stroke:black; " description="&lt;b&gt;RY26_RS01715&lt;/b&gt;&lt;br&gt;methyl-accepting chemotaxis protein&lt;br&gt;Location: 7808 - 5928&lt;br&gt;&lt;br&gt;&lt;b&gt;BlastP hit with ctg4_586&lt;/b&gt;&lt;br&gt;Percentage identity: 91&lt;br&gt;Percentage coverage: 100&lt;br&gt;BLAST bit score: 919&lt;br&gt;E-value: 2.5e-265" locus_tag="RY26_RS01715" class="clusterblast-orf" id="dummy-2_h2_9_9"  />
+</g>
+<g id="a2_0010"  >
+<polygon points="603,90 615,90 620,85 615,80 603,80 603,90 " style="fill:white; stroke-width:1; stroke:black; " description="&lt;b&gt;RY26_RS01710&lt;/b&gt;&lt;br&gt;RNA polymerase sigma factor&lt;br&gt;Location: 5619 - 5119" locus_tag="RY26_RS01710" class="clusterblast-orf" id="dummy-2_h2_9_10"  />
+</g>
+<g id="a2_0011"  >
+<polygon points="620,90 648,90 653,85 648,80 620,80 620,90 " style="fill:white; stroke-width:1; stroke:black; " description="&lt;b&gt;RY26_RS01705&lt;/b&gt;&lt;br&gt;peptide ABC transporter substrate-binding protein&lt;br&gt;Location: 5119 - 4118" locus_tag="RY26_RS01705" class="clusterblast-orf" id="dummy-2_h2_9_11"  />
+</g>
+<g id="a2_0012"  >
+<polygon points="655,90 733,90 738,85 733,80 655,80 655,90 " style="fill:white; stroke-width:1; stroke:black; " description="&lt;b&gt;RY26_RS01700&lt;/b&gt;&lt;br&gt;TonB-dependent siderophore receptor&lt;br&gt;Location: 4029 - 1525" locus_tag="RY26_RS01700" class="clusterblast-orf" id="dummy-2_h2_9_12"  />
+</g>
+<g id="a2_0013"  >
+<polygon points="741,90 775,90 780,85 775,80 741,80 741,90 " style="fill:white; stroke-width:1; stroke:black; " description="&lt;b&gt;RY26_RS01695&lt;/b&gt;&lt;br&gt;PepSY domain-containing protein&lt;br&gt;Location: 1446 - 268" locus_tag="RY26_RS01695" class="clusterblast-orf" id="dummy-2_h2_9_13"  />
+</g>
+</svg>

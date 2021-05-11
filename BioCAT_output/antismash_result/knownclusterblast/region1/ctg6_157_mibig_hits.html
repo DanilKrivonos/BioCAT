@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>CAY48784.1</td>
+              <td>conserved_hypothetical_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001312/1">BGC0001312</a></td>
+              <td>NRP</td>
+              <td>73.0</td>
+              <td>96.6</td>
+              <td>450.0</td>
+              <td>1.7e-126</td>
+          </tr>
+    
+          <tr>
+              <td>AAY93350.1</td>
+              <td>chromophore_maturation_protein_PvdO</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000413/1">BGC0000413</a></td>
+              <td>NRP</td>
+              <td>64.0</td>
+              <td>98.0</td>
+              <td>398.0</td>
+              <td>7.5e-111</td>
+          </tr>
+    
+          <tr>
+              <td>ARD09208.1</td>
+              <td>DivU</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001576/1">BGC0001576</a></td>
+              <td>RiPP</td>
+              <td>33.0</td>
+              <td>83.7</td>
+              <td>124.0</td>
+              <td>2.7e-28</td>
+          </tr>
+    
+          <tr>
+              <td>AAM70357.1</td>
+              <td>CalU17</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000033/1">BGC0000033</a></td>
+              <td>Polyketide</td>
+              <td>30.0</td>
+              <td>101.4</td>
+              <td>68.0</td>
+              <td>2.3e-11</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>

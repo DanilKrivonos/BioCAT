@@ -1,0 +1,176 @@
+ClusterBlast scores for NZ_LIRD01000005
+
+Table of genes, locations, strands and annotations of query cluster:
+ctg6_147	179074	179695	-		
+ctg6_148	180036	182742	-		
+ctg6_149	183246	184584	-		
+ctg6_150	184716	185199	-		
+ctg6_151	185519	186692	+		
+ctg6_152	186692	188666	+		
+ctg6_153	188673	190068	+		
+ctg6_154	190471	192100	-		
+ctg6_155	192332	193703	+		
+ctg6_156	193699	194983	+		
+ctg6_157	195221	196109	+		
+ctg6_158	196239	197898	+		
+ctg6_159	197962	202165	+		
+ctg6_160	202628	202997	-		
+ctg6_161	203761	206242	-		
+ctg6_162	206833	210055	-		
+ctg6_163	210051	223575	-		
+ctg6_164	223592	235946	-		
+ctg6_165	236194	236929	-		
+ctg6_166	237061	238195	+		
+ctg6_167	238308	239481	-		
+ctg6_168	239709	240510	+		
+ctg6_169	240502	242329	+		
+ctg6_170	242874	243264	+		
+ctg6_171	243399	244644	+		
+ctg6_172	244758	245664	+		
+ctg6_173	245617	246616	-		
+ctg6_174	246708	247395	+		
+ctg6_175	247489	248107	-		
+ctg6_176	248451	249252	-		
+ctg6_177	249252	249741	-		
+ctg6_178	249938	250883	+		
+ctg6_179	250875	251274	+		
+ctg6_180	251446	251749	+		
+ctg6_181	251877	252582	+		
+ctg6_182	252704	253106	+		
+ctg6_183	253229	254348	-		
+ctg6_184	254372	254696	-		
+
+
+Significant hits: 
+1. BGC0000413	pyoverdin
+2. BGC0002001	crochelin A
+3. BGC0001312	viscosin
+4. BGC0001189	taiwachelin
+5. BGC0001389	cichopeptin
+
+
+Details:
+
+>>
+1. BGC0000413
+Source: pyoverdin
+Type: NRP
+Number of proteins with BLAST hits to this cluster: 27
+Cumulative BLAST score: 30911
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg6_148	PFL_4078	89	1538	102.330743618202	0.0
+ctg6_149	PFL_4079	85	770	100.0	1.1e-222
+ctg6_150	PFL_4080	89	291	98.75	7e-79
+ctg6_151	PFL_4081	85	569	100.0	5.6e-162
+ctg6_152	PFL_4082	87	1114	100.0	0.0
+ctg6_153	PFL_4083	67	564	99.35344827586206	2.1e-160
+ctg6_154	PFL_4086	60	701	100.36900369003689	1e-201
+ctg6_155	PFL_4087	69	649	98.24561403508771	3.8e-186
+ctg6_156	PFL_4088	64	574	99.76580796252928	1.1e-163
+ctg6_157	PFL_4089	64	398	97.96610169491525	7.5e-111
+ctg6_158	PFL_4091	70	746	99.27536231884058	2.8e-215
+ctg6_163	PFL_4095	53	3686	82.60483692034613	0.0
+ctg6_163	PFL_4093	47	3347	94.16463279343243	0.0
+ctg6_163	PFL_4094	55	2210	48.25826492123363	0.0
+ctg6_164	PFL_4093	57	4383	100.26718484333253	0.0
+ctg6_164	PFL_4095	48	3335	101.87029390332766	0.0
+ctg6_165	PFL_4097	83	418	98.77049180327869	5.8e-117
+ctg6_167	PFL_4098	85	621	100.0	1.2e-177
+ctg6_168	PFL_4100	74	377	100.0	1.6e-104
+ctg6_169	PFL_4101	81	1043	100.0	1.6e-304
+ctg6_172	PFL_4104	72	450	96.01328903654485	2.2e-126
+ctg6_173	PFL_4108	74	470	95.78313253012048	3e-132
+ctg6_174	PFL_4109	79	345	98.68421052631578	5.9e-95
+ctg6_176	PFL_4113	65	357	100.0	1.7e-98
+ctg6_177	PFL_4114	66	214	91.35802469135803	1.1e-55
+ctg6_178	PFL_4115	69	444	97.13375796178345	1.7e-124
+ctg6_179	PFL_4115	76	222	96.96969696969697	5.7e-58
+ctg6_182	PFL_4116	71	185	99.24812030075188	7.7e-47
+ctg6_183	PFL_4117	87	677	100.0	1.4e-194
+ctg6_184	PFL_4118	91	213	100.0	1.6e-55
+
+
+
+>>
+2. BGC0002001
+Source: crochelin A
+Type: NRP + Polyketide
+Number of proteins with BLAST hits to this cluster: 6
+Cumulative BLAST score: 4244
+
+Table of genes, locations, strands and annotations of subject cluster:
+Achr_RS25415	Achr_RS25415	813	1033	-	hypothetical_protein
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg6_149	Achr_RS19635	46	382	93.48314606741573	1.1e-105
+ctg6_151	Achr_RS19615	56	302	98.2051282051282	7.4e-82
+ctg6_153	Achr_RS19620	56	441	100.43103448275863	2.1e-123
+ctg6_159	Achr_RS19580	46	805	75.92857142857142	9.7e-233
+ctg6_163	Achr_RS19575	47	2132	58.35367206567561	0.0
+ctg6_165	Achr_RS19600	47	182	92.62295081967213	9.2e-46
+
+
+
+>>
+3. BGC0001312
+Source: viscosin
+Type: NRP
+Number of proteins with BLAST hits to this cluster: 5
+Cumulative BLAST score: 3301
+
+Table of genes, locations, strands and annotations of subject cluster:
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg6_152	PFLU_2556	48	522	100.76103500761036	1e-147
+ctg6_154	PFLU_2551	80	936	99.2619926199262	2.4e-272
+ctg6_155	PFLU_2550	84	790	97.58771929824562	1.1e-228
+ctg6_156	PFLU_2549	68	603	100.0	2.9e-172
+ctg6_157	PFLU_2548	73	450	96.61016949152543	1.7e-126
+
+
+
+>>
+4. BGC0001189
+Source: taiwachelin
+Type: NRP
+Number of proteins with BLAST hits to this cluster: 2
+Cumulative BLAST score: 2657
+
+Table of genes, locations, strands and annotations of subject cluster:
+RALTA_B1233	RALTA_B1233	33971	34705	-	Transposase_fragment,_IS1111_family
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg6_149	RALTA_B1237	60	536	96.17977528089887	3.5e-152
+ctg6_163	RALTA_B1227	48	2121	57.90991790548037	0.0
+
+
+
+>>
+5. BGC0001389
+Source: cichopeptin
+Type: NRP
+Number of proteins with BLAST hits to this cluster: 2
+Cumulative BLAST score: 676
+
+Table of genes, locations, strands and annotations of subject cluster:
+AHZ34244.1	AHZ34244.1	1	1434	+	PseA
+AHZ34245.1	AHZ34245.1	1503	2543	+	PseB
+AHZ34246.1	AHZ34246.1	2540	5587	+	PseC
+AHZ34247.1	AHZ34247.1	5641	6246	+	CmaU
+AHZ34238.1	AHZ34238.1	6986	21700	+	CipA
+AHZ34239.1	AHZ34239.1	21826	31338	+	CipB
+AHZ34240.1	AHZ34240.1	31355	35977	+	CipC
+AHZ34241.1	AHZ34241.1	36115	49032	+	CipD
+AHZ34242.1	AHZ34242.1	49256	58486	+	CipE
+AHZ34243.1	AHZ34243.1	58668	80042	+	CipF
+AHZ34248.1	AHZ34248.1	80124	81299	+	MacA
+AHZ34249.1	AHZ34249.1	81296	83260	+	MacB
+AHZ34250.1	AHZ34250.1	83419	84261	-	LuxR
+
+Table of Blast hits (query gene, subject gene, %identity, blast score, %coverage, e-value):
+ctg6_151	AHZ34248.1	47	196	89.74358974358975	9.8e-50
+ctg6_152	AHZ34249.1	46	480	100.30441400304414	3.4e-135
+
