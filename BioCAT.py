@@ -242,8 +242,7 @@ def make_combine(sequences, pssm='None'):
     else:
         
         return  N_refer
-def builder(n_end, concensus, est_graph, EP):
-    
+def builder(n_end, concensus, est_graph, edge_graph, EP):
     while len(est_graph) != 0:
         for bond in est_graph:
             if n_end in bond:
@@ -252,7 +251,7 @@ def builder(n_end, concensus, est_graph, EP):
                 c_end.remove(n_end)
                 c_end = c_end[0]
                 est_graph.remove(bond)
-                
+            
         for contig in EP:
             if c_end == contig[0]:
 
@@ -260,6 +259,7 @@ def builder(n_end, concensus, est_graph, EP):
                 c_end = contig[-1]
                 EP.remove(contig)
                 continue
+
             if c_end == contig[-1]:
 
                 concensus.append(contig[-1: : -1])
@@ -267,7 +267,7 @@ def builder(n_end, concensus, est_graph, EP):
                 EP.remove(contig)
                 continue
 
-        builder(c_end, concensus, est_graph, EP)
+        builder(c_end, concensus, est_graph, edge_graph, EP)
 
 def parse_rBAN(outp):
     with open('{}/peptideGraph.json'.format(outp)) as json:
@@ -290,26 +290,39 @@ def parse_rBAN(outp):
         est_list = []
         [est_list.extend(i) for i in est_graph]
         concensus = []
-        #Finding true N-edn
+        #Finding true N-edn        
         if len(EP) > 1:
             for i in EP:
                 if i[-1] not in est_list:
-
+                
                     n_end = i[0]
                     concensus.append(i[-1: : -1])
                     EP.remove(i)  
                     
                 elif i[0] not in est_list:
+                    
 
                     n_end = i[-1]
                     concensus.append(i)
                     EP.remove(i)  
-            
-            builder(n_end, concensus, est_graph, EP)
+        
+            builder(n_end, concensus, est_graph, edge_graph, EP)
         
         else:
             
             concensus = EP
+
+        for tour in concensus:
+
+            count = 0
+
+            for edge in edge_graph:
+                
+                count += edge.count(tour[0])
+        
+            
+            if count < 2:
+                concensus[concensus.index(tour)] = tour[-1: : -1]
 
         new_EP = []
         ind = 0
@@ -418,14 +431,9 @@ with open('{}/Results.bed'.format(output), 'w') as bad_out:
         #run rBUN
         print('Hydrolizing of substrate with rBAN ...')
         call('java -jar rBAN-1.0.jar -inputId {} -inputSmiles {} -outputFolder {} -discoveryMode'.format(idsmi, smiles, output), shell=True)
-
-    
-
         #Mking list of monomers
         print('Buildung amino graph')
-
         new_EP = parse_rBAN(output)
-
         [print('Amino sequence of your substance: {}\n'.format('--'.join(seq))) for seq in new_EP]
         #call antiSMASH to take BGC
         print('Finding biosynthesis gene clusters with antiSMASH ...\n')
@@ -459,6 +467,10 @@ with open('{}/Results.bed'.format(output), 'w') as bad_out:
         
         #Recording final output
         table = read_csv(output + 'table.tsv', sep='\t')
+        
+        if len(files) == 0:
+
+            print('Organism have no potentianal cluster')
 
         for file in files:
             
@@ -489,25 +501,23 @@ with open('{}/Results.bed'.format(output), 'w') as bad_out:
                 continue
 
             EPs = make_combine(new_EP, BGC)
-            print(EPs, '\\,[pkwp[vmpovoui')
+
             print(file, EPs, sep='\n')
+            #Calculating TP score
+            
+            shuffled_scores = []
+
+            for i in range(ITER):
+
+                    shuffled_scores.append(pssm(EPs[0], shuffle_matrix(BGC)))
+
+            shuffled_scores = np.array(shuffled_scores)
+
             for v in EPs:
                 
                 TEST = pssm(v, BGC)
-
-                #Calculating TP score
-                target_score = pssm(v, BGC)
-                shuffled_scores = []
-             #   print('Calculating C-scores for {}'.format(file))
-
-                for i in range(ITER):
-
-                    shuffled_scores.append(pssm(v, shuffle_matrix(BGC)))
-
-             #   print('Calculating h-scores for {}'.format(file))
-                shuffled_scores = np.array(shuffled_scores)
+                target_score = pssm(v, BGC)                
                 prob = len(shuffled_scores[shuffled_scores < target_score])/len(shuffled_scores)
-                
                 bad_out.write('{}\n'.format('\t'.join([BGC_ID,
                                                         Name,
                                                         ids[smi],
