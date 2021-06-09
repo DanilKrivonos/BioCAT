@@ -1,0 +1,86 @@
+# hmmsearch :: search profile(s) against a sequence database
+# HMMER 3.3.2 (Nov 2020); http://hmmer.org/
+# Copyright (C) 2020 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query HMM file:                  ./HMM//ile/ile.hmm
+# target sequence database:        .//BioCAT_output//substrates_fasta/nrpspksdomains_AL066_08465_AMP-binding.4_lys-b.fasta
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       ile  [M=396]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence                                                    Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------                                                    -----------
+   5.2e-125  403.0   0.0   5.9e-125  402.8   0.0    1.0  1  BGC0001416_0_nrpspksdomains_AL066_08465_AMP-binding.4_lys-b  
+
+
+Domain annotation for each sequence (and alignments):
+>> BGC0001416_0_nrpspksdomains_AL066_08465_AMP-binding.4_lys-b  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  402.8   0.0  5.9e-125  5.9e-125       1     396 []       1     395 []       1     395 [] 0.92
+
+  Alignments for each domain:
+  == domain 1  score: 402.8 bits;  conditional E-value: 5.9e-125
+                                                          ile   1 FeeqvektpdavavvlgeqsltYkeLneranrlArlLiekgvkpgelvai 50 
+                                                                  Fe+q+++tp+a+a+v + ++ltY+eLn+ran +A+ Li+ gvkp+++v++
+  BGC0001416_0_nrpspksdomains_AL066_08465_AMP-binding.4_lys-b   1 FETQAARTPEAIALVSAGETLTYAELNARANGVAHRLIKLGVKPDDTVGL 50 
+                                                                  9************************************************* PP
+
+                                                          ile  51 llerslelivgllailkagaayvPldpeapeeRiaflledskakllltqs 100
+                                                                  +++rs ++++gll+ilkagaayvPldp++p+eR+a++l+ds+ ++l+ q+
+  BGC0001416_0_nrpspksdomains_AL066_08465_AMP-binding.4_lys-b  51 CARRSADMVIGLLGILKAGAAYVPLDPQYPAERLAHMLADSAPRVLVRQQ 100
+                                                                  ************************************************** PP
+
+                                                          ile 101 eleekleaaarvdlldeeelseeeeenlelaq.ssedlayviYtsGstGk 149
+                                                                   le ++     ++    e  s+e ++n+++a  + ++layviYtsGstG 
+  BGC0001416_0_nrpspksdomains_AL066_08465_AMP-binding.4_lys-b 101 GLELAVPVDLATI----EIGSDEITRNPQIAGlTVSHLAYVIYTSGSTGL 146
+                                                                  *999994333333....3334555666666666899************** PP
+
+                                                          ile 150 PKGvlvthraitrlvl.ntnyidleeedrvlqasniaFDastfeiwgaLl 198
+                                                                  PKGv+v+hr++  l     + ++++++d vl as++ FD +  +i ++L+
+  BGC0001416_0_nrpspksdomains_AL066_08465_AMP-binding.4_lys-b 147 PKGVMVEHRGLRNLLDwYLKDLAFTAKDAVLLASSYNFDLTQKNILAPLM 196
+                                                                  ************99852567899*************************** PP
+
+                                                          ile 199 nGaklvvidketllepeelaellkeeevtvlfvttalfnqlvql.ipeal 247
+                                                                   G+ l++ +  + ++p+++ ++++++++t++ ++ + f  lv++ +++al
+  BGC0001416_0_nrpspksdomains_AL066_08465_AMP-binding.4_lys-b 197 VGGVLHLAE--EPFDPAAIVKQIAQSGITHINMSPSAFHALVDAdKTHAL 244
+                                                                  ***999876..568**************************999725789* PP
+
+                                                          ile 248 kglrillfGGeradpkavrkvlakaaeerllhvYGPtEtttfattyevee 297
+                                                                  ++l+ +++GGe +  ++++k+  +a++  +++ YGPtE     ++ +v++
+  BGC0001416_0_nrpspksdomains_AL066_08465_AMP-binding.4_lys-b 245 ASLKRVVLGGEPIPLAMLEKL--QAPRPTVINSYGPTECSDVVAWQTVDA 292
+                                                                  *******************96..568889***********9999999985 PP
+
+                                                          ile 298 vae..eaesvpiGkpiantqvyildkklqlvPiGvvGElyigGdGvargY 345
+                                                                    +    +++piGkpi n q+++ld+ ++lvPiGv GE++igG+GvargY
+  BGC0001416_0_nrpspksdomains_AL066_08465_AMP-binding.4_lys-b 293 DLDvyREQAIPIGKPIRNMQLHVLDSLGHLVPIGVRGEIHIGGTGVARGY 342
+                                                                  433115599***************************************** PP
+
+                                                          ile 346 lnrpeltaekfvedpfas..garlYrtGDlarwlpdgnleyigRiDdqvK 393
+                                                                  ln+pel+ae+f++dpfa+  +arlY+tGD++rwl+dg+ley+gR D+qvK
+  BGC0001416_0_nrpspksdomains_AL066_08465_AMP-binding.4_lys-b 343 LNQPELSAERFISDPFAAtpEARLYKTGDIGRWLADGTLEYLGRDDHQVK 392
+                                                                  ****************88889***************************** PP
+
+                                                          ile 394 iRG 396
+                                                                  iRG
+  BGC0001416_0_nrpspksdomains_AL066_08465_AMP-binding.4_lys-b 393 IRG 395
+                                                                  **9 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (396 nodes)
+Target sequences:                          1  (395 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.00u 0.00s 00:00:00.00 Elapsed: 00:00:00.00
+# Mc/sec: 19.60
+//
+[ok]

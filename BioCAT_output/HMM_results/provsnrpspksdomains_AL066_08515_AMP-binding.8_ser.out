@@ -1,0 +1,81 @@
+# hmmsearch :: search profile(s) against a sequence database
+# HMMER 3.3.2 (Nov 2020); http://hmmer.org/
+# Copyright (C) 2020 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query HMM file:                  ./HMM//pro/pro.hmm
+# target sequence database:        .//BioCAT_output//substrates_fasta/nrpspksdomains_AL066_08515_AMP-binding.8_ser.fasta
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       pro  [M=408]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence                                                  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------                                                  -----------
+   1.6e-146  474.0   0.0   1.8e-146  473.9   0.0    1.0  1  BGC0001416_1_nrpspksdomains_AL066_08515_AMP-binding.8_ser  
+
+
+Domain annotation for each sequence (and alignments):
+>> BGC0001416_1_nrpspksdomains_AL066_08515_AMP-binding.8_ser  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  473.9   0.0  1.8e-146  1.8e-146       1     408 []       1     401 []       1     401 [] 0.96
+
+  Alignments for each domain:
+  == domain 1  score: 473.9 bits;  conditional E-value: 1.8e-146
+                                                        pro   1 FeeqvartpdavAveaedeqltYaeLneranrlarlLralgvgpeslVaicl 52 
+                                                                Fe+qva++pda+Av +e++++tYaeLn++an++a++L++lg++p+++Vaic+
+  BGC0001416_1_nrpspksdomains_AL066_08515_AMP-binding.8_ser   1 FEAQVASRPDAIAVSFEHSHWTYAELNRHANQVAHRLIELGIRPDDRVAICV 52 
+                                                                9*************************************************** PP
+
+                                                        pro  53 erslelvvallavlkaGaayvPlDpeyPaeRleyiledagakvllteeklae 104
+                                                                +rsle+v++ll++lk+GaayvPlDp+yPa+Rl+y+le+++++v+lt+++l+ 
+  BGC0001416_1_nrpspksdomains_AL066_08515_AMP-binding.8_ser  53 DRSLEMVAGLLGILKSGAAYVPLDPDYPADRLAYMLENSAPAVVLTQRSLQG 104
+                                                                **************************************************** PP
+
+                                                        pro 105 rlpeeaeaelvlldeeaeeelaeepeeseleseleaeslayviyTSGSTGkP 156
+                                                                +lp+ ++a+++lld    +  +++p+ +++ ++l+a++layviyTSGSTG P
+  BGC0001416_1_nrpspksdomains_AL066_08515_AMP-binding.8_ser 105 SLPA-TDADILLLD---GDGFSNQPTVDPVVESLSADNLAYVIYTSGSTGMP 152
+                                                                **99.699******...4578999999************************* PP
+
+                                                        pro 157 KGvvlehralvnllkwqkeklkleaeartlqfaslsFDvsvqeifstllsGg 208
+                                                                KGv+ eh+ +vn l w++++++l+a++++lq +++sFDvsv+e f  l++G+
+  BGC0001416_1_nrpspksdomains_AL066_08515_AMP-binding.8_ser 153 KGVMNEHAGVVNRLLWMQDEYQLTAADTVLQKTPFSFDVSVWEFFWPLFTGA 204
+                                                                **************************************************** PP
+
+                                                        pro 209 tLvlideetrrdpealaelleeerverl.flPavalqalaeaaeeeesalee 259
+                                                                +Lv+ +   +r+p+ l e++++er+++l f+P+++   la    +e    + 
+  BGC0001416_1_nrpspksdomains_AL066_08515_AMP-binding.8_ser 205 RLVMARPGGHREPAYLREVIQTERITTLhFVPSMLDVFLAAGDVSE---CKG 253
+                                                                ****************************999999866666555443...568 PP
+
+                                                        pro 260 LrelitaGeqlritealrkllarlsgvrlhnhYGPtEthv.vtaltleeeve 310
+                                                                L +++ +Ge+l   + +r++  +l+g++lhn YGPtE+ v vta++  +   
+  BGC0001416_1_nrpspksdomains_AL066_08515_AMP-binding.8_ser 254 LVRVMCSGEALP-GQLVRRFKLQLPGTELHNLYGPTEAAVdVTAWNCAGP-- 302
+                                                                ************.8**************************8899998777.. PP
+
+                                                        pro 311 ewpelppiGrpiantrvyvldekqrlvpvGvaGELyiaGaglArgYlnrpel 362
+                                                                ++p+++piG+p+ant++y+ld++q++vp+GvaGE+yiaG+++ArgYl+rpel
+  BGC0001416_1_nrpspksdomains_AL066_08515_AMP-binding.8_ser 303 DTPDSTPIGKPVANTQIYLLDAHQQPVPMGVAGEIYIAGVQVARGYLHRPEL 354
+                                                                679************************************************* PP
+
+                                                        pro 363 taerFvadpfs.ekgarlYrTGDlarllpdGeleylGRaDdqVKirG 408
+                                                                t erF++dpfs +++ar+YrTGDl+r+l+dG++ ylGR+DdqVKirG
+  BGC0001416_1_nrpspksdomains_AL066_08515_AMP-binding.8_ser 355 TGERFLTDPFStTQNARMYRTGDLGRYLADGNIIYLGRNDDQVKIRG 401
+                                                                **********978999******************************9 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (408 nodes)
+Target sequences:                          1  (401 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.00u 0.00s 00:00:00.00 Elapsed: 00:00:00.00
+# Mc/sec: 21.84
+//
+[ok]

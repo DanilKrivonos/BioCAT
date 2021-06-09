@@ -1,0 +1,73 @@
+# hmmsearch :: search profile(s) against a sequence database
+# HMMER 3.3.2 (Nov 2020); http://hmmer.org/
+# Copyright (C) 2020 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query HMM file:                  ./HMM//dhb/dhb.hmm
+# target sequence database:        .//BioCAT_output//substrates_fasta/nrpspksdomains_AJW76709.1_AMP-binding.1_asn.fasta
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       dhb  [M=404]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence                                               Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------                                               -----------
+    5.2e-29   87.0   0.0    3.1e-19   54.8   0.0    2.2  2  BGC0001196_nrpspksdomains_AJW76709.1_AMP-binding.1_asn  
+
+
+Domain annotation for each sequence (and alignments):
+>> BGC0001196_nrpspksdomains_AJW76709.1_AMP-binding.1_asn  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   54.8   0.0   3.1e-19   3.1e-19       2     168 ..       4     164 ..       3     178 .. 0.83
+   2 !   29.9   0.0   1.1e-11   1.1e-11     332     402 ..     324     401 ..     316     403 .. 0.93
+
+  Alignments for each domain:
+  == domain 1  score: 54.8 bits;  conditional E-value: 3.1e-19
+                                                     dhb   2 saerapdriAvvagerrlsyaelderadrlaaglaelglkagdrvvvqlpniaef 56 
+                                                             +a+r+pd+ Avv+++ +lsyael+era+rla++la++g+ a+d v + lp +a++
+  BGC0001196_nrpspksdomains_AJW76709.1_AMP-binding.1_asn   4 QAARTPDAPAVVTDDGTLSYAELNERANRLAHELAARGVGAEDVVALSLPRSADL 58 
+                                                             6899*************************************************** PP
+
+                                                     dhb  57 vvvlfallrlGvlpvlalpahraleiehlvelaeavayvvsdeekg.fderelae 110
+                                                             +v+l+a+l++G++ +   p   a  i++l++ a++v +++++++   ++    ++
+  BGC0001196_nrpspksdomains_AJW76709.1_AMP-binding.1_asn  59 MVTLYAVLKTGAAYLPVDPDYPAERIAALLDDARPVHVITQHAADLpVRPGPDTR 113
+                                                             **************9999******************9888655443144445566 PP
+
+                                                     dhb 111 elaaelaslkevlvageaeefvalaelaaepvelaepdpeevAllllsgGttglp 165
+                                                             +l  +l++++e l + +a ++++ ++  + p      +p ++A++   +G+tg p
+  BGC0001196_nrpspksdomains_AJW76709.1_AMP-binding.1_asn 114 HLVLDLPATREALASRSAADLTDADR--RAP-----LRPGNAAYVIYTSGSTGRP 161
+                                                             77777777777777655554444332..234.....47999************** PP
+
+                                                     dhb 166 Kli 168
+                                                             K +
+  BGC0001196_nrpspksdomains_AJW76709.1_AMP-binding.1_asn 162 KGV 164
+                                                             955 PP
+
+  == domain 2  score: 29.9 bits;  conditional E-value: 1.1e-11
+                                                     dhb 332 rvvdeegeevapgeeGelltrGPYtirGYyraeehnaraFtedgf.......Yrt 379
+                                                             +v+d   ++v+ g  Gel   G    rGY   +   a+ F +d f       Yrt
+  BGC0001196_nrpspksdomains_AJW76709.1_AMP-binding.1_asn 324 HVLDGLLRPVPVGVPGELYLAGEQLARGYLGRPGLSAERFVADPFgapggrmYRT 378
+                                                             57888889***********************************888888888*** PP
+
+                                                     dhb 380 GDlvrltedgnlvveGRakdqin 402
+                                                             GDlvr+t+dg l+ +GR+ dq++
+  BGC0001196_nrpspksdomains_AJW76709.1_AMP-binding.1_asn 379 GDLVRRTADGALEYQGRTDDQVK 401
+                                                             *********************95 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (404 nodes)
+Target sequences:                          1  (404 residues searched)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.01u 0.00s 00:00:00.01 Elapsed: 00:00:00.00
+# Mc/sec: 27.11
+//
+[ok]

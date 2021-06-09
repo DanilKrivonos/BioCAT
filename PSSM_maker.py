@@ -13,37 +13,37 @@ def PSSM_make(search, aminochain, out, delta, hmms='./HMM/', neg='./negative.tsv
     substr = listdir('{}'.format(hmms))
     table = read_csv(path, sep='\t')
     subst_eval = {}
-
+    
     #making dict with all BGCs
     for id_new in table[table['Domain name'].str.contains('AMP-binding')].index:
-        
         if table['ID'][id_new] not in subst_eval:
+
             subst_eval[table['ID'][id_new]] = {} 
-            
-        key = '{}_{}'.format(table['Domain name'][id_new], table['Single aa prediction'][id_new])
-
-        if key in subst_eval:
-            continue
-
-        subst_eval[table['ID'][id_new]][key] = {}
         
+        key = '{}_{}'.format(table['Domain name'][id_new], table['Single aa prediction'][id_new])
+        subst_eval[table['ID'][id_new]][key] = {}
+
         for sub in substr:
+
             subst_eval[table['ID'][id_new]][key][sub] = []
-    #This dict only with possible BGCs, which length bigger or equel amino chain of molecule
-    subst_eval_new = subst_eval.copy()
-    for s in  subst_eval_new:
-        if len(subst_eval_new[s]) < aminochain:
+            
+    #This dict contains only possible BGCs, which length bigger or equel amino chain of molecule
+    cop =  subst_eval.copy()
+    
+    for s in  cop:
+        if len(cop[s]) < aminochain:
 
             subst_eval.pop(s)
             continue
         
-        if len(subst_eval[s]) > aminochain + delta:
+        if len(cop[s]) > aminochain + delta:
 
             subst_eval.pop(s)
             continue
     
     #Generator of n-score
     print('Calculation n-scores ...')
+
     for sub in substr:
         
         FP = [-float(i) for i in negative.loc[negative['Substrate'] == '{}'.format(sub)]['List_of_negative'].values[0].split('_')]
@@ -51,7 +51,7 @@ def PSSM_make(search, aminochain, out, delta, hmms='./HMM/', neg='./negative.tsv
         for substance in subst_eval.keys():
             print('Calculation n-scores for {}\n'.format(substance))
             for module in  subst_eval[substance].keys():
-                
+
                 open_hmm  = parse('{}/{}vs{}.out'.format(search, sub, module, sub), 'hmmer3-text')
 
                 for i in open_hmm:
@@ -64,7 +64,7 @@ def PSSM_make(search, aminochain, out, delta, hmms='./HMM/', neg='./negative.tsv
                 subst_eval[substance][module][sub] = ratio_metric
 
     print('Recording PSSM ...\n')
-
+    
     #Making directory for PSSMs
     PSSMs_out = output + 'PSSM/'
     try:
@@ -73,7 +73,7 @@ def PSSM_make(search, aminochain, out, delta, hmms='./HMM/', neg='./negative.tsv
 
     except FileExistsError:
 
-        print('The output directory already exists')
+        print('The output directory is already exists')
     #Recording PSSMs
     for substance in subst_eval.keys():
         print('For {}'.format(substance))
@@ -83,7 +83,7 @@ def PSSM_make(search, aminochain, out, delta, hmms='./HMM/', neg='./negative.tsv
             test.write('{}\n'.format('\t'.join(substr)))
 
             for module in  subst_eval[substance].keys():
-
+                
                 test.write('{}'.format(module))
                 
                 for sub in substr: 
