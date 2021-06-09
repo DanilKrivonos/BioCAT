@@ -123,9 +123,19 @@ def anti_parse(path, table_out):
         GEN_ID = {}
         GEN_strand = {}
         GEN_COORD = {}
-        
+        gene_loc_tag = {}
+
         for key in open_js['records']:
             for i in key['features']:
+                if 'CDS' in i['type']:
+
+                    try:
+
+                        gene_loc_tag[i['qualifiers']['gene'][0]] = i['qualifiers']['protein_id'][0]
+
+                    except:
+                        continue
+
                 if 'aSModule' not in i['type']:
                     continue
 
@@ -150,12 +160,12 @@ def anti_parse(path, table_out):
                     protein_start[domain_name] = z['qualifiers']['protein_end'][0]
                     protein_end[domain_name] = z['qualifiers']['protein_start'][0]
                     translates[domain_name] = z['qualifiers']['translation'] 
-                    GEN_ID[domain_name] = z['qualifiers']['locus_tag'][0]
+                    GEN_ID[domain_name] = gene_loc_tag[z['qualifiers']['locus_tag'][0]]
                     
                     if z['qualifiers']['locus_tag'][0] not in GEN_COORD:
                         
-                        GEN_COORD[z['qualifiers']['locus_tag'][0]] = {'start' :'',
-                                                                      'end' : ''}
+                        GEN_COORD[gene_loc_tag[z['qualifiers']['locus_tag'][0]]] = {'start' :'',
+                                                                                     'end' : ''}
                         
                     if '+' in z['location']:
                         
@@ -214,18 +224,19 @@ def anti_parse(path, table_out):
                                 BGC = suknw[0]['accession']
                                 strand = i_k[-1]['strand']
 
-                                if i_k[2]['name'] in GEN_COORD:
-                                    
-                                    GEN_COORD[i_k[2]['name']]['start'] = i_k[2]['start']
-                                    GEN_COORD[i_k[2]['name']]['end'] = i_k[2]['end']
+                for knw in  key['modules']['antismash.modules.clusterblast']['knowncluster']['proteins']:
 
+                    if knw['name'] in GEN_COORD:
+
+                        GEN_COORD[knw['name']]['start'] = knw['location'].split('-')[0]
+                        GEN_COORD[knw['name']]['end'] = knw['location'].split('-')[1]
 
                 if BGC == '':
                     continue
 
                 for dom in key['modules']['antismash.modules.nrps_pks']['domain_predictions']:
                     if dom in i['qualifiers']['domains']:
-    
+                        
                         keys['ID'].append(BGC)
                         keys['Gen ID'].append(GEN_ID[dom])
                         keys['Name'].append(key['id'].split('.')[0])
