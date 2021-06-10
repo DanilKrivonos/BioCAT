@@ -90,9 +90,8 @@ def split_subcluster(df, subcluster):
     return df
 
 def anti_parse(path, table_out):
-    print(path)
-    out = table_out + 'table.tsv'
 
+    out = table_out + 'table.tsv'
     print('Starting parsing antiSMASH output ...')
     keys = {'ID' : [], 
             'Gen ID' : [],
@@ -127,12 +126,24 @@ def anti_parse(path, table_out):
 
         for key in open_js['records']:
             for i in key['features']:
-                if 'CDS' in i['type']:
-
+                if 'CDS' == i['type']:
                     try:
+                        if 'gene' in i['qualifiers']:
 
-                        gene_loc_tag[i['qualifiers']['gene'][0]] = i['qualifiers']['protein_id'][0]
+                            gene_loc_tag[i['qualifiers']['gene'][0]] = i['qualifiers']['protein_id'][0]
+                            
+                        else:
+                            
+                            locus_tag = 'have' 
+                            chack_gen_id[i['qualifiers']['locus_tag'][0]] = i['qualifiers']['locus_tag'][0]
 
+                            if i['qualifiers']['locus_tag'][0] not in GEN_COORD:
+                                GEN_COORD[i['qualifiers']['locus_tag'][0]] = {'start' : '',
+                                                                             'end' : ''}
+                                
+                            GEN_COORD[i['qualifiers']['locus_tag'][0]]['start'] = i['location'].split('(')[0].split(':')[0][1: ]
+                            GEN_COORD[i['qualifiers']['locus_tag'][0]]['end'] = i['location'].split('(')[0].split(':')[1][: -1]
+                            
                     except:
                         continue
 
@@ -160,12 +171,19 @@ def anti_parse(path, table_out):
                     protein_start[domain_name] = z['qualifiers']['protein_end'][0]
                     protein_end[domain_name] = z['qualifiers']['protein_start'][0]
                     translates[domain_name] = z['qualifiers']['translation'] 
-                    GEN_ID[domain_name] = gene_loc_tag[z['qualifiers']['locus_tag'][0]]
                     
-                    if z['qualifiers']['locus_tag'][0] not in GEN_COORD:
+                    if locus_tag == None:
                         
-                        GEN_COORD[gene_loc_tag[z['qualifiers']['locus_tag'][0]]] = {'start' :'',
+                        GEN_ID[domain_name] = gene_loc_tag[z['qualifiers']['locus_tag'][0]]
+                        
+                        if z['qualifiers']['locus_tag'][0] not in GEN_COORD:
+
+                            GEN_COORD[gene_loc_tag[z['qualifiers']['locus_tag'][0]]] = {'start' :'',
                                                                                      'end' : ''}
+                    else:
+
+                        GEN_ID[domain_name] = chack_gen_id[z['qualifiers']['locus_tag'][0]]
+                        
                         
                     if '+' in z['location']:
                         
@@ -223,13 +241,12 @@ def anti_parse(path, table_out):
                             if tag == i_k[0].split('|')[-2]:
                                 BGC = suknw[0]['accession']
                                 strand = i_k[-1]['strand']
+                if locus_tag == None:
+                    for knw in  key['modules']['antismash.modules.clusterblast']['knowncluster']['proteins']:
+                        if knw['name'] in GEN_COORD:
 
-                for knw in  key['modules']['antismash.modules.clusterblast']['knowncluster']['proteins']:
-
-                    if knw['name'] in GEN_COORD:
-
-                        GEN_COORD[knw['name']]['start'] = knw['location'].split('-')[0]
-                        GEN_COORD[knw['name']]['end'] = knw['location'].split('-')[1]
+                            GEN_COORD[knw['name']]['start'] = knw['location'].split('-')[0]
+                            GEN_COORD[knw['name']]['end'] = knw['location'].split('-')[1]
 
                 if BGC == '':
                     continue
