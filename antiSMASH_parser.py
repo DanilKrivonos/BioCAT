@@ -123,6 +123,8 @@ def anti_parse(path, table_out):
         GEN_strand = {}
         GEN_COORD = {}
         gene_loc_tag = {}
+        locus_tag = None
+        chack_gen_id = {}
 
         for key in open_js['records']:
             for i in key['features']:
