@@ -401,7 +401,7 @@ def cutter(edge_graph):
         
     return variants
 
-def get_peptide(edge_graph, pept_components):
+def get_peptide(edge_graph, pept_components, non_amino_graph):
     
     non_pept = []
     
@@ -414,7 +414,11 @@ def get_peptide(edge_graph, pept_components):
     for non in non_pept:
         
         edge_graph.remove(non)
-        
+    for edge in edge_graph:
+        if edge in non_amino_graph:
+            
+            edge_graph.remove(edge)
+            
     return edge_graph, non_pept
 
 def cyclic_peptide(edge_graph):
@@ -546,17 +550,6 @@ def parse_rBAN(outp, NRPS_type, subtrate_stack):
         amino_acids = get_AA(js, bonds_atoms, amino_acids_atoms, alpha_amino_length)
         edge_graph = list(map(list, set(map(tuple, edge_graph))))
         edge_graph, non_pept = get_peptide(edge_graph, pept_components)
-        cuts = []
-
-        for edge in edge_graph:
-            if edge[1] in C_ends:
-
-                cuts.append(edge)
-
-        for cut in cuts:
-
-            edge_graph.remove(cut)
-
         EP = {}
         EP[0] = []
         EP[0].extend(find_eulerian_tour(edge_graph.copy()))
