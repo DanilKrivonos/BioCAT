@@ -482,14 +482,18 @@ def get_monomer_names(EP, space):
     return new_EP
 #Split product on one part of NRPS synthesis
 def Type_B(new_EP):
+    
+    new_EP_cop = new_EP.copy()
+    
     for var in new_EP:
         for tour in new_EP[var]:
             for tourx in new_EP[var]:
                 if tourx == tour:
-                    
-                    new_EP[var].remove(tourx) #because tour == tour x
+                    if [tour] not in new_EP.values():
                         
-    return new_EP
+                        new_EP_cop[(len(new_EP))] = [tour] #because tour == tour x
+                        
+    return new_EP_cop
 #check N-end atom 
 def N_check(EP, tmp_names, atom_all):
     for var in EP:
@@ -572,15 +576,7 @@ def parse_rBAN(outp, NRPS_type, subtrate_stack):
         #find amino acids
         EP = find_amino_acid(EP, amino_acids)
         new_EP = get_monomer_names(EP, js['monomericGraph']['monomericGraph']['monomers'])
-
-        if NRPS_type == 'B':
-            try:
-
-                new_EP = Type_B(new_EP)
-
-            except:
-
-                print('Thats no B-type of NRPS')
+        new_EP = Type_B(new_EP)
 
     return new_EP
 # ********************************************************************************************************
