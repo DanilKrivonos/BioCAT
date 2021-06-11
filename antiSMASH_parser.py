@@ -74,6 +74,32 @@ def check_subcluster(df):
     else:
         
         return None #if cluster have not diffetent direction
+#reversing negative directed genes
+def reverse_neg(df):
+    
+    genes = list(dict.fromkeys(df['Gen ID'].values))
+    gen_stack = {}
+    df1 = DataFrame(columns=list(df.keys()))
+    
+    for gen in genes:
+        if '-' in df[df['Gen ID'].str.contains(gen)]['Gen strand'].values:
+            print(df[df['Gen ID'].str.contains(gen)]['Domain name'])
+            print(list(df[df['Gen ID'].str.contains(gen)].index))
+            gen_stack[gen] = list(df[df['Gen ID'].str.contains(gen)].index)
+ 
+
+        if '+' in df[df['Gen ID'].str.contains(gen)]['Gen strand'].values:
+            if gen_stack != {}:
+                for gen_k in list(gen_stack.keys())[: : -1]:
+                   
+                    dfcop = df.iloc[gen_stack[gen_k]]
+                    df1 = df1.append(dfcop)                
+            
+            dfcop = df[df['Gen ID'].str.contains(gen)]
+            df1 = df1.append(dfcop)
+            gen_stack = {}              
+            
+    return df1
 #Spliiting subclusters 
 def split_subcluster(df, subcluster):
     for cluster in subcluster.keys():
@@ -283,5 +309,8 @@ def anti_parse(path, table_out):
         df = split_subcluster(df, subcluster)
     
     df.to_csv(out, index=False, sep='\t')
-
+    from pandas import read_csv 
+    df = read_csv(out, sep='\t')
+    df = reverse_neg(df)
+    df.to_csv(out, index=False, sep='\t')
 print('Biosynthesis clusters have been successfully discovered!')
