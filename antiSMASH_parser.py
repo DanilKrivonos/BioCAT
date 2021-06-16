@@ -99,6 +99,12 @@ def reverse_neg(df):
             df1 = df1.append(dfcop)
             gen_stack = {}              
             
+    if gen_stack != {}:
+        for gen_k in list(gen_stack.keys())[: : -1]:
+
+            dfcop = df.iloc[gen_stack[gen_k]]
+            df1 = df1.append(dfcop)   
+            
     return df1
 #Spliiting subclusters 
 def split_subcluster(df, subcluster):
@@ -149,7 +155,7 @@ def anti_parse(path, table_out):
         GEN_strand = {}
         GEN_COORD = {}
         gene_loc_tag = {}
-        locus_tag = None
+        coordhave = ''
         chack_gen_id = {}
 
         for key in open_js['records']:
@@ -157,20 +163,46 @@ def anti_parse(path, table_out):
                 if 'CDS' == i['type']:
                     try:
                         if 'gene' in i['qualifiers']:
-
+                            
+                            coordhave = 'gene'
                             gene_loc_tag[i['qualifiers']['gene'][0]] = i['qualifiers']['protein_id'][0]
-                            
-                        else:
-                            
-                            locus_tag = 'have' 
-                            chack_gen_id[i['qualifiers']['locus_tag'][0]] = i['qualifiers']['locus_tag'][0]
+
+                        elif 'locus_tag' in i['qualifiers']:
+
+                            check_gen_id[i['qualifiers']['locus_tag'][0]] = i['qualifiers']['locus_tag'][0]
 
                             if i['qualifiers']['locus_tag'][0] not in GEN_COORD:
-                                GEN_COORD[i['qualifiers']['locus_tag'][0]] = {'start' : '',
-                                                                             'end' : ''}
                                 
-                            GEN_COORD[i['qualifiers']['locus_tag'][0]]['start'] = i['location'].split('(')[0].split(':')[0][1: ]
-                            GEN_COORD[i['qualifiers']['locus_tag'][0]]['end'] = i['location'].split('(')[0].split(':')[1][: -1]
+                                coordhave = 'locus_tag' 
+                                GEN_COORD[i['qualifiers']['locus_tag'][0]] = {'start' : i['location'].split('(')[0].split(':')[0][1: ],
+                                                                             'end' : i['location'].split('(')[0].split(':')[1][: -1]}
+
+                            if 'join' not in i['location']:
+
+                                GEN_COORD[i['qualifiers']['locus_tag'][0]]['start'] = i['location'].split('(')[0].split(':')[0][1: ]
+                                GEN_COORD[i['qualifiers']['locus_tag'][0]]['end'] = i['location'].split('(')[0].split(':')[1][: -1]
+
+                            else:
+
+                                if '-' in i['location']:
+
+                                    start = i['location'].split(', ')[-1].split(':')[0][1: ]
+                                    end = i['location'].split(', ')[0].split(':')[1].split(']')[0]
+                                    GEN_COORD[i['qualifiers']['locus_tag'][0]]['start'] = start
+                                    GEN_COORD[i['qualifiers']['locus_tag'][0]]['end'] = end
+
+                                elif '+' in i['location']:
+
+                                    start = i['location'].split(', ')[0].split(':')[0].split('[')[1]
+                                    end = i['location'].split(', ')[-1].split(':')[1].split(']')[0]
+                                    GEN_COORD[i['qualifiers']['locus_tag'][0]]['start'] = start
+                                    GEN_COORD[i['qualifiers']['locus_tag'][0]]['end'] = end
+                                    
+                        elif 'protein_id' in i['qualifiers']:
+                            
+                            coordhave = 'protein_id'
+                            GEN_COORD[i['qualifiers']['protein_id'][0]] = {'start' : i['location'].split(':')[0][1: ],
+                                                                             'end' : i['location'].split(':')[1][: -1]}
                             
                     except:
                         continue
@@ -200,7 +232,7 @@ def anti_parse(path, table_out):
                     protein_end[domain_name] = z['qualifiers']['protein_start'][0]
                     translates[domain_name] = z['qualifiers']['translation'] 
                     
-                    if locus_tag == None:
+                    if coordhave == 'gene':
                         
                         GEN_ID[domain_name] = gene_loc_tag[z['qualifiers']['locus_tag'][0]]
                         
@@ -208,10 +240,15 @@ def anti_parse(path, table_out):
 
                             GEN_COORD[gene_loc_tag[z['qualifiers']['locus_tag'][0]]] = {'start' :'',
                                                                                      'end' : ''}
-                    else:
+                    elif coordhave == 'loqus_tag':
 
-                        GEN_ID[domain_name] = chack_gen_id[z['qualifiers']['locus_tag'][0]]
+                        GEN_ID[domain_name] = check_gen_id[z['qualifiers']['locus_tag'][0]]
                         
+                    elif coordhave == 'protein_id':
+                        
+                        if z['qualifiers']['locus_tag'][0] in GEN_COORD:
+                            
+                            GEN_ID[domain_name] = z['qualifiers']['locus_tag'][0]
                         
                     if '+' in z['location']:
                         
@@ -267,9 +304,11 @@ def anti_parse(path, table_out):
                         for i_k in suknw[1]['pairings']:
 
                             if tag == i_k[0].split('|')[-2]:
+                                
                                 BGC = suknw[0]['accession']
                                 strand = i_k[-1]['strand']
-                if locus_tag == None:
+                                
+                if coordhave == 'gene' or coordhave == 'protein_id':
                     for knw in  key['modules']['antismash.modules.clusterblast']['knowncluster']['proteins']:
                         if knw['name'] in GEN_COORD:
 
