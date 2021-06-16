@@ -137,19 +137,19 @@ def make_combine(sequences, pssm='None'):
 
         sequences[var] = make_standard(sequences[var])
 
-    N_refer = 0
+    N_refers = []
     for var in sequences:
+        N_refer = 0
         for cont in sequences[var]:
             for mon in cont:
+                
+                N_refer += 1
+                
                 if mon not in subtrate_stack:
 
                     cont[cont.index(mon)] = 'nan'
-    print(sequences)
-    for i in sequences[0]:
-        for num in i:
-
-            N_refer += 1 
-
+        N_refers.append(N_refer)
+    
     if type(pssm) == DataFrame:
         
 
@@ -168,7 +168,7 @@ def make_combine(sequences, pssm='None'):
         
     else:
         
-        return  N_refer
+        return  min(N_refers)
     
 #******************************************* GETTING LINER STRUCTURE **********************************
 #Findind Euler tour
@@ -401,7 +401,7 @@ def cutter(edge_graph):
         
     return variants
 
-def get_peptide(edge_graph, pept_components, non_amino_graph):
+def get_peptide(edge_graph, pept_components):
     
     non_pept = []
     
@@ -414,11 +414,7 @@ def get_peptide(edge_graph, pept_components, non_amino_graph):
     for non in non_pept:
         
         edge_graph.remove(non)
-    for edge in edge_graph:
-        if edge in non_amino_graph:
-            
-            edge_graph.remove(edge)
-            
+        
     return edge_graph, non_pept
 
 def cyclic_peptide(edge_graph):
@@ -436,18 +432,18 @@ def cyclic_peptide(edge_graph):
     return EP
 
 def add_non_pept(EP, non_pept):
-    
+
     for var in EP:
-        
+
         check = 0
- 
+
         for tour in EP[var]:
-            if len(tour) == 1:
+            if len(tour) == 1 and tour != []:
                 continue
-             
+
             for lost_edge in non_pept:
                 if lost_edge[1] not in tour:
-                    
+
                     EP[var].append([lost_edge[1]])
                     check = 1
                     
@@ -455,10 +451,14 @@ def add_non_pept(EP, non_pept):
 
                     EP[var].append([lost_edge[0]])
                     check = 1
-
+        
         if check == 0:
 
             EP[var].append(lost_edge)
+        if [] in EP[var]:
+            
+            EP[var].remove([])
+            
     return EP
 
 def get_monomer_names(EP, space):
@@ -490,12 +490,15 @@ def Type_B(new_EP):
     new_EP_cop = new_EP.copy()
     
     for var in new_EP:
-        for tour in new_EP[var]:
-            for tourx in new_EP[var]:
-                if tourx == tour:
-                    if [tour] not in new_EP.values():
+        for tour in range(len(new_EP[var])):
+            indxs = list(range(len(new_EP[var])))
+            indxs.remove(tour)
+            for tourx in indxs:
+
+                if new_EP[var][tourx] == new_EP[var][tour]:
+                    if new_EP[var][tour] not in new_EP.values():
                         
-                        new_EP_cop[(len(new_EP))] = [tour] #because tour == tour x
+                        new_EP_cop[(len(new_EP))] = [new_EP[var][tour]] #because tour == tour x
                         
     return new_EP_cop
 #check N-end atom 
@@ -550,6 +553,17 @@ def parse_rBAN(outp, NRPS_type, subtrate_stack):
         amino_acids = get_AA(js, bonds_atoms, amino_acids_atoms, alpha_amino_length)
         edge_graph = list(map(list, set(map(tuple, edge_graph))))
         edge_graph, non_pept = get_peptide(edge_graph, pept_components)
+        cuts = []
+
+        for edge in edge_graph:
+            if edge[1] in C_ends:
+
+                cuts.append(edge)
+
+        for cut in cuts:
+
+            edge_graph.remove(cut)
+
         EP = {}
         EP[0] = []
         EP[0].extend(find_eulerian_tour(edge_graph.copy()))
@@ -558,7 +572,9 @@ def parse_rBAN(outp, NRPS_type, subtrate_stack):
         if EP[0] == []:
 
             EP = cyclic_peptide(edge_graph)
-
+            #If type B, with one aminoacid. Fro example valinomycin.
+            if EP == {}: 
+                EP = {0: [[]]}
         else:
 
             EP = C_check(N_check(EP, tmp_names, atom_all), C_ends)
@@ -569,9 +585,11 @@ def parse_rBAN(outp, NRPS_type, subtrate_stack):
         #find amino acids
         EP = find_amino_acid(EP, amino_acids)
         new_EP = get_monomer_names(EP, js['monomericGraph']['monomericGraph']['monomers'])
+        #Try to find sequence of B NRPS type
         new_EP = Type_B(new_EP)
 
     return new_EP
+
 # ********************************************************************************************************
 #Making shuffle funtions
 def shuffle_matrix(pssm_profile):
@@ -710,6 +728,7 @@ with open('{}/Results.bed'.format(output), 'w') as bad_out:
         #making of fasta files and hmmserching 
         HMM_make(output, output, hmms='./HMM/')
         aminochain = make_combine(new_EP)
+        print(aminochain)
         #making PSSMs
         PSSM_make(search = output + 'HMM_results/', aminochain=aminochain, out = output, delta=args.delta)
         #Importing all PSSMs
@@ -773,10 +792,10 @@ with open('{}/Results.bed'.format(output), 'w') as bad_out:
                         shuffled_scores.append(pssm(v, shuffle_matrix(matrix)))
 
                     shuffled_scores = np.array(shuffled_scores)
-                    print(v)
                     TEST = pssm(v, matrix)
                     target_score = pssm(v, matrix)                
                     prob = len(shuffled_scores[shuffled_scores < target_score])/len(shuffled_scores)
+                    print(target_score, shuffled_scores)
                     bad_out.write('{}\n'.format('\t'.join([BGC_ID,
                                                             Name,
                                                             ids[smi],
