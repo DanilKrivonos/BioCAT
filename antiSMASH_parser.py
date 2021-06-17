@@ -240,7 +240,7 @@ def anti_parse(path, table_out):
 
                             GEN_COORD[gene_loc_tag[z['qualifiers']['locus_tag'][0]]] = {'start' :'',
                                                                                      'end' : ''}
-                    elif coordhave == 'loqus_tag':
+                    elif coordhave == 'locus_tag':
 
                         GEN_ID[domain_name] = check_gen_id[z['qualifiers']['locus_tag'][0]]
                         
