@@ -24,7 +24,7 @@ parser.add_argument('-smiles',
                     default="Unknown")
 parser.add_argument('-file_smiles',
                     type=str,
-                    help='If you want to find a lot of substances you can give a file with smiles(example \n>NAME OF SUBSTANCE\nSMILES_FORMULA)',
+                    help='If you want to find a lot of substances you can give a file with smiles',
                     default="Unknown")
 parser.add_argument('-rBAN',
                     type=str,
@@ -241,7 +241,7 @@ def macthing_templates(templates_peptide, templates_minipept):
         
     return templates_minipept
 
-def build_grpah(js):
+def build_graph(js):
     
     edge_graph = []
     bonds_atoms = {}
@@ -547,7 +547,7 @@ def parse_rBAN(outp, NRPS_type, subtrate_stack):
 
                 [tmp_names.append(i) for i in tp if idx['cdk_idx'] == i and idx['name'] == 'N']
 
-        edge_graph, c_end_atoms, bonds_atoms = build_grpah(js)
+        edge_graph, c_end_atoms, bonds_atoms = build_graph(js)
         C_ends, atom_all = get_C_ends(js, c_end_atoms, templates, corboxy_pattern_lenth)
         pept_components = get_N_ends(js, bonds_atoms, templates_peptide, corboxy_pattern_lenth, pept_pattern_lenth)
         amino_acids = get_AA(js, bonds_atoms, amino_acids_atoms, alpha_amino_length)
@@ -593,17 +593,18 @@ def parse_rBAN(outp, NRPS_type, subtrate_stack):
 # ********************************************************************************************************
 #Making shuffle funtions
 def shuffle_matrix(pssm_profile):
-    
+
     profile = pssm_profile.copy()
-    cols = profile.columns[1:]
-    
-    for col in cols:
-        
-        col_vals = list(profile[col])
-        shuffle(col_vals)
-        profile[col] = col_vals
-        
-    return profile     
+    cols = profile.columns[1: ]
+
+    while np.min(profile.values == pssm_profile.values) == True:                           
+        for col in cols:
+            
+            col_vals = list(profile[col])
+            shuffle(col_vals)
+            profile[col] = col_vals
+                           
+    return profile  
         
 def pssm(seq, pssm_profile):
 
@@ -668,7 +669,7 @@ except FileExistsError:
 
 if args.smiles != None:
 
-    smile_list=[args.smiles]
+    smile_list = [args.smiles]
     ids = [args.name]
 
 else:
@@ -678,8 +679,8 @@ else:
 
     for line in smiles:
 
-        [smile_list.append(smi) for smi in line.split('\n') if '>' not in smi]
-        [ids.append(name) for name in line.split('\n') if '>' in name]
+        smile_list.append(line.split('\t')[1])
+        ids.append(line.split('\t')[0])
 
 with open('{}/Results.bed'.format(output), 'w') as bad_out:
 
@@ -693,8 +694,8 @@ with open('{}/Results.bed'.format(output), 'w') as bad_out:
         print('Hydrolizing of substrate with rBAN ...')
         if args.rBAN == 'No':
             
-            call('java -jar rBAN-1.0.jar -inputId {} -inputSmiles {} -outputFolder {} -discoveryMode'.format(idsmi, smiles, output), shell=True)
-            new_EP = parse_rBAN(output + '/peptideGraph.json', NRPS_type, subtrate_stack)
+            call('java -jar rBAN-1.0.jar -inputId {} -inputSmiles {} -outputFolder {}/{}_ -discoveryMode'.format(idsmi, smiles, output, idsmi), shell=True)
+            new_EP = parse_rBAN(output + '/{}_peptideGraph.json'.format(idsmi), NRPS_type, subtrate_stack)
             
         else:
             
