@@ -21,19 +21,19 @@ parser.add_argument('-name',
 parser.add_argument('-smiles', 
                     type=str,
                     help='Chemical formula in smiles format', 
-                    default="Unknown")
+                    default=None)
 parser.add_argument('-file_smiles',
                     type=str,
                     help='If you want to find a lot of substances you can give a file with smiles',
-                    default="Unknown")
+                    default=None)
 parser.add_argument('-rBAN',
                     type=str,
                     help='Put here rBAN json',
-                    default="No")
+                    default=None)
 parser.add_argument('-antismash',
                     type=str,
                     help='Put here antismashs json',
-                    default="No")                    
+                    default=None)                    
 parser.add_argument('-genome', 
                     type=str, 
                     help='Fasta file with nucleotide sequence', 
@@ -56,7 +56,7 @@ parser.add_argument('-delta',
                     default=3)
 args = parser.parse_args()
 
-if args.genome == None and args.antismash == 'No':
+if args.genome == None and args.antismash == None:
     
     print('Error: Give a fasta or an antismash json!')
     sys.exit()
@@ -556,10 +556,10 @@ def Type_B(new_EP):
                             
                             new_EP_cop[(len(new_EP))] = []
                             
-                        if [new_EP[var][tour]] in new_EP_cop[(len(new_EP))]:
+                        if new_EP[var][tour] in new_EP_cop[(len(new_EP))]:
                             continue
                             
-                        new_EP_cop[(len(new_EP))].append([new_EP[var][tour]]) #because tour == tour x
+                        new_EP_cop[(len(new_EP))].append(new_EP[var][tour]) #because tour == tour x
                         
     return new_EP_cop
 #check N-end atom 
@@ -661,6 +661,12 @@ def parse_rBAN(outp, NRPS_type, subtrate_stack):
 
     return new_EP
 
+def get_ids(outp):
+    with open(outp) as json:
+
+        js = load(json)
+    
+    return  js['id']
 # ********************************************************************************************************
 #Making shuffle funtions
 def shuffle_matrix(pssm_profile):
@@ -738,38 +744,51 @@ except FileExistsError:
 
     print('The output directory already exists')
 
+if args.smiles != None and args.file_smiles != None:
+    
+    print('Give a smiles or file if smi format!')
+    import sys
+    sys.exit()
+    
 if args.smiles != None:
 
     smile_list = [args.smiles]
     ids = [args.name]
 
-else:
-
-    smiles = args.smiles
+elif args.file_smiles != None:
+            
     smile_list = []
+    ids = []
 
-    for line in smiles:
+    with open(args.file_smiles) as smi:
+        for line in smi:
 
-        smile_list.append(line.split('\t')[1])
-        ids.append(line.split('\t')[0])
+            smile_list.append(line.split('\t')[1])
+            ids.append(line.split('\t')[0])
 
+if args.rBAN != None:
+    
+    smile_list = ['smi']
+    ids = [get_ids(args.rBAN)]
 with open('{}/Results.bed'.format(output), 'w') as bad_out:
 
     bad_out.write('Name of organism\tPotentialy MiBiG ID\tSubstance\tCoordinates of cluster\tStrand\tPresumptive sequence\th-score\n')
 
     for smi in range(len(smile_list)):
-
-        smiles = '"' + smile_list[smi] + '"'
-        idsmi = '"' + ids[smi] + '"'
+        if args.rBAN == None:
+            
+            smiles = '"' + smile_list[smi] + '"'
+            idsmi = ids[smi].replace(' ', '_')
         #run rBUN
         print('Hydrolizing of substrate with rBAN ...')
-        if args.rBAN == 'No':
-            
+        if args.rBAN == None:
+
             call('java -jar rBAN-1.0.jar -inputId {} -inputSmiles {} -outputFolder {}/{}_ -discoveryMode'.format(idsmi, smiles, output, idsmi), shell=True)
+            print('java -jar rBAN-1.0.jar -inputId {} -inputSmiles {} -outputFolder {}/{}_ -discoveryMode'.format(idsmi, smiles, output, idsmi[1: -1]))
             new_EP = parse_rBAN(output + '/{}_peptideGraph.json'.format(idsmi), NRPS_type, subtrate_stack)
             
         else:
-            
+
             new_EP = parse_rBAN(args.rBAN, NRPS_type, subtrate_stack)
             
         #Mking list of monomers
@@ -800,7 +819,6 @@ with open('{}/Results.bed'.format(output), 'w') as bad_out:
         #making of fasta files and hmmserching 
         HMM_make(output, output, hmms='./HMM/')
         aminochain = make_combine(new_EP)
-        print(aminochain)
         #making PSSMs
         PSSM_make(search = output + 'HMM_results/', aminochain=aminochain, out = output, delta=args.delta)
         #Importing all PSSMs
@@ -848,26 +866,24 @@ with open('{}/Results.bed'.format(output), 'w') as bad_out:
                 BGC == skipper(BGC, skip)
                 
             for matrix in BGC:
-                
+                print(new_EP)
                 EPs = make_combine(new_EP, matrix)
                 print(EPs)
                 #Calculating TP score
-
-                
-
                 for v in EPs:
 
                     shuffled_scores = []
 
+                    if len(matrix) == 1:
+                        continue
                     for i in range(ITER):
 
                         shuffled_scores.append(pssm(v, shuffle_matrix(matrix)))
-
+                    
                     shuffled_scores = np.array(shuffled_scores)
                     TEST = pssm(v, matrix)
                     target_score = pssm(v, matrix)                
-                    prob = len(shuffled_scores[shuffled_scores < target_score])/len(shuffled_scores)
-                    print(target_score, shuffled_scores)
+                    prob = len(shuffled_scores[shuffled_scores < target_score])/len(shuffled_scores)             
                     bad_out.write('{}\n'.format('\t'.join([BGC_ID,
                                                             Name,
                                                             ids[smi],

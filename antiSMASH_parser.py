@@ -74,38 +74,6 @@ def check_subcluster(df):
     else:
         
         return None #if cluster have not diffetent direction
-#reversing negative directed genes
-def reverse_neg(df):
-    
-    genes = list(dict.fromkeys(df['Gen ID'].values))
-    gen_stack = {}
-    df1 = DataFrame(columns=list(df.keys()))
-    
-    for gen in genes:
-        if '-' in df[df['Gen ID'].str.contains(gen)]['Gen strand'].values:
-            print(df[df['Gen ID'].str.contains(gen)]['Domain name'])
-            print(list(df[df['Gen ID'].str.contains(gen)].index))
-            gen_stack[gen] = list(df[df['Gen ID'].str.contains(gen)].index)
- 
-
-        if '+' in df[df['Gen ID'].str.contains(gen)]['Gen strand'].values:
-            if gen_stack != {}:
-                for gen_k in list(gen_stack.keys())[: : -1]:
-                   
-                    dfcop = df.iloc[gen_stack[gen_k]]
-                    df1 = df1.append(dfcop)                
-            
-            dfcop = df[df['Gen ID'].str.contains(gen)]
-            df1 = df1.append(dfcop)
-            gen_stack = {}              
-            
-    if gen_stack != {}:
-        for gen_k in list(gen_stack.keys())[: : -1]:
-
-            dfcop = df.iloc[gen_stack[gen_k]]
-            df1 = df1.append(dfcop)   
-            
-    return df1
 #Spliiting subclusters 
 def split_subcluster(df, subcluster):
     for cluster in subcluster.keys():
@@ -117,13 +85,45 @@ def split_subcluster(df, subcluster):
         for sub in subclusters.keys():
         
             for idx in df.iloc[subclusters[sub]].index:
+                
                 df['ID'][idx] = '{}_{}'.format(cluster, sub)
     
     return df
+#reversing negative directed genes
+def reverse_neg(df):
+    
+    genes = list(dict.fromkeys(df['Gen ID'].values))
+    gen_stack = {}
+    df1 = DataFrame(columns=list(df.keys()))
+    
+    for gen in genes:
+        if '-' in df[df['Gen ID'].str.contains(gen)]['Gen strand'].values:
+            
+            gen_stack[gen] = list(df[df['Gen ID'].str.contains(gen)].index)
+ 
+        if '+' in df[df['Gen ID'].str.contains(gen)]['Gen strand'].values:
+            if gen_stack != {}:
+                for gen_k in list(gen_stack.keys())[: : -1]:
+                   
+                    dfcop = df.iloc[gen_stack[gen_k]]
+                    df1 = df1.append(dfcop)                
+            
+            dfcop = df[df['Gen ID'].str.contains(gen)]
+            df1 = df1.append(dfcop)
+            gen_stack = {}    
+            
+    if gen_stack != {}:
+        for gen_k in list(gen_stack.keys())[: : -1]:
+
+            dfcop = df.iloc[gen_stack[gen_k]]
+            df1 = df1.append(dfcop)   
+            
+    return df1
 
 def anti_parse(path, table_out):
-
+   
     out = table_out + 'table.tsv'
+
     print('Starting parsing antiSMASH output ...')
     keys = {'ID' : [], 
             'Gen ID' : [],
@@ -156,57 +156,32 @@ def anti_parse(path, table_out):
         GEN_COORD = {}
         gene_loc_tag = {}
         coordhave = ''
-        chack_gen_id = {}
-
+        check_gen_id = {}
+        
         for key in open_js['records']:
             for i in key['features']:
                 if 'CDS' == i['type']:
                     try:
-                        if 'gene' in i['qualifiers']:
-                            
-                            coordhave = 'gene'
-                            gene_loc_tag[i['qualifiers']['gene'][0]] = i['qualifiers']['protein_id'][0]
-
-                        elif 'locus_tag' in i['qualifiers']:
+                        if 'locus_tag' in i['qualifiers']:
 
                             check_gen_id[i['qualifiers']['locus_tag'][0]] = i['qualifiers']['locus_tag'][0]
-
-                            if i['qualifiers']['locus_tag'][0] not in GEN_COORD:
-                                
-                                coordhave = 'locus_tag' 
-                                GEN_COORD[i['qualifiers']['locus_tag'][0]] = {'start' : i['location'].split('(')[0].split(':')[0][1: ],
-                                                                             'end' : i['location'].split('(')[0].split(':')[1][: -1]}
-
-                            if 'join' not in i['location']:
-
-                                GEN_COORD[i['qualifiers']['locus_tag'][0]]['start'] = i['location'].split('(')[0].split(':')[0][1: ]
-                                GEN_COORD[i['qualifiers']['locus_tag'][0]]['end'] = i['location'].split('(')[0].split(':')[1][: -1]
-
-                            else:
-
-                                if '-' in i['location']:
-
-                                    start = i['location'].split(', ')[-1].split(':')[0][1: ]
-                                    end = i['location'].split(', ')[0].split(':')[1].split(']')[0]
-                                    GEN_COORD[i['qualifiers']['locus_tag'][0]]['start'] = start
-                                    GEN_COORD[i['qualifiers']['locus_tag'][0]]['end'] = end
-
-                                elif '+' in i['location']:
-
-                                    start = i['location'].split(', ')[0].split(':')[0].split('[')[1]
-                                    end = i['location'].split(', ')[-1].split(':')[1].split(']')[0]
-                                    GEN_COORD[i['qualifiers']['locus_tag'][0]]['start'] = start
-                                    GEN_COORD[i['qualifiers']['locus_tag'][0]]['end'] = end
-                                    
-                        elif 'protein_id' in i['qualifiers']:
+                            coordhave = 'locus_tag'
+                            GEN_COORD[i['qualifiers']['locus_tag'][0]] = i['location']
                             
+                        elif 'gene' in i['qualifiers']:
+                            
+                            gene_loc_tag[i['qualifiers']['gene'][0]] = i['qualifiers']['protein_id'][0]
+                            coordhave = 'gene'
+                            GEN_COORD[i['qualifiers']['protein_id'][0]] = i['location']
+                            
+                        elif 'protein_id' in i['qualifiers']:
+
                             coordhave = 'protein_id'
-                            GEN_COORD[i['qualifiers']['protein_id'][0]] = {'start' : i['location'].split(':')[0][1: ],
-                                                                             'end' : i['location'].split(':')[1][: -1]}
+                            GEN_COORD[i['qualifiers']['protein_id'][0]] = i['location']
                             
                     except:
                         continue
-
+                
                 if 'aSModule' not in i['type']:
                     continue
 
@@ -216,7 +191,7 @@ def anti_parse(path, table_out):
                 tag = i['qualifiers']['locus_tags'][0]
                 BGC = ''
                 metric_dict = {}
-                
+
                 for z in key['features']:
 
                     if 'aSDomain' not in z['type']:
@@ -228,28 +203,25 @@ def anti_parse(path, table_out):
                     metric_dict[z['qualifiers']['domain_id'][0]] = {'evalue' : z['qualifiers']['evalue'][0],
                                                                     'score' : z['qualifiers']['score'][0]}
                     domain_name = z['qualifiers']['domain_id'][0]
-                    protein_start[domain_name] = z['qualifiers']['protein_end'][0]
-                    protein_end[domain_name] = z['qualifiers']['protein_start'][0]
-                    translates[domain_name] = z['qualifiers']['translation'] 
-                    
+                    protein_start[domain_name] = z['qualifiers']['protein_start'][0]
+                    protein_end[domain_name] = z['qualifiers']['protein_end'][0]
+                    translates[domain_name] = z['qualifiers']['translation']                         
+
                     if coordhave == 'gene':
-                        
+
                         GEN_ID[domain_name] = gene_loc_tag[z['qualifiers']['locus_tag'][0]]
-                        
-                        if z['qualifiers']['locus_tag'][0] not in GEN_COORD:
-
-                            GEN_COORD[gene_loc_tag[z['qualifiers']['locus_tag'][0]]] = {'start' :'',
-                                                                                     'end' : ''}
+                    
                     elif coordhave == 'locus_tag':
-
+                        if z['qualifiers']['locus_tag'][0] not in check_gen_id:
+                            continue
+                            
                         GEN_ID[domain_name] = check_gen_id[z['qualifiers']['locus_tag'][0]]
                         
                     elif coordhave == 'protein_id':
-                        
                         if z['qualifiers']['locus_tag'][0] in GEN_COORD:
-                            
+
                             GEN_ID[domain_name] = z['qualifiers']['locus_tag'][0]
-                        
+
                     if '+' in z['location']:
                         
                         direct = '+'
@@ -260,7 +232,7 @@ def anti_parse(path, table_out):
                         
                     GEN_strand[domain_name] = direct
                 predictiton_dict = {}
-                
+               
                 for dom in key['modules']['antismash.modules.nrps_pks']['domain_predictions']:
                     
                     predictiton_dict[dom] = {'LargePred' : '',
@@ -269,13 +241,14 @@ def anti_parse(path, table_out):
                     
                     if dom in i['qualifiers']['domains']:
                         if 'NRPSPredictor2' in key['modules']['antismash.modules.nrps_pks']['domain_predictions'][dom]:
+                            
                             predictiton_dict[dom]['LargePred'] = key['modules']['antismash.modules.nrps_pks']['domain_predictions'][dom]['NRPSPredictor2']['large_cluster_pred']
                             predictiton_dict[dom]['SmalPred'] = key['modules']['antismash.modules.nrps_pks']['domain_predictions'][dom]['NRPSPredictor2']['small_cluster_pred']
                             predictiton_dict[dom]['Single_AA'] = key['modules']['antismash.modules.nrps_pks']['domain_predictions'][dom]['NRPSPredictor2']['single_amino_pred']
                             
                             if predictiton_dict[dom]['Single_AA'] == 'N/A':
                                         
-                                        predictiton_dict[dom]['Single_AA'] = key['modules']['antismash.modules.nrps_pks']['domain_predictions'][dom]['NRPSPredictor2']['stachelhaus_predictions'][0]
+                                predictiton_dict[dom]['Single_AA'] = key['modules']['antismash.modules.nrps_pks']['domain_predictions'][dom]['NRPSPredictor2']['stachelhaus_predictions'][0]
                         else:
                             
                             predictiton_dict[dom]['LargePred'] = 'nan'
@@ -297,17 +270,13 @@ def anti_parse(path, table_out):
                     for suknw in knw['ranking']:
                         if 'NRP' not in suknw[0]['cluster_type']:
                             continue 
-                            
-                        if BGC != '':
-                            break
-                            
+
                         for i_k in suknw[1]['pairings']:
 
-                            if tag == i_k[0].split('|')[-2]:
-                                
+                            if tag == i_k[0].split('|')[-2] and BGC == '':
                                 BGC = suknw[0]['accession']
                                 strand = i_k[-1]['strand']
-                                
+                
                 if coordhave == 'gene' or coordhave == 'protein_id':
                     for knw in  key['modules']['antismash.modules.clusterblast']['knowncluster']['proteins']:
                         if knw['name'] in GEN_COORD:
@@ -320,15 +289,33 @@ def anti_parse(path, table_out):
 
                 for dom in key['modules']['antismash.modules.nrps_pks']['domain_predictions']:
                     if dom in i['qualifiers']['domains']:
-                        
+                        if dom not in GEN_ID:
+                            continue
+                            
+                        if 'join' in GEN_COORD[GEN_ID[dom]]:
+                            if '-' in GEN_COORD[GEN_ID[dom]]:
+
+                                start = GEN_COORD[GEN_ID[dom]].split(', ')[-1].split(':')[0][1: ]
+                                end = GEN_COORD[GEN_ID[dom]].split(', ')[0].split(':')[1].split(']')[0]
+
+                            elif '+' in GEN_COORD[GEN_ID[dom]]:
+
+                                start = GEN_COORD[GEN_ID[dom]].split(', ')[0].split(':')[0].split('[')[1]
+                                end = GEN_COORD[GEN_ID[dom]].split(', ')[-1].split(':')[1].split(']')[0]
+                            
+                        else:
+                            
+                            start = GEN_COORD[GEN_ID[dom]].split(':')[0].split('[')[1]
+                            end = GEN_COORD[GEN_ID[dom]].split(':')[1].split(']')[0]
+                            
                         keys['ID'].append(BGC)
-                        keys['Gen ID'].append(GEN_ID[dom])
+                        keys['Gen ID'].append(str(GEN_ID[dom]))
                         keys['Name'].append(key['id'].split('.')[0])
                         keys['Coordinates of cluster'].append(coord_tag)
                         keys['Strand'].append(strand)
-                        keys['Gen strand'].append(GEN_strand[dom])
-                        keys['Start of gen'].append(int(GEN_COORD[GEN_ID[dom]]['start']))
-                        keys['End of gen'].append(int(GEN_COORD[GEN_ID[dom]]['end']))
+                        keys['Gen strand'].append(str(GEN_strand[dom]))
+                        keys['Start of gen'].append(int(start))
+                        keys['End of gen'].append(int(end))
                         keys['Protein start'].append(int(protein_start[dom]))
                         keys['Protein end'].append(int(protein_end[dom]))
                         keys['Domain name'].append(dom)
@@ -346,10 +333,13 @@ def anti_parse(path, table_out):
     if subcluster != None:
 
         df = split_subcluster(df, subcluster)
-    
+
+  #  df = reverse_neg(df)
     df.to_csv(out, index=False, sep='\t')
+    
     from pandas import read_csv 
     df = read_csv(out, sep='\t')
     df = reverse_neg(df)
     df.to_csv(out, index=False, sep='\t')
+
 print('Biosynthesis clusters have been successfully discovered!')
