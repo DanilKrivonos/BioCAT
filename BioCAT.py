@@ -4,6 +4,7 @@ import random
 import numpy as np
 import sys
 from rdkit import Chem
+from rdkit.DataStructs import BulkTanimotoSimilarity
 from random import shuffle
 from subprocess import call 
 from json import load
@@ -38,9 +39,9 @@ parser.add_argument('-genome',
                     type=str, 
                     help='Fasta file with nucleotide sequence', 
                     default=None)
-parser.add_argument('-NRPS_type', 
+parser.add_argument('-NRPS_type_C', 
                     type=str, 
-                    help='Choose potentioanl NRPS type: A, B, C', 
+                    help='Expected NRPS type C', 
                     default='A')
 parser.add_argument('-skip', 
                     type=int, 
@@ -74,7 +75,7 @@ if args.genome != None:
     fasta = open(genome)
     
 skip = args.skip
-NRPS_type = args.NRPS_type
+NRPS_type = args.NRPS_type_C
 #list with all substrates from antiSMASH
 subtrate_stack = ['ser', 'thr', 'dhpg', 'hpg', 'gly', 'ala', 'val', 'leu', 'ile', 'abu', 'iva', 'pro', 'pip', 'asp', 'asn',
                   'glu', 'gln', 'aad', 'phe', 'trp', 'phg', 'tyr', 'bht', 'orn', 'lys', 'arg', 'cys', 'dhb', 'sal', 'nan']
@@ -503,12 +504,12 @@ def add_non_pept(EP, non_pept):
             numbers += tour
             
         for lost_edge in non_pept:
-            if lost_edge[1] not in numbers:
-
+            if lost_edge[1] not in numbers and [lost_edge[1]] not in EP[var]:
+                
                 EP[var].append([lost_edge[1]])
                 check = 1
 
-            elif lost_edge[0] not in numbers:
+            elif lost_edge[0] not in numbers and [lost_edge[0]] not in EP[var]:
 
                 EP[var].append([lost_edge[0]])
                 check = 1
@@ -587,6 +588,81 @@ def C_check(EP, C_ends):
 
                         EP[var][EP[var].index(tour)] = tour[ : : -1]
     return EP
+#Type C compression
+def type_C(EP, js):
+    
+    repeats = Find_repeats(EP, js)
+
+    for var in EP:
+        for tour in EP[var]:        
+            if len(repeats[var][EP[var].index(tour)]) == 0:
+                continue
+                
+            else:
+                for rep in repeats[var][EP[var].index(tour)]:
+                    for rep_node in rep[1: ]:
+                        EP[var][EP[var].index(tour)].remove(rep_node)
+
+    return EP
+#finding reapits in aminochain tours
+def Find_repeats(EP, js):
+    
+    reapets = {}
+    
+    for var in EP:
+        
+        reapets[var] = {}
+        
+        for tour in EP[var]:
+            
+            smiles_dict = {}
+
+            for node in tour:
+                for i in js['monomericGraph']['monomericGraph']['monomers']:
+                    if i['monomer']['index'] == node:
+                
+                        smiles_dict[node] = Chem.MolFromSmiles(i['monomer']['monomer']['smiles'])
+
+            reapets[var][EP[var].index(tour)] = Get_compare(smiles_dict)
+            
+
+
+    return reapets
+#finding Tanimotosimmularitis
+def Get_compare(smiles_dict):
+    
+    reps = []
+    mols = list(smiles_dict.keys())
+    reps_count = 0
+    
+    for idx in range(len(mols) - 1):
+
+        Tanimoto = BulkTanimotoSimilarity(Chem.RDKFingerprint(smiles_dict[mols[idx]]), [Chem.RDKFingerprint(smiles_dict[mols[idx + 1]])])[0]
+
+        if Tanimoto == 1:
+
+            check = 0
+
+            if len(reps) != 0:
+                for rep in reps:
+                    if mols[idx] in rep:
+
+                        check = 1
+                        
+                if check == 1:
+
+                    reps[reps_count].append(mols[idx + 1])
+
+                else:
+
+                    reps_count += 1
+                    reps.append([])
+                    reps[reps_count].extend([mols[idx], mols[idx + 1]])
+            else:
+
+                reps.append([mols[idx], mols[idx + 1]])                            
+
+    return reps
 
 def parse_rBAN(outp, NRPS_type, subtrate_stack):
     
@@ -603,8 +679,8 @@ def parse_rBAN(outp, NRPS_type, subtrate_stack):
     pept_pattern_length = len(peptide_bond.GetAtoms())
     alpha_amino_length = len(alpha_amino.GetAtoms())
     N_OH_length = len(N_OH.GetAtoms())
-    
-    with open(outp) as json:
+    print(outp)
+    with open(outp, 'r') as json:
 
         js = load(json)
         
@@ -661,6 +737,10 @@ def parse_rBAN(outp, NRPS_type, subtrate_stack):
 
     #find amino acids
     EP = find_amino_acid(EP, amino_acids)
+
+    if NRPS_type == 'C':
+
+        EP = type_C(EP, js)
 
     new_EP = get_monomer_names(EP, js['monomericGraph']['monomericGraph']['monomers'])
     new_EP = Type_B(new_EP)
@@ -768,8 +848,8 @@ elif args.file_smiles != None:
 
     with open(args.file_smiles) as smi:
         for line in smi:
-
-            smile_list.append(line.split('\t')[1])
+            print(line.split('\t'))
+            smile_list.append(line.split('\t')[1].replace('\n', ''))
             ids.append(line.split('\t')[0])
 
 if args.rBAN != None:
@@ -784,19 +864,21 @@ with open('{}/Results.bed'.format(output), 'w') as bad_out:
         if args.rBAN == None:
             
             smiles = '"' + smile_list[smi] + '"'
-            idsmi = ids[smi].replace(' ', '_')
+            idsmi = ids[smi].replace(' ', '_').replace('(', '').replace(')', '')
+        print(smiles)
         #run rBUN
         print('Hydrolizing of substrate with rBAN ...')
         if args.rBAN == None:
 
+            rBAN_path = output + '/{}_peptideGraph.json'.format(idsmi)
             call('java -jar rBAN-1.0.jar -inputId {} -inputSmiles {} -outputFolder {}/{}_ -discoveryMode'.format(idsmi, smiles, output, idsmi), shell=True)
             print('java -jar rBAN-1.0.jar -inputId {} -inputSmiles {} -outputFolder {}/{}_ -discoveryMode'.format(idsmi, smiles, output, idsmi[1: -1]))
-            new_EP = parse_rBAN(output + '/{}_peptideGraph.json'.format(idsmi), NRPS_type, subtrate_stack)
             
         else:
 
-            new_EP = parse_rBAN(args.rBAN, NRPS_type, subtrate_stack)
-            
+            rBAN_path = args.rBAN
+
+        new_EP = parse_rBAN(rBAN_path, NRPS_type, subtrate_stack)
         #Mking list of monomers
         print('Buildung amino graph')
         print(output)
@@ -831,7 +913,14 @@ with open('{}/Results.bed'.format(output), 'w') as bad_out:
         folder =  output + '/PSSM/'
         ITER = 100
         files = os.listdir(folder)
-        
+        if len(files) == 0:
+
+            print('peptide sequence exceeds cluster landing attachment\nTry to check type C NRPS...')
+            new_EP = parse_rBAN(rBAN_path, 'C', subtrate_stack)
+            aminochain = make_combine(new_EP)
+            PSSM_make(search = output + '/HMM_results/', aminochain=aminochain, out = output, delta=args.delta)
+            folder =  output + '/PSSM/'
+            files = os.listdir(folder)
         #Recording final output
         table = read_csv(output + '/table.tsv', sep='\t')
         
