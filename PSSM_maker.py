@@ -9,7 +9,7 @@ def PSSM_make(search, aminochain, out, delta, hmms='./HMM/', neg='./negative.tsv
 
     negative = read_csv(neg, sep='\t')
     output = out
-    path = out + 'table.tsv'
+    path = out + '/table.tsv'
     substr = listdir('{}'.format(hmms))
     table = read_csv(path, sep='\t')
     subst_eval = {}
@@ -66,7 +66,7 @@ def PSSM_make(search, aminochain, out, delta, hmms='./HMM/', neg='./negative.tsv
     print('Recording PSSM ...\n')
     
     #Making directory for PSSMs
-    PSSMs_out = output + 'PSSM/'
+    PSSMs_out = output + '/PSSM/'
     try:
 
         os.mkdir('{}'.format(PSSMs_out))

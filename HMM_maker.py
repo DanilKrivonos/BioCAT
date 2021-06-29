@@ -5,7 +5,7 @@ from os import listdir
 
 def HMM_make(path, output, hmms='./HMM/'):
 
-    table = read_csv(path + 'table.tsv', sep='\t')
+    table = read_csv(path + '/table.tsv', sep='\t')
 
     #making work directory to fasta files
     substrates = []

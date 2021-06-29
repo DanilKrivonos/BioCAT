@@ -60,8 +60,14 @@ if args.genome == None and args.antismash == None:
     
     print('Error: Give a fasta or an antismash json!')
     sys.exit()
+
+if  args.out == './':
+
+    output = args.out + '/BioCAT_output/'
+
+else:
     
-output = args.out + '/BioCAT_output/'
+    output = args.out
 
 if args.genome != None:
     genome = args.genome
@@ -820,14 +826,14 @@ with open('{}/Results.bed'.format(output), 'w') as bad_out:
         HMM_make(output, output, hmms='./HMM/')
         aminochain = make_combine(new_EP)
         #making PSSMs
-        PSSM_make(search = output + 'HMM_results/', aminochain=aminochain, out = output, delta=args.delta)
+        PSSM_make(search = output + '/HMM_results/', aminochain=aminochain, out = output, delta=args.delta)
         #Importing all PSSMs
-        folder =  output + 'PSSM/'
+        folder =  output + '/PSSM/'
         ITER = 100
         files = os.listdir(folder)
         
         #Recording final output
-        table = read_csv(output + 'table.tsv', sep='\t')
+        table = read_csv(output + '/table.tsv', sep='\t')
         
         if len(files) == 0:
 

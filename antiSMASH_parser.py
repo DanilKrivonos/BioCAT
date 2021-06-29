@@ -122,7 +122,7 @@ def reverse_neg(df):
 
 def anti_parse(path, table_out):
    
-    out = table_out + 'table.tsv'
+    out = table_out + '/table.tsv'
 
     print('Starting parsing antiSMASH output ...')
     keys = {'ID' : [], 
