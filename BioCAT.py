@@ -6,7 +6,7 @@ from subprocess import call
 from pandas import read_csv
 from PSSM_maker import PSSM_make
 from HMM_maker import HMM_make
-from antiSMASH_parser import anti_parse
+from antiSMASH_parser import generate_table_from_antismash
 from Make_NRP_structure import parse_rBAN
 from Combinatorics import skipper, pssm, shuffle_matrix, make_combine
 
@@ -85,33 +85,34 @@ except FileExistsError:
 
     print('The output directory already exists')
 
-if args.smiles != None and args.file_smiles != None:
+if args.smiles is not None and args.file_smiles is not None:
     
     print('Give a smiles or file if smi format!')
     import sys
     sys.exit()
     
-if args.smiles != None:
+if args.smiles is not None:
 
     smile_list = [args.smiles]
     ids = [args.name]
 
-elif args.file_smiles != None:
+elif args.file_smiles is not None:
             
     smile_list = []
     ids = []
 
     with open(args.file_smiles) as smi:
         for line in smi:
-            print(line.split('\t'))
+
             smile_list.append(line.split('\t')[1].replace('\n', ''))
             ids.append(line.split('\t')[0])
 
-        #call antiSMASH to take BGC
+#call antiSMASH to take BGC
 print('Finding biosynthesis gene clusters with antiSMASH ...\n')
-if args.antismash == 'No':
+if args.antismash is None:
     
     anti_out = output + 'antismash_result/'
+
     try:
         
         os.mkdir(anti_out)
@@ -120,17 +121,24 @@ if args.antismash == 'No':
 
         print('The output directory already exists')
 
-    call('antismash {} --cb-general --cb-knownclusters --output-dir {} --genefinding-tool prodigal'.format(genome, anti_out), shell=True)
+    call('antismash {} --cb-general--output-dir {} --genefinding-tool prodigal'.format(genome, anti_out), shell=True)
     json_path = anti_out + ('.').join(os.path.split(genome)[1].split('.')[0: -1]) + '.json'
 else:
 
     json_path = args.antismash
 #parsing antiSMASH output json
-anti_parse(json_path, output, dif_strand)
+generate_table_from_antismash(json_path, output, dif_strand)
 #making of fasta files and hmmserching 
-HMM_make(output, output, hmms='./HMM/')
+HMM_make(output, output)
 
-if args.rBAN != None:
+def get_ids(outp):
+    with open(outp) as json:
+
+        js = load(json)
+    
+    return  js['id']
+
+if args.rBAN is not None:
     
     smile_list = ['smi']
     ids = [get_ids(args.rBAN)]
@@ -140,14 +148,14 @@ with open('{}/Results.bed'.format(output), 'w') as bad_out:
     bad_out.write('Chromosome ID\tCoordinates of cluster\tStrand\tSubstance\tMiBiG ID\tPutative NRP sequence\th-score\n')
 
     for smi in range(len(smile_list)):
-        if args.rBAN == None:
+        if args.rBAN is None:
             
             smiles = '"' + smile_list[smi] + '"'
             idsmi = ids[smi].replace(' ', '_').replace('(', '').replace(')', '')
         
         #run rBUN
         print('Hydrolizing of substrate with rBAN ...')
-        if args.rBAN == None:
+        if args.rBAN is None:
 
             rBAN_path = output + '/{}_peptideGraph.json'.format(idsmi)
             call('java -jar rBAN-1.0.jar -inputId {} -inputSmiles {} -outputFolder {}/{}_ -discoveryMode'.format(idsmi, smiles, output, idsmi), shell=True)
@@ -159,7 +167,7 @@ with open('{}/Results.bed'.format(output), 'w') as bad_out:
 
         new_EP = parse_rBAN(rBAN_path, NRPS_type)
         #if structure doesnt contain aminoacids
-        if new_EP == None:
+        if new_EP is None:
 
             print('Unparseable structure!')
             break 
@@ -202,17 +210,15 @@ with open('{}/Results.bed'.format(output), 'w') as bad_out:
                     NRPS_type = 'A'
 
                 #Dont split cluster
-                if len(files) == 0 and dif_strand == None:
+                if len(files) == 0 and dif_strand is None:
 
                     print('Trying to find putative cluster from different strands ...')
                     dif_strand = 'Have'
-                    anti_parse(json_path, output, dif_strand)
+                    generate_table_from_antismash(json_path, output, dif_strand)
                 
                 if NRPS_type == 'A' and dif_strand == 'Have':
 
                     check = 1
-
-                
 
         #Recording final output
         table = read_csv(output + '/table.tsv', sep='\t')
@@ -258,7 +264,7 @@ with open('{}/Results.bed'.format(output), 'w') as bad_out:
                 
                 EPs = make_combine(new_EP, subtrate_stack, matrix, delta)
                 print(EPs, '-------------------')
-                if EPs == None:
+                if EPs is None:
                     continue
                 #Calculating TP score
                 for v in EPs:

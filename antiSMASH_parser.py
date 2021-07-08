@@ -184,7 +184,7 @@ def sort_cluster_seq(df):
     
     return df2
 #*******************************************************************************************************************************
-def anti_parse(path, table_out, dif_strand):
+def generate_table_from_antismash(path, table_out, dif_strand):
    
     out = table_out + '/table.tsv'
 
@@ -220,13 +220,13 @@ def anti_parse(path, table_out, dif_strand):
         gene_loc_tag = {}
         coordhave = ''
         check_gen_id = {}
-        chromosome_ID = 0
+        chromosome_ID = 1
 
         for key in open_js['records']:
             for i in key['features']:
-                if 'protocluster' in i['type']:
-                    
-                    BGC = 'BGC_{}_{}'.format(chromosome_ID, i['qualifiers']['protocluster_number'][0])
+                if 'cand_cluster' in i['type']:
+
+                    BGC = 'BGC_{}_{}'.format(chromosome_ID, i['qualifiers']['candidate_cluster_number'][0])
                     coord_cluster = i['location']
                 
                 if 'CDS' == i['type']:
