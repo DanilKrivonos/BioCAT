@@ -5,70 +5,78 @@ from pandas import DataFrame
 #sortion genes in cluster and modules in genes
 def cluster_sort(df):
     
-    genes = set(df['Gen ID'].values)
-    #sorting genes in a BGC
-    sort_indexes = []
-    sort_indexes = list(df['Start of gen'].sort_values().index)    
-    sort_genes = []    
-    
-    for ind in list(df.iloc[sort_indexes]['Gen ID'].values):
-        if ind not in sort_genes:
-                    
-            sort_genes.append(ind)
-
-    sort_indexes = {}
+    chromosomes = list(set(df['Name'].values))
     df2 = DataFrame(columns=list(df.keys()))
-    #sorting modules in gene
-    for gen in sort_genes:
-        
-        sort_indexes[gen] = list(df[df['Gen ID'].str.contains(gen)]['Protein start'].sort_values().index)
 
-    for idx in sort_indexes:
-        
-        df2 = df2.append(df.iloc[sort_indexes[idx]])
+    for chromosome in chromosomes:
 
+        genes = set(df[df['Name'] == chromosome]['Gen ID'].values)
+        #sorting genes in a BGC
+        sort_indexes = []
+        sort_indexes = list(df[df['Name'] == chromosome]['Start of gen'].sort_values().index)    
+        sort_genes = []    
+        
+        for ind in list(df.iloc[sort_indexes]['Gen ID'].values):
+            if ind not in sort_genes:
+                        
+                sort_genes.append(ind)
+
+        sort_indexes = {}
+        #sorting modules in gene
+        for gen in sort_genes:
+                
+            sort_indexes[gen] = list(df[df['Gen ID'] == gen]['Protein start'].sort_values().index)
+
+        for idx in sort_indexes:
+
+            df2 = df2.append(df.iloc[sort_indexes[idx]])
+    df2.reset_index(drop=True, inplace=True)
     return df2
 #finding subclusters
 def check_subcluster(df):
-    
-    cluster_stack = df['ID'].values
-    cluster_stack = set(cluster_stack)
-    subcluster = {}
+
+    chromosomes = list(set(df['Name'].values))
     have_not = 0
+    subcluster = {}
     
-    for cluster in cluster_stack:
+    for chromosome in chromosomes:
         
-        subcluster[cluster] = {}
-        strand = df[df['ID'] == cluster]['Gen strand'].values[0]
+        cluster_stack = df[df['Name'] == chromosome]['ID'].values
+        subcluster[chromosome] = {}
+
+        for cluster in cluster_stack:
+            
+            subcluster[chromosome][cluster] = {}
+            strand = df[df['ID'] == cluster]['Gen strand'].values[0]
+            cluster_stack = set(cluster_stack)
+
+            if all(gen == strand for gen in df[df['ID'] == cluster]['Gen strand'].values):
+                
+                continue
+                
+            else:
+                
+                have_not = 1
+                subcluster[chromosome][cluster] = {0: [],
+                                                   1: []} 
+
+                plus_SB = []
+                minus_SB = []
         
-        if all(gen == strand for gen in df[df['ID'] == cluster]['Gen strand'].values):
-            
-            continue
-            
-        else:
-            
-            genes = df[df['ID'] == cluster]['Gen strand']
-            index = 0
-
-            for gen_id in genes.index:
-
-                if index not in subcluster[cluster]:
-                    
-                    subcluster[cluster][index] = []
-
-                if genes[gen_id] != strand:
-                    
-                    index += 1
-                    strand = genes[gen_id]
-                    have_not = 1
-                    
-                    if index not in subcluster[cluster]:
+                for idx in df[df['ID'] == cluster].index:
+                    if '+' in df['Gen strand'][idx]:
                         
-                        subcluster[cluster][index] = []
-                    
-                subcluster[cluster][index].append(gen_id)
+                        plus_SB.append(idx)
+                        
+                    else:
+                        
+                        minus_SB.append(idx)
+                        
+                subcluster[chromosome][cluster][0].extend(plus_SB)
+                subcluster[chromosome][cluster][1].extend(minus_SB)
+
     if have_not != 0:
-        
+
         return subcluster
     
     else:
@@ -76,60 +84,115 @@ def check_subcluster(df):
         return None #if cluster have not diffetent direction
 #Spliiting subclusters 
 def split_subcluster(df, subcluster):
-    for cluster in subcluster.keys():
-        if len(subcluster[cluster]) < 2:
-            continue
-            
-        subclusters = subcluster[cluster]
-        
-        for sub in subclusters.keys():
-        
-            for idx in df.iloc[subclusters[sub]].index:
+
+    chromosomes = list(set(df['Name'].values))
+
+    for chromosome in chromosomes:
+        for cluster in subcluster[chromosome].keys():
+            if len(subcluster[chromosome][cluster]) < 2:
+                continue
                 
-                df['ID'][idx] = '{}_{}'.format(cluster, sub)
+            subclusters = subcluster[chromosome][cluster]
+
+            for sub in subclusters.keys():
+            
+                for idx in df.iloc[subclusters[sub]].index:
+                    
+                    df['ID'][idx] = '{}_{}'.format(cluster, sub)
     
     return df
 #reversing negative directed genes
 def reverse_neg(df):
-    
-    genes = list(dict.fromkeys(df['Gen ID'].values))
-    gen_stack = {}
+
+    chromosomes = list(dict.fromkeys((df['Name'].values)))
     df1 = DataFrame(columns=list(df.keys()))
-    
-    for gen in genes:
-        if '-' in df[df['Gen ID'].str.contains(gen)]['Gen strand'].values:
-            
-            gen_stack[gen] = list(df[df['Gen ID'].str.contains(gen)].index)
- 
-        if '+' in df[df['Gen ID'].str.contains(gen)]['Gen strand'].values:
-            if gen_stack != {}:
-                for gen_k in list(gen_stack.keys())[: : -1]:
-                   
-                    dfcop = df.iloc[gen_stack[gen_k]]
-                    df1 = df1.append(dfcop)                
-            
-            dfcop = df[df['Gen ID'].str.contains(gen)]
-            df1 = df1.append(dfcop)
-            gen_stack = {}    
-            
-    if gen_stack != {}:
-        for gen_k in list(gen_stack.keys())[: : -1]:
 
-            dfcop = df.iloc[gen_stack[gen_k]]
-            df1 = df1.append(dfcop)   
+    for chromosome in chromosomes:
+        
+        clusters = list(dict.fromkeys(df[df['Name'] == chromosome]['ID']))
+        
+        for bgc in clusters:
             
+            genes = list(dict.fromkeys(df[df['ID'] == bgc]['Gen ID']))
+            SB = []
+            genes_stack = [] 
+            
+            for gen in genes:
+                
+                if '+' in list(df[df['ID'] == bgc][df['Gen ID'] == gen]['Gen strand']):
+                    if len(SB) != 0:
+                        
+                        genes_stack.extend(SB[-1: : -1])
+                        SB = []
+                        
+                    genes_stack.append(gen)
+                    
+                else:
+                    
+                    SB.append(gen)
+                    
+            genes_stack.extend(SB[-1: : -1])
+            
+            for gen in genes_stack:
+
+                df1 = df1.append(df.iloc[df[df['ID'] == bgc][df['Gen ID'] == gen].index])
+
+    df1.reset_index(drop=True, inplace=True)
+
     return df1
+#************************THIS TWO FUNCTION RMOVING PART AFTER TE DOMAIN TO THE START OF CLUSTER************************
+def shift_contig(df2, df, remove):
+    for domain in remove:
 
-def anti_parse(path, table_out):
+        df2 = df2.append(df[df['Domain name'] == domain])
+        
+    return df2
+
+def sort_cluster_seq(df):
+    
+    chromosomes = list(dict.fromkeys(df['Name'].values))
+    df2 = DataFrame(columns=list(df.keys()))
+
+    for chromosome in chromosomes:
+        
+        clusters = list(dict.fromkeys(df[df['Name'] == chromosome]['ID']))
+        
+        for bgc in clusters:
+            
+            add = 0
+            remove = []
+            stack_domain = []
+            domains = df[df['ID'] == bgc]['Domain name']
+            
+            for domain in domains:
+                if add == 1:
+                    
+                    remove.append(domain)
+                    
+                else:
+                    
+                    stack_domain.append(domain)
+                    
+                if 'Thioesterase' in domain:
+                    
+                    stack_domain.extend(remove)
+                    remove = []
+                    add = 1
+
+            remove.extend(stack_domain)
+            df2 = shift_contig(df2, df, remove)
+    
+    return df2
+#*******************************************************************************************************************************
+def anti_parse(path, table_out, dif_strand):
    
     out = table_out + '/table.tsv'
 
     print('Starting parsing antiSMASH output ...')
-    keys = {'ID' : [], 
+    keys = {'Name' : [],
+            'ID' : [], 
             'Gen ID' : [],
-            'Name' : [],
             'Coordinates of cluster' : [],
-            'Strand' : [],
             'Gen strand' : [],
             'Start of gen' : [],
             'End of gen' : [],
@@ -143,9 +206,9 @@ def anti_parse(path, table_out):
             'Score' : [],
             'Sequence': []
             }
-
+    
     with open(path, 'r') as js:
-
+        
         translates = {}
         open_js = load(js)
         coord_tag = {}
@@ -157,9 +220,15 @@ def anti_parse(path, table_out):
         gene_loc_tag = {}
         coordhave = ''
         check_gen_id = {}
-        
+        chromosome_ID = 0
+
         for key in open_js['records']:
             for i in key['features']:
+                if 'protocluster' in i['type']:
+                    
+                    BGC = 'BGC_{}_{}'.format(chromosome_ID, i['qualifiers']['protocluster_number'][0])
+                    coord_cluster = i['location']
+                
                 if 'CDS' == i['type']:
                     try:
                         if 'locus_tag' in i['qualifiers']:
@@ -185,19 +254,12 @@ def anti_parse(path, table_out):
                 if 'aSModule' not in i['type']:
                     continue
 
-                if 'nrps' not in i['qualifiers']['type']:
-                    continue
-
                 tag = i['qualifiers']['locus_tags'][0]
-                BGC = ''
                 metric_dict = {}
 
                 for z in key['features']:
 
                     if 'aSDomain' not in z['type']:
-                        continue
-
-                    if z['qualifiers']['domain_id'][0] not in i['qualifiers']['domains']:
                         continue
 
                     metric_dict[z['qualifiers']['domain_id'][0]] = {'evalue' : z['qualifiers']['evalue'][0],
@@ -248,44 +310,13 @@ def anti_parse(path, table_out):
                             
                             if predictiton_dict[dom]['Single_AA'] == 'N/A':
                                         
-                                predictiton_dict[dom]['Single_AA'] = key['modules']['antismash.modules.nrps_pks']['domain_predictions'][dom]['NRPSPredictor2']['stachelhaus_predictions'][0]
+                                predictiton_dict[dom]['Single_AA'] = key['modules']['antismash.modules.nrps_pks']['domain_predictions'][dom]['NRPSPredictor2']['stachelhaus_predictions'][0].replace('(', '').replace(')', '')
+
                         else:
                             
                             predictiton_dict[dom]['LargePred'] = 'nan'
                             predictiton_dict[dom]['SmalPred'] = 'nan'
                             predictiton_dict[dom]['Single_AA'] = 'nan'
-                            
-                cutoff = 0
-
-                for knw in  key['modules']['antismash.detection.hmm_detection']['rule_results']['cds_by_protocluster']:
-                    for knw_i in knw[1]:
-                        if tag in knw_i['cds_name']:
-
-                            if cutoff < eval(knw[0]['qualifiers']['cutoff'][0]):
-
-                                cutoff = eval(knw[0]['qualifiers']['cutoff'][0])
-                                coord_tag = knw[0]['location']
-
-                for knw in  key['modules']['antismash.modules.clusterblast']['knowncluster']['results']:
-                    for suknw in knw['ranking']:
-                        if 'NRP' not in suknw[0]['cluster_type']:
-                            continue 
-
-                        for i_k in suknw[1]['pairings']:
-
-                            if tag == i_k[0].split('|')[-2] and BGC == '':
-                                BGC = suknw[0]['accession']
-                                strand = i_k[-1]['strand']
-                
-                if coordhave == 'gene' or coordhave == 'protein_id':
-                    for knw in  key['modules']['antismash.modules.clusterblast']['knowncluster']['proteins']:
-                        if knw['name'] in GEN_COORD:
-
-                            GEN_COORD[knw['name']]['start'] = knw['location'].split('-')[0]
-                            GEN_COORD[knw['name']]['end'] = knw['location'].split('-')[1]
-
-                if BGC == '':
-                    continue
 
                 for dom in key['modules']['antismash.modules.nrps_pks']['domain_predictions']:
                     if dom in i['qualifiers']['domains']:
@@ -307,12 +338,11 @@ def anti_parse(path, table_out):
                             
                             start = GEN_COORD[GEN_ID[dom]].split(':')[0].split('[')[1]
                             end = GEN_COORD[GEN_ID[dom]].split(':')[1].split(']')[0]
-                            
+                        
+                        keys['Name'].append(key['id'].split('.')[0])    
                         keys['ID'].append(BGC)
                         keys['Gen ID'].append(str(GEN_ID[dom]))
-                        keys['Name'].append(key['id'].split('.')[0])
-                        keys['Coordinates of cluster'].append(coord_tag)
-                        keys['Strand'].append(strand)
+                        keys['Coordinates of cluster'].append(coord_cluster)
                         keys['Gen strand'].append(str(GEN_strand[dom]))
                         keys['Start of gen'].append(int(start))
                         keys['End of gen'].append(int(end))
@@ -326,20 +356,24 @@ def anti_parse(path, table_out):
                         keys['Score'].append(metric_dict[dom]['score'])
                         keys['Sequence'].append(translates[dom][0])
 
+            chromosome_ID += 1
+
     df = DataFrame(data=keys)
-    df = cluster_sort(df)
-    subcluster = check_subcluster(df)
 
-    if subcluster != None:
+    if dif_strand == None:
 
-        df = split_subcluster(df, subcluster)
+        subcluster = check_subcluster(df)
 
-  #  df = reverse_neg(df)
+        if subcluster != None:
+
+            df = split_subcluster(df, subcluster)
+
     df.to_csv(out, index=False, sep='\t')
-    
     from pandas import read_csv 
     df = read_csv(out, sep='\t')
+    df = cluster_sort(df)
     df = reverse_neg(df)
+    df = sort_cluster_seq(df)
     df.to_csv(out, index=False, sep='\t')
 
 print('Biosynthesis clusters have been successfully discovered!')
