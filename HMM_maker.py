@@ -1,15 +1,16 @@
 import argparse
 from pandas import read_csv
 from subprocess import call
-from os import listdir
+from os import listdir, mkdir
 
 def HMM_make(path, output, hmms='./HMM/'):
 
     table = read_csv(path + '/table.tsv', sep='\t')
-
     #making work directory to fasta files
     substrates = []
-    call('mkdir {}/substrates_fasta'.format(path), shell=True)
+    mkdir('{}/substrates_fasta'.format(path))
+    hmm_out = '{}/HMM_results/'.format(output)
+    mkdir('{}'.format(hmm_out))
     print('Gereing of fasta files ...')
 
     for ind in table[table['Domain name'].str.contains('AMP-binding')].index:
@@ -30,8 +31,6 @@ def HMM_make(path, output, hmms='./HMM/'):
 
     #Importtant to set on all hmms
     print('Searching values of sequense with HMM ...')
-    hmm_out = '{}/HMM_results/'.format(output)
-    call('mkdir {}'.format(hmm_out), shell=True)
     A_domains = listdir('{}/substrates_fasta/'.format(path))
     hmms_s = listdir(hmms)
 

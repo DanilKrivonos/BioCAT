@@ -2,6 +2,7 @@ import argparse
 import os 
 import sys
 import numpy as np
+from json import load
 from subprocess import call 
 from pandas import read_csv
 from PSSM_maker import PSSM_make
@@ -135,8 +136,16 @@ def get_ids(outp):
     with open(outp) as json:
 
         js = load(json)
-    
-    return  js['id']
+        
+    try:
+
+        name = js['id']
+
+    except:
+
+        name = js[0]['id']
+
+    return  name
 
 if args.rBAN is not None:
     
@@ -174,8 +183,6 @@ with open('{}/Results.bed'.format(output), 'w') as bad_out:
 
         #Mking list of monomers
         print('Buildung amino graph')
-        print(output)
-        
         [print('Amino sequence of your substance: {}\n'.format(new_EP[seq])) for seq in new_EP]
 
         aminochain = make_combine(new_EP, subtrate_stack)
@@ -192,7 +199,7 @@ with open('{}/Results.bed'.format(output), 'w') as bad_out:
             NRPS_type = 'C'
 
             while check != 1:
-                print(check, dif_strand)
+
                 print('Peptide sequence exceeds cluster landing attachment\nTry to check type C NRPS...')
                 new_EP = parse_rBAN(rBAN_path, NRPS_type)
                 [print('Amino sequence of your substance: {}\n'.format(new_EP[seq])) for seq in new_EP]
