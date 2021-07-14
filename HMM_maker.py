@@ -8,9 +8,23 @@ def HMM_make(path, output, hmms='./HMM/'):
     table = read_csv(path + '/table.tsv', sep='\t')
     #making work directory to fasta files
     substrates = []
-    mkdir('{}/substrates_fasta'.format(path))
+    try:
+        
+        mkdir('{}/substrates_fasta'.format(path))
+        
+    except:
+        
+        print('Exist!')
+        
     hmm_out = '{}/HMM_results/'.format(output)
-    mkdir('{}'.format(hmm_out))
+    try:
+        
+        mkdir('{}'.format(hmm_out))
+        
+    except:
+        
+        print('Exist!')
+        
     print('Gereing of fasta files ...')
 
     for ind in table[table['Domain name'].str.contains('AMP-binding')].index:

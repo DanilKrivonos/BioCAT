@@ -47,7 +47,7 @@ def PSSM_make(search, aminochain, out, delta, hmms='./HMM/', neg='./negative.tsv
     for sub in substr:
         
         FP = [-float(i) for i in negative.loc[negative['Substrate'] == '{}'.format(sub)]['List_of_negative'].values[0].split('_')]
-        
+
         for substance in subst_eval.keys():
             print('Calculation n-scores for {}\n'.format(substance))
             for module in  subst_eval[substance].keys():
@@ -62,7 +62,9 @@ def PSSM_make(search, aminochain, out, delta, hmms='./HMM/', neg='./negative.tsv
                 FP = np.array(FP)
                 ratio_metric = len(FP[FP <= TP])/ len(FP)
                 subst_eval[substance][module][sub] = ratio_metric
-
+                print('{}/{}vs{}.out'.format(search, sub, module, sub))
+                print(FP, '\t\t\t\t', TP)
+    print(subst_eval)
     print('Recording PSSM ...\n')
     
     #Making directory for PSSMs

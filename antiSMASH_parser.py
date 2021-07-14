@@ -10,13 +10,15 @@ def cluster_sort(df):
 
     for chromosome in chromosomes:
 
-        genes = set(df[df['Name'] == chromosome]['Gen ID'].values)
+        Chr_df = df[df['Name'] == chromosome]
+        genes = set(Chr_df['Gen ID'].values)
         #sorting genes in a BGC
         sort_indexes = []
         sort_indexes = list(df[df['Name'] == chromosome]['Start of gen'].sort_values().index)    
         sort_genes = []    
-        
-        for ind in list(df.iloc[sort_indexes]['Gen ID'].values):
+        sorted_df = df.iloc[sort_indexes]
+
+        for ind in list(sorted_df['Gen ID'].values):
             if ind not in sort_genes:
                         
                 sort_genes.append(ind)
@@ -24,8 +26,9 @@ def cluster_sort(df):
         sort_indexes = {}
         #sorting modules in gene
         for gen in sort_genes:
-                
-            sort_indexes[gen] = list(df[df['Gen ID'] == gen]['Protein start'].sort_values().index)
+            
+            Gen_df = Chr_df[Chr_df['Gen ID'] == gen]
+            sort_indexes[gen] = list(Gen_df['Protein start'].sort_values().index)
 
         for idx in sort_indexes:
 
@@ -95,10 +98,10 @@ def split_subcluster(df, subcluster):
             subclusters = subcluster[chromosome][cluster]
 
             for sub in subclusters.keys():
-            
                 for idx in df.iloc[subclusters[sub]].index:
-                    
-                    df['ID'][idx] = '{}_{}'.format(cluster, sub)
+
+                    subcluster_id = '{}_{}'.format(cluster, sub)
+                    df.loc[idx, 'ID'] = subcluster_id
     
     return df
 #reversing negative directed genes
@@ -108,18 +111,22 @@ def reverse_neg(df):
     df1 = DataFrame(columns=list(df.keys()))
 
     for chromosome in chromosomes:
-        
-        clusters = list(dict.fromkeys(df[df['Name'] == chromosome]['ID']))
+
+        Chr_df = df[df['Name'] == chromosome]
+        clusters = list(dict.fromkeys(Chr_df['ID']))
         
         for bgc in clusters:
             
-            genes = list(dict.fromkeys(df[df['ID'] == bgc]['Gen ID']))
+            BGC_df = Chr_df[Chr_df['ID'] == bgc]
+            genes = list(dict.fromkeys(BGC_df['Gen ID']))
             SB = []
             genes_stack = [] 
             
             for gen in genes:
+
+                Gen_df = BGC_df[BGC_df['Gen ID'] == gen]
                 
-                if '+' in list(df[df['ID'] == bgc][df['Gen ID'] == gen]['Gen strand']):
+                if '+' in list(Gen_df['Gen strand']):
                     if len(SB) != 0:
                         
                         genes_stack.extend(SB[-1: : -1])
@@ -135,7 +142,8 @@ def reverse_neg(df):
             
             for gen in genes_stack:
 
-                df1 = df1.append(df.iloc[df[df['ID'] == bgc][df['Gen ID'] == gen].index])
+                Sort_gen_df = BGC_df[BGC_df['Gen ID'] == gen]
+                df1 = df1.append(df.iloc[Sort_gen_df.index])
 
     df1.reset_index(drop=True, inplace=True)
 
@@ -144,7 +152,8 @@ def reverse_neg(df):
 def shift_contig(df2, df, remove):
     for domain in remove:
 
-        df2 = df2.append(df[df['Domain name'] == domain])
+        Dom_df = df[df['Domain name'] == domain]
+        df2 = df2.append(Dom_df)
         
     return df2
 
@@ -154,15 +163,17 @@ def sort_cluster_seq(df):
     df2 = DataFrame(columns=list(df.keys()))
 
     for chromosome in chromosomes:
-        
-        clusters = list(dict.fromkeys(df[df['Name'] == chromosome]['ID']))
+
+        Chr_df = df[df['Name'] == chromosome]
+        clusters = list(dict.fromkeys(Chr_df['ID']))
         
         for bgc in clusters:
             
             add = 0
             remove = []
             stack_domain = []
-            domains = df[df['ID'] == bgc]['Domain name']
+            BGC_df = Chr_df[Chr_df['ID'] == bgc]
+            domains = BGC_df['Domain name']
             
             for domain in domains:
                 if add == 1:

@@ -1,7 +1,9 @@
 from random import shuffle
 from itertools import permutations, product
 from pandas import DataFrame
+from os import listdir
 import numpy as np
+
 
 #Skip function 
 def skipper(pssm, skip):
@@ -71,6 +73,7 @@ def make_standard(sequences, subtrate_stack):
     
     check_1 = 0
     check_2 = 0
+
     for seq in sequences:
         for sub_AS in subtrate_stack:
             for sub in seq:
@@ -82,6 +85,9 @@ def make_standard(sequences, subtrate_stack):
     return sequences
 
 def make_combine(sequences, subtrate_stack, pssm='None', delta=3):
+    
+    HMM_substrates = listdir('./HMM/')
+    
     for var in sequences:
 
         sequences[var] = make_standard(sequences[var], subtrate_stack)
@@ -97,7 +103,7 @@ def make_combine(sequences, subtrate_stack, pssm='None', delta=3):
                 
                 N_refer += 1
                 
-                if mon not in subtrate_stack:
+                if mon not in HMM_substrates:
 
                     cont[cont.index(mon)] = 'nan'
 
@@ -133,18 +139,31 @@ def shuffle_matrix(pssm_profile):
     profile = pssm_profile.copy()
 
     while np.min(profile.values == pssm_profile.values) == True:
-        for idx in profile.index:
+        for idx in pssm_profile.index:
 
             row_vals = list(profile.iloc[idx].values[1: ])
             shuffle(row_vals)
             row = {k : v for k, v in zip(profile.iloc[idx].keys()[1: ], row_vals)}
             
             for sub in profile.keys()[1: ]:
-
-                profile[sub][idx] = row[sub]
+                
+                profile.loc[idx, sub] = row[sub]
 
     return profile
-        
+#VERTICAL SHUFFLUNG
+#def shuffle_matrix(pssm_profile):
+
+ #   profile = pssm_profile.copy()
+#    cols = profile.columns[1: ]
+
+    #while np.min(profile.values == pssm_profile.values) == True:
+    #    for col in cols:
+
+   #         col_vals = list(profile[col])
+  #          shuffle(col_vals)
+ #           profile[col] = col_vals
+#    return profile 
+    
 def pssm(seq, pssm_profile):
 
     TS = []
@@ -153,6 +172,7 @@ def pssm(seq, pssm_profile):
     #Calculating C-score(cluster-score)
     
     while N - cut - len(seq) != -1:
+        
         seq_cnt = 0
         target_sum = 0
 
@@ -163,15 +183,10 @@ def pssm(seq, pssm_profile):
                 
                 target_sum += pssm_profile[seq[seq_cnt]][line]
                 
-            except KeyError:
-                
-                
-                target_sum += 0
-                
-            except IndexError:
+            except:
                 
                 target_sum += 0
-
+            
             seq_cnt += 1
         
         cut += 1

@@ -44,6 +44,10 @@ parser.add_argument('-dif_strand',
                     type=str, 
                     help='If your putative cluster can containd different strands genes', 
                     default=None)
+parser.add_argument('-exploration', 
+                    type=bool, 
+                    help='If you want to try every variants of biosynthesis', 
+                    default=False)
 parser.add_argument('-skip', 
                     type=int, 
                     help='Count of possible skippikng', 
@@ -66,7 +70,7 @@ if args.genome == None and args.antismash == None:
 if args.genome != None:
     genome = args.genome
     fasta = open(genome)
-    
+exploration = args.exploration
 output = args.out    
 skip = args.skip
 delta = int(args.delta)
@@ -133,7 +137,7 @@ generate_table_from_antismash(json_path, output, dif_strand)
 HMM_make(output, output)
 
 def get_ids(outp):
-    with open(outp) as json:
+    with open(outp, 'r') as json:
 
         js = load(json)
         
@@ -151,7 +155,7 @@ if args.rBAN is not None:
     
     smile_list = ['smi']
     ids = [get_ids(args.rBAN)]
- 
+    
 with open('{}/Results.bed'.format(output), 'w') as bad_out:
 
     bad_out.write('Chromosome ID\tCoordinates of cluster\tStrand\tSubstance\tMiBiG ID\tPutative NRP sequence\th-score\n')
@@ -193,39 +197,40 @@ with open('{}/Results.bed'.format(output), 'w') as bad_out:
         ITER = 100
         files = os.listdir(folder)
         #Trying to find some vsiants of biosynthesis
-        if len(files) == 0:
+        if exploration is True:
+            if len(files) == 0:
 
-            check = 0
-            NRPS_type = 'C'
+                check = 0
+                NRPS_type = 'C'
 
-            while check != 1:
+                while check != 1:
 
-                print('Peptide sequence exceeds cluster landing attachment\nTry to check type C NRPS...')
-                new_EP = parse_rBAN(rBAN_path, NRPS_type)
-                [print('Amino sequence of your substance: {}\n'.format(new_EP[seq])) for seq in new_EP]
-                aminochain = make_combine(new_EP, subtrate_stack)
-                PSSM_make(search = output + '/HMM_results/', aminochain=aminochain, out = output, delta=delta)
-                folder =  output + '/PSSM/'
-                files = os.listdir(folder)
+                    print('Peptide sequence exceeds cluster landing attachment\nTry to check type C NRPS...')
+                    new_EP = parse_rBAN(rBAN_path, NRPS_type)
+                    [print('Amino sequence of your substance: {}\n'.format(new_EP[seq])) for seq in new_EP]
+                    aminochain = make_combine(new_EP, subtrate_stack)
+                    PSSM_make(search = output + '/HMM_results/', aminochain=aminochain, out = output, delta=delta)
+                    folder =  output + '/PSSM/'
+                    files = os.listdir(folder)
 
-                if len(files) != 0:
-                    check = 1
-                    break
+                    if len(files) != 0:
+                        check = 1
+                        break
 
-                if dif_strand == 'Have':
+                    if dif_strand == 'Have':
 
-                    NRPS_type = 'A'
+                        NRPS_type = 'A'
 
-                #Dont split cluster
-                if len(files) == 0 and dif_strand is None:
+                    #Dont split cluster
+                    if len(files) == 0 and dif_strand is None:
 
-                    print('Trying to find putative cluster from different strands ...')
-                    dif_strand = 'Have'
-                    generate_table_from_antismash(json_path, output, dif_strand)
-                
-                if NRPS_type == 'A' and dif_strand == 'Have':
+                        print('Trying to find putative cluster from different strands ...')
+                        dif_strand = 'Have'
+                        generate_table_from_antismash(json_path, output, dif_strand)
+                    
+                    if NRPS_type == 'A' and dif_strand == 'Have':
 
-                    check = 1
+                        check = 1
 
         #Recording final output
         table = read_csv(output + '/table.tsv', sep='\t')
@@ -268,32 +273,51 @@ with open('{}/Results.bed'.format(output), 'w') as bad_out:
                 BGC == skipper(BGC, skip)
                 
             for matrix in BGC:
-                
+
                 EPs = make_combine(new_EP, subtrate_stack, matrix, delta)
                 print(EPs, '-------------------')
                 if EPs is None:
                     continue
-                #Calculating TP score
+            
+                
+                        
                 for v in EPs:
                     
                     shuffled_scores = []
                     
                     if len(matrix) == 1:
                         continue
+                    MaxSeq = []
+                    subs = matrix.keys()[1: ]
+
+                    for idx in matrix.index:
+
+                        MAX_value = max(list(matrix.iloc[idx][1:]))
+
+                        for key in subs:
+                            if matrix[key][idx] == MAX_value:
+
+                                MaxSeq.append(key)
+                                break
+                    for max_sub in range(len(MaxSeq)):
+                        if v[max_sub] == 'nan':
+
+                            MaxSeq[max_sub] = 'nan'
+                    print('MAX', MaxSeq) 
+                    print(v)
                     for i in range(ITER):
-                        
-                        shuffled_scores.append(pssm(v, shuffle_matrix(matrix)))
-                    
+
+                        shuffled_scores.append(pssm(MaxSeq, shuffle_matrix(matrix)))
+
                     shuffled_scores = np.array(shuffled_scores)
-                    TEST = pssm(v, matrix)
                     target_score = pssm(v, matrix)                
                     prob = len(shuffled_scores[shuffled_scores < target_score])/len(shuffled_scores)             
                     bad_out.write('{}\n'.format('\t'.join([Name,
-                                                           Coord_cluster, 
-                                                           strand,
-                                                           ids[smi], 
-                                                           BGC_ID,
-                                                           '--'.join(v),
-                                                           str(prob)])))
-            
+                                                          Coord_cluster, 
+                                                          strand,
+                                                          ids[smi], 
+                                                          BGC_ID,
+                                                          '--'.join(v),
+                                                          str(prob)])))
+                
 print('Job is done!')
