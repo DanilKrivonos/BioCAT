@@ -2,8 +2,8 @@ from json import load
 from rdkit import Chem
 from rdkit.DataStructs import BulkTanimotoSimilarity
 
-#Findind Euler tour
-def iterator(current_node, graph, tour):
+#Findind Euler tour with modified Fleury's algorithm
+def find_subgraph_tour(current_node, graph, tour):
     priv_t = tour.copy()
     
     copy = graph.copy()
@@ -19,7 +19,7 @@ def iterator(current_node, graph, tour):
 
     if priv_t != tour:
         
-        iterator(current_node, graph, tour)
+        find_subgraph_tour(current_node, graph, tour)
         
     return tour
 
@@ -41,7 +41,7 @@ def find_eulerian_tour(graph):
         tour = []
         current_node = st
         tour.append(current_node)
-        tour = iterator(current_node, graph, tour)
+        tour = find_subgraph_tour(current_node, graph, tour)
         tour_list.append(tour)
         
     for tour in tour_list:
@@ -50,6 +50,7 @@ def find_eulerian_tour(graph):
             tour_list.remove(tour[-1: : -1])
 
     return tour_list
+
 def macthing_templates(templates_peptide, templates_minipept):
     for i in templates_minipept:    
         
@@ -371,28 +372,34 @@ def get_monomer_names(EP, space):
             
     return new_EP
 #Split product on one part of NRPS synthesis
-def Type_B(new_EP):
+def Type_B(PeptideSeq):
     
-    new_EP_cop = new_EP.copy()
-    
-    for var in new_EP:
-        for tour in range(len(new_EP[var])): 
-            indxs = list(range(len(new_EP[var])))
-            indxs.remove(tour)
-            for tourx in indxs:
+    PeptideSeq_cop = PeptideSeq.copy()
+    key = 0
+    for bios_path in PeptideSeq_cop:
+        if bios_path == 'B':
+            continue
 
-                if new_EP[var][tourx] == new_EP[var][tour]:
-                    if new_EP[var][tour] not in new_EP.values():
-                        if len(new_EP) not in new_EP_cop:
-                            
-                            new_EP_cop[(len(new_EP))] = []
-                            
-                        if new_EP[var][tour] in new_EP_cop[(len(new_EP))]:
-                            continue
-                            
-                        new_EP_cop[(len(new_EP))].append(new_EP[var][tour]) #because tour == tour x
-                        
-    return new_EP_cop
+        for var in PeptideSeq_cop[bios_path]:
+            for tour in range(len(PeptideSeq_cop[bios_path][var])): 
+
+                indxs = list(range(len(PeptideSeq_cop[bios_path][var])))
+                indxs.remove(tour)
+
+                for tourx in indxs:
+                    if PeptideSeq_cop[bios_path][var][tourx] == PeptideSeq_cop[bios_path][var][tour]:
+                        if PeptideSeq_cop[bios_path][var][tour] not in PeptideSeq_cop[bios_path].values():
+                            if key not in PeptideSeq_cop['B']:
+
+                                PeptideSeq_cop['B'][key] = []
+
+                            if PeptideSeq[bios_path][var][tour] in PeptideSeq_cop['B'][key]:
+                                continue
+                                
+                            PeptideSeq_cop['B'][key].append(PeptideSeq[bios_path][var][tour]) #because tour == tour x
+        key += 1
+
+    return PeptideSeq_cop
 #check N-end atom 
 def N_check(EP, tmp_names, atom_all):
     for var in EP:
@@ -564,27 +571,27 @@ def parse_rBAN(outp, NRPS_type):
     if len(non_pept) > 0:
 
         EP = add_non_pept(EP, non_pept)
-
     #find amino acids
     if len(EP[0][0]) == 0:
-        
+    
         return None
+
     else:
         
         EP = find_amino_acid(EP, amino_acids)
-        
-        if NRPS_type == 'C':
+        # Giveng biosynthetic way name
+        PeptideSeq = {'A': EP, 'B': {}, 'C': {}}
 
-            EP = type_C(EP, js)
+        if 'C' in NRPS_type:
 
-        new_EP = get_monomer_names(EP, js['monomericGraph']['monomericGraph']['monomers'])
-        new_EP = Type_B(new_EP)
+            PeptideSeq['C'] = type_C(EP, js)
+            PeptideSeq['C'] = get_monomer_names(PeptideSeq['C'], js['monomericGraph']['monomericGraph']['monomers'])
 
-        return new_EP
+        PeptideSeq['A'] = get_monomer_names(PeptideSeq['A'], js['monomericGraph']['monomericGraph']['monomers'])
 
-    def get_ids(outp):
-        with open(outp) as json:
+        if 'B' in NRPS_type:
+            
+            PeptideSeq = Type_B(PeptideSeq)
 
-            js = load(json)
-        
-        return  js['id']
+        return PeptideSeq
+

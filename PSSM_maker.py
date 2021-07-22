@@ -42,29 +42,28 @@ def PSSM_make(search, aminochain, out, delta, hmms='./HMM/', neg='./negative.tsv
             continue
     
     #Generator of n-score
-    print('Calculation n-scores ...')
+    print('Calculation scores for PSSM ...')
 
     for sub in substr:
         
-        FP = [-float(i) for i in negative.loc[negative['Substrate'] == '{}'.format(sub)]['List_of_negative'].values[0].split('_')]
+        FP = [-float(i) for i in list(negative[negative.Substrate == sub].List_of_negative)[0].split(',')]
 
         for substance in subst_eval.keys():
-            print('Calculation n-scores for {}\n'.format(substance))
             for module in  subst_eval[substance].keys():
-
-                open_hmm  = parse('{}/{}vs{}.out'.format(search, sub, module, sub), 'hmmer3-text')
-
+                
+                open_hmm  = parse('{}/{}.out'.format(search, sub), 'hmmer3-text')
+            
                 for i in open_hmm:
                     for t in i:
-
-                        TP = -np.log(t.evalue)
-
+                        if t.hsps[0].hit.id == '{}_{}'.format(substance, module):
+                       
+                            TP = -np.log(t.evalue)
+                            break
+                
                 FP = np.array(FP)
                 ratio_metric = len(FP[FP <= TP])/ len(FP)
                 subst_eval[substance][module][sub] = ratio_metric
-                print('{}/{}vs{}.out'.format(search, sub, module, sub))
-                print(FP, '\t\t\t\t', TP)
-    print(subst_eval)
+
     print('Recording PSSM ...\n')
     
     #Making directory for PSSMs

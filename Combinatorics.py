@@ -2,10 +2,12 @@ from random import shuffle
 from itertools import permutations, product
 from pandas import DataFrame
 from os import listdir
+from numpy import linspace
 import numpy as np
+import os
+from multiprocessing import Process, Manager
 
-
-#Skip function 
+#Skip mode function 
 def skipper(pssm, skip):
     skips_fragments = []
     skip_steps = list(permutations(pssm.index, skip))
@@ -25,7 +27,7 @@ def skipper(pssm, skip):
     return skips_fragments
 
 #Making combinations of modules
-def create_variants(original_seq, len_place,):
+def create_variants(original_seq, len_place):
     
     seq = []
     
@@ -69,128 +71,201 @@ def create_variants(original_seq, len_place,):
     return variants
 
 #Standartization of monomers
-def make_standard(sequences, subtrate_stack):
+def make_standard(PeptideSeq):
     
-    check_1 = 0
-    check_2 = 0
+    monomers_names = listdir('./HMM/') #standardized list of possible to compare substrates 
 
-    for seq in sequences:
-        for sub_AS in subtrate_stack:
-            for sub in seq:
+    #For every variants getting standard monomer names
+    for bios_path in PeptideSeq:
+        if len(PeptideSeq[bios_path]) == 0:
+            continue
 
-                if sub_AS in sub:
-                    
-                    sequences[sequences.index(seq)][seq.index(sub)] =  sub_AS
+        for var in PeptideSeq[bios_path]:
+            for seq in PeptideSeq[bios_path][var]:
+                for sub_AS in monomers_names:
+                    for sub in seq:
+                        if sub_AS in sub:
+                            
+                            PeptideSeq[bios_path][var][PeptideSeq[bios_path][var].index(seq)][seq.index(sub)] =  sub_AS #Changing monomer name
 
-    return sequences
+    for bios_path in PeptideSeq:
+        if len(PeptideSeq[bios_path]) == 0:
+            continue
 
-def make_combine(sequences, subtrate_stack, pssm='None', delta=3):
-    
-    HMM_substrates = listdir('./HMM/')
-    
-    for var in sequences:
+        for var in PeptideSeq[bios_path]:
+            for seq in PeptideSeq[bios_path][var]:
+                for sub in seq:
+                    if sub not in monomers_names:
 
-        sequences[var] = make_standard(sequences[var], subtrate_stack)
-    
-    N_refers = []
+                        PeptideSeq[bios_path][var][PeptideSeq[bios_path][var].index(seq)][seq.index(sub)] =  'nan' #For substrates, which we have not HMM, giving nan name
 
-    for var in sequences:
-        
-        N_refer = 0
+    return PeptideSeq
+#Making possible combinations for potential clusters
+def make_combine(sequence, length_min, pssm, delta=3):
+    if length_min + delta < len(pssm): #if minimal possible length of peptide sequence much less, then cluster 
+        return None
 
-        for cont in sequences[var]:
-            for mon in cont:
-                
-                N_refer += 1
-                
-                if mon not in HMM_substrates:
-
-                    cont[cont.index(mon)] = 'nan'
-
-        N_refers.append(N_refer)
-    
-    if type(pssm) == DataFrame:
-        if min(N_refers) + delta < len(pssm):
-            return None
-
-        else:
-
-            answ = []
-
-            for var in sequences:
-                
-                nx = []
-                
-                for i in sequences[var]:
-                    
-                    nx.append(i)
-
-                answ.extend(create_variants(nx, len(pssm)))
-            answ = list(set(answ))
-            return answ
-        
     else:
+
+        answ = []
         
-        return  min(N_refers)
-    
-#Making shuffle funtions
-def shuffle_matrix(pssm_profile):
-    
-    profile = pssm_profile.copy()
-
-    while np.min(profile.values == pssm_profile.values) == True:
-        for idx in pssm_profile.index:
-
-            row_vals = list(profile.iloc[idx].values[1: ])
-            shuffle(row_vals)
-            row = {k : v for k, v in zip(profile.iloc[idx].keys()[1: ], row_vals)}
+        for var in sequence:
             
-            for sub in profile.keys()[1: ]:
+            nx = []
+            
+            for i in sequence[var]:
                 
-                profile.loc[idx, sub] = row[sub]
+                nx.append(i)
 
-    return profile
-#VERTICAL SHUFFLUNG
-#def shuffle_matrix(pssm_profile):
+            answ.extend(create_variants(nx, len(pssm)))
 
- #   profile = pssm_profile.copy()
-#    cols = profile.columns[1: ]
+        answ = list(set(answ))
 
-    #while np.min(profile.values == pssm_profile.values) == True:
-    #    for col in cols:
+    return answ #Returen condinations
 
-   #         col_vals = list(profile[col])
-  #          shuffle(col_vals)
- #           profile[col] = col_vals
-#    return profile 
+#Getting minimla size of putative sequence
+def get_minim_aminochain(PeptideSeq):
     
-def pssm(seq, pssm_profile):
+    lens_of_varints = []
 
-    TS = []
-    cut = 0
-    N = pssm_profile.shape[0]
-    #Calculating C-score(cluster-score)
-    
-    while N - cut - len(seq) != -1:
+    for bios_path in PeptideSeq:
+        for var in PeptideSeq[bios_path]:
+            
+            len_of_varint_seq = 0
+
+            for cont in PeptideSeq[bios_path][var]:
+
+                len_of_varint_seq += len(cont)
+
+            lens_of_varints.append(len_of_varint_seq)
+
+    return  min(lens_of_varints) # Return minimal lenght from possible variants
+
+#SHUFFLUNG FUNCTION
+def shuffle_matrix(pssm_profile, ShufflingType):
+    # Module shuffling
+    if ShufflingType == 'module':
         
-        seq_cnt = 0
-        target_sum = 0
+        profile = pssm_profile.copy()
+        cols = profile.columns[1: ]
+        
+        while np.min(profile.values == pssm_profile.values) == True:
+            for col in cols:
 
-        for line in pssm_profile.index:
-            if line < cut:
-                continue
-            try:
+                col_vals = list(profile[col])
+                shuffle(col_vals)
+                profile[col] = col_vals
+            if len(profile) < 3:
+                break
+    # Substrate shuffling
+    elif ShufflingType == 'substrate':
+
+        profile = pssm_profile.copy()
+
+        while np.min(profile.values == pssm_profile.values) == True:
+            for idx in pssm_profile.index:
+
+                row_vals = list(profile.iloc[idx].values[1: ])
+                shuffle(row_vals)
+                row = {k : v for k, v in zip(profile.iloc[idx].keys()[1: ], row_vals)}
+
+                for sub in profile.keys()[1: ]:
+
+                    profile.loc[idx, sub] = row[sub]
+
+    return profile 
+###############################********************************TO TESTING**************************************************************
+def get_score(seq, pssm_profile, type_value):
+    
+    target_sum = 0
+    seq_cnt = 0
+
+    for line in pssm_profile.index:
+        
+        try:
+            if type_value == 'log':
                 
+                target_sum += np.log(pssm_profile[seq[seq_cnt]][line])
+                
+            elif type_value == None:
+
                 target_sum += pssm_profile[seq[seq_cnt]][line]
-                
-            except:
-                
-                target_sum += 0
             
-            seq_cnt += 1
+        except:
+            
+            target_sum += 0
+
+        seq_cnt += 1
+      
+    return target_sum
+
+# Multple treading generating shuflling mtrixes
+def get_shuffled_matrix(pssm_mat, iterations, return_dict, ShufflingType):
+
+    shuffled_matrix = []
+    for i in range(iterations):
+
+        shuffled_matrix.append(shuffle_matrix(pssm_mat, ShufflingType))
+
+    return_dict[os.getpid()] = shuffled_matrix
+
+def multi_thread_shuffling(pssm_mat, ShufflingType, iterations=100, threads=1):
+    
+    procs = []
+    manager = Manager()
+    return_dict = manager.dict()
+    thread_iterations = [int(iterations/threads)] * threads    
+
+    thread_iterations[0] += iterations - sum(thread_iterations)
+
+    for i in thread_iterations:
+        proc = Process(target=get_shuffled_matrix, args=(pssm_mat, i, return_dict, ShufflingType))
+        procs.append(proc)
+        proc.start()
         
-        cut += 1
-        TS.append(target_sum)
+    for proc in procs:
+        proc.join()
+        
+    shuffled_matrix = []
+
+    for v in return_dict.values():
+        shuffled_matrix += v
     
-    return max(TS)
+    return shuffled_matrix
+
+# Multple treading calculation scores for shuffled matrix
+def get_shuffled_scores(MaxSeq, return_dict, ShuffledMatrix, type_value):
+
+    shuffled_scores = []
+    for i in range(len(ShuffledMatrix)):
+        shuffled_scores.append(get_score(MaxSeq, ShuffledMatrix[i], type_value))
+
+    shuffled_scores = np.array(shuffled_scores)
+    return_dict[os.getpid()] = shuffled_scores
+
+
+def multi_thread_calculating_scores(MaxSeq, ShuffledMatrix, type_value, iterations=100, threads=1):
     
+    procs = []
+    manager = Manager()
+    return_dict = manager.dict()
+    #thread_iterations = [int((len(ShuffledMatrix))/threads)] * threads    
+    batches = linspace(0, len(ShuffledMatrix), threads)
+    #thread_iterations[0] += iterations - sum(thread_iterations)
+
+    edges = [
+        (batches[i], batches[i+1]) for i in range(len(batches) - 1)
+    ]
+    for i in range(len(edges)):
+
+        proc = Process(target=get_shuffled_scores, args=(MaxSeq, return_dict, ShuffledMatrix[int(edges[i][0]): int(edges[i][1])], type_value))
+        procs.append(proc)
+        proc.start()
+        
+    for proc in procs:
+        proc.join()
+
+    print(len(return_dict))
+    shuffled_scores = np.concatenate([return_dict[k] for k in return_dict])
+    
+    return shuffled_scores
