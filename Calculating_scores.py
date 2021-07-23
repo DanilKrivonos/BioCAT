@@ -7,8 +7,8 @@ Rf = load(open('./model.dump', 'rb'))
 # The function generate list of shuflled matrix
 def make_shuffle_matrix(matrix, cpu):
 
-    module_shuffling_matrix = multi_thread_shuffling(matrix, ShufflingType='module', iterations=100, threads=cpu)
-    substrate_shuffling_matrix = multi_thread_shuffling(matrix, ShufflingType='substrate', iterations=100, threads=cpu)
+    module_shuffling_matrix = multi_thread_shuffling(matrix, ShufflingType='module', iterations=1000, threads=cpu)
+    substrate_shuffling_matrix = multi_thread_shuffling(matrix, ShufflingType='substrate', iterations=1000, threads=cpu)
     return module_shuffling_matrix, substrate_shuffling_matrix
 
 # The fujnction finds suquence with maximum possible value, results from alignment
@@ -127,7 +127,7 @@ def give_results(bed_out, folder, files, table, ids, PeptideSeq, length_min, ski
                     bed_out['Chromosome ID'].append(Name)
                     bed_out['Coordinates of cluster'].append(Coord_cluster)
                     bed_out['Strand'].append(strand)
-                    bed_out['Substance'].append(ids)
+                    bed_out['Substance'].append(ids[0])
                     bed_out['BGC ID'].append(BGC_ID)
                     bed_out['Putative linearized NRP sequence'].append('--'.join(variant_seq))
                     bed_out['Biosynthesis profile'].append('Type {}'.format(BS_type))

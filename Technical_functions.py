@@ -36,14 +36,14 @@ def run_antiSMASH(antismash, output, genome, cpu):
 
             print('The output directory already exists')
         # Run antiSMASH with loose mode
-        call('antismash {} --cb-general --output-dir {} --genefinding-tool prodigal --hmmdetection-strictness loose --cpus {}'.format(genome, anti_out, cpu), shell=True)
+        call('antismash {} --cb-general --output-dir {} --genefinding-tool prodigal --cpus {}'.format(genome, anti_out, cpu), shell=True)
         json_path = anti_out + ('.').join(os.path.split(genome)[1].split('.')[0: -1]) + '.json'
 
     else:
 
         json_path = antismash
 
-        return json_path
+    return json_path
 
 # Getting substance name if we have only rBAN json
 def get_ids(outp):
