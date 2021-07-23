@@ -36,7 +36,7 @@ def run_antiSMASH(antismash, output, genome, cpu):
 
             print('The output directory already exists')
         # Run antiSMASH with loose mode
-        call('antismash {} --cb-general --output-dir {} --genefinding-tool prodigal --hgenomemmdetection-strictness loose --cpus {}'.format(genome, anti_out, cpu), shell=True)
+        call('antismash {} --cb-general --output-dir {} --genefinding-tool prodigal --hmmdetection-strictness loose --cpus {}'.format(genome, anti_out, cpu), shell=True)
         json_path = anti_out + ('.').join(os.path.split(genome)[1].split('.')[0: -1]) + '.json'
 
     else:
