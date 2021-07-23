@@ -55,5 +55,4 @@ def exploration_mode(rBAN_path, output, json_path, delta, hmm=None):
         print(NRPS_type)
         print(dif_strand)
         if NRPS_type == 'A+B' and dif_strand == None:
-
-            check = 1
+            check =1
