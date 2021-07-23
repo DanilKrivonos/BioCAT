@@ -10,7 +10,7 @@ from HMM_maker import HMM_make
 from antiSMASH_parser import generate_table_from_antismash
 from Make_NRP_structure import parse_rBAN
 from Combinatorics import skipper, get_score, shuffle_matrix, make_combine, multi_thread_shuffling, get_minim_aminochain, make_standard
-from Exploration_mode import exploration
+from Exploration_mode import exploration_mode
 from Technical_functions import parse_smi_file, run_antiSMASH, run_rBAN, get_ids
 from Calculating_scores import give_results
 parser = argparse.ArgumentParser(description='Pipeline, which help to find biosynthesis gene clusters of NRP')
@@ -49,7 +49,7 @@ parser.add_argument('-dif_strand',
 parser.add_argument('-exploration', 
                     type=bool, 
                     help='If you want to try every variants of biosynthesis', 
-                    default=False)
+                    default=True)
 parser.add_argument('-skip', 
                     type=int, 
                     help='Count of possible skippikng', 
@@ -170,8 +170,10 @@ for smi in range(len(smile_list)):
     files = os.listdir(folder)
     #Trying to find some vsiants of biosynthesis
     if exploration is True:
+        if len(files) == 0:
 ###############################********************************TO TESTING**************************************************************
-        exploration(rBAN_path, output, json_path, args.hmm)
+            #exploration(rBAN_path, output, json_path, args.hmm)
+            exploration_mode(rBAN_path, output, json_path, delta)
 ###############################********************************TO TESTING**************************************************************
     # Check availability of PSSMs
     if len(files) == 0:
