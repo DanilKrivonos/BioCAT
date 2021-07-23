@@ -52,7 +52,7 @@ def exploration_mode(rBAN_path, output, json_path, delta, hmm=None):
                 print('Trying to find putative cluster from different strands ...')
                 dif_strand = 'Have'
                 generate_table_from_antismash(json_path, output, dif_strand)
-        print(NRPS_type)
-        print(dif_strand)
+        
         if NRPS_type == 'A+B' and dif_strand == None:
+
             check =1
