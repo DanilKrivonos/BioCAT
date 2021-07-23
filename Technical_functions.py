@@ -26,7 +26,7 @@ def parse_smi_file(smiles, name, file_smiles):
 def run_antiSMASH(antismash, output, genome, cpu):
     if antismash is None:
     
-        anti_out = output + 'antismash_result/'
+        anti_out = output + '/antismash_result/'
 
         try:
             
