@@ -1,2 +1,1 @@
-# BioCAT: Biosynthesis gene clusters predictor of nonribosmomal peptides
-
+# BioCAT: Biosynthesis gene clusters predictor of nonribosmomal peptides BioCAT_logo.png![BioCAT_logo](https://user-images.githubusercontent.com/53526550/126766152-e8f2c771-1e2f-475f-b213-180e2091686e.png)
