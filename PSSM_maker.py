@@ -52,7 +52,7 @@ def PSSM_make(search, aminochain, out, delta, hmms='./HMM/', neg='./negative.tsv
             for module in  subst_eval[substance].keys():
                 
                 open_hmm  = parse('{}/{}.out'.format(search, sub), 'hmmer3-text')
-            
+                
                 for i in open_hmm:
                     for t in i:
                         if t.hsps[0].hit.id == '{}_{}'.format(substance, module):

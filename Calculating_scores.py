@@ -75,9 +75,10 @@ def calculate_scores(variant_seq, matrix, substrate_shuffling_matrix, module_shu
     # Calculating Relative score
     
     Relative_score = Rf.predict_proba([[Sln_score, Mln_score, 
-                                Slt_score, Mlt_score, 
-                                Sdn_score, Mdn_score,
-                                Sdt_score, Mdt_score]])[0][1]
+                                        Sdn_score, Mdn_score,
+                                        Sdt_score, Mdt_score,
+                                        Slt_score, Mlt_score  
+                                        ]])[0][1]
     
     return Sln_score, Mln_score, Slt_score, Mlt_score, Sdn_score, Mdn_score, Sdt_score, Mdt_score, Relative_score
 
@@ -133,11 +134,11 @@ def give_results(bed_out, folder, files, table, ids, PeptideSeq, length_min, ski
                     bed_out['Biosynthesis profile'].append('Type {}'.format(BS_type))
                     bed_out['Sln score'].append(Sln_score) #shaffling substrates in matrix with log score and nan in maximally possible sequence
                     bed_out['Mln score'].append(Mln_score) #shaffling modules matrix with log score and nan in maximally possible sequence
-                    bed_out['Slt score'].append(Slt_score) #shaffling substrates matrix with log score in maximally possible sequence
-                    bed_out['Mlt score'].append(Mlt_score) #shaffling modules matrix with log score in maximally possible sequence
                     bed_out['Sdn score'].append(Sdn_score) #shaffling substrates matrix without log score and nan in maximally possible sequence
                     bed_out['Mdn score'].append(Mdn_score) #shaffling modules matrix without log score and nan in maximally possible sequence
                     bed_out['Sdt score'].append(Sdt_score) #shaffling substrates matrix without log score in maximally possible sequence
                     bed_out['Mdt score'].append(Mdt_score) #shaffling modules matrix without log score in maximally possible sequence
+                    bed_out['Slt score'].append(Slt_score) #shaffling substrates matrix with log score in maximally possible sequence
+                    bed_out['Mlt score'].append(Mlt_score) #shaffling modules matrix with log score in maximally possible sequence
                     bed_out['Relative score'].append(Relative_score) #Final score
     return bed_out

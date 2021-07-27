@@ -38,7 +38,7 @@ def exploration_mode(rBAN_path, output, json_path, delta, hmm=None):
         if len(files) != 0:
             
             check = 1
-
+            break
         if dif_strand == 'Have':
             
             NRPS_type = 'A+B'
@@ -46,6 +46,7 @@ def exploration_mode(rBAN_path, output, json_path, delta, hmm=None):
             print('Trying to find putative cluster from different strands ...')
             generate_table_from_antismash(json_path, output, dif_strand)
         #Dont split cluster
+        files = listdir(folder)
         if len(files) == 0 and dif_strand is None:
             if NRPS_type != 'A+B':
 
@@ -56,3 +57,4 @@ def exploration_mode(rBAN_path, output, json_path, delta, hmm=None):
         if NRPS_type == 'A+B' and dif_strand == None:
 
             check =1
+    return PeptideSeq, NRPS_type

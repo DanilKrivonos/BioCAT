@@ -61,7 +61,7 @@ parser.add_argument('-out',
 parser.add_argument('-cpu', 
                     type=str, 
                     help='Multiple treadings', 
-                    default=10)
+                    default=100)
 ###############################********************************TO TESTING**************************************************************
 parser.add_argument('-hmm', 
                     type=str, 
@@ -173,11 +173,12 @@ for smi in range(len(smile_list)):
         if len(files) == 0:
 ###############################********************************TO TESTING**************************************************************
             #exploration(rBAN_path, output, json_path, args.hmm)
-            exploration_mode(rBAN_path, output, json_path, delta)
+            PeptideSeq, NRPS_type = exploration_mode(rBAN_path, output, json_path, delta)
 ###############################********************************TO TESTING**************************************************************
     # Check availability of PSSMs
+    files = os.listdir(folder)
     if len(files) == 0:
-
+        print(len(files))
         print('Organism have no putative cluster') 
         break# If have no cluster -> brake it
     # Importing table with information about cluster
