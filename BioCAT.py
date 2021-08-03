@@ -50,6 +50,10 @@ parser.add_argument('-exploration',
                     type=bool, 
                     help='If you want to try every variants of biosynthesis', 
                     default=True)
+parser.add_argument('-iterations', 
+                    type=int, 
+                    help='Number of permuted PSSMs', 
+                    default=1000)
 parser.add_argument('-skip', 
                     type=int, 
                     help='Count of possible skippikng', 
@@ -82,7 +86,7 @@ delta = int(args.delta)
 NRPS_type = args.NRPS_type
 dif_strand = args.dif_strand
 genome = args.genome
-
+iterations = args.iterations
 if args.genome == None and args.antismash == None:
     
     print('Error: Give a fasta or an antismash json!')
@@ -119,26 +123,28 @@ if args.rBAN is not None:
     
     smile_list = ['smi']
     ids = [get_ids(args.rBAN)]
-#Output info dictionary
-bed_out = {'Chromosome ID': [],
-            'Coordinates of cluster': [],
-            'Strand': [],
-            'Substance': [],
-            'BGC ID': [],
-            'Putative linearized NRP sequence': [],
-            'Biosynthesis profile': [],
-            'Sln score': [],
-            'Mln score': [],
-            'Slt score': [],
-            'Mlt score': [],
-            'Sdn score': [],
-            'Mdn score': [],
-            'Sdt score': [],
-            'Mdt score': [],
-            'Relative score': []
-            }
 
 for smi in range(len(smile_list)):
+    #Output info dictionary
+    bed_out = {'Chromosome ID': [],
+               'Coordinates of cluster': [],
+               'Strand': [],
+               'Substance': [],
+               'BGC ID': [],
+               'Putative linearized NRP sequence': [],
+               'Biosynthesis profile': [],
+               'Sln score': [],
+               'Mln score': [],
+               'Sdn score': [],
+               'Mdn score': [],
+               'Sdt score': [],
+               'Mdt score': [],
+               'Slt score': [],
+               'Mlt score': [],
+               'Relative score': [],
+               'Binary': []
+               }
+    print('Calculating probability for {}'.format(ids[smi]))
     # Run rBAN if it neccecery or return path to directory 
     rBAN_path = run_rBAN(args.rBAN, ids[smi], smile_list[smi], output)
     PeptideSeq = parse_rBAN(rBAN_path, NRPS_type)
@@ -153,7 +159,7 @@ for smi in range(len(smile_list)):
     for BS_type in PeptideSeq:
 
         print('For {} biosynthetic path'.format(BS_type))
-        [print('Variant of amino sequence of your substance: {}\n'.format(PeptideSeq[BS_type][seq])) for seq in PeptideSeq[BS_type]]
+        [print('Variant of amino sequence of your substance: {}'.format(PeptideSeq[BS_type][seq])) for seq in PeptideSeq[BS_type]]
     # Standartization of monomer names
     PeptideSeq = make_standard(PeptideSeq)
     # Calculating length of smaller variant
@@ -162,29 +168,32 @@ for smi in range(len(smile_list)):
 ###############################********************************TO TESTING**************************************************************
     # print( args.hmm + '/HMM_results/')
     #PSSM_make(search = args.hmm + '/HMM_results/', aminochain=length_min, out = output, delta=delta)
-    PSSM_make(search = output + '/HMM_results/', aminochain=length_min, out = output, delta=delta)
+    PSSM_make(search = output + '/HMM_results/', aminochain=length_min, out = output, delta=delta, substance_name=ids[smi])
 
 ###############################********************************TO TESTING**************************************************************
     #Importing all PSSMs
-    folder =  output + '/PSSM/'
+    folder =  output + '/PSSM_{}/'.format(ids[smi])
     files = os.listdir(folder)
     #Trying to find some vsiants of biosynthesis
     if exploration is True:
         if len(files) == 0:
 ###############################********************************TO TESTING**************************************************************
             #exploration(rBAN_path, output, json_path, args.hmm)
-            PeptideSeq, NRPS_type = exploration_mode(rBAN_path, output, json_path, delta)
+            PeptideSeq, NRPS_type = exploration_mode(rBAN_path, output, json_path, delta, substance_name=ids[smi])
 ###############################********************************TO TESTING**************************************************************
     # Check availability of PSSMs
     files = os.listdir(folder)
-    if len(files) == 0:
-        print(len(files))
+    if len(files) == 0: 
+        bed_df = DataFrame(data=bed_out)
+        bed_df.to_csv('{}/Results_{}.csv'.format(output, ids[smi]), sep='\t', index=False)  
         print('Organism have no putative cluster') 
         break# If have no cluster -> brake it
     # Importing table with information about cluster
     table = read_csv(output + '/table.tsv', sep='\t')
-    bed_out = give_results(bed_out, folder, files, table, ids, PeptideSeq, length_min, skip, cpu)                                     
-#Recording Data Frame
-bed_df = DataFrame(data=bed_out)
-bed_df.to_csv('{}/Results.bed'.format(output), sep='\t')           
+    bed_out = give_results(bed_out, folder, files, table, ids[smi], PeptideSeq, length_min, skip, cpu, iterations)                                     
+    #Recording Data Frame
+    bed_df = DataFrame(data=bed_out)
+    bed_df.to_csv('{}/Results_{}.csv'.format(output, ids[smi]), sep='\t', index=False)           
+    ('Results file for {} is recorded!'.format(ids[smi]))
+
 print('Job is done!')

@@ -3,12 +3,12 @@ from pickle import load
 from pandas import read_csv
 from Combinatorics import multi_thread_shuffling, multi_thread_calculating_scores, make_combine, get_score
 # Importing random forest model
-Rf = load(open('./model.dump', 'rb'))
+Rf = load(open('/data12/bio/runs-konanov/krivonos/scripts/pipe/BioCAT/model.dump', 'rb'))
 # The function generate list of shuflled matrix
-def make_shuffle_matrix(matrix, cpu):
+def make_shuffle_matrix(matrix, cpu, iterat):
 
-    module_shuffling_matrix = multi_thread_shuffling(matrix, ShufflingType='module', iterations=1000, threads=cpu)
-    substrate_shuffling_matrix = multi_thread_shuffling(matrix, ShufflingType='substrate', iterations=1000, threads=cpu)
+    module_shuffling_matrix = multi_thread_shuffling(matrix, ShufflingType='module', iterations=iterat, threads=cpu)
+    substrate_shuffling_matrix = multi_thread_shuffling(matrix, ShufflingType='substrate', iterations=iterat, threads=cpu)
     return module_shuffling_matrix, substrate_shuffling_matrix
 
 # The fujnction finds suquence with maximum possible value, results from alignment
@@ -48,18 +48,18 @@ def get_cluster_info(table, BGC_ID, target_file):
     return Name, Coord_cluster, strand
 
 # Calculate scores 
-def calculate_scores(variant_seq, matrix, substrate_shuffling_matrix, module_shuffling_matrix, cpu):    
+def calculate_scores(variant_seq, matrix, substrate_shuffling_matrix, module_shuffling_matrix, cpu, iterat):    
     # Finding suquence with maximum possible value, results from alignment
     MaxSeq_full, MaxSeq_nan = get_MaxSeq(matrix, variant_seq)
     # Calculating shuffled scores
-    Sln_shuffled_score = array(multi_thread_calculating_scores(MaxSeq_nan, substrate_shuffling_matrix, type_value='log', iterations=100, threads=cpu))
-    Mln_shuffled_score = array(multi_thread_calculating_scores(MaxSeq_nan, module_shuffling_matrix, type_value='log', iterations=100, threads=cpu))
-    Slt_shuffled_score = array(multi_thread_calculating_scores(MaxSeq_full, substrate_shuffling_matrix, type_value='log', iterations=100, threads=cpu))
-    Mlt_shuffled_score = array(multi_thread_calculating_scores(MaxSeq_full, module_shuffling_matrix, type_value='log', iterations=100, threads=cpu))
-    Sdn_shuffled_score = array(multi_thread_calculating_scores(MaxSeq_nan, substrate_shuffling_matrix, type_value=None, iterations=100, threads=cpu))
-    Mdn_shuffled_score = array(multi_thread_calculating_scores(MaxSeq_nan, module_shuffling_matrix, type_value=None, iterations=100, threads=cpu))
-    Sdt_shuffled_score = array(multi_thread_calculating_scores(MaxSeq_full, substrate_shuffling_matrix, type_value=None, iterations=100, threads=cpu))
-    Mdt_shuffled_score = array(multi_thread_calculating_scores(MaxSeq_full, module_shuffling_matrix, type_value=None, iterations=100, threads=cpu))
+    Sln_shuffled_score = array(multi_thread_calculating_scores(MaxSeq_nan, substrate_shuffling_matrix, type_value='log', iterations=iterat, threads=cpu))
+    Mln_shuffled_score = array(multi_thread_calculating_scores(MaxSeq_nan, module_shuffling_matrix, type_value='log', iterations=iterat, threads=cpu))
+    Slt_shuffled_score = array(multi_thread_calculating_scores(MaxSeq_full, substrate_shuffling_matrix, type_value='log', iterations=iterat, threads=cpu))
+    Mlt_shuffled_score = array(multi_thread_calculating_scores(MaxSeq_full, module_shuffling_matrix, type_value='log', iterations=iterat, threads=cpu))
+    Sdn_shuffled_score = array(multi_thread_calculating_scores(MaxSeq_nan, substrate_shuffling_matrix, type_value=None, iterations=iterat, threads=cpu))
+    Mdn_shuffled_score = array(multi_thread_calculating_scores(MaxSeq_nan, module_shuffling_matrix, type_value=None, iterations=iterat, threads=cpu))
+    Sdt_shuffled_score = array(multi_thread_calculating_scores(MaxSeq_full, substrate_shuffling_matrix, type_value=None, iterations=iterat, threads=cpu))
+    Mdt_shuffled_score = array(multi_thread_calculating_scores(MaxSeq_full, module_shuffling_matrix, type_value=None, iterations=iterat, threads=cpu))
     # Calculating scores for target sequence
     log_target_score = get_score(variant_seq, matrix, type_value='log')
     non_log_target_score = get_score(variant_seq, matrix, type_value=None)
@@ -73,16 +73,19 @@ def calculate_scores(variant_seq, matrix, substrate_shuffling_matrix, module_shu
     Sdt_score = len(Sdt_shuffled_score[Sdt_shuffled_score < non_log_target_score])/len(Sdt_shuffled_score)
     Mdt_score = len(Mdt_shuffled_score[Mdt_shuffled_score < non_log_target_score])/len(Mdt_shuffled_score)
     # Calculating Relative score
-    
     Relative_score = Rf.predict_proba([[Sln_score, Mln_score, 
                                         Sdn_score, Mdn_score,
                                         Sdt_score, Mdt_score,
                                         Slt_score, Mlt_score  
                                         ]])[0][1]
-    
-    return Sln_score, Mln_score, Slt_score, Mlt_score, Sdn_score, Mdn_score, Sdt_score, Mdt_score, Relative_score
+    Binary = Rf.predict([[Sln_score, Mln_score, 
+                                        Sdn_score, Mdn_score,
+                                        Sdt_score, Mdt_score,
+                                        Slt_score, Mlt_score  
+                                        ]])[0]
+    return Sln_score, Mln_score, Slt_score, Mlt_score, Sdn_score, Mdn_score, Sdt_score, Mdt_score, Relative_score, Binary
 
-def give_results(bed_out, folder, files, table, ids, PeptideSeq, length_min, skip, cpu):
+def give_results(bed_out, folder, files, table, ID, PeptideSeq, length_min, skip, cpu, iterat):
     
     for target_file in files:
             
@@ -111,6 +114,8 @@ def give_results(bed_out, folder, files, table, ids, PeptideSeq, length_min, ski
         for matrix in BGC:
             if len(matrix) == 1:
                 continue
+            # Generating shuffling matrix
+            module_shuffling_matrix, substrate_shuffling_matrix =  make_shuffle_matrix(matrix, cpu, iterat)
 
             for BS_type in PeptideSeq:# For every biosynthesis profile pathways
 
@@ -118,17 +123,15 @@ def give_results(bed_out, folder, files, table, ids, PeptideSeq, length_min, ski
 
                 if EPs is None: # If length sequnce can't be scaled to cluster size
                     continue
-                # Generating shuffling matrix
-                module_shuffling_matrix, substrate_shuffling_matrix =  make_shuffle_matrix(matrix, cpu)
                 
                 for variant_seq in EPs:
 
-                    Sln_score, Mln_score, Slt_score, Mlt_score, Sdn_score, Mdn_score, Sdt_score, Mdt_score, Relative_score = calculate_scores(variant_seq, matrix, substrate_shuffling_matrix, module_shuffling_matrix, cpu)
+                    Sln_score, Mln_score, Slt_score, Mlt_score, Sdn_score, Mdn_score, Sdt_score, Mdt_score, Relative_score, Binary = calculate_scores(variant_seq, matrix, substrate_shuffling_matrix, module_shuffling_matrix, cpu, iterat)
                     #Recordind dictionary 
                     bed_out['Chromosome ID'].append(Name)
                     bed_out['Coordinates of cluster'].append(Coord_cluster)
                     bed_out['Strand'].append(strand)
-                    bed_out['Substance'].append(ids[0])
+                    bed_out['Substance'].append(ID)
                     bed_out['BGC ID'].append(BGC_ID)
                     bed_out['Putative linearized NRP sequence'].append('--'.join(variant_seq))
                     bed_out['Biosynthesis profile'].append('Type {}'.format(BS_type))
@@ -141,4 +144,5 @@ def give_results(bed_out, folder, files, table, ids, PeptideSeq, length_min, ski
                     bed_out['Slt score'].append(Slt_score) #shaffling substrates matrix with log score in maximally possible sequence
                     bed_out['Mlt score'].append(Mlt_score) #shaffling modules matrix with log score in maximally possible sequence
                     bed_out['Relative score'].append(Relative_score) #Final score
+                    bed_out['Binary'].append(Binary) #Binary value
     return bed_out

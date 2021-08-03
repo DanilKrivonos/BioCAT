@@ -1,6 +1,8 @@
 import argparse 
 from json import load
 from pandas import DataFrame
+from pandas import read_csv
+from Get_AS_DF import get_df
 
 #sortion genes in cluster and modules in genes
 def cluster_sort(df):
@@ -195,182 +197,12 @@ def sort_cluster_seq(df):
     
     return df2
 #*******************************************************************************************************************************
-def generate_table_from_antismash(path, table_out, dif_strand):
-   
-    out = table_out + '/table.tsv'
-
-    print('Starting parsing antiSMASH output ...')
-    keys = {'Name' : [],
-            'ID' : [], 
-            'Gen ID' : [],
-            'Coordinates of cluster' : [],
-            'Gen strand' : [],
-            'Start of gen' : [],
-            'End of gen' : [],
-            'Protein start' : [],
-            'Protein end' : [],
-            'Domain name' : [],
-            'Large prediction' : [],
-            'Small prediction' : [],
-            'Single aa prediction' : [],
-            'E-value' : [],
-            'Score' : [],
-            'Sequence': []
-            }
+def generate_table_from_antismash(json_path, table_out, dif_strand):
     
-    with open(path, 'r') as js:
-        
-        translates = {}
-        open_js = load(js)
-        coord_tag = {}
-        protein_start = {}
-        protein_end = {}
-        GEN_ID = {}
-        GEN_strand = {}
-        GEN_COORD = {}
-        gene_loc_tag = {}
-        coordhave = ''
-        check_gen_id = {}
-        chromosome_ID = 1
-
-        for key in open_js['records']:
-            for i in key['features']:
-                if 'cand_cluster' in i['type']:
-
-                    BGC = 'BGC_{}_{}'.format(chromosome_ID, i['qualifiers']['candidate_cluster_number'][0])
-                    coord_cluster = i['location']
-                
-                if 'CDS' == i['type']:
-                    try:
-                        if 'locus_tag' in i['qualifiers']:
-
-                            check_gen_id[i['qualifiers']['locus_tag'][0]] = i['qualifiers']['locus_tag'][0]
-                            coordhave = 'locus_tag'
-                            GEN_COORD[i['qualifiers']['locus_tag'][0]] = i['location']
-                            
-                        elif 'gene' in i['qualifiers']:
-                            
-                            gene_loc_tag[i['qualifiers']['gene'][0]] = i['qualifiers']['protein_id'][0]
-                            coordhave = 'gene'
-                            GEN_COORD[i['qualifiers']['protein_id'][0]] = i['location']
-                            
-                        elif 'protein_id' in i['qualifiers']:
-
-                            coordhave = 'protein_id'
-                            GEN_COORD[i['qualifiers']['protein_id'][0]] = i['location']
-                            
-                    except:
-                        continue
-                
-                if 'aSModule' not in i['type']:
-                    continue
-
-                tag = i['qualifiers']['locus_tags'][0]
-                metric_dict = {}
-
-                for z in key['features']:
-
-                    if 'aSDomain' not in z['type']:
-                        continue
-
-                    metric_dict[z['qualifiers']['domain_id'][0]] = {'evalue' : z['qualifiers']['evalue'][0],
-                                                                    'score' : z['qualifiers']['score'][0]}
-                    domain_name = z['qualifiers']['domain_id'][0]
-                    protein_start[domain_name] = z['qualifiers']['protein_start'][0]
-                    protein_end[domain_name] = z['qualifiers']['protein_end'][0]
-                    translates[domain_name] = z['qualifiers']['translation']                         
-
-                    if coordhave == 'gene':
-
-                        GEN_ID[domain_name] = gene_loc_tag[z['qualifiers']['locus_tag'][0]]
-                    
-                    elif coordhave == 'locus_tag':
-                        if z['qualifiers']['locus_tag'][0] not in check_gen_id:
-                            continue
-                            
-                        GEN_ID[domain_name] = check_gen_id[z['qualifiers']['locus_tag'][0]]
-                        
-                    elif coordhave == 'protein_id':
-                        if z['qualifiers']['locus_tag'][0] in GEN_COORD:
-
-                            GEN_ID[domain_name] = z['qualifiers']['locus_tag'][0]
-
-                    if '+' in z['location']:
-                        
-                        direct = '+'
-                        
-                    elif '-' in z['location']:
-                        
-                        direct = '-'
-                        
-                    GEN_strand[domain_name] = direct
-                predictiton_dict = {}
-               
-                for dom in key['modules']['antismash.modules.nrps_pks']['domain_predictions']:
-                    
-                    predictiton_dict[dom] = {'LargePred' : '',
-                                            'SmalPred' : '',
-                                            'Single_AA' : ''}
-                    
-                    if dom in i['qualifiers']['domains']:
-                        if 'NRPSPredictor2' in key['modules']['antismash.modules.nrps_pks']['domain_predictions'][dom]:
-                            
-                            predictiton_dict[dom]['LargePred'] = key['modules']['antismash.modules.nrps_pks']['domain_predictions'][dom]['NRPSPredictor2']['large_cluster_pred']
-                            predictiton_dict[dom]['SmalPred'] = key['modules']['antismash.modules.nrps_pks']['domain_predictions'][dom]['NRPSPredictor2']['small_cluster_pred']
-                            predictiton_dict[dom]['Single_AA'] = key['modules']['antismash.modules.nrps_pks']['domain_predictions'][dom]['NRPSPredictor2']['single_amino_pred']
-                            
-                            if predictiton_dict[dom]['Single_AA'] == 'N/A':
-                                        
-                                predictiton_dict[dom]['Single_AA'] = key['modules']['antismash.modules.nrps_pks']['domain_predictions'][dom]['NRPSPredictor2']['stachelhaus_predictions'][0].replace('(', '').replace(')', '')
-
-                        else:
-                            
-                            predictiton_dict[dom]['LargePred'] = 'nan'
-                            predictiton_dict[dom]['SmalPred'] = 'nan'
-                            predictiton_dict[dom]['Single_AA'] = 'nan'
-
-                for dom in key['modules']['antismash.modules.nrps_pks']['domain_predictions']:
-                    if dom in i['qualifiers']['domains']:
-                        if dom not in GEN_ID:
-                            continue
-                            
-                        if 'join' in GEN_COORD[GEN_ID[dom]]:
-                            if '-' in GEN_COORD[GEN_ID[dom]]:
-
-                                start = GEN_COORD[GEN_ID[dom]].split(', ')[-1].split(':')[0][1: ]
-                                end = GEN_COORD[GEN_ID[dom]].split(', ')[0].split(':')[1].split(']')[0]
-
-                            elif '+' in GEN_COORD[GEN_ID[dom]]:
-
-                                start = GEN_COORD[GEN_ID[dom]].split(', ')[0].split(':')[0].split('[')[1]
-                                end = GEN_COORD[GEN_ID[dom]].split(', ')[-1].split(':')[1].split(']')[0]
-                            
-                        else:
-                            
-                            start = GEN_COORD[GEN_ID[dom]].split(':')[0].split('[')[1]
-                            end = GEN_COORD[GEN_ID[dom]].split(':')[1].split(']')[0]
-                        
-                        keys['Name'].append(key['id'].split('.')[0])    
-                        keys['ID'].append(BGC)
-                        keys['Gen ID'].append(str(GEN_ID[dom]))
-                        keys['Coordinates of cluster'].append(coord_cluster)
-                        keys['Gen strand'].append(str(GEN_strand[dom]))
-                        keys['Start of gen'].append(int(start))
-                        keys['End of gen'].append(int(end))
-                        keys['Protein start'].append(int(protein_start[dom]))
-                        keys['Protein end'].append(int(protein_end[dom]))
-                        keys['Domain name'].append(dom)
-                        keys['Large prediction'].append(predictiton_dict[dom]['LargePred'])
-                        keys['Small prediction'].append(predictiton_dict[dom]['SmalPred'])
-                        keys['Single aa prediction'].append(predictiton_dict[dom]['Single_AA'])
-                        keys['E-value'].append(metric_dict[dom]['evalue'])
-                        keys['Score'].append(metric_dict[dom]['score'])
-                        keys['Sequence'].append(translates[dom][0])
-
-            chromosome_ID += 1
-
-    df = DataFrame(data=keys)
-
+    out = table_out + '/table.tsv'
+    get_df(json_path, out)
+    df = read_csv(out, sep='\t')
+    
     if dif_strand == None:
 
         subcluster = check_subcluster(df)
@@ -379,9 +211,6 @@ def generate_table_from_antismash(path, table_out, dif_strand):
 
             df = split_subcluster(df, subcluster)
 
-    df.to_csv(out, index=False, sep='\t')
-    from pandas import read_csv 
-    df = read_csv(out, sep='\t')
     df = cluster_sort(df)
     df = reverse_neg(df)
     df = sort_cluster_seq(df)

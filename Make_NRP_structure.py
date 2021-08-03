@@ -376,6 +376,7 @@ def Type_B(PeptideSeq):
     
     PeptideSeq_cop = PeptideSeq.copy()
     key = 0
+
     for bios_path in PeptideSeq_cop:
         if bios_path == 'B':
             continue
@@ -387,16 +388,18 @@ def Type_B(PeptideSeq):
                 indxs.remove(tour)
 
                 for tourx in indxs:
-                    if PeptideSeq_cop[bios_path][var][tourx] == PeptideSeq_cop[bios_path][var][tour]:
-                        if PeptideSeq_cop[bios_path][var][tour] not in PeptideSeq_cop[bios_path].values():
-                            if key not in PeptideSeq_cop['B']:
+                    if PeptideSeq_cop[bios_path][var][tourx] != PeptideSeq_cop[bios_path][var][tour]:
+                        continue
+                    
+                    if PeptideSeq_cop[bios_path][var][tour] not in PeptideSeq_cop[bios_path].values():
+                        if key not in PeptideSeq_cop['B']:
 
-                                PeptideSeq_cop['B'][key] = []
+                            PeptideSeq_cop['B'][key] = []
 
-                            if PeptideSeq[bios_path][var][tour] in PeptideSeq_cop['B'][key]:
-                                continue
-                                
-                            PeptideSeq_cop['B'][key].append(PeptideSeq[bios_path][var][tour]) #because tour == tour x
+                        if PeptideSeq[bios_path][var][tour] in PeptideSeq_cop['B'][key]:
+                            continue
+                            
+                        PeptideSeq_cop['B'][key].append(PeptideSeq[bios_path][var][tour]) #because tour == tour x
         key += 1
 
     return PeptideSeq_cop
@@ -516,7 +519,6 @@ def parse_rBAN(outp, NRPS_type):
     pept_pattern_length = len(peptide_bond.GetAtoms())
     alpha_amino_length = len(alpha_amino.GetAtoms())
     N_OH_length = len(N_OH.GetAtoms())
-    print(outp)
     with open(outp, 'r') as json:
 
         js = load(json)
@@ -581,13 +583,11 @@ def parse_rBAN(outp, NRPS_type):
         EP = find_amino_acid(EP, amino_acids)
         # Giveng biosynthetic way name
         PeptideSeq = {'A': EP, 'B': {}, 'C': {}}
-
+        PeptideSeq['A'] = get_monomer_names(PeptideSeq['A'], js['monomericGraph']['monomericGraph']['monomers'])
         if 'C' in NRPS_type:
 
             PeptideSeq['C'] = type_C(EP, js)
             PeptideSeq['C'] = get_monomer_names(PeptideSeq['C'], js['monomericGraph']['monomericGraph']['monomers'])
-
-        PeptideSeq['A'] = get_monomer_names(PeptideSeq['A'], js['monomericGraph']['monomericGraph']['monomers'])
 
         if 'B' in NRPS_type:
             

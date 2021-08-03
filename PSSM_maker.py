@@ -5,7 +5,7 @@ from os import listdir
 from pandas import read_csv
 from Bio.SearchIO import parse
 
-def PSSM_make(search, aminochain, out, delta, hmms='./HMM/', neg='./negative.tsv'):
+def PSSM_make(search, aminochain, out, delta, substance_name, hmms='./HMM/', neg='./negative.tsv'):
 
     negative = read_csv(neg, sep='\t')
     output = out
@@ -20,7 +20,7 @@ def PSSM_make(search, aminochain, out, delta, hmms='./HMM/', neg='./negative.tsv
 
             subst_eval[table['ID'][id_new]] = {} 
         
-        key = '{}_{}'.format(table['Domain name'][id_new], table['Single aa prediction'][id_new])
+        key = table['Domain name'][id_new]
         subst_eval[table['ID'][id_new]][key] = {}
 
         for sub in substr:
@@ -37,7 +37,7 @@ def PSSM_make(search, aminochain, out, delta, hmms='./HMM/', neg='./negative.tsv
             continue
         
         if len(cop[s]) > aminochain + delta:
-
+            
             subst_eval.pop(s)
             continue
     
@@ -50,13 +50,13 @@ def PSSM_make(search, aminochain, out, delta, hmms='./HMM/', neg='./negative.tsv
 
         for substance in subst_eval.keys():
             for module in  subst_eval[substance].keys():
-                
+
                 open_hmm  = parse('{}/{}.out'.format(search, sub), 'hmmer3-text')
                 
                 for i in open_hmm:
                     for t in i:
-                        if t.hsps[0].hit.id == '{}_{}'.format(substance, module):
-                       
+                        if module in t.hsps[0].hit.id:
+                               
                             TP = -np.log(t.evalue)
                             break
                 
@@ -67,7 +67,7 @@ def PSSM_make(search, aminochain, out, delta, hmms='./HMM/', neg='./negative.tsv
     print('Recording PSSM ...\n')
     
     #Making directory for PSSMs
-    PSSMs_out = output + '/PSSM/'
+    PSSMs_out = output + '/PSSM_{}/'.format(substance_name)
     try:
 
         os.mkdir('{}'.format(PSSMs_out))

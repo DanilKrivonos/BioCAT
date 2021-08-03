@@ -184,8 +184,13 @@ def get_score(seq, pssm_profile, type_value):
         
         try:
             if type_value == 'log':
-                
-                target_sum += np.log(pssm_profile[seq[seq_cnt]][line])
+                if pssm_profile[seq[seq_cnt]][line] != 0:
+
+                    target_sum += np.log(pssm_profile[seq[seq_cnt]][line])
+
+                else:
+
+                    target_sum += -np.inf
                 
             elif type_value == None:
 
@@ -265,7 +270,7 @@ def multi_thread_calculating_scores(MaxSeq, ShuffledMatrix, type_value, iteratio
     for proc in procs:
         proc.join()
 
-    print(len(return_dict))
+    #print(len(return_dict))
     shuffled_scores = np.concatenate([return_dict[k] for k in return_dict])
     
     return shuffled_scores

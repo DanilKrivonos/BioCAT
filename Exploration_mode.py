@@ -9,7 +9,7 @@ from PSSM_maker import PSSM_make
 # 2 - Try don't split cluster on subcluster with type A+B+C biosynthetic path
 # 2 - Try don't split cluster on subcluster with type A+B biosynthetic path
 
-def exploration_mode(rBAN_path, output, json_path, delta, hmm=None):
+def exploration_mode(rBAN_path, output, json_path, delta, substance_name, hmm=None):#Change hmm atribute
 
     check = 0
     NRPS_type = 'A+B+C'
@@ -29,10 +29,10 @@ def exploration_mode(rBAN_path, output, json_path, delta, hmm=None):
         # Calculating length of smaller variant
         length_min = get_minim_aminochain(PeptideSeq)
         #PSSM_make(search = args.hmm + '/HMM_results/', aminochain=length_min, out = output, delta=delta)
-        PSSM_make(search = output + '/HMM_results/', aminochain=length_min, out = output, delta=delta)
+        PSSM_make(search = output + '/HMM_results/', aminochain=length_min, out = output, delta=delta, substance_name=substance_name)
 
 ###############################********************************TO TESTING**************************************************************
-        folder =  output + '/PSSM/'
+        folder =  output + '/PSSM_{}/'.format(substance_name)
         files = listdir(folder)
 
         if len(files) != 0:

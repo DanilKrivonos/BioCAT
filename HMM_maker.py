@@ -19,18 +19,22 @@ def HMM_make(path, output, cpu, hmms='./HMM/'):
         print('Exist!')
         
     print('Gereing of fasta files ...')
+    headers = []
     with open('{}/nrps_domains.fasta'.format(path), 'w') as fasta:
         for ind in table[table['Domain name'].str.contains('AMP-binding')].index:
             
-            substrates.append(table['Single aa prediction'][ind])
             ID = table['ID'][ind]
             DOMAIN = table['Domain name'][ind]
-            SUB = table['Single aa prediction'][ind]
             TRANSLATE = table['Sequence'][ind]        
-            fasta.write('>{}_{}_{}\n{}\n'.format(ID, 
+
+            if '>{}_{}'.format(ID, DOMAIN) in headers:
+                continue
+
+            fasta.write('>{}_{}\n{}\n'.format(ID, 
                                             DOMAIN, 
-                                            SUB, 
                                             TRANSLATE))
+
+            headers.append('>{}_{}'.format(ID, DOMAIN))
 
     print('Fasta files were generated successfully!')
 

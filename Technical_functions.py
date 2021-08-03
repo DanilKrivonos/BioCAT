@@ -11,14 +11,14 @@ def parse_smi_file(smiles, name, file_smiles):
     if smiles is not None:
         
         smile_list = [smiles]
-        ids = [name]
+        ids = [name.replace(' ', '_').replace('(', '').replace(')', '')]
 
     elif file_smiles is not None:
         with open(file_smiles) as smi:
             for line in smi:
 
                 smile_list.append(line.split('\t')[1].replace('\n', ''))
-                ids.append(line.split('\t')[0])
+                ids.append(line.split('\t')[0].replace(' ', '_').replace('(', '').replace(')', ''))
     
     return smile_list, ids
 
@@ -68,10 +68,10 @@ def run_rBAN(rBAN, ID, SMI, output):
     if rBAN is None:
 
         smiles = '"' + SMI + '"'
-        idsmi = ID.replace(' ', '_').replace('(', '').replace(')', '')
-        rBAN_path = output + '/{}_peptideGraph.json'.format(idsmi)
+        #idsmi = ID.replace(' ', '_').replace('(', '').replace(')', '')
+        rBAN_path = output + '/{}_peptideGraph.json'.format(ID)
         # Run rBAN with discoveryMode
-        call('java -jar rBAN-1.0.jar -inputId {} -inputSmiles {} -outputFolder {}/{}_ -discoveryMode'.format(idsmi, smiles, output, idsmi), shell=True)
+        call('java -jar rBAN-1.0.jar -inputId {} -inputSmiles {} -outputFolder {}/{}_ -discoveryMode'.format(ID, smiles, output, ID), shell=True)
         
     else:
 
