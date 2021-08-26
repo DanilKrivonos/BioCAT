@@ -73,170 +73,6 @@ def macthing_templates(templates_peptide, templates_minipept):
         
     return templates_minipept
 
-def build_graph(js):
-    
-    edge_graph = []
-    non_amino_graph = []
-    bonds_atoms = {}
-    c_end_atoms = {}
-    
-    for i in js['monomericGraph']['monomericGraph']['bonds']:
-
-        edge_graph.append(i['bond']['monomers'])
-        
-        if 'AMINO' not in i['bond']['bondTypes']:
-            
-            non_amino_graph.append(i['bond']['monomers'])
-            
-        for name in i['bond']['monomers']:
-            if name not in bonds_atoms:
-
-                bonds_atoms[name] = []
-                c_end_atoms[name] = []
-
-            atms = i['bond']['monomers'].copy()
-            atms.remove(name)
-            neibor = atms[0]
-
-            for si in js['atomicGraph']['atomicGraph']['bonds']:
-                if i['bond']['atomicIndexes'][0] == si['cdk_idx']:
-
-                    c_end_atoms[name].extend(si['atoms'])
-
-            for si in js['monomericGraph']['monomericGraph']['monomers']:
-                if si['monomer']['index'] == neibor:
-
-                    bonds_atoms[name].extend(si['monomer']['atoms'])
-                    
-    return edge_graph, c_end_atoms, bonds_atoms, non_amino_graph
-
-def get_C_ends(js, c_end_atoms, templates_carboxy, corboxy_pattern_length):
-     
-    C_ends = []
-    atom_all = {}
-    
-    for line in js['monomericGraph']['monomericGraph']['monomers']:
-
-        atoms = []
-        atom_all[line['monomer']['index']] = []
-        atom_all[line['monomer']['index']].extend(line['monomer']['atoms'])
-        atoms.extend(line['monomer']['atoms'])
-        atoms.extend(c_end_atoms[line['monomer']['index']])
-        
-        for tp in templates_carboxy:
-                
-            s_atoms = 0
-
-            for idx in tp:
-                if idx in atoms:
-
-                    s_atoms += 1
-                    
-            if s_atoms == corboxy_pattern_length:
-                break
-    
-        try:                        
-            if s_atoms == corboxy_pattern_length:
-
-                C_ends.append(line['monomer']['index'])
-                
-        except NameError:
-            continue
-            
-    return C_ends, atom_all
-
-def get_N_OH(js, bonds_atoms, templates_N_OH, N_OH_length):
-    
-    N_OHs = []
-    atom_all = {}
-    
-    for line in js['monomericGraph']['monomericGraph']['monomers']:
-
-        atoms = []
-        atom_all[line['monomer']['index']] = []
-        atom_all[line['monomer']['index']].extend(line['monomer']['atoms'])
-        atoms.extend(line['monomer']['atoms'])
-        atoms.extend(bonds_atoms[line['monomer']['index']])
-        
-        for tp in templates_N_OH:
-                
-            s_atoms = 0
-
-            for idx in tp:
-                if idx in atoms:
-
-                    s_atoms += 1
-                    
-            if s_atoms == N_OH_length:
-                break
-    
-        try:                        
-            if s_atoms == N_OH_length:
-
-                N_OHs.append(line['monomer']['index'])
-                
-        except NameError:
-            continue
-            
-    return N_OHs
-
-def get_N_ends(js, bonds_atoms, templates_peptide, corboxy_pattern_length, pept_pattern_length):
-    
-    pept_components = []
-    
-    for line in js['monomericGraph']['monomericGraph']['monomers']:
-
-        atoms_for_pept = []
-        atoms_for_pept.extend(line['monomer']['atoms'])
-        atoms_for_pept.extend(bonds_atoms[line['monomer']['index']])
-        atoms_for_pept = set(atoms_for_pept)
-        amino_acids = []
-
-
-        for tp in templates_peptide:
-
-            p_atoms = 0
-                    
-            for idx in tp:
-                if idx in atoms_for_pept:
-                    
-                    p_atoms += 1
-
-            if p_atoms == pept_pattern_length:
-                
-                pept_components.append(line['monomer']['index'])
-                break
-
-    return pept_components
-
-def get_AA(js, bonds_atoms, amino_acids_atoms, alpha_amino_length):
-    
-    amino_acids = []
-    
-    for line in js['monomericGraph']['monomericGraph']['monomers']:
-
-        atoms_for_pept = []
-        atoms_for_pept.extend(line['monomer']['atoms'])
-       # atoms_for_pept.extend(bonds_atoms[line['monomer']['index']])
-        atoms_for_pept = set(atoms_for_pept)
-        
-
-        for tp in amino_acids_atoms:
-
-            p_atoms = 0
-                    
-            for idx in tp:
-                if idx in atoms_for_pept:
-                    
-                    p_atoms += 1
-
-            if p_atoms == alpha_amino_length:
-                
-                amino_acids.append(line['monomer']['index'])
-                break
-            
-    return amino_acids
-
 def find_amino_acid(EP, amono_acids):
     for var in EP:
         for tour in EP[var]:
@@ -271,35 +107,6 @@ def cutter(edge_graph):
         variants.append(edge_gr_cop)
         
     return variants
-
-def get_peptide(edge_graph, pept_components, non_amino_graph, C_ends):
-    
-    non_pept = []
-    edge_graph_new = edge_graph.copy()
-    
-    for edge in edge_graph:
-        if edge[0] not in pept_components or edge[1] not in pept_components:
-            #adding non peptide components
-            non_pept.append(edge)
-            
-    #removeing non peptide chain components        
-    
-    for non in non_pept:
-        
-        edge_graph_new.remove(non)
-        
-    edge_graph = edge_graph_new.copy()
-    
-    for edge in edge_graph:
-        if edge in non_amino_graph:
-            
-            edge_graph_new.remove(edge)
-            
-        elif edge[0] in C_ends and edge[1] in C_ends:
-            
-            edge_graph_new.remove(edge)
-            
-    return edge_graph_new, non_pept
 
 def cyclic_peptide(edge_graph):
     
@@ -371,8 +178,21 @@ def get_monomer_names(EP, space):
             ind += 1
             
     return new_EP
-#Split product on one part of NRPS synthesis
-def Type_B(PeptideSeq):
+# The function adding type B variant of biosynthesis to PeptideSeq
+def compare_type_B_tour(add_tour, compare, PeptideSeq_cop, bios_path, key):
+    if add_tour == compare:
+        if add_tour not in PeptideSeq_cop[bios_path].values():
+            if key not in PeptideSeq_cop['B']:
+
+                PeptideSeq_cop['B'][key] = []
+
+            if add_tour not in PeptideSeq_cop['B'][key]:
+                
+                PeptideSeq_cop['B'][key].append(add_tour) #because tour == tour x
+            
+    return PeptideSeq_cop
+# Finding type B biosynthesis path
+def type_B(PeptideSeq, Push='None'):
     
     PeptideSeq_cop = PeptideSeq.copy()
     key = 0
@@ -380,47 +200,136 @@ def Type_B(PeptideSeq):
     for bios_path in PeptideSeq_cop:
         if bios_path == 'B':
             continue
-
+        
         for var in PeptideSeq_cop[bios_path]:
             for tour in range(len(PeptideSeq_cop[bios_path][var])): 
 
                 indxs = list(range(len(PeptideSeq_cop[bios_path][var])))
                 indxs.remove(tour)
-
+                
                 for tourx in indxs:
-                    if PeptideSeq_cop[bios_path][var][tourx] != PeptideSeq_cop[bios_path][var][tour]:
-                        continue
-                    
-                    if PeptideSeq_cop[bios_path][var][tour] not in PeptideSeq_cop[bios_path].values():
-                        if key not in PeptideSeq_cop['B']:
 
-                            PeptideSeq_cop['B'][key] = []
-
-                        if PeptideSeq[bios_path][var][tour] in PeptideSeq_cop['B'][key]:
+                    add_tour = PeptideSeq_cop[bios_path][var][tour]
+                    compare = PeptideSeq_cop[bios_path][var][tourx]
+                    new_PeptideSeq_copEP_cop = compare_type_B_tour(add_tour, compare, PeptideSeq_cop, bios_path, key)
+                    # The push module need to approximate two homology NRP fragments, 
+                    # which potentuly synthesys with type B variant
+                    # Example BGC0000359: fuscachelin
+                    if not Push is None: 
+                        if len(PeptideSeq_cop[bios_path][var][tour]) != len(PeptideSeq_cop[bios_path][var][tourx]):
                             continue
                             
-                        PeptideSeq_cop['B'][key].append(PeptideSeq[bios_path][var][tour]) #because tour == tour x
+                        if PeptideSeq_cop[bios_path][var][tour] == PeptideSeq_cop[bios_path][var][tourx]:
+                            continue
+                        # In case if the last element will not match
+                        add_tour = PeptideSeq_cop[bios_path][var][tour][: -1]
+
+                        if add_tour == []:
+                            continue
+                    
+                        compare = PeptideSeq_cop[bios_path][var][tourx][: -1]
+                        PeptideSeq_cop = compare_type_B_tour(add_tour, compare, PeptideSeq_cop, bios_path, key)
+                        # In case if the first element will not match
+                        add_tour = PeptideSeq_cop[bios_path][var][tour][1: ]
+
+                        if add_tour == []:
+                            continue
+                    
+                        compare = PeptideSeq_cop[bios_path][var][tourx][1: ]
+                        PeptideSeq_cop = compare_type_B_tour(add_tour, compare, PeptideSeq_cop, bios_path, key)
         key += 1
 
     return PeptideSeq_cop
-#check N-end atom 
-def N_check(EP, tmp_names, atom_all):
+    
+def get_CPC(templates_minipept, js):
+    # Make CPC(core peptide chain)
+    CPC = [] 
+    # Give it afunction 
+    for tp in templates_minipept:
+        for atom in js['atomicGraph']['atomicGraph']['atoms']:
+            if atom['cdk_idx'] in tp:
+                # N is conditional C end 
+                # C is conditional N end 
+                if atom['name'] == 'N':
+                    
+                    monomer_end = atom['matchIdx']
+                    
+                if atom['name'] == 'C':
+                    
+                    monomer_start = atom['matchIdx']
+                    
+        CPC.append([monomer_start, monomer_end]) #Directed edge fom conditional N to conditional C end
+    return CPC
+
+def get_peptide_elements(templates_peptide, js):
+    
+    core_peptide_elements = []
+    
+    for tp in templates_peptide:
+        for atom in js['atomicGraph']['atomicGraph']['atoms']:
+            if atom['cdk_idx'] in tp:
+                if atom['matchIdx'] in core_peptide_elements:
+                    continue
+                    
+                core_peptide_elements.append(atom['matchIdx']) #Adding aminoacids
+    return core_peptide_elements
+
+def get_non_classic(templates_non_classic, js):
+    
+    non_classic = []
+
+    for tp in templates_non_classic:
+        for atom in js['atomicGraph']['atomicGraph']['atoms']:
+            if atom['cdk_idx'] in tp:
+                if atom['matchIdx'] in non_classic:
+                    continue
+
+                non_classic.append(atom['matchIdx']) #Adding amino
+    return non_classic
+
+def get_AA(amino_acids_atoms, js):
+    
+    AAs = []
+
+    for tp in amino_acids_atoms:
+        for atom in js['atomicGraph']['atomicGraph']['atoms']:
+            if atom['cdk_idx'] in tp:
+                if atom['matchIdx'] in AAs:
+                    continue
+
+                AAs.append(atom['matchIdx']) #Adding amino
+    return AAs
+
+def get_direction(EP, CPC):
+    
     for var in EP:
         for tour in EP[var]:
-            for N_number in tmp_names:
-                if N_number in atom_all[tour[0]]:
+            if tour[-2 :] in CPC:
+                continue
 
-                    EP[var][EP[var].index(tour)] = tour[: : -1]
-                    break
+            EP[var][EP[var].index(tour)] = tour[: : -1]
+            
     return EP
-#check C-end atom 
-def C_check(EP, C_ends):
-    if C_ends != []:
-            for var in EP:
-                for tour in EP[var]:
-                    if tour[0] in C_ends:
 
-                        EP[var][EP[var].index(tour)] = tour[ : : -1]
+def add_acids(EP, amino_acids):
+    for var in EP:
+        for tour in EP[var].copy():
+            if len(tour) == 0:
+
+                EP[var].remove(tour)
+                continue
+    
+            for aa in amino_acids.copy():                    
+                if aa not in tour:
+                    continue
+
+                amino_acids.remove(aa)
+
+    if len(amino_acids) != 0:
+        for var in EP:
+            
+            [EP[var].append([aa]) for aa in amino_acids]
+            
     return EP
 #Type C compression
 def type_C(EP, js):
@@ -503,85 +412,114 @@ def Get_compare(smiles_dict):
                 reps.append([mols[idx], mols[idx + 1]])                            
 
     return reps
-
-def parse_rBAN(outp, NRPS_type):
+# The function return list of monomer, which not AA, but pupular compounds
+def find_not_aa_monomers(js):
     
-    corboxy_pattern = Chem.MolFromSmiles('C(N)C(=O)O')
+    compare_dict = {'iva': 'CC(C)CC(=O)O',
+                    'hiv': 'CC(C)C(C(=O)O)O',
+                   # 'dhb': 'C1=CC(=C(C(=C1)O)O)C(=O)O', #dOH-Bz
+                    'pip': 'C1CCNC(C1)C(=O)O' # Hpr
+                   }
+    not_aa_monomer = []
+    
+    for i in js['monomericGraph']['monomericGraph']['monomers']:
+
+        target = Chem.MolFromSmiles(i['monomer']['monomer']['smiles'])
+        
+        if target is None: # In some cases can be unparseble structure in rBAN output
+            continue
+
+        for mon in compare_dict.keys():
+                
+            compare = Chem.MolFromSmiles(compare_dict[mon])
+            Tanimoto = BulkTanimotoSimilarity(Chem.RDKFingerprint(target), [Chem.RDKFingerprint(compare)])[0]
+            
+            if Tanimoto == 1:
+                if mon == 'hiv':
+                    
+                    mon = 'iva' # iva == hiv, the most common case is hiv, but we have only iva hmm (homology structure)
+                    
+                not_aa_monomer.append(i['monomer']['index'])
+                i['monomer']['monomer']['monomer'] = mon
+                
+    return not_aa_monomer, js
+def parse_rBAN(outp, NRPS_type, push_B=None):
+    
     peptide_bond = Chem.MolFromSmiles('C(=O)CN(C(=O)CN)')
     mini_pept = Chem.MolFromSmiles('NC=O')
-    alpha_amino = Chem.MolFromSmiles('C(=O)CN')
     N_OH = Chem.MolFromSmiles('C(=O)CN(O)(C(=O)CN)')
+    alpha_amino = Chem.MolFromSmiles('C(=O)CN')
     N_N = Chem.MolFromSmiles('C(=O)CNC(=O)CNN')
     N_P = Chem.MolFromSmiles('C(=O)CN(P)(C(=O)CN)')
     N_Cl = Chem.MolFromSmiles('C(=O)CN(Cl)(C(=O)CN)')
     #Pattern length 
-    corboxy_pattern_length = len(corboxy_pattern.GetAtoms())
     pept_pattern_length = len(peptide_bond.GetAtoms())
-    alpha_amino_length = len(alpha_amino.GetAtoms())
     N_OH_length = len(N_OH.GetAtoms())
-    with open(outp, 'r') as json:
+    
+    with open(outp) as json:
 
         js = load(json)
         
     substance = Chem.MolFromSmiles(js['isomericSmiles'])
-    templates_carboxy = substance.GetSubstructMatches(corboxy_pattern)
     templates_peptide = substance.GetSubstructMatches(peptide_bond)
-    templates_N_OH = list(substance.GetSubstructMatches(N_OH))
-    templates_N_OH += list(substance.GetSubstructMatches(N_N))
-    templates_N_OH += list(substance.GetSubstructMatches(N_P))
-    templates_N_OH += list(substance.GetSubstructMatches(N_Cl))
-    tmp_names = []
+    templates_non_classic = list(substance.GetSubstructMatches(N_OH))
+    templates_non_classic += list(substance.GetSubstructMatches(N_N))
+    templates_non_classic += list(substance.GetSubstructMatches(N_P))
+    templates_non_classic += list(substance.GetSubstructMatches(N_Cl))
     templates_minipept = list(map(list, substance.GetSubstructMatches(mini_pept)))
-    amino_acids_atoms = list(map(list, substance.GetSubstructMatches(alpha_amino)))
     templates_minipept = macthing_templates(templates_peptide, templates_minipept)
-
-    for tp in templates_minipept:
-        for idx in js['atomicGraph']['atomicGraph']['atoms']:
-
-            [tmp_names.append(i) for i in tp if idx['cdk_idx'] == i and idx['name'] == 'N']
-
-    edge_graph, c_end_atoms, bonds_atoms, non_amino_graph = build_graph(js)
-    C_ends, atom_all = get_C_ends(js, c_end_atoms, templates_carboxy, corboxy_pattern_length)
-    pept_components = get_N_ends(js, bonds_atoms, templates_peptide, corboxy_pattern_length, pept_pattern_length)
-    amino_acids = get_AA(js, bonds_atoms, amino_acids_atoms, alpha_amino_length)
-    edge_graph, non_pept = get_peptide(edge_graph, pept_components, non_amino_graph, C_ends)
-
-    if len(templates_N_OH) > 0:
+    amino_acids_atoms = substance.GetSubstructMatches(alpha_amino)
+    # Make CPC(core peptide chain)
+    CPC = get_CPC(templates_minipept, js)
+    # Getting main participant of core peptide chain
+    core_peptide_elements = get_peptide_elements(templates_peptide, js)
+    # Finding amino acids in the case of modificated peptide bonds
+    amino_acids = get_AA(amino_acids_atoms, js)
+    # Check non classic peptide bonds 
+    non_pept = []
+    
+    if len(templates_non_classic) > 0:
         
-        N_OH = get_N_OH(js, bonds_atoms, templates_N_OH, N_OH_length)
-        for edge in edge_graph:
-            if edge[0] in N_OH and edge[1] in N_OH:
+        non_classic = get_non_classic(templates_non_classic, js)
+        
+        for edge in CPC:
+            if edge[0] in non_classic and edge[1] in non_classic:
                 
-                edge_graph.remove(edge)
+                CPC.remove(edge)
                 non_pept.append(edge)
         
     EP = {}
     EP[0] = []
-    EP[0].extend(find_eulerian_tour(edge_graph.copy()))
+    EP[0].extend(find_eulerian_tour(CPC.copy()))
     #for cyclic peptides bonded only with peptide bonds
-
     if EP[0] == []:
 
-        EP = cyclic_peptide(edge_graph)
-        
+        EP = cyclic_peptide(CPC)
+
         if EP == {}:
             EP = {0: [[]]}
-    else:
-
-        EP = C_check(N_check(EP, tmp_names, atom_all), C_ends)
+    #Check N-ends
+    EP = get_direction(EP, CPC)
 
     if len(non_pept) > 0:
 
-        EP = add_non_pept(EP, non_pept)
-    #find amino acids
-    if len(EP[0][0]) == 0:
-    
+        EP = add_non_pept(EP, non_pept) #Return edges with non classic peptide elements
+    # Adding not aa popular monomer 
+    not_aa_monomer, js = find_not_aa_monomers(js)
+    # Append standing separately aminoacids
+    EP = add_acids(EP, amino_acids.copy())
+    # If it unparsible analisys
+    if len(EP[0][0]) == 0 or len(EP[0]) == 0:
+        
         return None
-
+    
     else:
         
-        EP = find_amino_acid(EP, amino_acids)
-        # Giveng biosynthetic way name
+        EP = find_amino_acid(EP, amino_acids.copy()) # Removing edges with non amino acids
+        # Remove empty tours and append standing separately aminoacids
+        EP = add_acids(EP, amino_acids.copy())
+        EP = add_acids(EP, not_aa_monomer) # add non AA monomers
+        # Giving biosynthetic way name
         PeptideSeq = {'A': EP, 'B': {}, 'C': {}}
         PeptideSeq['A'] = get_monomer_names(PeptideSeq['A'], js['monomericGraph']['monomericGraph']['monomers'])
         if 'C' in NRPS_type:
@@ -591,7 +529,6 @@ def parse_rBAN(outp, NRPS_type):
 
         if 'B' in NRPS_type:
             
-            PeptideSeq = Type_B(PeptideSeq)
+            PeptideSeq = type_B(PeptideSeq, push_B)
 
         return PeptideSeq
-

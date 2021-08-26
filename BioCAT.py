@@ -9,9 +9,9 @@ from PSSM_maker import PSSM_make
 from HMM_maker import HMM_make
 from antiSMASH_parser import generate_table_from_antismash
 from Make_NRP_structure import parse_rBAN
-from Combinatorics import skipper, get_score, shuffle_matrix, make_combine, multi_thread_shuffling, get_minim_aminochain, make_standard
+from Combinatorics import skipper, get_score, shuffle_matrix, make_combine, multi_thread_shuffling, make_standard, get_minim_aminochain
 from Exploration_mode import exploration_mode
-from Technical_functions import parse_smi_file, run_antiSMASH, run_rBAN, get_ids
+from Technical_functions import parse_smi_file, run_antiSMASH, run_rBAN, get_ids, check_pept_seq, get_results_to_csv
 from Calculating_scores import give_results
 parser = argparse.ArgumentParser(description='Pipeline, which help to find biosynthesis gene clusters of NRP')
 parser.add_argument('-name', 
@@ -38,10 +38,18 @@ parser.add_argument('-genome',
                     type=str, 
                     help='Fasta file with nucleotide sequence', 
                     default=None)
+parser.add_argument('-taxon', 
+                    type=str, 
+                    help='Taxon of organism: fungi or bacteria', 
+                    default='bacteria')
 parser.add_argument('-NRPS_type', 
                     type=str, 
                     help='Expected NRPS type^', 
                     default='A+B')
+parser.add_argument('-push_type_B', 
+                    type=str, 
+                    help='Fasta file with nucleotide sequence', 
+                    default='Push')
 parser.add_argument('-dif_strand', 
                     type=str, 
                     help='If your putative cluster can containd different strands genes', 
@@ -58,35 +66,31 @@ parser.add_argument('-skip',
                     type=int, 
                     help='Count of possible skippikng', 
                     default=0)
-parser.add_argument('-out', 
-                    type=str, 
-                    help='Output directory, example: ./MY_path', 
-                    default='./BioCAT_output')
-parser.add_argument('-cpu', 
-                    type=str, 
-                    help='Multiple treadings', 
-                    default=100)
-###############################********************************TO TESTING**************************************************************
-parser.add_argument('-hmm', 
-                    type=str, 
-                    help='Output directory, example: ./MY_path',
-                    default=None)
-###############################********************************TO TESTING**************************************************************
 parser.add_argument('-delta', 
                     type=str, 
                     help='Delta between PSSM and sequence of peptide', 
                     default=3)
+parser.add_argument('-cpu', 
+                    type=str, 
+                    help='Multiple treadings', 
+                    default=30)
+parser.add_argument('-out', 
+                    type=str, 
+                    help='Output directory, example: ./MY_path', 
+                    default='./BioCAT_output')
 args = parser.parse_args()
 # Parsing agruments 
 cpu = args.cpu
 exploration = args.exploration
 output = args.out    
 skip = args.skip
+taxon = args.taxon
 delta = int(args.delta)
 NRPS_type = args.NRPS_type
 dif_strand = args.dif_strand
 genome = args.genome
 iterations = args.iterations
+push_type_B = args.push_type_B
 if args.genome == None and args.antismash == None:
     
     print('Error: Give a fasta or an antismash json!')
@@ -115,9 +119,7 @@ json_path = run_antiSMASH(args.antismash, output, genome, cpu)
 # Making antiSMASH dataes to table
 generate_table_from_antismash(json_path, output, dif_strand)
 # Making of fasta files and hmmserching 
-###############################********************************TO TESTING**************************************************************
-HMM_make(output, output, cpu)
-###############################********************************TO TESTING**************************************************************
+HMM_make(output, output, taxon, cpu)
 # Getting substance name if we have only rBAN json
 if args.rBAN is not None:
     
@@ -125,8 +127,8 @@ if args.rBAN is not None:
     ids = [get_ids(args.rBAN)]
 
 for smi in range(len(smile_list)):
-    #Output info dictionary
-    bed_out = {'Chromosome ID': [],
+    # Output info dictionary
+    dict_res = {'Chromosome ID': [],
                'Coordinates of cluster': [],
                'Strand': [],
                'Substance': [],
@@ -146,54 +148,57 @@ for smi in range(len(smile_list)):
                }
     print('Calculating probability for {}'.format(ids[smi]))
     # Run rBAN if it neccecery or return path to directory 
+    print('Buildung amino graph')
     rBAN_path = run_rBAN(args.rBAN, ids[smi], smile_list[smi], output)
-    PeptideSeq = parse_rBAN(rBAN_path, NRPS_type)
+    PeptideSeq = parse_rBAN(rBAN_path, NRPS_type, push_type_B)
     #if structure doesnt contain aminoacids
     if PeptideSeq is None:
 
         print('Unparseable structure!')
-        break 
-
-    #Mking list of monomers
-    print('Buildung amino graph')
-    for BS_type in PeptideSeq:
-
-        print('For {} biosynthetic path'.format(BS_type))
-        [print('Variant of amino sequence of your substance: {}'.format(PeptideSeq[BS_type][seq])) for seq in PeptideSeq[BS_type]]
+        get_results_to_csv(dict_res, output, ids[smi])# Make empty Results.csv
+        continue 
     # Standartization of monomer names
-    PeptideSeq = make_standard(PeptideSeq)
+    PeptideSeq = make_standard(PeptideSeq, taxon)  
+    # Check correctness of the stcucture
+    PeptideSeq = check_pept_seq(PeptideSeq)
+
+    if PeptideSeq is None:
+
+        print('Unparseable structure!')
+        get_results_to_csv(dict_res, output, ids[smi])# Make empty Results.csv
+        continue 
+    
     # Calculating length of smaller variant
     length_min = get_minim_aminochain(PeptideSeq)
-    #making PSSMs
-###############################********************************TO TESTING**************************************************************
-    # print( args.hmm + '/HMM_results/')
-    #PSSM_make(search = args.hmm + '/HMM_results/', aminochain=length_min, out = output, delta=delta)
-    PSSM_make(search = output + '/HMM_results/', aminochain=length_min, out = output, delta=delta, substance_name=ids[smi])
+    for BS_type in PeptideSeq:
 
-###############################********************************TO TESTING**************************************************************
+        print('For {} biosynthetic paths'.format(BS_type))
+        [print(PeptideSeq[BS_type][i]) for i in PeptideSeq[BS_type]]
+
+    # Making PSSMs
+    PSSM_make(search = output + '/HMM_results/', aminochain=length_min, out = output, delta=delta, substance_name=ids[smi], taxon=taxon)
     #Importing all PSSMs
     folder =  output + '/PSSM_{}/'.format(ids[smi])
     files = os.listdir(folder)
     #Trying to find some vsiants of biosynthesis
     if exploration is True:
         if len(files) == 0:
-###############################********************************TO TESTING**************************************************************
-            #exploration(rBAN_path, output, json_path, args.hmm)
-            PeptideSeq, NRPS_type = exploration_mode(rBAN_path, output, json_path, delta, substance_name=ids[smi])
-###############################********************************TO TESTING**************************************************************
+
+            PeptideSeq, NRPS_type = exploration_mode(rBAN_path, output, json_path, delta, substance_name=ids[smi], taxon=taxon)
+            
     # Check availability of PSSMs
     files = os.listdir(folder)
+
     if len(files) == 0: 
-        bed_df = DataFrame(data=bed_out)
-        bed_df.to_csv('{}/Results_{}.csv'.format(output, ids[smi]), sep='\t', index=False)  
+
         print('Organism have no putative cluster') 
-        break# If have no cluster -> brake it
+        get_results_to_csv(dict_res, output, ids[smi])# Make empty Results.csv
+        continue# If have no cluster -> brake it
     # Importing table with information about cluster
     table = read_csv(output + '/table.tsv', sep='\t')
-    bed_out = give_results(bed_out, folder, files, table, ids[smi], PeptideSeq, length_min, skip, cpu, iterations)                                     
+    dict_res = give_results(dict_res, folder, files, table, ids[smi], PeptideSeq, skip, cpu, iterations)                                     
     #Recording Data Frame
-    bed_df = DataFrame(data=bed_out)
-    bed_df.to_csv('{}/Results_{}.csv'.format(output, ids[smi]), sep='\t', index=False)           
+    get_results_to_csv(dict_res, output, ids[smi])
     ('Results file for {} is recorded!'.format(ids[smi]))
 
 print('Job is done!')

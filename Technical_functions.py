@@ -1,7 +1,7 @@
 import os
 from json import load
 from subprocess import call
-
+from pandas import DataFrame
 #Getting smiles formula and names of substances
 def parse_smi_file(smiles, name, file_smiles):
 
@@ -78,3 +78,40 @@ def run_rBAN(rBAN, ID, SMI, output):
         rBAN_path = rBAN
 
     return rBAN_path
+# Check correctness of PeptideSeq
+def check_pept_seq(ps):
+    
+    ps_cop = ps.copy()
+    
+    for bs_type in ps_cop:
+        if ps_cop[bs_type] == {}:
+            continue
+            
+        for var in ps[bs_type]:
+            
+            check = 0
+            
+            for tour in ps_cop[bs_type][var]:
+                if tour  == ['nan'] * len(tour):
+                    continue
+                    
+                check = 1
+
+        if check == 0:
+            
+            ps[bs_type].pop(var)
+    
+    vals = list(ps.values())
+    
+    if vals == [{}] * len(vals): # If PeptideSeq is empty
+        
+        return None
+    
+    else:
+        
+        return ps
+# Make a dictionary with results to csv output
+def get_results_to_csv(dict_res, output, id_smi):
+
+    res_df = DataFrame(data=dict_res)
+    res_df.to_csv('{}/Results_{}.csv'.format(output, id_smi), sep='\t', index=False)           

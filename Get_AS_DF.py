@@ -146,6 +146,7 @@ def get_df(json_path, out):
         'End of gen' : [],
         'Protein start' : [],
         'Protein end' : [],
+        'ModuleID' : [],
         'Domain name' : [],
         'Sequence': []
         }
@@ -162,12 +163,13 @@ def get_df(json_path, out):
                 continue
 
             cluster_loc = BGC['location']
-
+            
+            
             for proto_cluster in BGC['childs']:
 
                 proto_BGC = BGC['childs'][proto_cluster]
                 proclust_loc = proto_BGC['location']
-
+                
                 if 'NRPS' not in proto_BGC['qualifiers']['product'][0]:
                     continue
 
@@ -176,9 +178,10 @@ def get_df(json_path, out):
                     gen_id = proto_BGC['CDS_childs'][gen]
                     gen_location = gen_id['location']
                     gen_start, gen_end, gen_strand = get_coord(gen_location)
+                    mod_num = 1
 
                     for module in gen_id['Module_childs']:
-
+                        
                         modlue_name = gen_id['Module_childs'][module]
                         module_loc = modlue_name['location']
 
@@ -189,9 +192,9 @@ def get_df(json_path, out):
                             protein_start = domain_info['qualifiers']['protein_start'][0]
                             protein_end = domain_info['qualifiers']['protein_end'][0]
                             translation = domain_info['qualifiers']['translation'][0]
-
+                            # Protocluster
                             keys['Name'].append(ID)
-                            keys['ID'].append('BGC_{}_{}'.format(cluster_id, protocluster_id))
+                            keys['ID'].append('BGC_proto_{}_{}'.format(cluster_id, protocluster_id))
                             keys['Gen ID'].append(gen)
                             keys['Coordinates of cluster'].append(cluster_loc)
                             keys['Coordinates of protocluster'].append(proclust_loc)
@@ -200,13 +203,26 @@ def get_df(json_path, out):
                             keys['End of gen'].append(gen_end)
                             keys['Protein start'].append(protein_start)
                             keys['Protein end'].append(protein_end)
+                            keys['ModuleID'].append('{}_{}'.format(gen, mod_num))
                             keys['Domain name'].append(domain)
                             keys['Sequence'].append(translation)
-                            
+                            # Candidate custer
+                            keys['Name'].append(ID)
+                            keys['ID'].append('BGC_cand_{}'.format(cluster_id))
+                            keys['Gen ID'].append(gen)
+                            keys['Coordinates of cluster'].append(cluster_loc)
+                            keys['Coordinates of protocluster'].append(proclust_loc)
+                            keys['Gen strand'].append(gen_strand)
+                            keys['Start of gen'].append(gen_start)
+                            keys['End of gen'].append(gen_end)
+                            keys['Protein start'].append(protein_start)
+                            keys['Protein end'].append(protein_end)
+                            keys['ModuleID'].append('{}_{}'.format(gen, mod_num))
+                            keys['Domain name'].append(domain)
+                            keys['Sequence'].append(translation)
+                    mod_num += 1
                 protocluster_id += 1
             cluster_id += 1
-
-                
-
+            
     df = DataFrame(data=keys) 
     df.to_csv(out, index=False, sep='\t')

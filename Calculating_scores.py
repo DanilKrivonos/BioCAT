@@ -1,7 +1,8 @@
 from numpy import array
 from pickle import load
 from pandas import read_csv
-from Combinatorics import multi_thread_shuffling, multi_thread_calculating_scores, make_combine, get_score
+from Combinatorics import multi_thread_shuffling, multi_thread_calculating_scores, make_combine, get_score, get_max_aminochain
+
 # Importing random forest model
 Rf = load(open('/data12/bio/runs-konanov/krivonos/scripts/pipe/BioCAT/model.dump', 'rb'))
 # The function generate list of shuflled matrix
@@ -85,7 +86,7 @@ def calculate_scores(variant_seq, matrix, substrate_shuffling_matrix, module_shu
                                         ]])[0]
     return Sln_score, Mln_score, Slt_score, Mlt_score, Sdn_score, Mdn_score, Sdt_score, Mdt_score, Relative_score, Binary
 
-def give_results(bed_out, folder, files, table, ID, PeptideSeq, length_min, skip, cpu, iterat):
+def give_results(bed_out, folder, files, table, ID, PeptideSeq, skip, cpu, iterat):
     
     for target_file in files:
             
@@ -112,18 +113,39 @@ def give_results(bed_out, folder, files, table, ID, PeptideSeq, length_min, skip
             BGC == skipper(BGC, skip)
 
         for matrix in BGC:
+            # Check quality of matrix
             if len(matrix) == 1:
                 continue
+            
+            check = 0
+            values = matrix.drop(matrix.columns[0], axis=1).values
+
+            for i in values:
+                if all(i) == 0:
+
+                    check += 1
+
+            if check == len(values): # If thes condition is True, the matrix of unrecognized monomers 
+                continue
+
             # Generating shuffling matrix
             module_shuffling_matrix, substrate_shuffling_matrix =  make_shuffle_matrix(matrix, cpu, iterat)
 
             for BS_type in PeptideSeq:# For every biosynthesis profile pathways
 
-                EPs = make_combine(PeptideSeq[BS_type], length_min, matrix, delta=3)
+                if PeptideSeq[BS_type] == None: # If in sequence only nan monomers
+                    continue
+
+                if len(PeptideSeq[BS_type]) == 0: # If have not the variant
+                    continue
+
+                # Check correctness of PeptideSeq
+                length_max= get_max_aminochain(PeptideSeq[BS_type])
+                EPs = make_combine(PeptideSeq[BS_type], length_max, matrix, delta=3)
 
                 if EPs is None: # If length sequnce can't be scaled to cluster size
                     continue
-                
+
                 for variant_seq in EPs:
 
                     Sln_score, Mln_score, Slt_score, Mlt_score, Sdn_score, Mdn_score, Sdt_score, Mdt_score, Relative_score, Binary = calculate_scores(variant_seq, matrix, substrate_shuffling_matrix, module_shuffling_matrix, cpu, iterat)
@@ -145,4 +167,5 @@ def give_results(bed_out, folder, files, table, ID, PeptideSeq, length_min, skip
                     bed_out['Mlt score'].append(Mlt_score) #shaffling modules matrix with log score in maximally possible sequence
                     bed_out['Relative score'].append(Relative_score) #Final score
                     bed_out['Binary'].append(Binary) #Binary value
+                    
     return bed_out

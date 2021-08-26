@@ -150,15 +150,55 @@ def reverse_neg(df):
     df1.reset_index(drop=True, inplace=True)
 
     return df1
-#************************THIS TWO FUNCTION RMOVING PART AFTER TE DOMAIN TO THE START OF CLUSTER************************
-def shift_contig(df2, df, remove):
-    for domain in remove:
-
-        Dom_df = df[df['Domain name'] == domain]
-        df2 = df2.append(Dom_df)
+#************************THE FUNCTIONS RMOVING PART AFTER TE DOMAIN TO THE START OF CLUSTER************************
+def shift_contig(df2, remove):
+    for gen in remove:
         
-    return df2
+        df2 = df2.append(gen)
 
+    return df2
+def remove_modificate(remove):
+    
+    remove2 = []
+    deque = []
+    first = 0
+    first_gen = []
+    
+    for gen in remove:
+
+        modules = set(gen.ModuleID.values)
+        module_privi = ''
+        
+        for module in modules:
+
+            Domain_BGC = gen[gen.ModuleID == module]
+            domains = list(dict.fromkeys(Domain_BGC['Domain name'].values))
+            
+            for domain in domains:
+                if 'Condensation' in domain or 'Cglyc' in domain:
+                    
+                    first = 1
+            
+        if first == 0:
+
+            first_gen.append(gen)
+            first = 0
+            
+        else:
+            
+            deque.append(gen)
+            
+    if len(first_gen):
+        for gen in first_gen:
+        
+            remove2.append(gen)
+        
+    for gen in deque:
+        
+        remove2.append(gen)
+        
+    return remove2
+                    
 def sort_cluster_seq(df):
     
     chromosomes = list(dict.fromkeys(df['Name'].values))
@@ -167,34 +207,64 @@ def sort_cluster_seq(df):
     for chromosome in chromosomes:
 
         Chr_df = df[df['Name'] == chromosome]
-        clusters = list(dict.fromkeys(Chr_df['ID']))
+        clusters = list(dict.fromkeys(Chr_df['ID'].values))
         
         for bgc in clusters:
-            
-            add = 0
+
             remove = []
             stack_domain = []
             BGC_df = Chr_df[Chr_df['ID'] == bgc]
-            domains = BGC_df['Domain name']
+            genes = list(dict.fromkeys(BGC_df['Gen ID'].values))
+            TE = 0
+            gen_term = None
+            gen_counter = 0 #Counting gen number to find index of terminating gene with TE domain
             
-            for domain in domains:
-                if add == 1:
-                    
-                    remove.append(domain)
-                    
-                else:
-                    
-                    stack_domain.append(domain)
-                    
-                if 'Thioesterase' in domain:
-                    
-                    stack_domain.extend(remove)
-                    remove = []
-                    add = 1
+            for gen in genes:
+                
+                Gen_BGC = BGC_df[BGC_df['Gen ID'] == gen]
+                modules = list(dict.fromkeys(Gen_BGC.ModuleID.values))
+                module_privi = ''
+                strand = list(set(Gen_BGC['Gen strand'].values))[0]
+                
+                for module in modules[:: -1]:
 
-            remove.extend(stack_domain)
-            df2 = shift_contig(df2, df, remove)
-    
+                    Domain_BGC = Gen_BGC[Gen_BGC.ModuleID == module]
+                    domains = list(dict.fromkeys(Domain_BGC['Domain name'].values))
+                    
+                    if TE == 1:
+      
+                        remove.append(Domain_BGC)
+                    
+                    else:
+
+                        stack_domain.append(Domain_BGC)
+                    
+                    for domain in domains:
+                        if 'Thioesterase' in domain:
+
+                            stack_domain.extend(remove)
+                            remove = []
+                            gen_term = gen_counter
+                            TE = 1
+                            
+                gen_counter += 1
+                
+            if strand == '-' and not gen_term is None:
+              
+                last_gen = stack_domain[gen_term]
+                stack_domain = stack_domain[: -1]
+                remove = remove_modificate(remove)
+                recombined = stack_domain 
+                recombined += remove 
+                recombined.append(last_gen)
+
+            else:
+                
+                remove = remove_modificate(remove)
+                recombined = remove + stack_domain
+                #remove.extend(stack_domain)
+
+            df2 = shift_contig(df2, recombined)
     return df2
 #*******************************************************************************************************************************
 def generate_table_from_antismash(json_path, table_out, dif_strand):

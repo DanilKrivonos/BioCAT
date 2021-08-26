@@ -3,7 +3,14 @@ from pandas import read_csv
 from subprocess import call
 from os import listdir, mkdir
 
-def HMM_make(path, output, cpu, hmms='./HMM/'):
+def HMM_make(path, output, taxon, cpu):
+    if taxon == 'bacteria':
+
+        hmms = './HMM/Bacteria_HMM'
+
+    else:
+
+        hmms = './HMM/Fungi_HMM'
 
     table = read_csv(path + '/table.tsv', sep='\t')
     #making work directory to fasta files
@@ -27,14 +34,13 @@ def HMM_make(path, output, cpu, hmms='./HMM/'):
             DOMAIN = table['Domain name'][ind]
             TRANSLATE = table['Sequence'][ind]        
 
-            if '>{}_{}'.format(ID, DOMAIN) in headers:
+            if '>{}'.format(DOMAIN) in headers:
                 continue
 
-            fasta.write('>{}_{}\n{}\n'.format(ID, 
-                                            DOMAIN, 
-                                            TRANSLATE))
+            fasta.write('>{}\n{}\n'.format(DOMAIN, 
+                                           TRANSLATE))
 
-            headers.append('>{}_{}'.format(ID, DOMAIN))
+            headers.append('>{}'.format(DOMAIN))
 
     print('Fasta files were generated successfully!')
 
@@ -43,13 +49,13 @@ def HMM_make(path, output, cpu, hmms='./HMM/'):
     hmms_s = listdir(hmms)
 
     for sub in hmms_s:
-    
-        call('hmmsearch -Z 1000 --cpu {} {}/{}/{}.hmm {}/nrps_domains.fasta > {}/{}.out'.format(cpu,
-                                                                                                hmms,
-                                                                                                sub,
-                                                                                                sub,
-                                                                                                path, 
-                                                                                                hmm_out, 
-                                                                                                sub), shell=True)
+
+        substrate = sub.split('_')[1][: -4]
+        call('hmmsearch -Z 1000 --cpu {} {}/{} {}/nrps_domains.fasta > {}/{}.out'.format(cpu,
+                                                                                        hmms,
+                                                                                        sub,
+                                                                                        path, 
+                                                                                        hmm_out, 
+                                                                                        substrate), shell=True)
 
     print('Searching is done successfully!')

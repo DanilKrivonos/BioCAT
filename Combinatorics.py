@@ -9,6 +9,7 @@ from multiprocessing import Process, Manager
 
 #Skip mode function 
 def skipper(pssm, skip):
+
     skips_fragments = []
     skip_steps = list(permutations(pssm.index, skip))
     skip_steps = list(map(list, skip_steps))
@@ -71,9 +72,21 @@ def create_variants(original_seq, len_place):
     return variants
 
 #Standartization of monomers
-def make_standard(PeptideSeq):
-    
-    monomers_names = listdir('./HMM/') #standardized list of possible to compare substrates 
+def make_standard(PeptideSeq, taxon):
+    if taxon == 'bacteria':
+
+        hmms = './HMM/Bacteria_HMM'
+
+    else:
+
+        hmms = './HMM/Fungi_HMM'
+
+    monomers_names_tax = listdir(hmms) #standardized list of possible to compare substrates 
+    monomers_names = []
+
+    for subst in monomers_names_tax:
+
+        monomers_names.append(subst.split('_')[1][: -4])
 
     #For every variants getting standard monomer names
     for bios_path in PeptideSeq:
@@ -84,6 +97,14 @@ def make_standard(PeptideSeq):
             for seq in PeptideSeq[bios_path][var]:
                 for sub_AS in monomers_names:
                     for sub in seq:
+                        if 'prob' in sub or 'prop' in sub:
+                            continue
+
+                        if 'dhpg' in sub:
+
+                            PeptideSeq[bios_path][var][PeptideSeq[bios_path][var].index(seq)][seq.index(sub)] =  'dhpg' #Changing monomer name
+                            continue
+                        
                         if sub_AS in sub:
                             
                             PeptideSeq[bios_path][var][PeptideSeq[bios_path][var].index(seq)][seq.index(sub)] =  sub_AS #Changing monomer name
@@ -96,13 +117,13 @@ def make_standard(PeptideSeq):
             for seq in PeptideSeq[bios_path][var]:
                 for sub in seq:
                     if sub not in monomers_names:
-
+                        
                         PeptideSeq[bios_path][var][PeptideSeq[bios_path][var].index(seq)][seq.index(sub)] =  'nan' #For substrates, which we have not HMM, giving nan name
 
     return PeptideSeq
 #Making possible combinations for potential clusters
-def make_combine(sequence, length_min, pssm, delta=3):
-    if length_min + delta < len(pssm): #if minimal possible length of peptide sequence much less, then cluster 
+def make_combine(sequence, length_max, pssm, delta=3):
+    if length_max + delta < len(pssm): #if minimal possible length of peptide sequence much less, then cluster 
         return None
 
     else:
@@ -123,6 +144,22 @@ def make_combine(sequence, length_min, pssm, delta=3):
 
     return answ #Returen condinations
 
+#Getting maximum size of putative sequence from variant of biosynthesis type
+def get_max_aminochain(bios_path):
+    
+    lens_of_varints = []
+
+    for var in bios_path:
+        
+        len_of_varint_seq = 0
+
+        for cont in bios_path[var]:
+
+            len_of_varint_seq += len(cont)
+        
+        lens_of_varints.append(len_of_varint_seq)
+
+    return  max(lens_of_varints) # Return maximum lenght from possible variants
 #Getting minimla size of putative sequence
 def get_minim_aminochain(PeptideSeq):
     
@@ -140,7 +177,6 @@ def get_minim_aminochain(PeptideSeq):
             lens_of_varints.append(len_of_varint_seq)
 
     return  min(lens_of_varints) # Return minimal lenght from possible variants
-
 #SHUFFLUNG FUNCTION
 def shuffle_matrix(pssm_profile, ShufflingType):
     # Module shuffling
@@ -206,7 +242,7 @@ def get_score(seq, pssm_profile, type_value):
 
 # Multple treading generating shuflling mtrixes
 def get_shuffled_matrix(pssm_mat, iterations, return_dict, ShufflingType):
-
+    
     shuffled_matrix = []
     for i in range(iterations):
 
