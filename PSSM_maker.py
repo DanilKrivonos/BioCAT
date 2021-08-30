@@ -5,16 +5,69 @@ from os import listdir
 from pandas import read_csv
 from Bio.SearchIO import parse
 
-def PSSM_make(search, aminochain, out, delta, substance_name, hmms='./HMM/', neg='./negative.tsv'):
+# The function deletes protocluster, which is duplicate of candidate cluster
+def check_cluster_dublicates(pssm_path):
+    
+    pssms = listdir(pssm_path)
+    
+    for pssm in pssms:
+        if 'cand' not in pssm:
+            continue
+
+        CC_pssm = read_csv(pssm_path + pssm, sep='\t')
+        
+        if len(pssm.split('_')) == 5:
+        
+            protoID = pssm.split('_')[4].split('.')[0]
+            
+        else:
+            
+            protoID = pssm.split('_')[4]
+
+        for p_pssm in pssms:
+            if 'proto_{}_'.format(protoID) not in p_pssm:
+                continue
+            try:
+                
+                proto_pssm = read_csv(pssm_path + p_pssm, sep='\t')
+            
+            except FileNotFoundError: # if file was removed
+                continue
+            try:
+                if all(CC_pssm == proto_pssm) == True:
+                    
+                    print(p_pssm, ' is duplicate')
+                    call('rm ' + pssm_path + p_pssm, shell=True)
+
+            except ValueError: # if the cluster was splited, its will differ
+                continue
+        
+
+def PSSM_make(search, aminochain, out, delta, substance_name, taxon):
+    if taxon == 'bacteria':
+
+        hmms = './HMM/Bacteria_HMM'
+        neg='./Bac_negative.tsv'
+
+    else:
+
+        hmms = './HMM/Fungi_HMM'
+        neg='./Fungi_negative.tsv'
 
     negative = read_csv(neg, sep='\t')
     output = out
     path = out + '/table.tsv'
-    substr = listdir('{}'.format(hmms))
+    substr_hmm = listdir('{}'.format(hmms))
+    substr = []
+    # Making substrates list
+    for subst in substr_hmm:
+
+        substr.append(subst.split('_')[1][: -4])
+
     table = read_csv(path, sep='\t')
     subst_eval = {}
     
-    #making dict with all BGCs
+    # Making dict with all BGCs
     for id_new in table[table['Domain name'].str.contains('AMP-binding')].index:
         if table['ID'][id_new] not in subst_eval:
 
@@ -26,7 +79,6 @@ def PSSM_make(search, aminochain, out, delta, substance_name, hmms='./HMM/', neg
         for sub in substr:
 
             subst_eval[table['ID'][id_new]][key][sub] = []
-            
     #This dict contains only possible BGCs, which length bigger or equel amino chain of molecule
     cop =  subst_eval.copy()
     
@@ -39,14 +91,14 @@ def PSSM_make(search, aminochain, out, delta, substance_name, hmms='./HMM/', neg
         if len(cop[s]) > aminochain + delta:
             
             subst_eval.pop(s)
-            continue
-    
-    #Generator of n-score
-    print('Calculation scores for PSSM ...')
+            continue        
+    # Generator of ratio
+    print('Calculation ratio scores for PSSM ...')
 
     for sub in substr:
         
-        FP = [-float(i) for i in list(negative[negative.Substrate == sub].List_of_negative)[0].split(',')]
+        TN = [-float(i) for i in list(negative[negative.Substrate == sub].List_of_negative)[0].split(',')]
+        TN = np.array(TN)
 
         for substance in subst_eval.keys():
             for module in  subst_eval[substance].keys():
@@ -55,13 +107,11 @@ def PSSM_make(search, aminochain, out, delta, substance_name, hmms='./HMM/', neg
                 
                 for i in open_hmm:
                     for t in i:
-                        if module in t.hsps[0].hit.id:
-                               
+                        if module == t.hsps[0].hit.id:
+                            
                             TP = -np.log(t.evalue)
-                            break
                 
-                FP = np.array(FP)
-                ratio_metric = len(FP[FP <= TP])/ len(FP)
+                ratio_metric = len(TN[TN <= TP])/ len(TN)
                 subst_eval[substance][module][sub] = ratio_metric
 
     print('Recording PSSM ...\n')
@@ -93,5 +143,6 @@ def PSSM_make(search, aminochain, out, delta, substance_name, hmms='./HMM/', neg
                     test.write('{}'.format(subst_eval[substance][module][sub]))
                     
                 test.write('\n')
-                                
+    print('Checking cluster duplicates ...')
+    check_cluster_dublicates(PSSMs_out)# delete duplicates 
     print('All PSSM were recorded sucessfully!')
