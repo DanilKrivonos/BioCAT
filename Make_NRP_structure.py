@@ -145,7 +145,11 @@ def add_non_pept(EP, non_pept):
 
                 EP[var].append([lost_edge[0]])
                 check = 1
-        
+                
+        if lost_edge[0] in numbers or lost_edge[1] in numbers:
+            
+            check = 1
+
         if check == 0:
 
             EP[var].append(lost_edge)

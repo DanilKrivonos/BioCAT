@@ -71,9 +71,9 @@ parser.add_argument('-delta',
                     help='Delta between PSSM and sequence of peptide', 
                     default=3)
 parser.add_argument('-cpu', 
-                    type=str, 
+                    type=int, 
                     help='Multiple treadings', 
-                    default=30)
+                    default=100)
 parser.add_argument('-out', 
                     type=str, 
                     help='Output directory, example: ./MY_path', 
