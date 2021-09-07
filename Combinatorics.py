@@ -9,7 +9,21 @@ from multiprocessing import Process, Manager
 
 #Skip mode function 
 def skipper(pssm, skip):
+    """
+    Skip function. In the rare cases, then one or more of modules in cluster 
+    is skipped (https://doi.org/10.1186/s12934-018-0929-4).
 
+    Parameters
+    ----------
+    pssm : pandas DataFrame
+        PSSM profile.
+    skip : int
+        Number of presumptive skip.
+    Returns
+    -------
+    skips_fragments : list
+        Each possible variants of pssm with presumptive number of skip.
+    """
     skips_fragments = []
     skip_steps = list(permutations(pssm.index, skip))
     skip_steps = list(map(list, skip_steps))
@@ -23,13 +37,27 @@ def skipper(pssm, skip):
             for skip_module in step:
 
                 pssm_step = pssm_step[pssm_step.index != skip_module]
+
         skips_fragments.append(pssm_step)
         
     return skips_fragments
 
 #Making combinations of modules
 def create_variants(original_seq, len_place):
-    
+    """
+    Combined fragments to possible sequences.
+
+    Parameters
+    ----------
+    original_seq : list
+        Sequence of possible fragments.
+    len_place : int
+        Length of PSSM profile (length of cluster).
+    Returns
+    -------
+    concatenates : list
+        Possible combined sequence from continual fragments.
+    """
     seq = []
     
     for s in original_seq:
@@ -65,64 +93,29 @@ def create_variants(original_seq, len_place):
     
     concatenates = list(set (map(tuple, concatenates)))
     concatenates.sort()
+    
     return concatenates
 
-    variants = set(variants)
-
-    return variants
-
-#Standartization of monomers
-def make_standard(PeptideSeq, taxon):
-    if taxon == 'bacteria':
-
-        hmms = './HMM/Bacteria_HMM'
-
-    else:
-
-        hmms = './HMM/Fungi_HMM'
-
-    monomers_names_tax = listdir(hmms) #standardized list of possible to compare substrates 
-    monomers_names = []
-
-    for subst in monomers_names_tax:
-
-        monomers_names.append(subst.split('_')[1][: -4])
-
-    #For every variants getting standard monomer names
-    for bios_path in PeptideSeq:
-        if len(PeptideSeq[bios_path]) == 0:
-            continue
-
-        for var in PeptideSeq[bios_path]:
-            for seq in PeptideSeq[bios_path][var]:
-                for sub_AS in monomers_names:
-                    for sub in seq:
-                        if 'prob' in sub or 'prop' in sub:
-                            continue
-
-                        if 'dhpg' in sub:
-
-                            PeptideSeq[bios_path][var][PeptideSeq[bios_path][var].index(seq)][seq.index(sub)] =  'dhpg' #Changing monomer name
-                            continue
-                        
-                        if sub_AS in sub:
-                            
-                            PeptideSeq[bios_path][var][PeptideSeq[bios_path][var].index(seq)][seq.index(sub)] =  sub_AS #Changing monomer name
-
-    for bios_path in PeptideSeq:
-        if len(PeptideSeq[bios_path]) == 0:
-            continue
-
-        for var in PeptideSeq[bios_path]:
-            for seq in PeptideSeq[bios_path][var]:
-                for sub in seq:
-                    if sub not in monomers_names:
-                        
-                        PeptideSeq[bios_path][var][PeptideSeq[bios_path][var].index(seq)][seq.index(sub)] =  'nan' #For substrates, which we have not HMM, giving nan name
-
-    return PeptideSeq
 #Making possible combinations for potential clusters
 def make_combine(sequence, length_max, pssm, delta=3):
+    """
+    Create possible combinations of core peptide sequences.
+
+    Parameters
+    ----------
+    sequence : list
+        Sequences of one of biosynthesis type (e.g. A, B, or C).
+    length_max : int
+        Length of PSSM profile (length of cluster).
+    pssm : pandas DataFrame
+        PSSM profile.
+    delta : int
+        Differense between length of core peptide chain and size of cluster.
+    Returns
+    -------
+    answ : list
+        Possible combined sequence from continual fragments.
+    """
     if length_max + delta < len(pssm): #if minimal possible length of peptide sequence much less, then cluster 
         return None
 
@@ -137,16 +130,27 @@ def make_combine(sequence, length_max, pssm, delta=3):
             for i in sequence[var]:
                 
                 nx.append(i)
-
+            
             answ.extend(create_variants(nx, len(pssm)))
 
         answ = list(set(answ))
 
-    return answ #Returen condinations
+    return answ #Returen combinations
 
 #Getting maximum size of putative sequence from variant of biosynthesis type
 def get_max_aminochain(bios_path):
-    
+    """
+    The function return length of minimum fragmnt of core peptide chain.
+
+    Parameters
+    ----------
+    bios_path : list
+        Sequences of one of biosynthesis type (e.g. A, B, or C).
+    Returns
+    -------
+    max(lens_of_varints) : int
+        Maximum possible lenght from possible variants.
+    """
     lens_of_varints = []
 
     for var in bios_path:
@@ -162,7 +166,18 @@ def get_max_aminochain(bios_path):
     return  max(lens_of_varints) # Return maximum lenght from possible variants
 #Getting minimla size of putative sequence
 def get_minim_aminochain(PeptideSeq):
-    
+    """
+    The function return length of minimum fragmnt of core peptide chain.
+
+    Parameters
+    ----------
+    PeptideSeq : dict
+        Core peptide chains for different biosynthesis types (e.g. A, B, or C).
+    Returns
+    -------
+    min(lens_of_varints) : int
+        Minimal possible lenght from possible variants.
+    """
     lens_of_varints = []
 
     for bios_path in PeptideSeq:
@@ -179,6 +194,20 @@ def get_minim_aminochain(PeptideSeq):
     return  min(lens_of_varints) # Return minimal lenght from possible variants
 #SHUFFLUNG FUNCTION
 def shuffle_matrix(pssm_profile, ShufflingType):
+    """
+    The function return shuffled PSSM profile.
+
+    Parameters
+    ----------
+    pssm_profile : pandas DataFrame
+        PSSM profile.
+    ShufflingType : str
+        Variant of shuffling.
+    Returns
+    -------
+    profile : pandas DataFrame
+        Shuffled PSSM profile.
+    """
     # Module shuffling
     if ShufflingType == 'module':
         
@@ -210,9 +239,24 @@ def shuffle_matrix(pssm_profile, ShufflingType):
                     profile.loc[idx, sub] = row[sub]
 
     return profile 
-###############################********************************TO TESTING**************************************************************
+#
 def get_score(seq, pssm_profile, type_value):
-    
+    """
+    Alighning peptide sequence on PSSM profile.
+
+    Parameters
+    ----------
+    seq : str
+        Core peptide chain.
+    pssm_profile : str
+        PSSM profile.
+    type_value : str or None
+        Variant of score modification (log or default).
+    Returns
+    -------
+    profile : pandas DataFrame
+        Shuffled PSSM profile.
+    """
     target_sum = 0
     seq_cnt = 0
 
@@ -242,7 +286,20 @@ def get_score(seq, pssm_profile, type_value):
 
 # Multple treading generating shuflling mtrixes
 def get_shuffled_matrix(pssm_mat, iterations, return_dict, ShufflingType):
-    
+    """
+    The functuion generate massive of shuffled matrix.
+
+    Parameters
+    ----------
+    pssm_mat : pandas DataFrame
+        PSSM profile.
+    iterations : int
+        Number of iterations of shuffling.
+    return_dict : dict
+        Manager of multitreating.
+    ShufflingType : str
+        Variant of shuffling.
+    """
     shuffled_matrix = []
     for i in range(iterations):
 
@@ -251,7 +308,24 @@ def get_shuffled_matrix(pssm_mat, iterations, return_dict, ShufflingType):
     return_dict[os.getpid()] = shuffled_matrix
 
 def multi_thread_shuffling(pssm_mat, ShufflingType, iterations=100, threads=1):
-    
+    """
+    The functuion parallel matrix shuffling.
+
+    Parameters
+    ----------
+    pssm_mat : pandas DataFrame
+        PSSM profile.
+    ShufflingType : str
+        Variant of shuffling.
+    iterations : int
+        Number of iterations of shuffling.
+    threads : int
+        Number of threads used.
+    Returns
+    -------
+    shuffled_matrix : list
+        List of shuffled matrix.
+    """
     procs = []
     manager = Manager()
     return_dict = manager.dict()
@@ -276,7 +350,20 @@ def multi_thread_shuffling(pssm_mat, ShufflingType, iterations=100, threads=1):
 
 # Multple treading calculation scores for shuffled matrix
 def get_shuffled_scores(MaxSeq, return_dict, ShuffledMatrix, type_value):
+    """
+    The functuion calculate scores for shuffled matrix.
 
+    Parameters
+    ----------
+    MaxSeq : list
+        Suquence with maximum possible value.
+    return_dict : dict
+        Manager of multitreating.
+    ShuffledMatrix  : pandas DataFrame
+        Variant of shuffled matrix.
+    type_value : str or None
+        Variant of score modification (log or default).
+    """
     shuffled_scores = []
     for i in range(len(ShuffledMatrix)):
         shuffled_scores.append(get_score(MaxSeq, ShuffledMatrix[i], type_value))
@@ -286,7 +373,26 @@ def get_shuffled_scores(MaxSeq, return_dict, ShuffledMatrix, type_value):
 
 
 def multi_thread_calculating_scores(MaxSeq, ShuffledMatrix, type_value, iterations=100, threads=1):
-    
+    """
+    The functuion parallel calculation of scores for shuffled matrix.
+
+    Parameters
+    ----------
+    MaxSeq : list
+        Suquence with maximum possible value.
+    ShuffledMatrix : pandas DataFrame
+        Variant of shuffled matrix.
+    type_value : str or None
+        Variant of score modification (log or default).
+    iterations : int
+        Number of iterations of shuffling.
+    threads : int
+        Number of threads used.
+    Returns
+    -------
+    shuffled_scores : list
+        List of scores for shuffled matrix.
+    """
     procs = []
     manager = Manager()
     return_dict = manager.dict()
@@ -307,6 +413,6 @@ def multi_thread_calculating_scores(MaxSeq, ShuffledMatrix, type_value, iteratio
         proc.join()
 
     #print(len(return_dict))
-    shuffled_scores = np.concatenate([return_dict[k] for k in return_dict])
+    shuffled_scores = np.concatenate([return_dict[k] for k in return_dict.keys()])
     
     return shuffled_scores

@@ -4,9 +4,27 @@ from pandas import DataFrame
 from pandas import read_csv
 from Get_AS_DF import get_df
 
-#sortion genes in cluster and modules in genes
+""" This function construction correct NRPS clusters"""
+
+# Sortion genes in cluster and modules in genes
 def cluster_sort(df):
-    
+    """
+    The function sorting clusters in table with meta inforamtion.
+    Everything sorted from min to max coordinate, but it does not 
+    correct in case of negative strand. Thus it will reversed by 
+    reverse_neg function. Firstly sorting nucleotide sequence, 
+    chromosomes and genes, then sortin domain by location in protein
+    seques.
+
+    Parameters
+    ----------
+    df : pandas DataFrame
+        DataFrame with NRPS meta information.
+    Returns
+    -------
+    df2 : pandas DataFrame
+        Corrected DataFrame with NRPS meta information.
+    """
     chromosomes = list(set(df['Name'].values))
     df2 = DataFrame(columns=list(df.keys()))
 
@@ -36,10 +54,24 @@ def cluster_sort(df):
 
             df2 = df2.append(df.iloc[sort_indexes[idx]])
     df2.reset_index(drop=True, inplace=True)
+
     return df2
 #finding subclusters
 def check_subcluster(df):
+    """
+    The function find genes with differing directions in area of one cluster.
 
+    Parameters
+    ----------
+    df : pandas DataFrame
+        DataFrame with NRPS meta information.
+    Returns
+    -------
+    subcluster : dict
+        Dictionary  with information about potential subclusters.
+    None
+        If we have not potential subclusters.
+    """
     chromosomes = list(set(df['Name'].values))
     have_not = 0
     subcluster = {}
@@ -89,7 +121,21 @@ def check_subcluster(df):
         return None #if cluster have not diffetent direction
 #Spliiting subclusters 
 def split_subcluster(df, subcluster):
+    """
+    Split cluster on subclusters. In this case one cluster BGC_n can split
+    on BGC_n_0, BGC_n_1, ...
 
+    Parameters
+    ----------
+    df : pandas DataFrame
+        DataFrame with NRPS meta information.
+    subclusterdf : dict
+        Dictionary  with information about potential subclusters.
+    Returns
+    -------
+    df : pandas DataFrame
+        Corrected DataFrame with NRPS meta information.
+    """
     chromosomes = list(set(df['Name'].values))
 
     for chromosome in chromosomes:
@@ -108,7 +154,18 @@ def split_subcluster(df, subcluster):
     return df
 #reversing negative directed genes
 def reverse_neg(df):
+    """
+    Reversing negative strand genes from max to min coordinate.
 
+    Parameters
+    ----------
+    df : pandas DataFrame
+        DataFrame with NRPS meta information.
+    Returns
+    -------
+    df1 : pandas DataFrame
+        Corrected DataFrame with NRPS meta information.
+    """
     chromosomes = list(dict.fromkeys((df['Name'].values)))
     df1 = DataFrame(columns=list(df.keys()))
 
@@ -152,13 +209,41 @@ def reverse_neg(df):
     return df1
 #************************THE FUNCTIONS RMOVING PART AFTER TE DOMAIN TO THE START OF CLUSTER************************
 def shift_contig(df2, remove):
+    """
+    The function append shifted fragment from 
+    sort_cluster_seq function.
+
+    Parameters
+    ----------
+    df2 : pandas DataFrame
+        DataFrame NRPS cluster fragment.
+    remove : list
+        List of cluster fragment, which should removed.
+    Returns
+    -------
+    df2 : pandas DataFrame
+        Corrected DataFrame with NRPS meta information.
+    """
     for gen in remove:
         
         df2 = df2.append(gen)
 
     return df2
+
 def remove_modificate(remove):
-    
+    """
+    If cluster has module with C starter domain it should
+    be the first.
+
+    Parameters
+    ----------
+    remove : list
+        List of cluster fragment, which should removed.
+    Returns
+    -------
+    dremove2 : list
+        Corrected list of cluster fragment, which should removed.
+    """
     remove2 = []
     deque = []
     first = 0
@@ -167,7 +252,6 @@ def remove_modificate(remove):
     for gen in remove:
 
         modules = set(gen.ModuleID.values)
-        module_privi = ''
         
         for module in modules:
 
@@ -200,7 +284,20 @@ def remove_modificate(remove):
     return remove2
                     
 def sort_cluster_seq(df):
-    
+    """
+    In most cases the domain of Thioesterase sould be in the end of NRPS, 
+    but it codding in the start of cluster. Thus, module with TE domain
+    removed to the end.
+
+    Parameters
+    ----------
+    df : pandas DataFrame
+        DataFrame with NRPS meta information.
+    Returns
+    -------
+    df2 : pandas DataFrame
+        Corrected DataFrame with NRPS meta information.
+    """
     chromosomes = list(dict.fromkeys(df['Name'].values))
     df2 = DataFrame(columns=list(df.keys()))
 
@@ -223,7 +320,6 @@ def sort_cluster_seq(df):
                 
                 Gen_BGC = BGC_df[BGC_df['Gen ID'] == gen]
                 modules = list(dict.fromkeys(Gen_BGC.ModuleID.values))
-                module_privi = ''
                 strand = list(set(Gen_BGC['Gen strand'].values))[0]
                 
                 for module in modules[:: -1]:
@@ -253,7 +349,7 @@ def sort_cluster_seq(df):
               
                 last_gen = stack_domain[gen_term]
                 stack_domain = stack_domain[: -1]
-                remove = remove_modificate(remove)
+                remove = remove_modificate(remove) # Check first module
                 recombined = stack_domain 
                 recombined += remove 
                 recombined.append(last_gen)
@@ -263,12 +359,24 @@ def sort_cluster_seq(df):
                 remove = remove_modificate(remove)
                 recombined = remove + stack_domain
                 #remove.extend(stack_domain)
-
+            # Recompiling of cluster
             df2 = shift_contig(df2, recombined)
     return df2
 #*******************************************************************************************************************************
 def generate_table_from_antismash(json_path, table_out, dif_strand):
-    
+    """
+    The function generate table with NRPS cluster mata inforamtion and 
+    construct deque of modules of NRPS.
+
+    Parameters
+    ----------
+    json_path : str
+        Path to antiSMASH json output.
+    table_out : str
+        Path to BioCAT output directory.
+    dif_strand : bool
+        Parameter of cutting cluster by directions of gene strands.
+    """
     out = table_out + '/table.tsv'
     get_df(json_path, out)
     df = read_csv(out, sep='\t')
@@ -285,5 +393,3 @@ def generate_table_from_antismash(json_path, table_out, dif_strand):
     df = reverse_neg(df)
     df = sort_cluster_seq(df)
     df.to_csv(out, index=False, sep='\t')
-
-print('Biosynthesis clusters have been successfully discovered!')

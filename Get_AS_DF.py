@@ -2,6 +2,19 @@ from json import load
 from pandas import DataFrame
 
 def get_info_dict(json_path):
+    """
+    This function compile dictionary with cluster information from antiSMASH information.
+    This neccery only for comfort parsing of json.
+
+    Parameters
+    ----------
+    json_path : str
+        Path to antiSMASH json output.
+    Returns
+    -------
+    BIGDICT : dict
+        Dict with all biosynthetic clusters inforamtion.
+    """
     with open(json_path, 'r') as f:
 
         data = load(f)
@@ -110,8 +123,24 @@ def get_info_dict(json_path):
     return BIGDICT
 
 def get_coord(gen_location):
+    """
+    Finding the coordinates of cluster in genome. In eucariota it can be with 
+    exones, then we check it.
+
+    Parameters
+    ----------
+    gen_location : str
+        antiSMASH record of coordinate.
+    Returns
+    -------
+    start : str
+        Start of cluster coordinate in genome.
+    end : str
+        End of cluster coordinate in genome.
+    strand : str
+        Strand of cluster coordinate in genome.
+    """
     if 'join' in gen_location:
-        print('nippnpnponopnopnop')
         if '-' in gen_location:
 
             start = gen_location.split(', ')[-1].split(':')[0][1: ]
@@ -132,8 +161,18 @@ def get_coord(gen_location):
     return start, end, strand
 
 def get_df(json_path, out):
-    
-    BIGDICT = get_info_dict(json_path)
+    """
+    Collecting of NRPS cluster meta information and compiled it to pandas DataFrame.
+
+    Parameters
+    ----------
+    json_path : str
+        Path to antiSMASH json output.
+    out : str
+        Path to save of BioCAT meta inforamtion about clusters.
+    """
+
+    BIGDICT = get_info_dict(json_path) # Calling get_info_dict function
     cluster_id = 0
     protocluster_id = 0
     keys = {'Name' : [],
@@ -186,7 +225,9 @@ def get_df(json_path, out):
                         module_loc = modlue_name['location']
 
                         for domain in modlue_name['Domain_childs']:
-
+                            # In some cases Protocluster does not duplicate Candidate custer.
+                            # For this cases, we add every possible variants.
+                            # In order not to count PSSM for duplicates, we delete them later.
                             domain_info = modlue_name['Domain_childs'][domain]
                             location = domain_info['location']
                             protein_start = domain_info['qualifiers']['protein_start'][0]
@@ -225,4 +266,4 @@ def get_df(json_path, out):
             cluster_id += 1
             
     df = DataFrame(data=keys) 
-    df.to_csv(out, index=False, sep='\t')
+    df.to_csv(out, index=False, sep='\t') # Save DataFrame

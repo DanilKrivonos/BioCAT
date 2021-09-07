@@ -4,9 +4,10 @@ from rdkit.DataStructs import BulkTanimotoSimilarity
 
 #Findind Euler tour with modified Fleury's algorithm
 def find_subgraph_tour(current_node, graph, tour):
+
     priv_t = tour.copy()
-    
     copy = graph.copy()
+    
     for edge in copy:
         if current_node in edge:
 
@@ -43,7 +44,9 @@ def find_eulerian_tour(graph):
         tour.append(current_node)
         tour = find_subgraph_tour(current_node, graph, tour)
         tour_list.append(tour)
-        
+
+    tour_list_cop = tour_list.copy()
+
     for tour in tour_list:
 
         if tour[-1: : -1] in tour_list:
@@ -52,6 +55,9 @@ def find_eulerian_tour(graph):
     return tour_list
 
 def macthing_templates(templates_peptide, templates_minipept):
+
+    templates_minipept_cop = templates_minipept.copy()
+
     for i in templates_minipept:    
         
         check = 0
@@ -69,9 +75,9 @@ def macthing_templates(templates_peptide, templates_minipept):
 
         if check != len(i):
 
-            templates_minipept.remove(i)
+            templates_minipept_cop.remove(i)
         
-    return templates_minipept
+    return templates_minipept_cop
 
 def find_amino_acid(EP, amono_acids):
     for var in EP:
@@ -124,7 +130,9 @@ def cyclic_peptide(edge_graph):
 
 def add_non_pept(EP, non_pept):
 
-    for var in EP:
+    EP_cop = EP.copy()
+
+    for var in EP_cop:
 
         check = 0
         numbers = []
@@ -316,7 +324,10 @@ def get_direction(EP, CPC):
     return EP
 
 def add_acids(EP, amino_acids):
-    for var in EP:
+
+    EP_cop = EP.copy()
+
+    for var in EP_cop:
         for tour in EP[var].copy():
             if len(tour) == 0:
 
@@ -339,8 +350,9 @@ def add_acids(EP, amino_acids):
 def type_C(EP, js):
     
     repeats = Find_repeats(EP, js)
+    EP_cop = EP.copy()
 
-    for var in EP:
+    for var in EP_cop:
         for tour in EP[var]:        
             if len(repeats[var][EP[var].index(tour)]) == 0:
                 continue
@@ -348,6 +360,7 @@ def type_C(EP, js):
             else:
                 for rep in repeats[var][EP[var].index(tour)]:
                     for rep_node in rep[1: ]:
+
                         EP[var][EP[var].index(tour)].remove(rep_node)
 
     return EP
@@ -485,8 +498,9 @@ def parse_rBAN(outp, NRPS_type, push_B=None):
     if len(templates_non_classic) > 0:
         
         non_classic = get_non_classic(templates_non_classic, js)
+        CPC_cop = CPC.copy()
         
-        for edge in CPC:
+        for edge in CPC_cop:
             if edge[0] in non_classic and edge[1] in non_classic:
                 
                 CPC.remove(edge)

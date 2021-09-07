@@ -3,14 +3,22 @@ from pandas import read_csv
 from subprocess import call
 from os import listdir, mkdir
 
-def HMM_make(path, output, taxon, cpu):
-    if taxon == 'bacteria':
+def HMM_make(path, output, cpu):
+    """
+    Firatly, function generate fasta file with all possible sequences of AMP-binding domain
+    and alighn its on hmm profile
 
-        hmms = './HMM/Bacteria_HMM'
+    Parameters
+    ----------
+    path : str
+        Path to HMM profiles
+    output : str
+        Path to output directory for Hmmer output
+    cpu : int
+        Number of threads used.
+    """
 
-    else:
-
-        hmms = './HMM/Fungi_HMM'
+    hmms = './HMM/Bacteria_HMM'
 
     table = read_csv(path + '/table.tsv', sep='\t')
     #making work directory to fasta files
@@ -49,8 +57,9 @@ def HMM_make(path, output, taxon, cpu):
     hmms_s = listdir(hmms)
 
     for sub in hmms_s:
-
+        
         substrate = sub.split('_')[1][: -4]
+        # Call hmmsearch
         call('hmmsearch -Z 1000 --cpu {} {}/{} {}/nrps_domains.fasta > {}/{}.out'.format(cpu,
                                                                                         hmms,
                                                                                         sub,

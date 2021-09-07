@@ -5,9 +5,18 @@ from os import listdir
 from pandas import read_csv
 from Bio.SearchIO import parse
 
+""" The main role of this functions is generate PSSM """
+
 # The function deletes protocluster, which is duplicate of candidate cluster
-def check_cluster_dublicates(pssm_path):
-    
+def check_cluster_duplicates(pssm_path):
+    """
+    The function remove duplicates of PSSMs.
+
+    Parameters
+    ----------
+    pssm_path : str
+        Path to PSSMs.
+    """
     pssms = listdir(pssm_path)
     
     for pssm in pssms:
@@ -43,17 +52,25 @@ def check_cluster_dublicates(pssm_path):
                 continue
         
 
-def PSSM_make(search, aminochain, out, delta, substance_name, taxon):
-    if taxon == 'bacteria':
+def PSSM_make(search, aminochain, out, delta, substance_name):
+    """
+    The function genetates PSSM profiles from hmm otputs.
 
-        hmms = './HMM/Bacteria_HMM'
-        neg='./Bac_negative.tsv'
-
-    else:
-
-        hmms = './HMM/Fungi_HMM'
-        neg='./Fungi_negative.tsv'
-
+    Parameters
+    ----------
+    search : str
+        Path to HMM profile directory
+    aminochain : str
+        Length of minimal possible core peptide chain variant for the substances. 
+    out : str
+        Path to BioCAT output directory.
+    delta : int
+        Differense between length of core peptide chain and size of cluster.
+    substance_name : str
+        Name of analyzing substance.
+    """
+    hmms = './HMM/Bacteria_HMM'
+    neg='./HMM/Bac_negative.tsv'
     negative = read_csv(neg, sep='\t')
     output = out
     path = out + '/table.tsv'
@@ -144,5 +161,5 @@ def PSSM_make(search, aminochain, out, delta, substance_name, taxon):
                     
                 test.write('\n')
     print('Checking cluster duplicates ...')
-    check_cluster_dublicates(PSSMs_out)# delete duplicates 
+    check_cluster_duplicates(PSSMs_out)# delete duplicate 
     print('All PSSM were recorded sucessfully!')

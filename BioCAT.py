@@ -9,9 +9,9 @@ from PSSM_maker import PSSM_make
 from HMM_maker import HMM_make
 from antiSMASH_parser import generate_table_from_antismash
 from Make_NRP_structure import parse_rBAN
-from Combinatorics import skipper, get_score, shuffle_matrix, make_combine, multi_thread_shuffling, make_standard, get_minim_aminochain
+from Combinatorics import skipper, get_score, shuffle_matrix, make_combine, multi_thread_shuffling, get_minim_aminochain
 from Exploration_mode import exploration_mode
-from Technical_functions import parse_smi_file, run_antiSMASH, run_rBAN, get_ids, check_pept_seq, get_results_to_csv
+from Technical_functions import parse_smi_file, run_antiSMASH, run_rBAN, get_ids, check_pept_seq, get_results_to_csv, make_standard
 from Calculating_scores import give_results
 parser = argparse.ArgumentParser(description='Pipeline, which help to find biosynthesis gene clusters of NRP')
 parser.add_argument('-name', 
@@ -28,7 +28,7 @@ parser.add_argument('-file_smiles',
                     default=None)
 parser.add_argument('-rBAN',
                     type=str,
-                    help='Put here rBAN json',
+                    help='Put here rBAN peptideGraph.json output',
                     default=None)
 parser.add_argument('-antismash',
                     type=str,
@@ -38,10 +38,6 @@ parser.add_argument('-genome',
                     type=str, 
                     help='Fasta file with nucleotide sequence', 
                     default=None)
-parser.add_argument('-taxon', 
-                    type=str, 
-                    help='Taxon of organism: fungi or bacteria', 
-                    default='bacteria')
 parser.add_argument('-NRPS_type', 
                     type=str, 
                     help='Expected NRPS type^', 
@@ -73,7 +69,7 @@ parser.add_argument('-delta',
 parser.add_argument('-cpu', 
                     type=int, 
                     help='Multiple treadings', 
-                    default=100)
+                    default=30)
 parser.add_argument('-out', 
                     type=str, 
                     help='Output directory, example: ./MY_path', 
@@ -84,7 +80,6 @@ cpu = args.cpu
 exploration = args.exploration
 output = args.out    
 skip = args.skip
-taxon = args.taxon
 delta = int(args.delta)
 NRPS_type = args.NRPS_type
 dif_strand = args.dif_strand
@@ -119,10 +114,16 @@ json_path = run_antiSMASH(args.antismash, output, genome, cpu)
 # Making antiSMASH dataes to table
 generate_table_from_antismash(json_path, output, dif_strand)
 # Making of fasta files and hmmserching 
-HMM_make(output, output, taxon, cpu)
+HMM_make(output, output, cpu)
 # Getting substance name if we have only rBAN json
+print('Biosynthesis clusters have been successfully discovered!')
 if args.rBAN is not None:
-    
+    """
+    If we have rBAN json we make empty smile_list,
+    because we should not run rBAN yet and we can 
+    only parse existing json output. Especialy, we
+    gets name of the substance from peptideGraph.json.
+    """
     smile_list = ['smi']
     ids = [get_ids(args.rBAN)]
 
@@ -158,7 +159,7 @@ for smi in range(len(smile_list)):
         get_results_to_csv(dict_res, output, ids[smi])# Make empty Results.csv
         continue 
     # Standartization of monomer names
-    PeptideSeq = make_standard(PeptideSeq, taxon)  
+    PeptideSeq = make_standard(PeptideSeq)  
     # Check correctness of the stcucture
     PeptideSeq = check_pept_seq(PeptideSeq)
 
@@ -176,7 +177,7 @@ for smi in range(len(smile_list)):
         [print(PeptideSeq[BS_type][i]) for i in PeptideSeq[BS_type]]
 
     # Making PSSMs
-    PSSM_make(search = output + '/HMM_results/', aminochain=length_min, out = output, delta=delta, substance_name=ids[smi], taxon=taxon)
+    PSSM_make(search = output + '/HMM_results/', aminochain=length_min, out = output, delta=delta, substance_name=ids[smi])
     #Importing all PSSMs
     folder =  output + '/PSSM_{}/'.format(ids[smi])
     files = os.listdir(folder)
@@ -184,7 +185,7 @@ for smi in range(len(smile_list)):
     if exploration is True:
         if len(files) == 0:
 
-            PeptideSeq, NRPS_type = exploration_mode(rBAN_path, output, json_path, delta, substance_name=ids[smi], taxon=taxon)
+            PeptideSeq, NRPS_type = exploration_mode(rBAN_path, output, json_path, delta, substance_name=ids[smi])
             
     # Check availability of PSSMs
     files = os.listdir(folder)
