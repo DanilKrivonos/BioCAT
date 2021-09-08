@@ -5,7 +5,20 @@ from rdkit.DataStructs import BulkTanimotoSimilarity
 """The function of restoring molecule srtucture"""
 #Findind Euler tour with modified Fleury's algorithm
 def find_subgraph_tour(current_node, graph, tour):
+    """
+    The function search subgraph structure in main geaph fragments.
 
+    Parameters
+    ----------
+    current_node : dict
+        Start node.
+    graph : dict
+        Peptide bonds.
+    Returns
+    -------
+    tour : list
+        Euler tour for subgraph.
+    """
     priv_t = tour.copy()
     copy = graph.copy()
     
@@ -26,7 +39,20 @@ def find_subgraph_tour(current_node, graph, tour):
     return tour
 
 def find_eulerian_tour(graph):
+    """
+    The function trying to fing path in graph, using modificated variant 
+    of Fleri algorithm (to find tour in unrelated fragments) of seqrcing Euler path, for every possible inner
+    subgrap structure.
 
+    Parameters
+    ----------
+    graph : list
+        Peptide bonds.
+    Returns
+    -------
+    tour_list : list
+        Euler tour for subgraph.
+    """
     start = []
     for edge in graph:
         for node in edge:
@@ -56,7 +82,20 @@ def find_eulerian_tour(graph):
     return tour_list
 
 def macthing_templates(templates_peptide, templates_minipept):
+    """
+    The function searching atoms of peptide bonds in small pepride pattern.
 
+    Parameters
+    ----------
+    templates_peptide : list
+        List of atoms of peptide bonds.
+    templates_minipept : list
+        List of atoms of part of peptide bonds.
+    Returns
+    -------
+    templates_minipept_cop : list
+        Corrected list of atoms of part of peptide bonds.
+    """
     templates_minipept_cop = templates_minipept.copy()
 
     for i in templates_minipept:    
@@ -81,6 +120,21 @@ def macthing_templates(templates_peptide, templates_minipept):
     return templates_minipept_cop
 
 def find_amino_acid(EP, amono_acids):
+    """
+    The function check that all alpha amino acids in sequence,
+    else add this monomers.
+
+    Parameters
+    ----------
+    EP : dict
+        Variants of peptide sequences.
+    amino_acids : list
+        List of alpha amino acids.
+    Returns
+    -------
+    EP : dict
+        Corrected variants of peptide sequences.
+    """
     for var in EP:
         for tour in EP[var]:
             if len(tour) == 1 and tour[0] not in amono_acids:
@@ -105,6 +159,18 @@ def find_amino_acid(EP, amono_acids):
     return EP
 
 def cutter(edge_graph):
+    """
+    Return variant of cutted sequence.
+
+    Parameters
+    ----------
+    EP : dict
+        Variants of peptide sequences.
+    Returns
+    -------
+    variants : list
+        list of CPC with removed one of edges.
+    """
     variants = []
 
     for ind in range(len(edge_graph)):
@@ -116,7 +182,19 @@ def cutter(edge_graph):
     return variants
 
 def cyclic_peptide(edge_graph):
-    
+    """
+    For cyclic peptide. The function remove one of ones 
+    each edge and return dict with all possible variants.
+
+    Parameters
+    ----------
+    edge_graph : list
+        Core peptide chain. List of directed edges.    
+    Returns
+    -------
+    EP : dict
+        All possiible variants of linerized version of cuclic peptide.
+    """
     EP = {}
     v = cutter(edge_graph)
     idx = 0
@@ -130,7 +208,21 @@ def cyclic_peptide(edge_graph):
     return EP
 
 def add_non_pept(EP, non_pept):
+    """
+    The function check that all alpha amino acids in sequence,
+    else add this monomers.
 
+    Parameters
+    ----------
+    EP : dict
+        Variants of peptide sequences.
+    amino_acids : list
+        List of alpha amino acids.
+    Returns
+    -------
+    EP : dict
+        Variant of type C, synthesized peptide sequence. 
+    """
     EP_cop = EP.copy()
 
     for var in EP_cop:
@@ -169,6 +261,21 @@ def add_non_pept(EP, non_pept):
     return EP
 
 def get_monomer_names(EP, space):
+    """
+    The function check that all alpha amino acids in sequence,
+    else add this monomers.
+
+    Parameters
+    ----------
+    EP : dict
+        Variants of peptide sequences.
+    amino_acids : list
+        List of alpha amino acids.
+    Returns
+    -------
+    EP : dict
+        Corrected variants of peptide sequences.
+    """
     new_EP = {}
 
     for var in EP:
@@ -193,6 +300,21 @@ def get_monomer_names(EP, space):
     return new_EP
 # The function adding type B variant of biosynthesis to PeptideSeq
 def compare_type_B_tour(add_tour, compare, PeptideSeq_cop, bios_path, key):
+    """
+    The function check that all alpha amino acids in sequence,
+    else add this monomers.
+
+    Parameters
+    ----------
+    EP : dict
+        Variants of peptide sequences.
+    amino_acids : list
+        List of alpha amino acids.
+    Returns
+    -------
+    EP : dict
+        Corrected variants of peptide sequences.
+    """
     if add_tour == compare:
         if add_tour not in PeptideSeq_cop[bios_path].values():
             if key not in PeptideSeq_cop['B']:
@@ -206,7 +328,21 @@ def compare_type_B_tour(add_tour, compare, PeptideSeq_cop, bios_path, key):
     return PeptideSeq_cop
 # Finding type B biosynthesis path
 def type_B(PeptideSeq, not_push=True):
-    
+    """
+    The function try to find type C synthesis pathways molecule.
+
+    Parameters
+    ----------
+    PeptideSeq : dict
+        Core peptide chains for different biosynthesis types (e.g. A, B, or C).
+    not_push : bool
+        Is the mod of forse searching type B variant. Its cut ends of sequences and try to 
+        compare it. If its compare, then it possible type B.
+    Returns
+    -------
+    PeptideSeq_cop : dict
+        Corrected variants of peptide sequences.
+    """
     PeptideSeq_cop = PeptideSeq.copy()
     key = 0
 
@@ -255,6 +391,22 @@ def type_B(PeptideSeq, not_push=True):
     return PeptideSeq_cop
     
 def get_CPC(templates_minipept, js):
+    """
+    The function return list with core peptide chain of molecule.
+    Basicly algorithm find host of alpha nitrogen. the host of it is 
+    potentialy C end of edge.
+
+    Parameters
+    ----------
+    templates_minipept : dict
+        Templates with main components of peptide bonds.
+    js : dict
+        Opend rBAN peptideGraph.json.
+    Returns
+    -------
+    CPC : list
+        Core peptide chain. List of directed edges.
+    """
     # Make CPC(core peptide chain)
     CPC = [] 
     # Give it afunction 
@@ -275,7 +427,20 @@ def get_CPC(templates_minipept, js):
     return CPC
 
 def get_peptide_elements(templates_peptide, js):
-    
+    """
+    The function return a list with compounds of core peptide chain.
+
+    Parameters
+    ----------
+    templates_peptide : list
+        List of atoms of peptide bonds
+    js : dict
+        Opend rBAN peptideGraph.json.
+    Returns
+    -------
+    core_peptide_elements : list
+        List of core peptide elements.
+    """
     core_peptide_elements = []
     
     for tp in templates_peptide:
@@ -288,7 +453,20 @@ def get_peptide_elements(templates_peptide, js):
     return core_peptide_elements
 
 def get_non_classic(templates_non_classic, js):
-    
+    """
+    Getting edges with non classic peptide bonds.
+
+    Parameters
+    ----------
+    templates_non_classic : list
+        List of atoms of non classic peptide bonds.
+    js : dict
+        Opend rBAN peptideGraph.json.
+    Returns
+    -------
+    non_classic : list
+        List of amino acids, bonded with non classic peptide bonds.
+    """
     non_classic = []
 
     for tp in templates_non_classic:
@@ -301,7 +479,19 @@ def get_non_classic(templates_non_classic, js):
     return non_classic
 
 def get_AA(amino_acids_atoms, js):
-    
+    """
+    The function check that all alpha amino acids in sequence,
+    else add this monomers.
+
+    Parameters
+    ----------
+    amino_acids : list
+        List of alpha amino atoms.
+    Returns
+    -------
+    AAs : list
+        List of amino acids monomers.
+    """
     AAs = []
 
     for tp in amino_acids_atoms:
@@ -314,7 +504,20 @@ def get_AA(amino_acids_atoms, js):
     return AAs
 
 def get_direction(EP, CPC):
-    
+    """
+    The function direct sequence from N to C ends.
+
+    Parameters
+    ----------
+    EP : dict
+        Variants of peptide sequences.
+    CPC : list
+        Core peptide chain. List of directed edges.
+    Returns
+    -------
+    EP : dict
+        Corrected variants of peptide sequences.
+    """
     for var in EP:
         for tour in EP[var]:
             if tour[-2 :] in CPC:
@@ -325,7 +528,21 @@ def get_direction(EP, CPC):
     return EP
 
 def add_acids(EP, amino_acids):
+    """
+    The function check that all alpha amino acids in sequence,
+    else add this monomers.
 
+    Parameters
+    ----------
+    EP : dict
+        Variants of peptide sequences.
+    amino_acids : list
+        List of alpha amino acids.
+    Returns
+    -------
+    EP : dict
+        Corrected variants of peptide sequences.
+    """
     EP_cop = EP.copy()
 
     for var in EP_cop:
@@ -349,7 +566,20 @@ def add_acids(EP, amino_acids):
     return EP
 #Type C compression
 def type_C(EP, js):
-    
+    """
+    The function try to find type C synthesis pathways molecule.
+
+    Parameters
+    ----------
+    EP : dict
+        Variants of peptide sequences.
+    js : dict
+        Opend rBAN peptideGraph.json.
+    Returns
+    -------
+    EP : dict
+        Variant of type C, synthesized peptide sequence. 
+    """
     repeats = Find_repeats(EP, js)
     EP_cop = EP.copy()
 
@@ -367,7 +597,21 @@ def type_C(EP, js):
     return EP
 #finding reapits in aminochain tours
 def Find_repeats(EP, js):
-    
+    """
+    The function generating smiles dictionry and find simmular neighbour 
+    monomers.
+
+    Parameters
+    ----------
+    EP : dict
+        Opend rBAN peptideGraph.json.
+    js : dict
+        Opend rBAN peptideGraph.json.
+    Returns
+    -------
+    reapets : list
+        Simmular neighbours monomers.
+    """
     reapets = {}
     
     for var in EP:
@@ -385,13 +629,23 @@ def Find_repeats(EP, js):
                         smiles_dict[node] = Chem.MolFromSmiles(i['monomer']['monomer']['smiles'])
                         
             reapets[var][EP[var].index(tour)] = Get_compare(smiles_dict)
-            
-
-
+        
     return reapets
 #finding Tanimotosimmularitis
 def Get_compare(smiles_dict):
-    
+    """
+    The function find the simmular neighbours monomers, using Tanimoto metric of 
+    molecul similarity.
+
+    Parameters
+    ----------
+    smiles_dict : dict
+        Smiles of each monomers.
+    Returns
+    -------
+    reps : list
+        Simmular neighbours monomers.
+    """
     reps = []
     mols = list(smiles_dict.keys())
     reps_count = 0
@@ -432,7 +686,20 @@ def Get_compare(smiles_dict):
     return reps
 # The function return list of monomer, which not AA, but pupular compounds
 def find_not_aa_monomers(js):
-    
+    """
+    The function searchin non aminoacids monomers if anzlizyng molecule.
+
+    Parameters
+    ----------
+    js : dict
+        Opend rBAN peptideGraph.json.
+    Returns
+    -------
+    not_aa_monomer : list
+        List of non aminoacids monomers.
+    js : dict 
+        Opend rBAN peptideGraph.json, with modified names of some monomers.
+    """
     compare_dict = {'iva': 'CC(C)CC(=O)O',
                     'hiv': 'CC(C)C(C(=O)O)O',
                    # 'dhb': 'C1=CC(=C(C(=C1)O)O)C(=O)O', #dOH-Bz
@@ -462,15 +729,34 @@ def find_not_aa_monomers(js):
                 
     return not_aa_monomer, js
 def parse_rBAN(outp, NRPS_type, off_push_B=True):
-    
-    peptide_bond = Chem.MolFromSmiles('C(=O)CN(C(=O)CN)')
-    mini_pept = Chem.MolFromSmiles('NC=O')
-    N_OH = Chem.MolFromSmiles('C(=O)CN(O)(C(=O)CN)')
-    alpha_amino = Chem.MolFromSmiles('C(=O)CN')
-    N_N = Chem.MolFromSmiles('C(=O)CNC(=O)CNN')
-    N_P = Chem.MolFromSmiles('C(=O)CN(P)(C(=O)CN)')
-    N_Cl = Chem.MolFromSmiles('C(=O)CN(Cl)(C(=O)CN)')
-    #Pattern length 
+    """
+    The main function of retrobiosynthesis stage. The function parse rBAN output,
+    with restoring primary molecule stricture.
+
+    Parameters
+    ----------
+    outp : str
+        Path to rBAN peptideGraph.json.
+    NRPS_type : str
+        Type of NRPS biosynthesis.
+    off_push_B : bool
+        Push mode of type B searching.
+    Returns
+    -------
+    PeptideSeq : dict
+        Core peptide chains for different biosynthesis pathways.
+    None
+        In the case, when the sequence contains only 'nan' monomers.
+    """
+    # Templates
+    peptide_bond = Chem.MolFromSmiles('C(=O)CN(C(=O)CN)') # Template of peptide bond
+    mini_pept = Chem.MolFromSmiles('NC=O') # Part of peptide bond template
+    alpha_amino = Chem.MolFromSmiles('C(=O)CN') # Pattern of alpha aminoacids
+    N_OH = Chem.MolFromSmiles('C(=O)CN(O)(C(=O)CN)') # N-OH peptide bond pttern (bonnevillamides)
+    N_N = Chem.MolFromSmiles('C(=O)CNC(=O)CNN') # N-N peptide bond pttern
+    N_P = Chem.MolFromSmiles('C(=O)CN(P)(C(=O)CN)') # N-P peptide bond pttern
+    N_Cl = Chem.MolFromSmiles('C(=O)CN(Cl)(C(=O)CN)') # N-Cl peptide bond pttern
+    # Patterns length
     pept_pattern_length = len(peptide_bond.GetAtoms())
     N_OH_length = len(N_OH.GetAtoms())
     
@@ -541,6 +827,7 @@ def parse_rBAN(outp, NRPS_type, off_push_B=True):
         # Giving biosynthetic way name
         PeptideSeq = {'A': EP, 'B': {}, 'C': {}}
         PeptideSeq['A'] = get_monomer_names(PeptideSeq['A'], js['monomericGraph']['monomericGraph']['monomers'])
+
         if 'C' in NRPS_type:
 
             PeptideSeq['C'] = type_C(EP, js)

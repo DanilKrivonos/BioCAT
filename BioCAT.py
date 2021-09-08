@@ -47,30 +47,30 @@ group2.add_argument('-rBAN',
                     default=None)
 group2.add_argument('-NRPS_type',
                     type=str,
-                    help='Expected NRPS type',
+                    help='Expected NRPS type (default A+B)',
                     default='A+B')
 # Group of technical arguments
 group3.add_argument('-iterations',
                     type=int,
-                    help='Count of permuted PSSMs',
+                    help='Count of permuted PSSMs (default 100)',
                     default=100)
-group3.add_argument('-skip',
-                    type=int,
-                    help='Count of possible skippikipped modules',
-                    default=0)
 group3.add_argument('-delta',
                     type=str,
-                    help='Delta between length of cluster and peptide sequence',
+                    help='Delta between length of cluster and peptide sequence (default 3)',
                     default=3)
 group3.add_argument('-cpu',
                     type=int,
-                    help='Number of treads',
+                    help='Number of treads (default 8)',
                     default=8)
 group3.add_argument('-out',
                     type=str,
-                    help='Output directory',
+                    help='Output directory (default ./BioCAT_output)',
                     default='./BioCAT_output')
 # Group of Advanced arguments
+group4.add_argument('-skip',
+                    type=int,
+                    help='Count of possible skippikipped modules',
+                    default=0)
 group4.add_argument('--disable_pushing_type_B',
                     help='Fasta file with nucleotide sequence',
                     action='store_true',
