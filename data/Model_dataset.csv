@@ -1,0 +1,326 @@
+Genome	Substance	Smiles
+GCF_000015785.2_ASM1578v2_genomic	bacillomycin_D	CCC(C)CCCCCCCCC1CC(=O)NC(CC(N)=O)C(=O)NC(CC2=CC=C(O)C=C2)C(=O)NC(CC(N)=O)C(=O)N2CCCC2C(=O)NC(CCC(O)=O)C(=O)NC(CO)C(=O)NC(C(C)O)C(=O)N1
+
+GCF_000091305.1_ASM9130v1_genomic	scabichelin	CN[C@@H](CCCN(O)C=O)C(=O)N[C@@H](CO)C(=O)N(O)CCC[C@H](NC)C(=O)N[C@@H](CCCN)C(=O)N[C@@H]1CCCN(O)C1=O
+
+GCA_000710505.1_Plagard2.0_genomic	anabaenopeptin_915	CC[C@H](C)[C@H]1C(=O)NCCCC[C@H](C(=O)N[C@H](C(=O)N[C@H](C(=O)N([C@H](C(=O)N1)CCC2=CC=C(C=C2)O)C)CCC3=CC=C(C=C3)O)C(C)C)NC(=O)N[C@@H](CC4=CC=C(C=C4)O)C(=O)O
+
+GCF_003947255.1_ASM394725v1_genomic	balhimycin	CNC(CC(C)C)C(=O)NC1C(O)C2=CC=C(OC3=C(OC4O[C@H](CO)C(O)[C@H](O)C4O)C4=CC(=C3)C(NC(=O)C(CC(N)=O)NC1=O)C(=O)NC1C3=CC(=C(O)C=C3)C3=C(O)C=C(O)C=C3C(NC(=O)C(NC1=O)C(OC1C[C@](C)(N)C(=O)C(C)O1)C1=CC=C(O4)C(Cl)=C1)C(O)=O)C(Cl)=C2
+
+GCF_002706795.1_ASM270679v1_genomic	brevicidine	CC[C@H](C)[C@H]1C(=O)NCC(=O)N[C@H](C(=O)O[C@@H]([C@@H](C(=O)N1)NC(=O)[C@H](CC2=CNC3=CC=CC=C32)NC(=O)[C@@H](CCCN)NC(=O)CNC(=O)[C@H](CCCN)NC(=O)[C@@H](CCCN)NC(=O)[C@@H](CC4=CNC5=CC=CC=C54)NC(=O)[C@@H](CC6=CC=C(C=C6)O)NC(=O)[C@@H](CC(=O)N)NC(=O)CCC(C)CC)C)CO
+
+GCF_900010725.2_PCC_8927_PRJEB10992_v2_genomic	hassallidin_E	C/C=C1NC(C(NC(C(NC(C(C(OC(C(NC(C(N(C(CNC(C(NC\1=O)CCC(N)=O)=O)=O)C)C(OC2OC(C(C(C2O)O)O)CO)C)=O)CCC(N)=O)=O)C)NC(C(C(O)C)NC(C(C(CCCCCCCCCCCCC)O)O)=O)=O)=O)C(O)C)=O)Cc3ccc(O)cc3)=O
+
+GCF_000378685.1_ASM37868v1_genomic	BE-43547C2	O=C(CNC([C@](O)(C)C1=O)=O)NC(/C=C/C(N(C)CC(O[C@@H](CCCCCCCCCCCCC(C)C)[C@@H]1C)=O)=O)=C
+
+GCF_003121295.1_ASM312129v1_genomic	neoantimycin	CCC(C)C1C(=O)OC(C(C(=O)OC(C(=O)OC(C(C(C(=O)O1)(C)C)O)CC2=CC=CC=C2)C(C)C)NC(=O)C3=C(C(=CC=C3)NC=O)O)C
+
+GCA_000710505.1_Plagard2.0_genomic	aeruginoside_126B	CC(C)C[C@@H](NC(=O)[C@H](O)CC1=CC=CC=C1)C(=O)N1[C@H]2C[C@@H](CC[C@H]2C[C@H]1C(=O)NCCCCNC(N)=N)O[C@H]1OC[C@@H](O)[C@H](O)[C@H]1O
+
+GCF_000198775.1_ASM19877v1_genomic	rhizomide_B	CC1C(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)O1)C(C)C)CO)C)C)CC2=CC=C(C=C2)O)NC(=O)C(CC(C)C)NC(=O)C
+
+GCF_000014805.1_ASM1480v1_genomic	amonabactin_P_750	N[C@@H](CCCCNC(=O)CNC(=O)C1=CC=CC(O)=C1O)C(=O)N[C@@H](CCCCNC(=O)C1=CC=CC(O)=C1O)C(=O)N[C@@H](CC1=CC=CC=C1)C(O)=O
+
+GCF_001189295.1_ASM118929v1_genomic	chondramide_A	CO[C@H]1C(NC(=O)[C@@H](CC2=CNC3=CC=CC=C23)N(C)C(=O)[C@H](C)NC(=O)[C@@H](C)CC(C)=C[C@H](C)[C@@H](C)OC1=O)C1=CC=C(O)C=C1
+
+GCF_000010165.1_ASM1016v1_genomic	gramicidin	C[C@@H](C(=O)N[C@H](CC(C)C)C(=O)N[C@@H](C)C(=O)N[C@H](C(C)C)C(=O)N[C@@H](C(C)C)C(=O)N[C@@H](C(C)C)C(=O)N[C@@H](CC1=CNC2=CC=CC=C21)C(=O)N[C@H](CC(C)C)C(=O)N[C@@H](CC3=CNC4=CC=CC=C43)C(=O)N[C@H](CC(C)C)C(=O)N[C@@H](CC5=CNC6=CC=CC=C65)C(=O)N[C@H](CC(C)C)C(=O)N[C@@H](CC7=CNC8=CC=CC=C87)C(=O)NCCO)NC(=O)CNC(=O)[C@H](C(C)C)NC=O
+
+GCF_000010105.1_ASM1010v1_genomic	heterobactin_S2	CS(=O)(=O)C1=C(O)C(O)=C(C=C1)C(=O)N[C@H](CCCNC(N)=NC(=O)C1=CC=CC(O)=C1O)C(=O)NCC(=O)N[C@H]1CCCN(O)C1=O
+
+GCF_000198775.1_ASM19877v1_genomic	holrhizin_A	CCCCCCCC(=O)N[C@@H](C(C)C)C(=O)N[C@@H](CC1=CC=CC=C1)C(=O)N[C@@H](CCC(=O)O)C(=O)N[C@@H]([C@@H](C)CC)C(=O)N[C@@H](C)C(=O)N[C@@H]([C@@H](C)CC)C(=O)O
+
+GCF_002087015.1_ASM208701v1_genomic	valinomycin	CC(C)[C@@H]1NC(=O)C(C)OC(=O)[C@H](NC(=O)[C@H](OC(=O)[C@@H](NC(=O)[C@H](C)OC(=O)[C@H](NC(=O)[C@H](OC(=O)[C@@H](NC(=O)[C@H](C)OC(=O)[C@H](NC(=O)[C@H](OC1=O)C(C)C)C(C)C)C(C)C)C(C)C)C(C)C)C(C)C)C(C)C)C(C)C
+
+GCF_000010105.1_ASM1010v1_genomic	heterobactin_A	NC(NCCC[C@@H](NC(=O)C1=C(O)C(O)=CC=C1)C(=O)NCC(=O)N[C@H]1CCCN(O)C1=O)=NC(=O)C1=CC=CC(O)=C1O
+
+GCF_000312705.1_ASM31270v1_genomic	anabaenopeptin	C[C@H]1C(=O)N[C@H](C(=O)NCCCC[C@H](C(=O)N[C@H](C(=O)N([C@H](C(=O)N1C)CCC2=CC=C(C=C2)O)C)C(C)C)NC(=O)N[C@@H](CCCN=C(N)N)C(=O)O)CC3=CC=CC=C3
+
+GCF_000732925.1_ASM73292v1_genomic	ristomycin_A	CC1C(C(CC(O1)OC2C3C(=O)NC(C4=CC(=CC(=C4C5=C(C=CC(=C5)C(C(=O)N3)NC(=O)C6C7=CC(=C(C(=C7)OC8=CC=C2C=C8)OC9C(C(C(C(O9)COC1C(C(C(C(O1)C)O)O)O)O)O)OC1C(C(C(C(O1)CO)O)O)OC1C(C(C(CO1)O)O)O)OC1=CC=C(C=C1)C(C1C(=O)NC(C2=CC(=C(C(=C2)O)C)OC2=C(C=CC(=C2)C(C(=O)N1)N)O)C(=O)N6)O)O)OC1C(C(C(C(O1)CO)O)O)O)O)C(=O)OC)N)O
+
+GCF_000522485.1_Pco1_genomic	corpeptin_B	CCCC/C=C\CC(CC(=N/C(=C\C)/C(=O)N1CCC[C@H]1C(=N[C@@H](C)C(=N[C@@H](C)C(=N[C@@H](C)C(=N[C@@H](C(C)C)C(=N[C@@H](C(C)C)C(=N/C(=C\C)/C(=N[C@@H](CCO)C(=N[C@@H](C(C)C)C(=N[C@@H]([C@H](C)CC)C(=NC(=C)C(=N[C@@H](C)C(=N[C@@H](C)C(=N[C@@H](C)C(=N[C@@H](C(C)C)C(=N/C(=C\C)/C(=N[C@H]2[C@@H](OC(=O)[C@@H](N=C([C@@H](N=C([C@@H](N=C([C@@H](N=C2O)C)O)CCN)O)CO)O)[C@@H](C)CC)C)O)O)O)O)O)O)O)O)O)O)O)O)O)O)O)O)O)O
+
+GCF_000378685.1_ASM37868v1_genomic	BE-43547A2	O=C(CNC([C@](O)(C)C1=O)=O)NC(/C=C/C(N(C)CC(O[C@@H](CCCCCCCCCCCCC)[C@@H]1C)=O)=O)=C
+
+GCF_000009045.1_ASM904v1_genomic	bacillibactin	C[C@@H]1[C@@H](C(=O)O[C@@H]([C@@H](C(=O)O[C@@H]([C@@H](C(=O)O1)NC(=O)CNC(=O)C2=C(C(=CC=C2)O)O)C)NC(=O)CNC(=O)C3=C(C(=CC=C3)O)O)C)NC(=O)CNC(=O)C4=C(C(=CC=C4)O)O
+
+GCF_000012405.1_ASM1240v1_genomic	fuscachelin_C	C1=CC(=C(C(=C1)O)O)C(=O)N[C@H](CCCN=C(N)N)C(=O)NCC(=O)NCC(=O)N[C@@H](CCCN(C(=O)[C@H](CO)NC(=O)CNC(=O)CNC(=O)[C@@H](CCCN=C(N)N)NC(=O)C2=C(C(=CC=C2)O)O)O)C(=O)N
+
+GCF_000252955.1_ASM25295v1_genomic	xenortide_C	CN[C@@H](C(C)C)C(N([C@H](C(NCCC1=CC=CC=C1)=O)CC2=CC=CC=C2)C)=O
+
+GCF_000737315.1_ASM73731v1_genomic	myxochromide_D	C1(=O)N[C@@H](CC(C)C)C(=O)N[C@@H](C)C(=O)N[C@@H](CCC(=O)N)C(=O)O[C@H](C)[C@H](N(C)C(=O)/C=C/C=C/C=C/C=C/C=C/C=C/C=C/CC)C(=O)N[C@@H]1C
+
+GCF_000012445.1_ASM1244v1_genomic	gacamide_A	CCCCCCC[C@@H](O)CC(N[C@H](CC(C)C)C(N[C@H](CC(O)=O)C(N[C@@H](C(N[C@@H]([C@H](C)CC)C(N[C@@H](C(N[C@H](CCC(N)=O)C(N[C@@H](C(N[C@H]1CC(C)C)=O)COC([C@H]([C@H](CC)C)NC([C@@H](CO)NC([C@H](CC(C)C)NC1=O)=O)=O)=O)=O)=O)CC(C)C)=O)=O)CCC(N)=O)=O)=O)=O
+
+GCF_000377045.1_ASM37704v1_genomic	salinichelin_A	CC(=O)NC(CCCN(C(=O)C)O)C(=O)NC(CCCN=C(N)N)C(=O)N(CCCC1C(=O)NC(C(=O)N1)CCCN(C=O)O)O
+
+GCF_001648775.1_ASM164877v1_genomic	anikasin	CCCCCCC[C@H](CC(=O)N[C@@H](CC(C)C)C(=O)N[C@@H](CC(=O)O)C(=O)N[C@@H]1[C@H](OC(=O)[C@H](NC(=O)[C@@H](NC(=O)[C@@H](NC(=O)[C@H](NC(=O)[C@@H](NC(=O)[C@H](NC(=O)[C@@H](NC(=O)[C@H](NC1=O)CC(C)C)CC(C)C)CO)CC(C)C)CO)CC(C)C)[C@@H](C)CC)CC(=O)O)C)O
+
+GCF_000018665.1_ASM1866v1_genomic	delftibactin_A	C/C=C(/C(=O)NC(CCCN(C=O)O)C(=O)NC(CO)C(=O)NC(CCCN=C(N)N)C(=O)NC1CCCN(C1=O)O)\NC(=O)CNC(=O)C(C(C)O)NC(=O)C(C(C(=O)O)O)NC(=O)C(C)C(C(C)N)O
+
+GCF_000196155.1_ASM19615v1_genomic	luminmycin_A	CCCCCCC\C=C\C=C\C(=O)N[C@@H]([C@@H](C)O)C(=O)N[C@H]1CCCCNC(=O)\C=C\[C@H](C)NC1=O
+
+GCF_008931305.1_ASM893130v1_genomic	CDA2b	CCCC1OC1C(=O)N[C@@H](CO)C(=O)N[C@H]1[C@@H](C)OC(=O)[C@H](CC2=CNC3=C2C=CC=C3)NC(=O)[C@@H](NC(=O)[C@H](NC(=O)CNC(=O)[C@H](CC(O)=O)NC(=O)[C@H](NC(=O)[C@H](CC(O)=O)NC(=O)[C@H](CC(O)=O)NC(=O)[C@@H](CC2=CNC3=C2C=CC=C3)NC1=O)C1=CC=C(O)C=C1)[C@H](OP(O)(O)=O)C(N)=O)C(C)CC(O)=O
+
+GCF_000252955.1_ASM25295v1_genomic	xenortide_D	CN[C@@H](C(C)C)C(=O)N(C)[C@@H](CC1=CC=CC=C1)C(=O)NCCC1=CNC2=CC=CC=C12
+
+GCF_001308855.1_ASM130885v1_genomic	nunapeptin	CCCCCCCCCC(CC(=O)N/C(=C\C)/C(=O)N1CCCC1C(=O)NC(C)C(=O)NC(C)C(=O)NC(C)C(=O)NC(C(C)C)C(=O)NC(C)C(=O)N/C(=C\C)/C(=O)NC(CO)C(=O)NC(C(C)C)C(=O)NC(C(C)CC)C(=O)NC(=C)C(=O)NC(C)C(=O)NC(C(C)C)C(=O)NC(C)C(=O)NC(C(C)C)C(=O)N/C(=C\C)/C(=O)NC2C(OC(=O)C(NC(=O)C(NC(=O)C(NC(=O)C(NC2=O)C)CCN)CO)C(C)CC)C)O
+
+GCF_000069785.1_ASM6978v1_genomic	taiwachelin	CCCCCCCCCCCC(=O)N[C@@H]([C@@H](C(=O)O)O)C(=O)N[C@H]([C@@H](C)O)C(=O)N[C@@H](CC(=O)O)C(=O)N[C@H](CCCN(C(=O)C[C@H](C)O)O)C(=O)N[C@@H](CO)C(=O)N[C@H]1CCCN(C1=O)O
+
+GCF_002632465.1_ASM263246v1_genomic	nevaltophin_A	CCC(C)C(=O)C(=O)N(C)[C@@H](C(C)C)C(=O)NCCC1=CC=CC=C1
+
+GCF_000012265.1_ASM1226v1_genomic	orfamide_A	CCCCCCCCCCCC(O)CC(=O)N[C@@H](CC(C)C)C(=O)N[C@H](CCC(O)=O)C(=O)N[C@@H]1[C@@H](C)OC(=O)[C@@H](NC(=O)[C@@H](CO)NC(=O)[C@H](CC(C)C)NC(=O)[C@H](CC(C)C)NC(=O)[C@@H](CO)NC(=O)[C@H](CC(C)C)NC(=O)[C@H](NC1=O)C(C)CC)C(C)C
+
+GCF_008931305.1_ASM893130v1_genomic	CDA2a	O=C(N[C@@H](CC(O)=O)C(N[C@H](C1=CC=C(O)C=C1)C(N[C@@H](CC(O)=O)C(NCC(N[C@@H](C(N[C@@H](CCC(O)=O)C(N/C(C(O[C@H](C)[C@@H]2NC([C@H](CO)NC(C(O3)C3CCC)=O)=O)=O)=C\C4=CNC5=C4C=CC=C5)=O)=O)[C@H](OP(O)(O)=O)C(N)=O)=O)=O)=O)=O)[C@H](CC(O)=O)NC([C@@H](CC6=CNC7=C6C=CC=C7)NC2=O)=O
+
+GCA_000715685.1_ASM71568v1_genomic	rakicidin_D	CN(CC(N[C@@H]([C@@H](C(N)=O)O)C(OC([C@H](C)CCCCCC)[C@H](C)C(N1)=O)=O)=O)C(/C=C/C1=C)=O
+
+GCF_000511405.1_ASM51140v1_genomic	paenilarvins	CCC(C)CCCCCCCCCC[C@H]1CC(=O)N[C@H](C(=O)N[C@@H](C(=O)N[C@@H](C(=O)N[C@H](C(=O)N2CCC[C@@H]2C(=O)N[C@@H](C(=O)N[C@H](C(=O)N1)CC(=O)N)CC(=O)N)CCC(=O)N)CC(=O)N)CC3=CC=C(C=C3)O)CC(=O)N
+
+GCF_000252955.1_ASM25295v1_genomic	xenortide_B	CN[C@@H](CC(C)C)C(=O)N(C)[C@@H](CC1=CC=CC=C1)C(=O)NCCC1=CNC2=C1C=CC=C2
+
+GCF_001854205.1_ASM185420v1_genomic	cryptomaldamide	CC(C)[C@@H](/C=C(\C)/C(=O)O)N(C)C(=O)[C@H](C(C)C)NC(=O)[C@H](CO)N=C(N)N
+
+GCF_000252955.1_ASM25295v1_genomic	rhabdopeptide_3	CN[C@H](CC(C)C)C(=O)N(C)[C@H](C(C)C)C(=O)N[C@H](C(C)C)C(=O)N(C)[C@H](C(C)C)C(=O)N(C)[C@H](C(C)C)C(=O)NCCC1=CC=CC=C1
+
+GCF_000012245.1_ASM1224v1_genomic	syringomycin	CCCCCCCCC[C@@H](CC(=O)N[C@H]1COC(=O)[C@@H](NC(=O)[C@@H](NC(=O)/C(=C/C)/NC(=O)[C@@H](NC(=O)[C@@H](NC(=O)[C@@H](NC(=O)[C@H](NC(=O)[C@H](NC1=O)CO)CCN)CCN)CCCN=C(N)N)CC2=CC=CC=C2)[C@@H](C(=O)O)O)[C@@H](CCl)O)O
+
+GCF_002127545.1_ASM212754v1_genomic	xefoampeptide_E	CCCCCCCCC1CC(=O)N[C@@H](C(=O)N[C@H](C(=O)N[C@H](C(=O)O1)CC(C)C)CC(C)C)CC(C)C
+
+GCF_005280215.1_ASM528021v1_genomic	echinomycin	C[C@@H]1C(=O)N([C@H]2CSC([C@@H](C(=O)N([C@H](C(=O)OC[C@H](C(=O)N1)NC(=O)C3=NC4=CC=CC=C4N=C3)C(C)C)C)N(C(=O)[C@H](NC(=O)[C@@H](COC(=O)[C@@H](N(C2=O)C)C(C)C)NC(=O)C5=NC6=CC=CC=C6N=C5)C)C)SC)C
+
+GCF_000062885.1_ASM6288v1_genomic	erythrochelin	CC(=O)N[C@H](CCCN(O)C(C)=O)C(=O)N[C@H](CO)C(=O)N(O)CCC[C@@H]1NC(=O)[C@H](CCCN(O)C(C)=O)NC1=O
+
+GCF_000143225.1_ASM14322v1_genomic	serobactin_B	CCCCCCCCCCCC(NC(C(O)C(O)=O)C(NC(CO)C(NC(C(O)C(O)=O)C(NC(C(C)O)C(NC(CO)C(NC1CCCN(O)C1=O)=O)=O)=O)=O)=O)=O
+
+GCF_000280925.3_ASM28092v3_genomic	myxochromide_C	C1(=O)N[C@@H](CC(C)C)C(N2CCC[C@H]2C(=O)N[C@@H](CCC(=O)N)C(=O)O[C@H](C)[C@H](N(C)C(=O)/C=C/C=C/C=C/C=C/C=C/C=C/C=C/C=C/C)C(=O)N[C@@H]1C)=O
+
+GCA_001725075.1_ASM172507v1_genomic	aeruginosin_98-C	CC[C@@H](C)[C@@H](NC(=O)[C@H](O)CC1=CC=C(O)C(Br)=C1)C(=O)N1[C@H]2C[C@@H](CC[C@H]2C[C@H]1C(=O)NCCCCNC(N)=N)OS(O)(=O)=O
+
+GCF_000264455.2_ASM26445v2_genomic	didemnin_X	CCCCCCC[C@H](CC(=O)N[C@@H](CCC(=O)N)C(=O)N[C@@H](CCC(=O)N)C(=O)N[C@@H](CCC(=O)O)C(=O)O[C@@H](C)C(=O)N1CCC[C@H]1C(=O)N(C)[C@H](CC(C)C)C(=O)N[C@H]2[C@@H](OC(=O)[C@@H](N(C(=O)[C@@H]3CCCN3C(=O)[C@@H](NC(=O)[C@H](C(=O)[C@@H](OC(=O)C[C@@H]([C@@H](NC2=O)[C@@H](C)CC)O)C(C)C)C)CC(C)C)C)CC4=CC=C(C=C4)OC)C)O
+
+GCF_000252955.1_ASM25295v1_genomic	xenortide_A	CN[C@@H](CC(C)C)C(=O)N(C)[C@@H](CC1=CC=CC=C1)C(=O)NCCC1=CC=CC=C1
+
+GCF_000009225.2_ASM922v1_genomic	viscosin	CCCCCCCC(O)CC(=O)N[C@@H](CC(C)C)C(=O)N[C@H](CCC(O)=O)C(=O)N[C@@H]1C(C)OC(=O)[C@@H](NC(=O)[C@@H](CO)NC(=O)[C@H](CC(C)C)NC(=O)[C@@H](CO)NC(=O)[C@H](CC(C)C)NC(=O)[C@H](NC1=O)C(C)C)[C@@H](C)CC
+
+GCF_000252955.1_ASM25295v1_genomic	xenotetrapeptide	CC(C)[C@H]1NC(=O)[C@@H](NC(=O)[C@H](NC(=O)[C@@H](NC1=O)C(C)C)C(C)C)CC(C)C
+
+GCF_000020025.1_ASM2002v1_genomic	anabaenopeptin_NZ857	CC[C@H](C)[C@@H]1NC(=O)[C@@H](CCCCNC(=O)[C@H](CCC2=CC=C(O)C=C2)NC(=O)CN(C)C(=O)[C@H](CCC2=CC=C(O)C=C2)NC1=O)NC(=O)N[C@@H](CC1=CC=CC=C1)C(O)=O
+
+GCF_000265295.1_ASM26529v1_genomic	barnesin_A	CCCCC/C=C/C(=O)N[C@@H](CC1=CC=C(C=C1)O)C(=O)N[C@@H](CCCN=C(N)N)/C=C/C(=O)O
+
+GCF_009739905.1_ASM973990v1_genomic	ficellomycin	CC(C)C(C(=O)NC(C1CC(C2N1C2)N=C(N)N)C(=O)O)N
+
+GCF_000012365.1_ASM1236v1_genomic	malleobactin_A	NCCCCNC(=O)[C@H](CCCN(O)C=O)NC(=O)[C@H](CO)NC(=O)[C@H](NC(=O)[C@H](CCCN(=O)=O)NC=O)[C@@H](O)C(O)=O
+
+GCF_000749465.2_ASM74946v3_genomic	ristocetin	CC1C(C(CC(O1)OC2C3C(=O)NC(C4=CC(=CC(=C4C5=C(C=CC(=C5)C(C(=O)N3)NC(=O)C6C7=CC(=C(C(=C7)OC8=CC=C2C=C8)OC9C(C(C(C(O9)COC1C(C(C(C(O1)C)O)O)O)O)O)OC1C(C(C(C(O1)CO)O)O)OC1C(C(C(CO1)O)O)O)OC1=CC=C(C=C1)C(C1C(=O)NC(C2=CC(=C(C(=C2)O)C)OC2=C(C=CC(=C2)C(C(=O)N1)N)O)C(=O)N6)O)O)OC1C(C(C(C(O1)CO)O)O)O)O)C(=O)OC)N)O
+
+GCA_000382005.1_ASM38200v1_genomic	dibromoalterochromide_B	C[C@H](CC)[C@@H]1NC([C@@H](NC([C@@H](NC([C@H](C(C)C)NC([C@H]([C@H](OC1=O)C)NC(/C=C/C=C/C=C/C=C/C=C/C2=CC(Br)=C(C(Br)=C2)O)=O)=O)=O)CC(N)=O)=O)CC(N)=O)=O
+
+GCF_000953355.1_XNC2_genomic	xenematide	C[C@H]1OC(=O)CCNC(=O)C(CC2=CNC3=C2C=CC=C3)NC(=O)C(CC2=CNC3=C2C=CC=C3)NC(=O)[C@H]1NC(=O)CC1=CC=CC=C1
+
+GCF_000198775.1_ASM19877v1_genomic	rhizomide_C	CC1C(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)O1)C(C)C)C)CO)C)CC2=CC=C(C=C2)O)NC(=O)C(CC(C)C)NC(=O)C
+
+GCF_002127545.1_ASM212754v1_genomic	xefoampeptide_C	CCCCCC1CC(=O)N[C@@H](C(=O)N[C@H](C(=O)N[C@H](C(=O)O1)CC(C)C)CC(C)C)CC(C)C
+
+GCA_001725075.1_ASM172507v1_genomic	aeruginosin_98-A	[H]C12CC(N(C(=O)[C@H](NC(=O)C(O)CC3=CC(Cl)=C(O)C=C3)[C@H](C)CC)C1([H])CC(CC2)OS(O)(=O)=O)C(=O)NCCCCNC(N)=N
+
+GCF_000513215.1_DB11_genomic	althiomycin	COC1=CC(=O)N(C1)C(=O)C2CSC(=N2)C(CO)NC(=O)C3=CSC(=CN=O)N3
+
+GCF_000195955.2_ASM19595v2_genomic	mycobactin	C1CCN(C(=O)C(C1)NC(=O)CCOC(=O)C(CCCCCN(C=O)O)NC(=O)C2CO/C(=C\3/C=CC=CC3=O)/N2)O
+
+GCA_000382005.1_ASM38200v1_genomic	bromoalterochromide_A	CCC(C)C1NC(=O)C(CC(N)=O)NC(=O)C(CC(N)=O)NC(=O)C(NC(=O)C(NC(=O)\C=C\C=C\C=C\C=C\C2=CC=C(O)C(Br)=C2)C(C)OC1=O)C(C)C
+
+GCF_000012365.1_ASM1236v1_genomic	malleobactin_B	NCCCCNC(=O)[C@H](CCCN(O)C=O)NC(=O)[C@H](CO)NC(=O)[C@H](NC(=O)[C@H](CCCNO)NC=O)[C@@H](O)C(O)=O
+
+GCF_008931305.1_ASM893130v1_genomic	CDA4b	[H][C@]1(NC(=O)[C@]([H])(NC(=O)CNC(=O)[C@H](CC(O)=O)NC(=O)[C@H](NC(=O)[C@H](CC(O)=O)NC(=O)[C@H](CC(O)=O)NC(=O)[C@@H](CC2=CNC3=C2C=CC=C3)NC(=O)[C@@H](NC(=O)[C@H](CO)NC(=O)C2OC2CCC)[C@@H](C)OC(=O)\C(NC1=O)=C\C1=CNC2=C1C=CC=C2)C1=CC=C(O)C=C1)[C@H](O)C(N)=O)[C@H](C)CC(O)=O
+
+GCF_000018665.1_ASM1866v1_genomic	delftibactin_B	C/C=C(/C(=O)NC(CCCN(C(=O)C)O)C(=O)NC(CO)C(=O)NC(CCCN=C(N)N)C(=O)NC1CCCN(C1=O)O)\NC(=O)CNC(=O)C(C(C)O)NC(=O)C(C(C(=O)O)O)NC(=O)C(C)C(C(C)N)O
+
+GCF_000158875.1_ASM15887v1_genomic	amychelin	OC[C@@H](NC(=O)[C@H](CO)NC(=O)[C@H]1COC(=N1)C1=CC=CC=C1O)C(=O)N[C@@H](CO)C(=O)N[C@H](CCCN(O)C=O)C(=O)N[C@@H]1CCCN(O)C1=O
+
+GCF_000716015.1_ASM71601v1_genomic	pyridomycin	CC/C(=C\1/C(=O)O[C@@H]([C@@H](C(=O)N[C@H]([C@@H]([C@H](C(=O)O1)C)O)CC2=CN=CC=C2)NC(=O)C3=C(C=CC=N3)O)C)/C
+
+GCF_000721115.1_ASM72111v1_genomic	rakicidin_A	CC(C)CCCCCCCCCCCC(C)C1OC(=O)C(NC(=O)CN(C)C(=O)\C=C/C(=C)NC(=O)C1C)C(O)C(N)=O
+
+GCF_000143225.1_ASM14322v1_genomic	serobactin_C	O=C(NC(C(O)C(O)=O)C(NC(CO)C(NC(C(O)C(O)=O)C(NC(C(C)O)C(NC(CO)C(NC1CCCN(O)C1=O)=O)=O)=O)=O)=O)CCCCCCCCCCCCC
+
+GCF_000511405.1_ASM51140v1_genomic	sevadicin	O=C(NC(C)C(NC(CC1=CNC2=C1C=CC=C2)C(O)=O)=O)C(N)CC3=CC=CC=C3
+
+GCF_000940805.1_ASM94080v1_genomic	sunshinamide	CCCCCCCC1CC(=O)N[C@@H](C(=O)N[C@H]2CSSC[C@@H](C(=O)O1)NC2=O)CC3=CC=CC=C3
+
+GCF_001434355.1_ASM143435v1_genomic	actinomycin_D	[H][C@@]12CCCN1C(=O)[C@]([H])(NC(=O)[C@@]([H])(NC(=O)C1=CC=C(C)C3=C1N=C1C(O3)=C(C)C(=O)C(N)=C1C(=O)N[C@]1([H])C(=O)N[C@]([H])(C(C)C)C(=O)N3CCC[C@@]3([H])C(=O)N(C)CC(=O)N(C)[C@@]([H])(C(C)C)C(=O)O[C@]1([H])C)[C@@]([H])(C)OC(=O)[C@]([H])(C(C)C)N(C)C(=O)CN(C)C2=O)C(C)C
+
+GCA_000725125.1_ASM72512v1_genomic	A-47934	None
+GCF_000414115.1_STRAU_genomic	aurantimycin_A	COC[C@@H]1N(O)C(=O)[C@H]2CCCNN2C(=O)[C@@H](NC(=O)[C@](C)(O)[C@]2(O)CC[C@@H](CC(C)C)[C@H](C)O2)[C@@H](OC(=O)[C@@H](C)N(O)C(=O)[C@@H]2CCCNN2C(=O)CNC1=O)C(C)C
+
+GCF_000270465.1_ASM27046v1_genomic	lugdunin	CC(C)C[C@@H]1C(=O)N[C@H](C(=O)N[C@@H](C(=O)N[C@H](C2N[C@@H](CS2)C(=O)N[C@@H](C(=O)N[C@H](C(=O)N1)CC3=CNC4=CC=CC=C43)C(C)C)C(C)C)C(C)C)C(C)C
+
+GCF_002095975.1_ASM209597v1_genomic	microcystin_LR	C[C@H]1[C@@H](NC(=O)[C@@H](NC(=O)[C@H]([C@@H](NC(=O)[C@@H](NC(=O)[C@H](NC(=O)C(=C)N(C(=O)CC[C@@H](NC1=O)C(=O)O)C)C)CC(C)C)C(=O)O)C)CCCN=C(N)N)/C=C/C(=C/[C@H](C)[C@H](CC2=CC=CC=C2)OC)/C
+
+GCF_000012405.1_ASM1240v1_genomic	fuscachelin_B	C1=CC(=C(C(=C1)O)O)C(=O)N[C@H](CCCN=C(N)N)C(=O)NCC(=O)NCC(=O)N[C@@H](CCCN(C(=O)[C@H](CO)NC(=O)CNC(=O)CNC(=O)[C@@H](CCCN=C(N)N)NC(=O)C2=C(C(=CC=C2)O)O)O)C(=O)O
+
+GCA_000710505.1_Plagard2.0_genomic	anabaenopeptin_908	CC[C@@H]([C@H]1C(NCCCC[C@@H](NC(N[C@H](C(O)=O)CCCNC(N)=N)=O)C(N[C@@H](C(C)C)C(N[C@@H](CCC2=CC=C(O)C=C2)C(N(C)[C@@H](CCC3=CC=C(O)C=C3)C(N1)=O)=O)=O)=O)=O)C
+
+GCF_002706795.1_ASM270679v1_genomic	bogorol_A	[H][C@](NC(=O)[C@@H](CCCN)NC(=O)C(CC(C)C)NC(=O)C(\NC(=O)[C@@H](O)[C@@H](C)CC)=C/C)([C@@H](C)CC)C(=O)N[C@@H](C(C)C)C(=O)N[C@@H](C(C)C)C(=O)NC(CCCCN)C(=O)N[C@@H](C(C)C)C(=O)NC(CC(C)C)C(=O)NC(CCCCN)C(=O)N[C@H](CC1=CC=C(O)C=C1)C(=O)NC(CC(C)C)C(=O)N[C@H](CO)C(C)C
+
+GCF_000012405.1_ASM1240v1_genomic	fuscachelin_A	C1C[C@@H](C(=O)OC[C@@H](C(=O)N(C1)O)NC(=O)CNC(=O)CNC(=O)[C@@H](CCCN=C(N)N)NC(=O)C2=C(C(=CC=C2)O)O)NC(=O)CNC(=O)CNC(=O)[C@@H](CCCN=C(N)N)NC(=O)C3=C(C(=CC=C3)O)O
+
+GCF_000721115.1_ASM72111v1_genomic	rakicidin_B	CC(C)CCCCCCCCCCCCC(C)C1OC(=O)C(NC(=O)CN(C)C(=O)\C=C/C(=C)NC(=O)C1C)C(O)C(N)=O
+
+GCF_000012685.1_ASM1268v1_genomic	myxoprincomide-c506	CNC(CO)C(=O)NC(CC(C)C)C(=O)NC(C(O)(C)C)C(=O)NC(CO)C(=O)NC(C(C)C)C(=O)C(=O)NC(CO)C(=O)NC(CC1=CC=C(O)C=C1)C(=O)NC(CCCN)CC(=O)NC(C)C(=O)O
+
+GCF_000382005.1_ASM38200v1_genomic	bromoalterochromide_A	None
+GCF_008931305.1_ASM893130v1_genomic	CDA3a	[H][C@@]1(CCC(O)=O)NC([C@](NC(CNC([C@@H](NC([C@@H](C2=CC=C(C=C2)O)NC([C@@H](NC([C@@H](NC([C@H](NC([C@H]([C@H](OC(/C(NC1=O)=C/C3=CNC4=C3C=CC=C4)=O)C)NC([C@@H](NC(C5OC5CCC)=O)CO)=O)=O)CC6=CNC7=C6C=CC=C7)=O)CC(O)=O)=O)CC(O)=O)=O)=O)CC(O)=O)=O)=O)([C@@H](C(N)=O)O)[H])=O
+
+GCF_002632465.1_ASM263246v1_genomic	nevaltophin_B	CC(C)[C@@H](C(=O)NCCC1=CC=CC=C1)N(C)C(=O)C(=O)C(C)C
+
+GCF_000378685.1_ASM37868v1_genomic	BE-43547B3	O=C(CNC([C@](O)(C)C1=O)=O)NC(/C=C/C(N(C)CC(O[C@@H](CCCCCCCCCCCCCC)[C@@H]1C)=O)=O)=C
+
+GCF_004798725.1_ASM479872v1_genomic	cupriachelin	CCCCCCCCCC(=O)N[C@@H]([C@H](O)C(O)=O)C(=O)N[C@@H](CCN)C(=O)N[C@@H]([C@H](O)C(O)=O)C(=O)NCC(=O)N[C@@H](CCCN(O)C(=O)C[C@H](C)O)C(O)=O
+
+GCF_003665435.1_ASM366543v1_genomic	enduracidin	C[C@@H]1[C@@H](C(=O)N[C@@H](C(=O)N[C@@H](C(=O)N[C@@H](C(=O)N[C@H](C(=O)N[C@@H](C(=O)N[C@H](C(=O)N[C@H](C(=O)N[C@@H](C(=O)N[C@H](C(=O)N[C@@H](C(=O)N[C@H](C(=O)NCC(=O)N[C@H](C(=O)N[C@@H](C(=O)N[C@H](C(=O)O1)C2=CC=C(C=C2)O)C)C[C@@H]3CN=C(N3)N)C4=CC(=C(C(=C4)Cl)O)Cl)CO)C5=CC=C(C=C5)O)C[C@@H]6CN=C(N6)N)CCCNC(=O)N)[C@H](C)O)C7=CC=C(C=C7)O)C8=CC=C(C=C8)O)[C@@H](C)O)CCCN)C9=CC=C(C=C9)O)NC(=O)[C@H](CC(=O)O)NC(=O)/C=C\C=C\CCCCC(C)C
+
+GCF_000012365.1_ASM1236v1_genomic	burkholdac_A	O=C(NC(C(C)C)C(O)CC1=O)C(CSSCC/C=C/C2O1)NC(C(NC(C2)=O)CCSC)=O
+
+GCF_000165485.1_ASM16548v1_genomic	myxochromide_S1	C\C=C\C=C\C=C\C=C\C=C\C=C\C=C\C(=O)N(C)[C@H]1[C@@H](C)OC(=O)[C@H](CCC(N)=O)NC(=O)[C@H](C)NC(=O)[C@H](C)NC(=O)[C@H](CC(C)C)NC1=O
+
+GCF_000012265.1_ASM1226v1_genomic	pyoverdin	NC(=O)CCC(NC(=O)C(CCCN(O)C=O)NC(=O)C1CCN=C(N1)C(CO)NC(=O)[C@@H]1CCNC2=C(NC(=O)CCC(O)=O)C=C3C=C(O)C(O)=CC3=[N+]12)C(=O)NC(CCC(N)=O)C(=O)NC(CCCN(O)C=O)C(=O)NCC(O)=O
+
+GCF_000264455.2_ASM26445v2_genomic	didemnin_B	CC[C@H](C)[C@@H]1[C@H](CC(=O)O[C@H](C(=O)[C@@H](C(=O)N[C@H](C(=O)N2CCC[C@H]2C(=O)N([C@H](C(=O)O[C@@H]([C@@H](C(=O)N1)NC(=O)[C@@H](CC(C)C)N(C)C(=O)[C@@H]3CCCN3C(=O)C(C)O)C)CC4=CC=C(C=C4)OC)C)CC(C)C)C)C(C)C)O
+
+GCA_000382005.1_ASM38200v1_genomic	dibromoalterochromide_A	C[C@H](CC)[C@@H]1NC([C@@H](NC([C@@H](NC([C@H](C(C)C)NC([C@H]([C@H](OC1=O)C)NC(/C=C/C=C/C=C/C=C/C2=CC(Br)=C(C(Br)=C2)O)=O)=O)=O)CC(N)=O)=O)CC(N)=O)=O
+
+GCF_014596335.1_ASM1459633v1_genomic	cereulide	CC(C)C[C@H]1OC(=O)[C@@H](NC(=O)[C@@H](OC(=O)[C@@H](C)NC(=O)[C@@H](CC(C)C)OC(=O)[C@@H](NC(=O)[C@@H](OC(=O)[C@@H](C)NC(=O)[C@@H](CC(C)C)OC(=O)[C@@H](NC(=O)[C@@H](OC(=O)[C@@H](C)NC1=O)C(C)C)C(C)C)C(C)C)C(C)C)C(C)C)C(C)C
+
+GCF_000522485.1_Pco1_genomic	corpeptin_A	CCCCCCCC(CC(=N/C(=C\C)/C(=O)N1CCC[C@H]1C(=N[C@@H](C)C(=N[C@@H](C)C(=N[C@@H](C)C(=N[C@@H](C(C)C)C(=N[C@@H](C(C)C)C(=N/C(=C\C)/C(=N[C@@H](CCO)C(=N[C@@H](C(C)C)C(=N[C@@H]([C@H](C)CC)C(=NC(=C)C(=N[C@@H](C)C(=N[C@@H](C)C(=N[C@@H](C)C(=N[C@@H](C(C)C)C(=N/C(=C\C)/C(=N[C@H]2[C@@H](OC(=O)[C@@H](N=C([C@@H](N=C([C@@H](N=C([C@@H](N=C2O)C)O)CCN)O)CO)O)[C@@H](C)CC)C)O)O)O)O)O)O)O)O)O)O)O)O)O)O)O)O)O)O
+
+GCF_000023245.1_ASM2324v1_genomic	mirubactin	C1=CC(=C(C(=C1)O)O)C(=O)N[C@H](CCCN=C(N)N)C(=O)N[C@H](CCCN(C=O)OC(=O)C2=C(C(=CC=C2)O)O)C(=O)O
+
+GCF_000464765.1_NC406_1_genomic	cyanopeptolin	CC[C@H](C)[C@H]1C(=O)O[C@@H]([C@@H](C(=O)N[C@H](C(=O)N[C@H]2CC[C@H](N(C2=O)[C@H](C(=O)N([C@H](C(=O)N1)CC3=CC=CC=C3)C)[C@@H](C)CC)O)CCCN=C(N)N)NC(=O)[C@@H](COS(=O)(=O)O)O)C
+
+GCF_000264455.2_ASM26445v2_genomic	nordidemnin_B	C[C@@H]1[C@@H](C(=O)N[C@@H]([C@H](CC(=O)O[C@H](C(=O)[C@@H](C(=O)N[C@H](C(=O)N2CCC[C@H]2C(=O)N([C@H](C(=O)O1)CC3=CC=C(C=C3)OC)C)CC(C)C)C)C(C)C)O)C(C)C)NC(=O)[C@@H](CC(C)C)N(C)C(=O)[C@@H]4CCCN4C(=O)[C@H](C)O
+
+GCA_000382005.1_ASM38200v1_genomic	bromoalterochromide_B	C[C@H](CC)[C@@H]1NC([C@@H](NC([C@@H](NC([C@H](C(C)C)NC([C@H]([C@H](OC1=O)C)NC(/C=C/C=C/C=C/C=C/C=C/C2=CC=C(C(Br)=C2)O)=O)=O)=O)CC(N)=O)=O)CC(N)=O)=O
+
+GCA_000382005.1_ASM38200v1_genomic	alterochromide_B	C[C@H](CC)[C@@H]1NC([C@@H](NC([C@@H](NC([C@H](C(C)C)NC([C@H]([C@H](OC1=O)C)NC(/C=C/C=C/C=C/C=C/C=C/C2=CC=C(C=C2)O)=O)=O)=O)CC(N)=O)=O)CC(N)=O)=O
+
+GCF_002362315.1_ASM236231v1_genomic	sulfazecin	C[C@H](C(=O)N[C@]1(CN(C1=O)S(=O)(=O)O)OC)NC(=O)CC[C@H](C(=O)O)N
+
+GCF_000015785.2_ASM1578v2_genomic	surfactin	[H][C@@]1(CCC(O)=O)NC(=O)CC(CCCCCCCCCCC)OC(=O)[C@]([H])(CC(C)C)NC(=O)[C@@]([H])(CC(C)C)NC(=O)[C@]([H])(CC(O)=O)NC(=O)[C@@]([H])(NC(=O)[C@@]([H])(CC(C)C)NC(=O)[C@]([H])(CC(C)C)NC1=O)C(C)C
+
+GCF_000014565.1_ASM1456v1_genomic	rhodochelin	CC(OC(=O)[C@@H](N)CCCN(O)C=O)[C@H](NC(=O)C1=C(O)C(O)=CC=C1)C(=O)N[C@@H](CCCN(O)C=O)C(O)=O
+
+GCF_000264455.2_ASM26445v2_genomic	didemnin_Y	CCCCCCC[C@H](CC(=O)N[C@@H](CCC(=O)N)C(=O)N[C@@H](CCC(=O)N)C(=O)N[C@@H](CCC(=O)N)C(=O)N[C@@H](CCC(=O)O)C(=O)O[C@@H](C)C(=O)N1CCC[C@H]1C(=O)N(C)[C@H](CC(C)C)C(=O)N[C@H]2[C@@H](OC(=O)[C@@H](N(C(=O)[C@@H]3CCCN3C(=O)[C@@H](NC(=O)[C@H](C(=O)[C@@H](OC(=O)C[C@@H]([C@@H](NC2=O)[C@@H](C)CC)O)C(C)C)C)CC(C)C)C)CC4=CC=C(C=C4)OC)C)O
+
+GCF_000046845.1_ASM4684v1_genomic	fimsbactin_A	CC(=O)N(O)CCCCNC(=O)[C@H](COC(=O)C1=C(O)C(O)=CC=C1)NC(=O)[C@@H]1COC(=N1)C1=C(O)C(O)=CC=C1
+
+GCF_000252955.1_ASM25295v1_genomic	rhabdopeptide_2	CN[C@H](C(C)C)C(=O)N(C)[C@H](CC(C)C)C(=O)N(C)[C@H](C(C)C)C(=O)N(C)[C@H](C(C)C)C(=O)NCCC1=CC=CC=C1
+
+GCF_000012365.1_ASM1236v1_genomic	malleobactin_D	NCCCCNC(=O)[C@H](CCCN(O)C=O)NC(=O)[C@H](CO)NC(=O)[C@H](NC(=O)[C@H](CCCN=N(=O)CCC[C@H](NC=O)C(=O)N[C@H]([C@@H](O)C(O)=O)C(=O)N[C@@H](CO)C(=O)N[C@@H](CCCN(O)C=O)C(=O)NCCCCN)NC=O)[C@@H](O)C(O)=O
+
+GCF_000012365.1_ASM1236v1_genomic	bactobolin	[H][C@@](C)(N)C(=O)N[C@@H]1[C@]2([H])[C@@H](O)[C@H](O)CC(O)=C2C(=O)O[C@]1(C)C(Cl)Cl
+
+GCA_000382005.1_ASM38200v1_genomic	alterochromide_A	C[C@H](CC)[C@@H]1NC([C@@H](NC([C@@H](NC([C@H](C(C)C)NC([C@H]([C@H](OC1=O)C)NC(/C=C/C=C/C=C/C=C/C2=CC=C(C=C2)O)=O)=O)=O)CC(N)=O)=O)CC(N)=O)=O
+
+GCA_001725075.1_ASM172507v1_genomic	aeruginosin_98-B	[H]C12CC(N(C(=O)[C@H](NC(=O)C(O)CC3=CC=C(O)C=C3)[C@H](C)CC)C1([H])CC(CC2)OS(O)(=O)=O)C(=O)NCCCCNC(N)=N
+
+GCF_000010165.1_ASM1016v1_genomic	tyrocidine	CC(C)C[C@H]1C(=O)N[C@@H](C(=O)N2CCC[C@H]2C(=O)N[C@H](C(=O)N[C@@H](C(=O)N[C@H](C(=O)N[C@H](C(=O)N[C@H](C(=O)N[C@H](C(=O)N[C@H](C(=O)N1)CCCN)C(C)C)CC3=CC=C(C=C3)O)CCC(=O)N)CC(=O)N)CC4=CC=CC=C4)CC5=CC=CC=C5)CC6=CC=CC=C6
+
+GCF_000378685.1_ASM37868v1_genomic	BE-43547B1	O=C(CNC([C@](O)(C)C1=O)=O)NC(/C=C/C(N(C)CC(O[C@@H](CCCCCCCCCCC(C)CC)[C@@H]1C)=O)=O)=C
+
+GCF_000378685.1_ASM37868v1_genomic	BE-43547C1	O=C(CNC([C@](O)(C)C1=O)=O)NC(/C=C/C(N(C)CC(O[C@@H](CCCCCCCCCCCCCCC)[C@@H]1C)=O)=O)=C
+
+GCF_000156695.2_ASM15669v2_genomic	daptomycin	CCCCCCCCCC(=O)N[C@@H](CC1=CNC2=CC=CC=C21)C(=O)N[C@H](CC(=O)N)C(=O)N[C@@H](CC(=O)O)C(=O)N[C@H]3[C@H](OC(=O)[C@@H](NC(=O)[C@@H](NC(=O)[C@H](NC(=O)CNC(=O)[C@@H](NC(=O)[C@H](NC(=O)[C@@H](NC(=O)[C@@H](NC(=O)CNC3=O)CCCN)CC(=O)O)C)CC(=O)O)CO)[C@H](C)CC(=O)O)CC(=O)C4=CC=CC=C4N)C
+
+GCF_000737315.1_ASM73731v1_genomic	myxochromide_D	C1(=O)N[C@@H](CC(C)C)C(=O)N[C@@H](C)C(=O)N[C@@H](CCC(=O)N)C(=O)O[C@H](C)[C@H](N(C)C(=O)/C=C/C=C/C=C/C=C/C=C/C=C/C=C/CC)C(=O)N[C@@H]1C
+
+GCF_014636235.1_ASM1463623v1_genomic	thalassospiramide_A	CCCCCC\C=C/CC(=O)N[C@@H](CO)C(=O)N[C@@H](C(C)C)C(=O)N[C@@H](CO)[C@@H](O)CC(=O)N[C@@H](C(C)C)C(=O)N[C@H]1COC(=O)[C@H](CC2=CC=C(O)C=C2)N(C)C(=O)[C@@H](NC(=O)\C=C\1)C(C)C
+
+GCF_000027225.1_ASM2722v1_genomic	taxlllaid_A	CC(C)CCCC(=O)N[C@H]1[C@@H](C)OC(=O)[C@H](C)NC(=O)[C@H](CC(C)C)NC(=O)[C@@H](CC(C)C)NC(=O)[C@@H](CC(C)C)NC(=O)[C@H](CC(C)C)NC(=O)[C@H](C)NC1=O
+
+GCF_000517305.1_ASM51730v1_genomic	cichofactin_B	O=C(N[C@@H](CC(C)C)C(N[C@@H](CC(C)C)C(N[C@@H](CCC(N)=O)C(N[C@@H](CC(C)C)C(N[C@@H](CCC(N)=O)C(N[C@@H](C(C)C)C(N[C@@H](CC(C)C)C(N[C@@H](CC(C)C)C(O)=O)=O)=O)=O)=O)=O)=O)=O)[C@H](CC1=CNC=N1)NC(CC(O)CCCCCCCCC)=O
+
+GCF_002127545.1_ASM212754v1_genomic	xefoampeptide_B	CCCCCCCC1CC(=O)N[C@@H](C(=O)N[C@H](C(=O)N[C@H](C(=O)O1)C(C)C)CC(C)C)CC(C)C
+
+GCF_002632465.1_ASM263246v1_genomic	nevaltophin_C	CC(C)[C@@H](C(=O)NCCC1=CC=CC=C1)NC(=O)C(=O)C(C)C
+
+GCF_000710505.1_Plagard2.0_genomic	microcystin	C[C@H]1[C@@H](NC(=O)[C@@H](NC(=O)[C@H]([C@@H](NC(=O)[C@H](NC(=O)[C@H](NC(=O)C(=C)N(C(=O)CC[C@@H](NC1=O)C(=O)O)C)C)CC(C)C)C(=O)O)C)CCCN=C(N)N)/C=C/C(=C/[C@H](C)[C@H](CC2=CC=CC=C2)OC)/C
+
+GCF_000039765.1_ASM3976v1_genomic	vulnibactin	CC1OC(=NC1C(=O)NCCCN(CCCNC(=O)C1=CC=CC(O)=C1O)C(=O)C1N=C(OC1C)C1=CC=CC=C1O)C1=CC=CC=C1O
+
+GCF_000020025.1_ASM2002v1_genomic	nostamide_A	O=C(NCCCC[C@@H](NC(N[C@@H](CC1=CC=CC=C1)C(O)=O)=O)C2=O)[C@H](CCC3=CC=C(O)C=C3)NC(CN(C)C([C@@H](NC([C@@H](N2)[C@@H](CC)C)=O)CCC4=CC=CC=C4)=O)=O
+
+GCF_008931305.1_ASM893130v1_genomic	CDA3b	O=C(N[C@@H](CC(O)=O)C(N[C@H](C1=CC=C(O)C=C1)C(N[C@@H](CC(O)=O)C(NCC(N[C@@H](C(N[C@@H](CCC(O)=O)C(N[C@@H](CC2=CNC3=C2C=CC=C3)C(O[C@H](C)[C@@H]4NC([C@H](CO)NC(C(O5)C5CCC)=O)=O)=O)=O)=O)[C@@H](C(N)=O)O)=O)=O)=O)=O)[C@H](CC(O)=C)NC([C@@H](CC6=CNC7=C6C=CC=C7)NC4=O)=O
+
+GCF_000378685.1_ASM37868v1_genomic	BE-43547B2	O=C(CNC([C@](O)(C)C1=O)=O)NC(/C=C/C(N(C)CC(O[C@@H](CCCCCCCCCCCC(C)C)[C@@H]1C)=O)=O)=C
+
+GCF_900111745.1_IMG-taxon_2693429888_annotated_assembly_genomic	myxochromide_D	C1(=O)N[C@@H](CC(C)C)C(=O)N[C@@H](C)C(=O)N[C@@H](CCC(=O)N)C(=O)O[C@H](C)[C@H](N(C)C(=O)/C=C/C=C/C=C/C=C/C=C/C=C/C=C/C)C(=O)N[C@@H]1C
+
+GCF_001685355.1_ASM168535v1_genomic	cysteoamide	C[C@@H]1[C@@H](C(=O)N[C@@H](C(=O)NCCC(=O)O1)[C@@H](C(C)C)O)NC(=O)[C@@H](CS(=O)(=O)O)NC(=O)[C@H](C(C)C)NC(=O)CC2=CC=CC=C2
+
+GCF_000342005.1_Whole_genome_assembly_genomic	decaplanin	CC1C(C(C(C(O1)OC2C(C(C(OC2OC3=C4C=C5C=C3OC6=C(C=C(C=C6)C(C(C(=O)NC(C(=O)NC5C(=O)NC7C8=CC(=C(C=C8)O)C9=C(C=C(C=C9C(NC(=O)C(C(C1=CC=C(O4)C=C1)OC1CC(C(C(O1)C)O)(C)N)NC7=O)C(=O)O)O)O)CC(=O)N)NC(=O)C(CC(C)C)NC)O)Cl)CO)O)O)O)O)O
+
+GCF_001704275.1_ASM170427v1_genomic	dechlorocuracomycin	CC[C@H](C)[C@@H]3NC(=O)[C@@H](CC(C)C)NC(=O)[C@@H](C(C)C)NC(=O)[C@H](Cc1c[nH]c2ccccc12)NC(=O)C(C(O)C(N)=O)NC(=O)[C@H](CCCN)NC3=O
+
+GCF_003865155.1_ASM386515v1_genomic	malonomycin	C(C1C(=C(C(=O)N1)C(=O)CC(C(=O)O)(C(=O)O)NC(=O)C(CO)N)O)N
+
+GCF_000012685.1_ASM1268v1_genomic	myxochromide_A	CN([C@H]1[C@@H](C)OC(=O)CC[C@H](NC(=O)[C@H](NC(=O)[C@H]2CCCN2C(=O)[C@H](CC(C)C)NC(=O)[C@@H](NC1=O)C)C)C(=O)N)C(=O)/C=C/C=C/C=C/C=C/C=C/C=C/C=C/C=C/C
+
+GCF_001308855.1_ASM130885v1_genomic	nunamycin	CCCCCCCCCCCC(CC(=O)NC1COC(=O)C(NC(=O)C(NC(=O)C(NC(=O)C(NC(=O)C(NC(=O)C(NC(=O)CNC(=O)C(NC1=O)CCN)CCO)CCN)C(C)O)C(C)O)[C@@H](C(=O)O)O)C(CCl)O)O
+
+GCF_001953865.1_ASM195386v1_genomic	avoparcin	C[C@H]1[C@@H]([C@@H](C[C@@H](O1)O[C@H]2[C@H]3C(=O)N[C@@H](C4=CC(=CC(=C4C5=C(C=CC(=C5)[C@H](C(=O)N3)NC(=O)[C@H]6C7=CC(=C(C(=C7)OC8=C(C=C2C=C8)Cl)O[C@H]9C([C@H]([C@@H]([C@H](O9)CO)O)O)O[C@H]1C[C@H]([C@H]([C@@H](O1)C)O)N)OC1=CC=C(C=C1)[C@H]([C@H](C(=O)N[C@H](C(=O)N6)C1=CC=C(C=C1)O)NC(=O)[C@@H](C1=CC=C(C=C1)O[C@H]1[C@@H]([C@@H]([C@H]([C@@H](O1)C)O)O)O)NC)O)O)O)O)C(=O)O)N)O
+
+GCF_008931305.1_ASM893130v1_genomic	CDA4a	O=C(N[C@@H](CC(O)=O)C(N[C@H](C1=CC=C(O)C=C1)C(N[C@@H](CC(O)=O)C(NCC(N[C@@H](C(N[C@@H]([C@H](C)CC(O)=O)C(N/C(C(O[C@H](C)[C@@H]2NC([C@H](CO)NC(C(O3)C3CCC)=O)=O)=O)=C\C4=CNC5=C4C=CC=C5)=O)=O)[C@H](O)C(N)=O)=O)=O)=O)=O)[C@H](CC(O)=O)NC([C@@H](CC6=CNC7=C6C=CC=C7)NC2=O)=O
+
+GCF_008931305.1_ASM893130v1_genomic	CDA1b	O=C(N[C@@H](CC(O)=O)C(N[C@H](C1=CC=C(O)C=C1)C(N[C@@H](CC(O)=O)C(NCC(N[C@@H](C(N[C@@H](CCC(O)=O)C(N[C@@H](CC2=CNC3=C2C=CC=C3)C(O[C@H](C)[C@@H]4NC([C@H](CO)NC(C(O5)C5CCC)=O)=O)=O)=O)=O)[C@H](OP(O)(O)=O)C(N)=O)=O)=O)=O)=O)[C@H](CC(O)=O)NC([C@@H](CC6=CNC7=C6C=CC=C7)NC4=O)=O
+
+GCF_001457595.1_NCTC8159_genomic	exochelin	CC(C(C(=O)N(CCCC(C(=O)O)N)O)NC(=O)C(CCCN(C(=O)CCNC(=O)C(CCCN(C=O)O)N)O)N)O
+
+GCF_000340565.2_ASM34056v3_genomic	spumigin_E	C[C@H]1C[C@H](N(C1)C(=O)[C@@H](CCC2=CC=C(C=C2)O)NC(=O)[C@@H](CC3=CC=C(C=C3)O)O)C(=O)NC(CCCN=C(N)N)C=O
+
+GCF_003789105.1_ASM378910v1_genomic	WAP-8294A2	None
+GCA_000710505.1_Plagard2.0_genomic	aeruginoside_126A	CC(C)C[C@@H](NC(=O)[C@H](O)CC1=CC=CC=C1)C(=O)N1[C@H]2C[C@@H](CC[C@H]2C[C@H]1C(=O)NCCC1=CCN(C1)C(N)=N)O[C@H]1OC[C@@H](O)[C@H](O)[C@H]1O
+
+GCF_000012265.1_ASM1226v1_genomic	orfamide_C	CCCCCCCCCC(O)CC(=O)NC(CC(C)C)C(=O)NC(CCC(O)=O)C(=O)NC1C(C)OC(=O)C(NC(=O)C(CO)NC(=O)C(CC(C)C)NC(=O)C(CC(C)C)NC(=O)C(CO)NC(=O)C(CC(C)C)NC(=O)C(NC1=O)C(C)CC)C(C)C
+
+GCF_000023025.1_ASM2302v1_genomic	turnerbactin	C1=CC(=C(C(=C1)O)O)C(=O)N[C@@H](CCCN)C(=O)N[C@@H](CO)C(=O)OC[C@@H](C(=O)OC[C@@H](C(=O)O)NC(=O)[C@H](CCCN)NC(=O)C2=C(C(=CC=C2)O)O)NC(=O)[C@H](CCCN)NC(=O)C3=C(C(=CC=C3)O)O
+
+GCF_002127545.1_ASM212754v1_genomic	xefoampeptide_A	CCCCCCCC1CC(=O)N[C@@H](C(=O)N[C@H](C(=O)N[C@H](C(=O)O1)CC(C)C)CC(C)C)CC(C)C
+
+GCF_000012365.1_ASM1236v1_genomic	malleobactin_C	NCCCCNC(=O)[C@H](CCCN(O)C=O)NC(=O)[C@H](CO)NC(=O)[C@H](NC(=O)[C@H](CCCN=O)NC=O)[C@@H](O)C(O)=O
+
+GCF_002632615.1_ASM263261v1_genomic	ambactin	CC(C)C[C@@H]1NC(=O)[C@@H](CC2=CC=CC=C2)NC(=O)[C@H](CCC(N)=O)NC(=O)[C@@H](CO)NC(=O)[C@H](CCCCN)NC(=O)[C@@H](CC2=CC=CC=C2)NC1=O
+
+GCF_000213315.1_ASM21331v1_genomic	paenibactin	CC1C(C(=O)OC(C(C(=O)OC(C(C(=O)O1)NC(=O)C(C)NC(=O)C2=C(C(=CC=C2)O)O)C)NC(=O)C(C)NC(=O)C3=C(C(=CC=C3)O)O)C)NC(=O)C(C)NC(=O)C4=C(C(=CC=C4)O)O
+
+GCF_008016805.1_ASM801680v1_genomic	isocomplestatin	CN1[C@@H](CC2=CC=C(OC3=CC4=CC(=C3O)C3=CC5=C(C=C3)C(C[C@@H](NC(=O)C(=O)C3=CC(Cl)=C(O)C(Cl)=C3)C(=O)N[C@H](C3=CC(Cl)=C(O)C(Cl)=C3)C(=O)N[C@H]4C(=O)N[C@H](C3=CC(Cl)=C(O)C(Cl)=C3)C1=O)=CN5)C=C2)C(=O)N[C@@H](C(O)=O)C1=CC=C(O)C=C1
+
+GCF_002811175.1_ASM281117v1_genomic	acinetobactin	CC1OC(=NC1C(=O)N(O)CCC1=CNC=N1)C1=CC=CC(O)=C1O
+
+GCF_000252955.1_ASM25295v1_genomic	rhabdopeptide_1	CC(C)C[C@H](C(=O)N(C)[C@H](C(C)C)C(=O)N[C@H](C(C)C)C(=O)N(C)[C@H](C(C)C)C(=O)NCCC1=CC=CC=C1)NC
+
+GCF_002632465.1_ASM263246v1_genomic	nevaltophin_D	CCC(C)C(=O)C(=O)N(C)[C@@H](C(C)C)C(=O)NCCC1=CNC2=CC=CC=C21
+
+GCF_000156455.1_ASM15645v1_genomic	stenothricin	C/C=C\1/C(=O)NC(C(=O)NC(C(=O)NC(C(=O)N(CC(=O)OC(C(C(=O)NC(C(=O)NC(C(=O)N1)CN)CO)NC(=O)C(CS(=O)(=O)O)NC)C)C)CCCCN)CO)C(C)C
+
+GCF_001298565.1_Actinobacteria.strain_OK006_v1.0_genomic	pepticinnamin_E	CCCC=CC1=CC=CC=C1C=CC(=O)NC(CC2=CC=C(C=C2)O)C(=O)N(C)C(CC3=C(C(=C(C=C3)OC)O)Cl)C(=O)N(C)C(CC4=CC=CC=C4)C(=O)OCC5C(=O)NCC(=O)N5
+
+GCF_000007805.1_ASM780v1_genomic	virginiafactin_A	CCCCCCC[C@H](CC(=O)N[C@@H](CC(C)C)C(=O)N[C@@H](CC(C)C)C(=O)N[C@H](CCC(=O)N)C(=O)N[C@@H](CC(C)C)C(=O)N[C@H](CO)C(=O)N[C@@H](C(C)C)C(=O)N[C@H](CC(C)C)C(=O)N[C@@H](CC(C)C)C(=O)O)O
+
+GCF_000015785.2_ASM1578v2_genomic	bacillibactin	C[C@@H]1[C@@H](C(=O)O[C@@H]([C@@H](C(=O)O[C@@H]([C@@H](C(=O)O1)NC(=O)CNC(=O)C2=C(C(=CC=C2)O)O)C)NC(=O)CNC(=O)C3=C(C(=CC=C3)O)O)C)NC(=O)CNC(=O)C4=C(C(=CC=C4)O)O
+
+GCF_000378685.1_ASM37868v1_genomic	BE-43547A1	O=C(CNC([C@](O)(C)C1=O)=O)NC(/C=C/C(N(C)CC(O[C@@H](CCCCCCCCCCC(C)C)[C@@H]1C)=O)=O)=C
+
+GCF_000517305.1_ASM51730v1_genomic	cichofactin_A	O=C(N[C@@H](CC(C)C)C(N[C@@H](CC(C)C)C(N[C@@H](CCC(N)=O)C(N[C@@H](CC(C)C)C(N[C@@H](CCC(N)=O)C(N[C@@H](C(C)C)C(N[C@@H](CC(C)C)C(N[C@@H](CC(C)C)C(O)=O)=O)=O)=O)=O)=O)=O)=O)[C@H](CC1=CNC=N1)NC(CC(O)CCCCCCC)=O
+
+GCF_000737315.1_ASM73731v1_genomic	myxochromide_D	C1(=O)N[C@@H](CC(C)C)C(=O)N[C@@H](C)C(=O)N[C@@H](CCC(=O)N)C(=O)O[C@H](C)[C@H](N(C)C(=O)/C=C/C=C/C=C/C=C/C=C/C=C/C=C/CC)C(=O)N[C@@H]1C
+
+GCF_000252955.1_ASM25295v1_genomic	rhabdopeptide_4	CN[C@H](C(C)C)C(=O)N(C)[C@H](CC(C)C)C(=O)N(C)[C@H](C(C)C)C(=O)N(C)[C@H](C(C)C)C(=O)N(C)[C@H](C(C)C)C(=O)NCCC1=CC=CC=C1
+
+GCF_001558125.2_ASM155812v2_genomic	decaplanin	CC1C(C(C(C(O1)OC2C(C(C(OC2OC3=C4C=C5C=C3OC6=C(C=C(C=C6)C(C(C(=O)NC(C(=O)NC5C(=O)NC7C8=CC(=C(C=C8)O)C9=C(C=C(C=C9C(NC(=O)C(C(C1=CC=C(O4)C=C1)OC1CC(C(C(O1)C)O)(C)N)NC7=O)C(=O)O)O)O)CC(=O)N)NC(=O)C(CC(C)C)NC)O)Cl)CO)O)O)O)O)O
+
+GCF_000143225.1_ASM14322v1_genomic	serobactin_A	CCCCCCCCCC(NC(C(O)C(O)=O)C(NC(CO)C(NC(C(O)C(O)=O)C(NC(C(C)O)C(NC(CO)C(NC1CCCN(O)C1=O)=O)=O)=O)=O)=O)=O
+
+GCF_000156695.2_ASM15669v2_genomic	arylomycin	CCCCCCCCCCCCCCCC(=O)N(C)[C@H](CO)C(=O)N[C@H](C)C(=O)NCC(=O)N(C)[C@H]1C2=CC(=C(C=C2)O)C3=C(C=CC(=C3)C[C@H](NC(=O)[C@@H](NC1=O)C)C(=O)O)O
+

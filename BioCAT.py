@@ -5,14 +5,14 @@ import numpy as np
 from json import load
 from subprocess import call 
 from pandas import read_csv, DataFrame
-from PSSM_maker import PSSM_make
-from HMM_maker import HMM_make
-from antiSMASH_parser import generate_table_from_antismash
-from Make_NRP_structure import parse_rBAN
-from Combinatorics import skipper, get_score, shuffle_matrix, make_combine, multi_thread_shuffling, get_minim_aminochain
-from Exploration_mode import exploration_mode
-from Technical_functions import parse_smi_file, run_antiSMASH, run_rBAN, get_ids, check_pept_seq, get_results_to_csv, make_standard
-from Calculating_scores import give_results
+from src.PSSM_maker import PSSM_make
+from src.HMM_maker import HMM_make
+from src.antiSMASH_parser import generate_table_from_antismash
+from src.Make_NRP_structure import parse_rBAN
+from src.Combinatorics import skipper, get_score, shuffle_matrix, make_combine, multi_thread_shuffling, get_minim_aminochain
+from src.Exploration_mode import exploration_mode
+from src.Technical_functions import parse_smi_file, run_antiSMASH, run_rBAN, get_ids, check_pept_seq, get_results_to_csv, make_standard
+from src.Calculating_scores import give_results
 parser = argparse.ArgumentParser(description='Pipeline, which help to find biosynthesis gene clusters of NRP')
 parser.add_argument('-name', 
                     type=str, 
