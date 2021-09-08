@@ -108,7 +108,8 @@ def PSSM_make(search, aminochain, out, delta, substance_name):
         if len(cop[s]) > aminochain + delta:
             
             subst_eval.pop(s)
-            continue        
+            continue       
+    
     # Generator of ratio
     print('Calculation ratio scores for PSSM ...')
 
@@ -144,7 +145,6 @@ def PSSM_make(search, aminochain, out, delta, substance_name):
         print('The output directory is already exists')
     #Recording PSSMs
     for substance in subst_eval.keys():
-        print('For {}'.format(substance))
         with open('{}/PSSM_A_{}.csv'.format(PSSMs_out, substance), 'w') as test:
 
             test.write('Module name\t')

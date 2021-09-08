@@ -37,11 +37,10 @@ def exploration_mode(rBAN_path, output, json_path, delta, substance_name):
     """
     check = 0
     NRPS_type = 'A+B+C'
-    push_B = 'Push'
-    dif_strand = None
+    off_push_B = False
+    dont_dif_strand = False
 
     while check != 1:
-        
         print('Peptide sequence exceeds cluster landing attachment\nTry to check type C NRPS...')
         PeptideSeq = parse_rBAN(rBAN_path, NRPS_type, push_B)
         
@@ -54,7 +53,6 @@ def exploration_mode(rBAN_path, output, json_path, delta, substance_name):
         PeptideSeq = make_standard(PeptideSeq)
         # Calculating length of smaller variant
         length_min = get_minim_aminochain(PeptideSeq)
-
         PSSM_make(search = output + '/HMM_results/', aminochain=length_min, out = output, delta=delta, substance_name=substance_name)
         folder =  output + '/PSSM_{}/'.format(substance_name)
         files = listdir(folder)
@@ -63,24 +61,24 @@ def exploration_mode(rBAN_path, output, json_path, delta, substance_name):
             
             check = 1
             break
-        if dif_strand == 'Have':
-            
+        if dont_dif_strand == True:
+
             NRPS_type = 'A+B'
-            push_B = None
-            dif_strand = None
+            off_push_B = True
+            dont_dif_strand = False
             print('Trying to find putative cluster from different strands ...')
-            generate_table_from_antismash(json_path, output, dif_strand)
+            generate_table_from_antismash(json_path, output, dont_dif_strand)
 
         files = listdir(folder)
         # Dont split cluster on subclusters
-        if len(files) == 0 and dif_strand is None:
+        if len(files) == 0 and dont_dif_strand == False:
             if NRPS_type != 'A+B':
 
                 print('Trying to find putative cluster from different strands ...')
-                dif_strand = 'Have'
-                generate_table_from_antismash(json_path, output, dif_strand)
+                dont_dif_strand = True
+                generate_table_from_antismash(json_path, output, dont_dif_strand)
         
-        if NRPS_type == 'A+B' and dif_strand == None:
+        if NRPS_type == 'A+B' and dont_dif_strand == False:
 
             check = 1
             

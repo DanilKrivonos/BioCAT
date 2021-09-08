@@ -13,79 +13,88 @@ from src.Combinatorics import skipper, get_score, shuffle_matrix, make_combine, 
 from src.Exploration_mode import exploration_mode
 from src.Technical_functions import parse_smi_file, run_antiSMASH, run_rBAN, get_ids, check_pept_seq, get_results_to_csv, make_standard
 from src.Calculating_scores import give_results
-parser = argparse.ArgumentParser(description='Pipeline, which help to find biosynthesis gene clusters of NRP')
-parser.add_argument('-name', 
-                    type=str, 
-                    help='Name of molecule or list of names', 
+
+parser = argparse.ArgumentParser(description='BioCAT is a tool, which find a NRP biosynthesis gene clusters')
+group1 = parser.add_argument_group("Genome arguments")
+group2 = parser.add_argument_group("Chemical arguments")
+group3 = parser.add_argument_group("Technical arguments")
+group4 = parser.add_argument_group("Advanced arguments")
+# Group of genome arguments
+group1.add_argument('-antismash',
+                    type=str,
+                    help='Put antismashs json',
+                    default=None)      
+group1.add_argument('-genome',
+                    type=str,
+                    help='Fasta file with nucleotide sequence',
+                    default=None)
+# Group of chemical arguments
+group2.add_argument('-name',
+                    type=str,
+                    help='Name of your molecule',
                     default="Unknown")
-parser.add_argument('-smiles', 
+group2.add_argument('-smiles', 
                     type=str,
-                    help='Chemical formula in smiles format', 
+                    help='Chemical formula in smiles format',
                     default=None)
-parser.add_argument('-file_smiles',
+group2.add_argument('-file_smiles',
                     type=str,
-                    help='If you want to find a lot of substances you can give a file with smiles',
+                    help='.smi file with one ore more',
                     default=None)
-parser.add_argument('-rBAN',
+group2.add_argument('-rBAN',
                     type=str,
                     help='Put here rBAN peptideGraph.json output',
                     default=None)
-parser.add_argument('-antismash',
+group2.add_argument('-NRPS_type',
                     type=str,
-                    help='Put here antismashs json',
-                    default=None)                    
-parser.add_argument('-genome', 
-                    type=str, 
-                    help='Fasta file with nucleotide sequence', 
-                    default=None)
-parser.add_argument('-NRPS_type', 
-                    type=str, 
-                    help='Expected NRPS type^', 
+                    help='Expected NRPS type',
                     default='A+B')
-parser.add_argument('-push_type_B', 
-                    type=str, 
-                    help='Fasta file with nucleotide sequence', 
-                    default='Push')
-parser.add_argument('-dif_strand', 
-                    type=str, 
-                    help='If your putative cluster can containd different strands genes', 
-                    default=None)
-parser.add_argument('-exploration', 
-                    type=bool, 
-                    help='If you want to try every variants of biosynthesis', 
-                    default=True)
-parser.add_argument('-iterations', 
-                    type=int, 
-                    help='Number of permuted PSSMs', 
-                    default=1000)
-parser.add_argument('-skip', 
-                    type=int, 
-                    help='Count of possible skippikng', 
+# Group of technical arguments
+group3.add_argument('-iterations',
+                    type=int,
+                    help='Count of permuted PSSMs',
+                    default=100)
+group3.add_argument('-skip',
+                    type=int,
+                    help='Count of possible skippikipped modules',
                     default=0)
-parser.add_argument('-delta', 
-                    type=str, 
-                    help='Delta between PSSM and sequence of peptide', 
+group3.add_argument('-delta',
+                    type=str,
+                    help='Delta between length of cluster and peptide sequence',
                     default=3)
-parser.add_argument('-cpu', 
-                    type=int, 
-                    help='Multiple treadings', 
-                    default=30)
-parser.add_argument('-out', 
-                    type=str, 
-                    help='Output directory, example: ./MY_path', 
+group3.add_argument('-cpu',
+                    type=int,
+                    help='Number of treads',
+                    default=8)
+group3.add_argument('-out',
+                    type=str,
+                    help='Output directory',
                     default='./BioCAT_output')
+# Group of Advanced arguments
+group4.add_argument('--disable_pushing_type_B',
+                    help='Fasta file with nucleotide sequence',
+                    action='store_true',
+                    default=False)
+group4.add_argument('--disable_dif_strand',
+                    help='If your putative cluster can contains different strands genes',
+                    action='store_true',
+                    default=False)
+group4.add_argument('--disable_exploration',
+                    help='Try to find optimal variant of biosynthesis',
+                    action='store_true',
+                    default=False)
 args = parser.parse_args()
-# Parsing agruments 
+# Parsing agruments
 cpu = args.cpu
-exploration = args.exploration
+disable_exploration = args.disable_exploration
 output = args.out    
 skip = args.skip
 delta = int(args.delta)
 NRPS_type = args.NRPS_type
-dif_strand = args.dif_strand
+dont_dif_strand = args.disable_dif_strand
 genome = args.genome
 iterations = args.iterations
-push_type_B = args.push_type_B
+off_push_type_B = args.disable_pushing_type_B
 if args.genome == None and args.antismash == None:
     
     print('Error: Give a fasta or an antismash json!')
@@ -112,7 +121,7 @@ print('Finding biosynthesis gene clusters with antiSMASH ...\n')
 # Run antiSMASH if it neccecery or return path to directory 
 json_path = run_antiSMASH(args.antismash, output, genome, cpu)
 # Making antiSMASH dataes to table
-generate_table_from_antismash(json_path, output, dif_strand)
+generate_table_from_antismash(json_path, output, dont_dif_strand)
 # Making of fasta files and hmmserching 
 HMM_make(output, output, cpu)
 # Getting substance name if we have only rBAN json
@@ -151,7 +160,7 @@ for smi in range(len(smile_list)):
     # Run rBAN if it neccecery or return path to directory 
     print('Buildung amino graph')
     rBAN_path = run_rBAN(args.rBAN, ids[smi], smile_list[smi], output)
-    PeptideSeq = parse_rBAN(rBAN_path, NRPS_type, push_type_B)
+    PeptideSeq = parse_rBAN(rBAN_path, NRPS_type, off_push_type_B)
     #if structure doesnt contain aminoacids
     if PeptideSeq is None:
 
@@ -182,7 +191,7 @@ for smi in range(len(smile_list)):
     folder =  output + '/PSSM_{}/'.format(ids[smi])
     files = os.listdir(folder)
     #Trying to find some vsiants of biosynthesis
-    if exploration is True:
+    if disable_exploration == False:
         if len(files) == 0:
 
             PeptideSeq, NRPS_type = exploration_mode(rBAN_path, output, json_path, delta, substance_name=ids[smi])
@@ -192,7 +201,7 @@ for smi in range(len(smile_list)):
 
     if len(files) == 0: 
 
-        print('Organism have no putative cluster') 
+        print('Organism has no putative cluster') 
         get_results_to_csv(dict_res, output, ids[smi])# Make empty Results.csv
         continue# If have no cluster -> brake it
     # Importing table with information about cluster

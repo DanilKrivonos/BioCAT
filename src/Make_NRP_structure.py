@@ -2,6 +2,7 @@ from json import load
 from rdkit import Chem
 from rdkit.DataStructs import BulkTanimotoSimilarity
 
+"""The function of restoring molecule srtucture"""
 #Findind Euler tour with modified Fleury's algorithm
 def find_subgraph_tour(current_node, graph, tour):
 
@@ -204,7 +205,7 @@ def compare_type_B_tour(add_tour, compare, PeptideSeq_cop, bios_path, key):
             
     return PeptideSeq_cop
 # Finding type B biosynthesis path
-def type_B(PeptideSeq, Push='None'):
+def type_B(PeptideSeq, not_push=True):
     
     PeptideSeq_cop = PeptideSeq.copy()
     key = 0
@@ -227,7 +228,7 @@ def type_B(PeptideSeq, Push='None'):
                     # The push module need to approximate two homology NRP fragments, 
                     # which potentuly synthesys with type B variant
                     # Example BGC0000359: fuscachelin
-                    if not Push is None: 
+                    if not_push == False: 
                         if len(PeptideSeq_cop[bios_path][var][tour]) != len(PeptideSeq_cop[bios_path][var][tourx]):
                             continue
                             
@@ -460,7 +461,7 @@ def find_not_aa_monomers(js):
                 i['monomer']['monomer']['monomer'] = mon
                 
     return not_aa_monomer, js
-def parse_rBAN(outp, NRPS_type, push_B=None):
+def parse_rBAN(outp, NRPS_type, off_push_B=True):
     
     peptide_bond = Chem.MolFromSmiles('C(=O)CN(C(=O)CN)')
     mini_pept = Chem.MolFromSmiles('NC=O')
@@ -544,9 +545,13 @@ def parse_rBAN(outp, NRPS_type, push_B=None):
 
             PeptideSeq['C'] = type_C(EP, js)
             PeptideSeq['C'] = get_monomer_names(PeptideSeq['C'], js['monomericGraph']['monomericGraph']['monomers'])
+            # If it obviosly not type C
+            if PeptideSeq['C'] == PeptideSeq['A']:
 
+                PeptideSeq['C'] = {}
+                
         if 'B' in NRPS_type:
             
-            PeptideSeq = type_B(PeptideSeq, push_B)
+            PeptideSeq = type_B(PeptideSeq, off_push_B)
 
         return PeptideSeq

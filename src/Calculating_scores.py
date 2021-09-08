@@ -90,7 +90,7 @@ def get_cluster_info(table, BGC_ID, target_file):
         Strand of cluster.
     """
     for ind in table[table['ID'].str.contains(BGC_ID)].index:
-
+        
         Name = table[table['ID'].str.contains(target_file.split('.')[0].split('_A_')[1])]['Name'][ind]
         Coord_cluster = table['Coordinates of cluster'][ind]
         strand = table['Gen strand'][ind]

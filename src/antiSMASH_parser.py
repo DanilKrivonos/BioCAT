@@ -363,7 +363,7 @@ def sort_cluster_seq(df):
             df2 = shift_contig(df2, recombined)
     return df2
 #*******************************************************************************************************************************
-def generate_table_from_antismash(json_path, table_out, dif_strand):
+def generate_table_from_antismash(json_path, table_out, dont_dif_strand):
     """
     The function generate table with NRPS cluster mata inforamtion and 
     construct deque of modules of NRPS.
@@ -374,14 +374,14 @@ def generate_table_from_antismash(json_path, table_out, dif_strand):
         Path to antiSMASH json output.
     table_out : str
         Path to BioCAT output directory.
-    dif_strand : bool
+    dont_dif_strand : bool
         Parameter of cutting cluster by directions of gene strands.
     """
     out = table_out + '/table.tsv'
     get_df(json_path, out)
     df = read_csv(out, sep='\t')
     
-    if dif_strand == None:
+    if dont_dif_strand == False:
 
         subcluster = check_subcluster(df)
 
