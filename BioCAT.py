@@ -22,28 +22,30 @@ group4 = parser.add_argument_group("Advanced arguments")
 # Group of genome arguments
 group1.add_argument('-antismash',
                     type=str,
-                    help='Put antismashs json',
+                    help='antiSMASH *.json output file (either -antismash or -genome parameter should be specified)',
                     default=None)      
 group1.add_argument('-genome',
                     type=str,
-                    help='Fasta file with nucleotide sequence',
+                    help='Path to the fasta file with nucleotide sequence (either -antismash or -genome parameter should be specified)',
                     default=None)
 # Group of chemical arguments
 group2.add_argument('-name',
                     type=str,
-                    help='Name of your molecule',
+                    help='Name of the given molecule (optional)',
                     default="Unknown")
 group2.add_argument('-smiles', 
                     type=str,
-                    help='Chemical formula in smiles format',
+                    help='NRP chemical structure in the SMILES format (either -smiles or -file_smiles parameter should be specified)',
                     default=None)
 group2.add_argument('-file_smiles',
                     type=str,
-                    help='.smi file with one ore more',
+                    help='.smi file with one or more NRPs. Each row should contain two ' + 
+                    'columns: name of the NRP and SMILES string. Columns shoulb be separated' +  
+                    'by tabulation. (Either -smiles or -file_smiles parameter should be specified.)',
                     default=None)
 group2.add_argument('-rBAN',
                     type=str,
-                    help='Put here rBAN peptideGraph.json output',
+                    help='rBAN peptideGraph.json output file',
                     default=None)
 group2.add_argument('-NRPS_type',
                     type=str,
@@ -52,11 +54,11 @@ group2.add_argument('-NRPS_type',
 # Group of technical arguments
 group3.add_argument('-iterations',
                     type=int,
-                    help='Count of permuted PSSMs (default 100)',
+                    help='Count of shuffling iterations (default 100)',
                     default=100)
 group3.add_argument('-delta',
                     type=str,
-                    help='Delta between length of cluster and peptide sequence (default 3)',
+                    help='The maximum number of gaps in the molecule (default 3). Gaps are assigned as "nan".',
                     default=3)
 group3.add_argument('-cpu',
                     type=int,
@@ -69,18 +71,29 @@ group3.add_argument('-out',
 # Group of Advanced arguments
 group4.add_argument('-skip',
                     type=int,
-                    help='Count of possible skippikipped modules',
+                    help='Count of modules which can be skipped (default 0). ' + 
+                    'Not recommended to use unless the user is sure about module skipping.',
                     default=0)
 group4.add_argument('--disable_pushing_type_B',
-                    help='Fasta file with nucleotide sequence',
+                    help='By defult, the algorithm tries to truncate peptide ' +
+                        'fragments cutting edge monomers to find all possible identical ' +
+                        'peptide fragments in the structure. If disabled, only ' +
+                        'the identity of full peptide fragments is considered.',
                     action='store_true',
                     default=False)
 group4.add_argument('--disable_dif_strand',
-                    help='If your putative cluster can contains different strands genes',
+                    help='By default, the protoclusters predicted by antiSMASH are ' +
+                        'subdivided according to the assumption that each cluster ' +
+                        'should contain only genes located on the same strand of the genome. ' +
+                        'If disabled, protoclusters annotated by antiSMASH are ' +
+                        'used as minimal clusters.',
                     action='store_true',
                     default=False)
 group4.add_argument('--disable_exploration',
-                    help='Try to find optimal variant of biosynthesis',
+                    help='By default, the algorithm tries to find the optimal ' +
+                        'alignment combining alignment options in all possible ' +
+                        'ways. If disabled, alignment is performed in according ' +
+                        'to the given options strictly.',
                     action='store_true',
                     default=False)
 args = parser.parse_args()

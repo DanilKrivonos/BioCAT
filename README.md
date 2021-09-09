@@ -43,33 +43,53 @@ optional arguments:
   -h, --help            show this help message and exit
 
 Genome arguments:
-  -antismash ANTISMASH  Put antismashs json
-  -genome GENOME        Fasta file with nucleotide sequence
+  -antismash ANTISMASH  antiSMASH *.json output file (either -antismash or
+                        -genome parameter should be specified)
+  -genome GENOME        Path to the fasta file with nucleotide sequence
+                        (either -antismash or -genome parameter should be
+                        specified)
 
 Chemical arguments:
-  -name NAME            Name of your molecule
-  -smiles SMILES        Chemical formula in smiles format
+  -name NAME            Name of the given molecule (optional)
+  -smiles SMILES        NRP chemical structure in the SMILES format (either
+                        -smiles or -file_smiles parameter should be specified)
   -file_smiles FILE_SMILES
-                        .smi file with one ore more
-  -rBAN RBAN            Put here rBAN peptideGraph.json output
+                        .smi file with one or more NRPs. Each row should
+                        contain two columns: name of the NRP and SMILES
+                        string. Columns shoulb be separatedby tabulation.
+                        (Either -smiles or -file_smiles parameter should be
+                        specified.)
+  -rBAN RBAN            rBAN peptideGraph.json output file
   -NRPS_type NRPS_TYPE  Expected NRPS type (default A+B)
 
 Technical arguments:
   -iterations ITERATIONS
-                        Count of permuted PSSMs (default 100)
-  -delta DELTA          Delta between length of cluster and peptide sequence
-                        (default 3)
+                        Count of shuffling iterations (default 100)
+  -delta DELTA          The maximum number of gaps in the molecule (default
+                        3). Gaps are assigned as "nan".
   -cpu CPU              Number of treads (default 8)
   -out OUT              Output directory (default ./BioCAT_output)
 
 Advanced arguments:
-  -skip SKIP            Count of possible skippikipped modules
+  -skip SKIP            Count of modules which can be skipped (default 0). Not
+                        recommended to use unless the user is sure about
+                        module skipping.
   --disable_pushing_type_B
-                        Fasta file with nucleotide sequence
-  --disable_dif_strand  If your putative cluster can contains different
-                        strands genes
+                        By defult, the algorithm tries to truncate peptide
+                        fragments cutting edge monomers to find all possible
+                        identical peptide fragments in the structure. If
+                        disabled, only the identity of full peptide fragments
+                        is considered.
+  --disable_dif_strand  By default, the protoclusters predicted by antiSMASH
+                        are subdivided according to the assumption that each
+                        cluster should contain only genes located on the same
+                        strand of the genome. If disabled, protoclusters
+                        annotated by antiSMASH are used as minimal clusters.
   --disable_exploration
-                        Try to find optimal variant of biosynthesis
+                        By default, the algorithm tries to find the optimal
+                        alignment combining alignment options in all possible
+                        ways. If disabled, alignment is performed in according
+                        to the given options strictly.
 
 ```
 
