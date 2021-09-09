@@ -76,4 +76,3 @@ Advanced arguments:
 ## Reference
 
 will be added
-![image](https://user-images.githubusercontent.com/53526550/132693590-d0c5d430-827c-4d32-adac-0ade63349b41.png)
