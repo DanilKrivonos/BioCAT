@@ -29,7 +29,49 @@ This file contains a detailed information about each possible NRP to BGC alignme
 
 ### Parameters
 
-will be added
+```
+usage: BioCAT.py [-h] [-antismash ANTISMASH] [-genome GENOME] [-name NAME]
+                 [-smiles SMILES] [-file_smiles FILE_SMILES] [-rBAN RBAN]
+                 [-NRPS_type NRPS_TYPE] [-iterations ITERATIONS]
+                 [-delta DELTA] [-cpu CPU] [-out OUT] [-skip SKIP]
+                 [--disable_pushing_type_B] [--disable_dif_strand]
+                 [--disable_exploration]
+
+BioCAT is a tool, which find a NRP biosynthesis gene clusters
+
+optional arguments:
+  -h, --help            show this help message and exit
+
+Genome arguments:
+  -antismash ANTISMASH  Put antismashs json
+  -genome GENOME        Fasta file with nucleotide sequence
+
+Chemical arguments:
+  -name NAME            Name of your molecule
+  -smiles SMILES        Chemical formula in smiles format
+  -file_smiles FILE_SMILES
+                        .smi file with one ore more
+  -rBAN RBAN            Put here rBAN peptideGraph.json output
+  -NRPS_type NRPS_TYPE  Expected NRPS type (default A+B)
+
+Technical arguments:
+  -iterations ITERATIONS
+                        Count of permuted PSSMs (default 100)
+  -delta DELTA          Delta between length of cluster and peptide sequence
+                        (default 3)
+  -cpu CPU              Number of treads (default 8)
+  -out OUT              Output directory (default ./BioCAT_output)
+
+Advanced arguments:
+  -skip SKIP            Count of possible skippikipped modules
+  --disable_pushing_type_B
+                        Fasta file with nucleotide sequence
+  --disable_dif_strand  If your putative cluster can contains different
+                        strands genes
+  --disable_exploration
+                        Try to find optimal variant of biosynthesis
+
+```
 
 ## Reference
 
