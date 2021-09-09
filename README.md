@@ -24,8 +24,8 @@ python3 BioCAT.py -smiles '[H][C@@]1(CCC(O)=O)NC(=O)CC(CCCCCCCCCCC)OC(=O)[C@]([H
 
 In this case, the chemical structure of surfactin given in the SMILES format is processed by rBAN and the genome is processed by antiSMASH 6. Next, resulting files are used for the alignment process. The main feature of BioCAT is PSSM-based alignment algorithm, which includes an artifitial shuffling of PSSMs to calculate the final score, so, the alignment process might be time-consuming in some cases (usualy less than 1 minute). 
 
-The output directory contains the rBAN and the antiSMASH resulting files, PSSM matrices for BGCs which were aligned during the analysis, and the resulting file `Results.tsv`.
-This file contains a detailed information about each possible NRP to BGC alignment, but now we are interested only in the last two columns `Relative score' and `Binary`. Rows with relative score more than 0.5 are interpreted as successful alignments, thus, the given organism can be considered as a potential producer of surfactin.
+The output directory `surfactin_results` contains the rBAN and the antiSMASH resulting files, PSSM matrices for BGCs which were aligned during the analysis, and the resulting file `Results.tsv`.
+This file contains a detailed information about each possible NRP to BGC alignment, but now we are interested only in the last two columns `Relative score` and `Binary`. Rows with relative score more than 0.5 are interpreted as successful alignments, thus, the given organism can be considered as a potential producer of surfactin.
 
 ### Parameters
 
