@@ -14,7 +14,12 @@ rBAN is included into the BioCAT package.
 - numpy 1.21.0
 - rdkit 2021.03.4
 ## **Installation:**
-```git clone https://github.com/DanilKrivonos/BioCAT```
+
+```
+conda install -c bioconda antismash
+conda install -c rdkit rdkit
+git clone https://github.com/DanilKrivonos/BioCAT
+```
 
 ## **BioCAT usage:**
 ### Usage example:

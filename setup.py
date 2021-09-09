@@ -9,7 +9,7 @@ setuptools.setup(
     author="D.N. Kononov, D.V. Krivonos",
     author_email="konanovdmitriy@gmail.com",
     description="NRP biosynthesis  Cluster  Analysis  Tool)",
-    long_description=long_description,
+    long_description="BioCAT",
     long_description_content_type="",
     url="https://github.com/DanilKrivonos/BioCAT",
     project_urls={
@@ -23,4 +23,10 @@ setuptools.setup(
     package_dir={"": "src"},
     packages=setuptools.find_packages(where="src"),
     python_requires=">=3.8",
+    install_requires=[
+        'numpy>=1.21.0',
+        'biopython>=1.79',
+        'pandas>=1.2.5',
+        'scikit-learn>=0.24.2'
+    ]
 )
