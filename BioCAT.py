@@ -211,4 +211,4 @@ for smi in range(len(smile_list)):
     get_results_to_csv(dict_res, output, ids[smi])
     ('Results file for {} is recorded!'.format(ids[smi]))
 
-print('Job is done!')
+print('BioCAT processing is done!')
