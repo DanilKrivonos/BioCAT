@@ -2,7 +2,7 @@
 <img src="https://user-images.githubusercontent.com/53526550/132544644-86306499-133d-44e2-8e4c-e2603fb7d0f0.png" width="205" height="145" align="left">BioCAT is a tool which is designed for searching potential producers of a given non-ribosomal peptide. The tool performs an alignment of the given NRP chemical structure against all possible biosytnthesis gene clusters (BGCs) found in the given genome and returns the final alignment score distributed from 0 to 1. Alignments with score higher than 0.5 can be considered as successful matches.
 
 Identification on monomers graph is performed with the rBAN tool(https://jcheminf.biomedcentral.com/articles/10.1186/s13321-019-0335-x). Annotation of nonribosomal peptide synthetase gene clusters is preformed with the antiSMASH 6 software(https://academic.oup.com/nar/article/49/W1/W29/6274535).
-# **Dependencies:**
+## **Dependencies:**
 - antiSMASH 6.0.0
 
 rBAN is included into the BioCAT package.
