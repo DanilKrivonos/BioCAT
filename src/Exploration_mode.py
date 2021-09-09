@@ -42,7 +42,7 @@ def exploration_mode(rBAN_path, output, json_path, delta, substance_name):
 
     while check != 1:
         print('Peptide sequence exceeds cluster landing attachment\nTry to check type C NRPS...')
-        PeptideSeq = parse_rBAN(rBAN_path, NRPS_type, push_B)
+        PeptideSeq = parse_rBAN(rBAN_path, NRPS_type, off_push_B)
         
         for BS_type in PeptideSeq:
 

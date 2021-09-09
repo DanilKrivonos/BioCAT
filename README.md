@@ -43,6 +43,7 @@ optional arguments:
   -h, --help            show this help message and exit
 
 Genome arguments:
+<<<<<<< HEAD
   -antismash ANTISMASH  antiSMASH *.json output file (either -antismash or
                         -genome parameter should be specified)
   -genome GENOME        Path to the fasta file with nucleotide sequence
@@ -60,17 +61,35 @@ Chemical arguments:
                         (Either -smiles or -file_smiles parameter should be
                         specified.)
   -rBAN RBAN            rBAN peptideGraph.json output file
+=======
+  -antismash ANTISMASH  Put antismashs json
+  -genome GENOME        Fasta file with nucleotide sequence
+
+Chemical arguments:
+  -name NAME            Name of your molecule
+  -smiles SMILES        Chemical formula in smiles format
+  -file_smiles FILE_SMILES
+                        .smi file with one ore more
+  -rBAN RBAN            Put here rBAN peptideGraph.json output
+>>>>>>> 1d3f36e90df5020779f480f9aa3b8272eabe336d
   -NRPS_type NRPS_TYPE  Expected NRPS type (default A+B)
 
 Technical arguments:
   -iterations ITERATIONS
+<<<<<<< HEAD
                         Count of shuffling iterations (default 100)
   -delta DELTA          The maximum number of gaps in the molecule (default
                         3). Gaps are assigned as "nan".
+=======
+                        Count of permuted PSSMs (default 100)
+  -delta DELTA          Delta between length of cluster and peptide sequence
+                        (default 3)
+>>>>>>> 1d3f36e90df5020779f480f9aa3b8272eabe336d
   -cpu CPU              Number of treads (default 8)
   -out OUT              Output directory (default ./BioCAT_output)
 
 Advanced arguments:
+<<<<<<< HEAD
   -skip SKIP            Count of modules which can be skipped (default 0). Not
                         recommended to use unless the user is sure about
                         module skipping.
@@ -90,9 +109,22 @@ Advanced arguments:
                         alignment combining alignment options in all possible
                         ways. If disabled, alignment is performed in according
                         to the given options strictly.
+=======
+  -skip SKIP            Count of possible skippikipped modules
+  --disable_pushing_type_B
+                        Fasta file with nucleotide sequence
+  --disable_dif_strand  If your putative cluster can contains different
+                        strands genes
+  --disable_exploration
+                        Try to find optimal variant of biosynthesis
+>>>>>>> 1d3f36e90df5020779f480f9aa3b8272eabe336d
 
 ```
 
 ## Reference
 
+<<<<<<< HEAD
 will be added
+=======
+will be added
+>>>>>>> 1d3f36e90df5020779f480f9aa3b8272eabe336d
