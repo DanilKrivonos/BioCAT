@@ -4,27 +4,26 @@
 Identification on monomers graph is performed with the rBAN tool(https://jcheminf.biomedcentral.com/articles/10.1186/s13321-019-0335-x). Annotation of nonribosomal peptide synthetase gene clusters is preformed with the antiSMASH 6 software(https://academic.oup.com/nar/article/49/W1/W29/6274535).
 ## **Dependencies:**
 - antiSMASH 6.0.0
-
-rBAN is included into the BioCAT package.
-
-### python3 libraries:
 - sklearn 0.24.2
 - pandas 1.2.5
 - biopython 1.79
 - numpy 1.21.0
 - rdkit 2021.03.4
+
+rBAN is included into the BioCAT package.
+
 ## **Installation:**
 
 ```
 conda install -c bioconda antismash hmmer
 conda install -c rdkit rdkit
-git clone https://github.com/DanilKrivonos/BioCAT
+pip install biocat
 ```
 
 ## **BioCAT usage:**
 ### Usage example:
 ```
-python3 BioCAT.py -smiles '[H][C@@]1(CCC(O)=O)NC(=O)CC(CCCCCCCCCCC)OC(=O)[C@]([H])(CC(C)C)NC(=O)[C@@]([H])(CC(C)C)NC(=O)[C@]([H])(CC(O)=O)NC(=O)[C@@]([H])(NC(=O)[C@@]([H])(CC(C)C)NC(=O)[C@]([H])(CC(C)C)NC1=O)C(C)C' -name 'surfactin' -genome example/Surfactine/GCF_000015785.2_ASM1578v2_genomic.fna -out surfactin_results 
+biocat -smiles '[H][C@@]1(CCC(O)=O)NC(=O)CC(CCCCCCCCCCC)OC(=O)[C@]([H])(CC(C)C)NC(=O)[C@@]([H])(CC(C)C)NC(=O)[C@]([H])(CC(O)=O)NC(=O)[C@@]([H])(NC(=O)[C@@]([H])(CC(C)C)NC(=O)[C@]([H])(CC(C)C)NC1=O)C(C)C' -name 'surfactin' -genome example/Surfactine/GCF_000015785.2_ASM1578v2_genomic.fna -out surfactin_results 
 ```
 
 In this case, the chemical structure of surfactin given in the SMILES format is processed by rBAN and the genome is processed by antiSMASH 6. Next, resulting files are used for the alignment process. The main feature of BioCAT is PSSM-based alignment algorithm, which includes an artifitial shuffling of PSSMs to calculate the final score, so, the alignment process might be time-consuming in some cases (usualy less than 1 minute). 
@@ -35,12 +34,12 @@ This file contains a detailed information about each possible NRP to BGC alignme
 ### Parameters
 
 ```
-usage: BioCAT.py [-h] [-antismash ANTISMASH] [-genome GENOME] [-name NAME]
-                 [-smiles SMILES] [-file_smiles FILE_SMILES] [-rBAN RBAN]
-                 [-NRPS_type NRPS_TYPE] [-iterations ITERATIONS]
-                 [-delta DELTA] [-cpu CPU] [-out OUT] [-skip SKIP]
-                 [--disable_pushing_type_B] [--disable_dif_strand]
-                 [--disable_exploration]
+usage: biocat [-h] [-antismash ANTISMASH] [-genome GENOME] [-name NAME]
+              [-smiles SMILES] [-file_smiles FILE_SMILES] [-rBAN RBAN]
+              [-NRPS_type NRPS_TYPE] [-iterations ITERATIONS]
+              [-delta DELTA] [-cpu CPU] [-out OUT] [-skip SKIP]
+              [--disable_pushing_type_B] [--disable_dif_strand]
+              [--disable_exploration]
 
 BioCAT is a tool, which find a NRP biosynthesis gene clusters
 
