@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="BioCAT",
-    version="0.9.14",
+    version="0.9.15",
     author="D.N. Kononov, D.V. Krivonos",
     author_email="konanovdmitriy@gmail.com",
     description="NRP biosynthesis  Cluster  Analysis  Tool)",
@@ -24,9 +24,9 @@ setuptools.setup(
     include_package_data=True,
     packages=['BioCAT', 'BioCAT.src', 'BioCAT.external', 'BioCAT.HMM', 'BioCAT.data'],
     install_requires=[
-        'numpy>=1.21.0',
-        'biopython>=1.79',
-        'pandas>=1.2.5',
+        'numpy',
+        'biopython',
+        'pandas',
         'scikit-learn>=0.24.2'
     ],
     entry_points={

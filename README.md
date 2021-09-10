@@ -3,12 +3,12 @@
 
 Identification on monomers graph is performed with the rBAN tool(https://jcheminf.biomedcentral.com/articles/10.1186/s13321-019-0335-x). Annotation of nonribosomal peptide synthetase gene clusters is preformed with the antiSMASH 6 software(https://academic.oup.com/nar/article/49/W1/W29/6274535).
 ## **Dependencies:**
-- antiSMASH 6.0.0
+- antiSMASH 6
 - sklearn 0.24.2
-- pandas 1.2.5
-- biopython 1.79
-- numpy 1.21.0
-- rdkit 2021.03.4
+- pandas
+- biopython
+- numpy
+- rdkit
 - hmmer
 
 rBAN is included into the BioCAT package.
@@ -16,8 +16,8 @@ rBAN is included into the BioCAT package.
 ## **Installation:**
 
 ```
-conda install -c bioconda antismash hmmer
-conda install -c rdkit rdkit
+conda create -n biocat_env -c bioconda -c rdkit antismash hmmer rdkit
+conda activate biocat_env
 pip install biocat
 ```
 
