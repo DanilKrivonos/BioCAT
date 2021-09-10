@@ -9,6 +9,7 @@ Identification on monomers graph is performed with the rBAN tool(https://jchemin
 - biopython 1.79
 - numpy 1.21.0
 - rdkit 2021.03.4
+- hmmer
 
 rBAN is included into the BioCAT package.
 
@@ -21,15 +22,20 @@ pip install biocat
 ```
 
 ## **BioCAT usage:**
+
+There is no test data in the BioCAT package distributed via Pip. Several examples are available in this repository in the `example` folder.
+
 ### Usage example:
-```
+
+For a minimal run, the NRP structure in SMILES format and the genome in FASTA format must be specified with the `-smiles` and `-genome` parameters, respectively. Optionally, you can specify the output directory using the `-out` parameter and the name of the given NRP using `-name`.
+
+``` 
 biocat -smiles '[H][C@@]1(CCC(O)=O)NC(=O)CC(CCCCCCCCCCC)OC(=O)[C@]([H])(CC(C)C)NC(=O)[C@@]([H])(CC(C)C)NC(=O)[C@]([H])(CC(O)=O)NC(=O)[C@@]([H])(NC(=O)[C@@]([H])(CC(C)C)NC(=O)[C@]([H])(CC(C)C)NC1=O)C(C)C' -name 'surfactin' -genome example/Surfactine/GCF_000015785.2_ASM1578v2_genomic.fna -out surfactin_results 
 ```
+In this case, the given chemical structure of surfactin is processed by rBAN and the given genome is processed by antiSMASH 6. Next, the resulting files are used for the alignment process. The main feature of BioCAT is the PSSM-based alignment algorithm, which includes an artificial shuffling of PSSMs to calculate the final score, so, the alignment process might be time-consuming in some cases (usually less than 1 minute).
 
-In this case, the chemical structure of surfactin given in the SMILES format is processed by rBAN and the genome is processed by antiSMASH 6. Next, resulting files are used for the alignment process. The main feature of BioCAT is PSSM-based alignment algorithm, which includes an artifitial shuffling of PSSMs to calculate the final score, so, the alignment process might be time-consuming in some cases (usualy less than 1 minute). 
-
-The output directory `surfactin_results` contains the rBAN and the antiSMASH resulting files, PSSM matrices for BGCs which were aligned during the analysis, and the resulting file `Results.tsv`.
-This file contains a detailed information about each possible NRP to BGC alignment, but now we are interested only in the last two columns `Relative score` and `Binary`. Rows with relative score more than 0.5 are interpreted as successful alignments, thus, the given organism can be considered as a potential producer of surfactin.
+The output directory `surfactin_results` contains the rBAN and the antiSMASH resulting files, PSSM matrices generated for BGCs which were aligned during the analysis, and the resulting file `Results.tsv`.
+This file contains a detailed information about each possible NRP to BGC alignment, but in this minimal example we are interested only in the last two columns `Relative score` and `Binary`. Rows with relative score more than 0.5 are interpreted as successful alignments, thus, the given organism can be considered as a potential producer of surfactin.
 
 ### Parameters
 
