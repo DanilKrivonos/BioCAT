@@ -271,4 +271,4 @@ def get_results_to_csv(dict_res, output, id_smi):
         Name of the processed structure.
     """
     res_df = DataFrame(data=dict_res)
-    res_df.to_csv('{}/Results_{}.csv'.format(output, id_smi), sep='\t', index=False)           
+    res_df.to_csv('{}/Results_{}.tsv'.format(output, id_smi), sep='\t', index=False)           
