@@ -5,14 +5,14 @@ import numpy as np
 from json import load
 from subprocess import call 
 from pandas import read_csv, DataFrame
-from src.PSSM_maker import PSSM_make
-from src.HMM_maker import HMM_make
-from src.antiSMASH_parser import generate_table_from_antismash
-from src.Make_NRP_structure import parse_rBAN
-from src.Combinatorics import skipper, get_score, shuffle_matrix, make_combine, multi_thread_shuffling, get_minim_aminochain
-from src.Exploration_mode import exploration_mode
-from src.Technical_functions import parse_smi_file, run_antiSMASH, run_rBAN, get_ids, check_pept_seq, get_results_to_csv, make_standard
-from src.Calculating_scores import give_results
+from BioCAT.src.PSSM_maker import PSSM_make
+from BioCAT.src.HMM_maker import HMM_make
+from BioCAT.src.antiSMASH_parser import generate_table_from_antismash
+from BioCAT.src.Make_NRP_structure import parse_rBAN
+from BioCAT.src.Combinatorics import skipper, get_score, shuffle_matrix, make_combine, multi_thread_shuffling, get_minim_aminochain
+from BioCAT.src.Exploration_mode import exploration_mode
+from BioCAT.src.Technical_functions import parse_smi_file, run_antiSMASH, run_rBAN, get_ids, check_pept_seq, get_results_to_csv, make_standard
+from BioCAT.src.Calculating_scores import give_results
 
 def main():
     parser = argparse.ArgumentParser(description='BioCAT is a tool, which find a NRP biosynthesis gene clusters')

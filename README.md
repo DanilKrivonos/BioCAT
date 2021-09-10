@@ -16,7 +16,7 @@ rBAN is included into the BioCAT package.
 ## **Installation:**
 
 ```
-conda install -c bioconda antismash
+conda install -c bioconda antismash hmmer
 conda install -c rdkit rdkit
 git clone https://github.com/DanilKrivonos/BioCAT
 ```

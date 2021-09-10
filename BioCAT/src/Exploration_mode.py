@@ -1,9 +1,9 @@
 from os import listdir
-from src.Make_NRP_structure import parse_rBAN
-from src.Combinatorics import get_max_aminochain, get_minim_aminochain
-from src.Technical_functions import make_standard
-from src.antiSMASH_parser import generate_table_from_antismash
-from src.PSSM_maker import PSSM_make
+from BioCAT.src.Make_NRP_structure import parse_rBAN
+from BioCAT.src.Combinatorics import get_max_aminochain, get_minim_aminochain
+from BioCAT.src.Technical_functions import make_standard
+from BioCAT.src.antiSMASH_parser import generate_table_from_antismash
+from BioCAT.src.PSSM_maker import PSSM_make
 
 # The exploratin mode try to find every possible combinations, with the exception of skipping
 

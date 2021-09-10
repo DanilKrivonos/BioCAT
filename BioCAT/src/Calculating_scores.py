@@ -1,10 +1,14 @@
 from numpy import array
 from pickle import load
 from pandas import read_csv
-from src.Combinatorics import multi_thread_shuffling, multi_thread_calculating_scores, make_combine, get_score, get_max_aminochain, skipper
+import os
+from BioCAT.src.Combinatorics import multi_thread_shuffling, multi_thread_calculating_scores, make_combine, get_score, get_max_aminochain, skipper
 
 # Importing random forest model
-Rf = load(open('./src/RFC.dump', 'rb'))
+
+modelpath = os.path.dirname(os.path.abspath(__file__)) + '/RFC.dump'
+
+Rf = load(open(modelpath, 'rb'))
 # The function generate list of shuflled matrix
 def make_shuffle_matrix(matrix, cpu, iterat):
     """
@@ -161,11 +165,11 @@ def calculate_scores(variant_seq, matrix, substrate_shuffling_matrix, module_shu
     Sdt_score = len(Sdt_shuffled_score[Sdt_shuffled_score < non_log_target_score])/len(Sdt_shuffled_score)
     Mdt_score = len(Mdt_shuffled_score[Mdt_shuffled_score < non_log_target_score])/len(Mdt_shuffled_score)
     # Calculating Relative score
-    Relative_score = Rf.predict_proba([[Sln_score, Mln_score, 
+    Relative_score = round(Rf.predict_proba([[Sln_score, Mln_score, 
                                         Sdn_score, Mdn_score,
                                         Sdt_score, Mdt_score,
                                         Slt_score, Mlt_score  
-                                        ]])[0][1]
+                                        ]])[0][1], 3)
     Binary = Rf.predict([[Sln_score, Mln_score, 
                                         Sdn_score, Mdn_score,
                                         Sdt_score, Mdt_score,

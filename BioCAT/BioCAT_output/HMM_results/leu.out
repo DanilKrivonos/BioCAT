@@ -1,0 +1,1291 @@
+# hmmsearch :: search profile(s) against a sequence database
+# HMMER 3.3.2 (Nov 2020); http://hmmer.org/
+# Copyright (C) 2020 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query HMM file:                  ./HMM/Bacteria_HMM/Bac_leu.hmm
+# target sequence database:        ./BioCAT_output/nrps_domains.fasta
+# sequence search space set to:    1000
+# number of worker threads:        8
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       Bac_leu  [M=394]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence                               Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------                               -----------
+   1.9e-151  499.9   0.0   2.1e-151  499.8   0.0    1.0  1  nrpspksdomains_ctg1_323_AMP-binding.3   
+   5.7e-151  498.4   0.0   6.4e-151  498.2   0.0    1.0  1  nrpspksdomains_ctg1_322_AMP-binding.3   
+   5.5e-142  468.8   0.0   6.1e-142  468.6   0.0    1.0  1  nrpspksdomains_ctg1_1760_AMP-binding.1  
+     1e-137  454.7   0.0   1.2e-137  454.5   0.0    1.0  1  nrpspksdomains_ctg1_324_AMP-binding.1   
+   4.5e-137  452.6   0.0   5.1e-137  452.4   0.0    1.0  1  nrpspksdomains_ctg1_323_AMP-binding.1   
+   7.2e-137  451.9   0.0     8e-137  451.8   0.0    1.0  1  nrpspksdomains_ctg1_1759_AMP-binding.1  
+     1e-134  444.9   0.0   1.1e-134  444.7   0.0    1.0  1  nrpspksdomains_ctg1_1760_AMP-binding.2  
+   3.6e-133  439.8   0.0   4.1e-133  439.6   0.0    1.0  1  nrpspksdomains_ctg1_1759_AMP-binding.2  
+   9.6e-133  438.4   0.0   1.1e-132  438.2   0.0    1.0  1  nrpspksdomains_ctg1_322_AMP-binding.2   
+   6.7e-130  429.0   0.0   7.4e-130  428.8   0.0    1.0  1  nrpspksdomains_ctg1_2831_AMP-binding.1  
+   1.4e-129  428.0   0.0   1.5e-129  427.8   0.0    1.0  1  nrpspksdomains_ctg1_1761_AMP-binding.1  
+   7.3e-128  422.3   0.0   8.1e-128  422.1   0.0    1.0  1  nrpspksdomains_ctg1_1787_AMP-binding.2  
+   5.5e-127  419.4   0.0   6.2e-127  419.2   0.0    1.0  1  nrpspksdomains_ctg1_1645_AMP-binding.1  
+   7.3e-127  419.0   0.0   8.2e-127  418.8   0.0    1.0  1  nrpspksdomains_ctg1_323_AMP-binding.2   
+   1.7e-126  417.8   0.0   1.9e-126  417.6   0.0    1.0  1  nrpspksdomains_ctg1_1648_AMP-binding.1  
+   1.8e-126  417.7   0.0     2e-126  417.5   0.0    1.0  1  nrpspksdomains_ctg1_1760_AMP-binding.4  
+   9.9e-126  415.3   0.2   1.1e-125  415.1   0.2    1.0  1  nrpspksdomains_ctg1_322_AMP-binding.1   
+   2.4e-125  414.0   0.0   2.7e-125  413.9   0.0    1.0  1  nrpspksdomains_ctg1_1786_AMP-binding.2  
+   7.4e-125  412.4   0.0   8.3e-125  412.2   0.0    1.0  1  nrpspksdomains_ctg1_1787_AMP-binding.1  
+   9.2e-125  412.1   0.0     1e-124  411.9   0.0    1.0  1  nrpspksdomains_ctg1_1789_AMP-binding.1  
+   1.4e-124  411.4   0.0   1.6e-124  411.3   0.0    1.0  1  nrpspksdomains_ctg1_1786_AMP-binding.3  
+     2e-123  407.7   0.0   2.3e-123  407.5   0.0    1.0  1  nrpspksdomains_ctg1_1788_AMP-binding.2  
+   2.9e-123  407.1   0.0   3.2e-123  407.0   0.0    1.0  1  nrpspksdomains_ctg1_1786_AMP-binding.1  
+   2.1e-122  404.3   0.0   2.3e-122  404.2   0.0    1.0  1  nrpspksdomains_ctg1_1760_AMP-binding.3  
+   1.2e-121  401.8   0.0   1.3e-121  401.7   0.0    1.0  1  nrpspksdomains_ctg1_2831_AMP-binding.2  
+   1.3e-121  401.7   0.0   1.5e-121  401.5   0.0    1.0  1  nrpspksdomains_ctg1_1785_AMP-binding.1  
+   4.2e-121  400.0   0.0   4.7e-121  399.9   0.0    1.0  1  nrpspksdomains_ctg1_1788_AMP-binding.1  
+   4.7e-113  373.5   0.0   5.2e-113  373.4   0.0    1.0  1  nrpspksdomains_ctg1_1789_AMP-binding.2  
+    2.3e-95  315.3   0.0    7.8e-95  313.5   0.0    1.7  1  nrpspksdomains_ctg1_2695_AMP-binding.1  
+      3e-95  314.9   0.0      1e-94  313.1   0.0    1.7  1  nrpspksdomains_ctg1_2695_AMP-binding.2  
+      3e-95  314.9   0.0      1e-94  313.1   0.0    1.7  1  nrpspksdomains_ctg1_2695_AMP-binding.3  
+    4.6e-41  136.5   0.0    5.3e-27   90.2   0.0    2.1  2  nrpspksdomains_ctg1_1781_AMP-binding.1  
+    2.7e-37  124.1   0.0    3.6e-37  123.7   0.0    1.1  1  nrpspksdomains_ctg1_2833_AMP-binding.1  
+
+
+Domain annotation for each sequence (and alignments):
+>> nrpspksdomains_ctg1_323_AMP-binding.3  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  499.8   0.0    7e-153  2.1e-151       1     393 [.       1     389 []       1     389 [] 0.94
+
+  Alignments for each domain:
+  == domain 1  score: 499.8 bits;  conditional E-value: 7e-153
+                                Bac_leu   1 feeqaaktpdavAvvaedqkltYaeLneranrlarrLrelgvkpddrvavllerslelvvalLavlkaGaay 72 
+                                            fee+aa+ ++++A++++++k+tY eLn+ranr+ar L++ gv++d+rv++l++ sle+ +++L+vlkaGaa+
+  nrpspksdomains_ctg1_323_AMP-binding.3   1 FEETAARYANRPAAAYNGAKWTYGELNARANRIARILMDCGVTADERVGILTKPSLEMAAGVLGVLKAGAAF 72 
+                                            89********************************************************************** PP
+
+                                Bac_leu  73 vpldpaypeeRlaylledsaakvvltqaelaerleeaevevldldeedleeea.....eedpeveelesedl 139
+                                            vp+dp+ypeeR++y+l+ds+ak++ltq++l    + ++ e++ ld ++   +      +e++ ++e+++++l
+  nrpspksdomains_ctg1_323_AMP-binding.3  73 VPIDPDYPEERISYILQDSGAKLLLTQEALDVPES-YNGETILLDGRRSILSLpldenDEANPQTETTADHL 143
+                                            ****************************9877666.77888888544332221132123333334799**** PP
+
+                                Bac_leu 140 AyviYTSGstGqPKGvmvehrslanlvewhaeafeltaedrvlsvaglafDasvwevwpalaaGatlvlapa 211
+                                            Ay+iYTSG+tGqPKGvmveh++l+nl+ wh++af++ta+d+ +++ag++fDas+we++p+++ Ga+l+++++
+  nrpspksdomains_ctg1_323_AMP-binding.3 144 AYMIYTSGTTGQPKGVMVEHHALVNLCFWHHDAFAMTADDKSAKYAGFGFDASIWEMFPTWTIGAELHVIDE 215
+                                            ************************************************************************ PP
+
+                                Bac_leu 212 eaaledleellelleaqkitvsflptalaelllslekptLrtlliGGdrlrelekellpefelvnnYGPtEa 283
+                                            +++l d+++l++++e++ +t++flpt+lae++++le+++Lr+ll+GGd+l+++ k+  p ++++nnYGPtE+
+  nrpspksdomains_ctg1_323_AMP-binding.3 216 AIRL-DITRLNHYFEENGVTITFLPTQLAEQFMELENTSLRMLLVGGDKLKRAVKQ--P-YTIINNYGPTEN 283
+                                            *999.78********************************************99999..5.99********** PP
+
+                                Bac_leu 284 tvvatsgeveeeeadgalsIGrpianarvyvLdeelqpvpvgvaGeLyigGagvarGYlnrpeltaerFlad 355
+                                            tvvatsg +  + ++g+lsIGr+ian+rvy+L +  q++p g+aGeL+++G+g+arGYlnr+e ta+rF+ad
+  nrpspksdomains_ctg1_323_AMP-binding.3 284 TVVATSGVI--NPEEGSLSIGRAIANTRVYILGDGDQVQPEGIAGELCVAGRGLARGYLNREEETAKRFTAD 353
+                                            *********..666689******************************************************* PP
+
+                                Bac_leu 356 pfseepgarlYrtGDlarwladGnleylGRnDdqvkiR 393
+                                            pf   pg+r+YrtGDl++w+a++ +ey+GR+D+qvk+R
+  nrpspksdomains_ctg1_323_AMP-binding.3 354 PF--VPGERMYRTGDLVKWNAQCGIEYIGRIDQQVKVR 389
+                                            **..89*******************************9 PP
+
+>> nrpspksdomains_ctg1_322_AMP-binding.3  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  498.2   0.0  2.1e-152  6.4e-151       1     393 [.       1     389 []       1     389 [] 0.93
+
+  Alignments for each domain:
+  == domain 1  score: 498.2 bits;  conditional E-value: 2.1e-152
+                                Bac_leu   1 feeqaaktpdavAvvaedqkltYaeLneranrlarrLrelgvkpddrvavllerslelvvalLavlkaGaay 72 
+                                            fe++aa+ ++++A++++++k+tY eLn+ranr+ar L++ gv++d+rv++l++ sle+ +++L+vlkaGaa+
+  nrpspksdomains_ctg1_322_AMP-binding.3   1 FEDTAARYANRPAAAYNGAKWTYGELNARANRIARILMDCGVTADERVGILTKPSLEMAAGVLGVLKAGAAF 72 
+                                            8999******************************************************************** PP
+
+                                Bac_leu  73 vpldpaypeeRlaylledsaakvvltqaelaerleeaevevldl......deedleeeaeedpeveelesed 138
+                                            vp+dp+ypeeR++y+l+ds+ak++ltq++l    + ++ e++ l       +  l+e++e+ + ++e+++++
+  nrpspksdomains_ctg1_322_AMP-binding.3  73 VPIDPDYPEERISYILQDSGAKLLLTQEALGVPES-YKGETILLdgsrsiLSLPLDENDEA-NPQTETTADH 142
+                                            ****************************9877766.6777777733221112222333333.3334699*** PP
+
+                                Bac_leu 139 lAyviYTSGstGqPKGvmvehrslanlvewhaeafeltaedrvlsvaglafDasvwevwpalaaGatlvlap 210
+                                            lAy+iYTSG+tGqPKGvmveh++l+nl+ wh++af++ta+d+ +++ag++fDas+we++p+++ Ga+l++++
+  nrpspksdomains_ctg1_322_AMP-binding.3 143 LAYMIYTSGTTGQPKGVMVEHHALVNLCFWHHDAFAMTADDKSAKYAGFGFDASIWEMFPTWTIGAELHVID 214
+                                            ************************************************************************ PP
+
+                                Bac_leu 211 aeaaledleellelleaqkitvsflptalaelllslekptLrtlliGGdrlrelekellpefelvnnYGPtE 282
+                                            ++++l d+++l++++e++ +t++flpt+lae++++le+++Lr+ll+GGd+l+++ k+  p ++++nnYGPtE
+  nrpspksdomains_ctg1_322_AMP-binding.3 215 EAIRL-DITRLNHYFEEHGVTITFLPTQLAEQFMDLENTSLRMLLVGGDKLKRAVKQ--P-YTIINNYGPTE 282
+                                            **999.78********************************************99999..5.99********* PP
+
+                                Bac_leu 283 atvvatsgeveeeeadgalsIGrpianarvyvLdeelqpvpvgvaGeLyigGagvarGYlnrpeltaerFla 354
+                                            +tvvatsg +  + ++g+lsIGr+ian+rvy+L +  q++p g+aGeL+++G+g+arGYlnr+e ta+rF+a
+  nrpspksdomains_ctg1_322_AMP-binding.3 283 NTVVATSGVI--NPEEGSLSIGRAIANTRVYILGDGDQVQPEGIAGELCVAGRGLARGYLNREEETAKRFTA 352
+                                            **********..666689****************************************************** PP
+
+                                Bac_leu 355 dpfseepgarlYrtGDlarwladGnleylGRnDdqvkiR 393
+                                            dpf   pg+r+YrtGDl++w+a++ +ey+GR+D+qvk+R
+  nrpspksdomains_ctg1_322_AMP-binding.3 353 DPF--VPGERMYRTGDLVKWNAQCGIEYIGRIDQQVKVR 389
+                                            ***..89*******************************9 PP
+
+>> nrpspksdomains_ctg1_1760_AMP-binding.1  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  468.6   0.0    2e-143  6.1e-142       1     393 [.       1     394 []       1     394 [] 0.93
+
+  Alignments for each domain:
+  == domain 1  score: 468.6 bits;  conditional E-value: 2e-143
+                                 Bac_leu   1 feeqaaktpdavAvvaedqkltYaeLneranrlarrLrelgvkpddrvavllerslelvvalLavlkaGaa 71 
+                                             feeqa++tp+++Av +++++ltY+eLne+anrlar+Lr+ gv+pd++va+l++rsle++v+++av+kaG+a
+  nrpspksdomains_ctg1_1760_AMP-binding.1   1 FEEQAERTPEHTAVKFKNDHLTYRELNEKANRLARTLRNCGVQPDTLVAILADRSLEMIVSIIAVWKAGGA 71 
+                                             89********************************************************************* PP
+
+                                 Bac_leu  72 yvpldpaypeeRlaylledsaakvvltqaelaerleeaevevldldeedleeeaeedpeveelesedlAyv 142
+                                             yvpldp+yp+eRl+yll+d+ a v+l+q++l+++l+  + +v+dl++e+  ++ + +   + + +++lAyv
+  nrpspksdomains_ctg1_1760_AMP-binding.1  72 YVPLDPEYPKERLQYLLHDADADVLLVQHHLKNSLA-FDGPVIDLNDETSYHA-DCSLLSPVAGHSHLAYV 140
+                                             ***********************************9.78******66655555.5666777789******* PP
+
+                                 Bac_leu 143 iYTSGstGqPKGvmvehrslanlvewhaeafeltaedrvlsvaglafDasvwevwpalaaGatlvlapaea 213
+                                             iYTSG+tG+PKGvmveh +++n ++w+++ f+ ++ drvl +  + fDa++++++  l++Gatl+l+p+e+
+  nrpspksdomains_ctg1_1760_AMP-binding.1 141 IYTSGTTGKPKGVMVEHGGIVNSLQWKKAFFKHSPADRVLVLYPYVFDAFILNFFGPLISGATLHLLPNEE 211
+                                             **********************************************************************9 PP
+
+                                 Bac_leu 214 aledleellelleaqkitvsflptalaellls.lekp....tLrtlliGGdrlr.ele...kellpefelv 275
+                                             ++e+  ++++ +++++it+   ++ l++++++ ++ +    +++++++GG++l+ ++    ++l p++++ 
+  nrpspksdomains_ctg1_1760_AMP-binding.1 212 NKET-FAIQNAIKQERITHFSTSPRLLKTMIEqMN-RedfiHVQHVVVGGEQLEaDTVeklHSLQPRIRIN 280
+                                             9988.89***********99999999999998533.33678**********99843330113345677*** PP
+
+                                 Bac_leu 276 nnYGPtEatvvatsgeveeeeadgalsIGrpianarvyvLdeelqpvpvgvaGeLyigGagvarGYlnrpe 346
+                                             n+YGPtE++vv+t ++v  ++ad++++IG p+an+++y+L +++q++p+gv+GeLy+gGagvarGYlnrpe
+  nrpspksdomains_ctg1_1760_AMP-binding.1 281 NEYGPTENSVVSTFHPV--QSADEQITIGSPVANHQAYILGAHHQIQPIGVPGELYVGGAGVARGYLNRPE 349
+                                             *****************..888899********************************************** PP
+
+                                 Bac_leu 347 ltaerFladpfseepgarlYrtGDlarwladGnleylGRnDdqvkiR 393
+                                             lt+e+F+++ +   pg+++Y+tGDlarwl+dG++eylGR+D+qvkiR
+  nrpspksdomains_ctg1_1760_AMP-binding.1 350 LTEEKFVEHLH--VPGQKMYKTGDLARWLPDGRIEYLGRIDHQVKIR 394
+                                             ********988..89*******************************9 PP
+
+>> nrpspksdomains_ctg1_324_AMP-binding.1  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  454.5   0.0  3.8e-139  1.2e-137       1     393 [.       1     398 []       1     398 [] 0.93
+
+  Alignments for each domain:
+  == domain 1  score: 454.5 bits;  conditional E-value: 3.8e-139
+                                Bac_leu   1 feeqaaktpdavAvvaedqkltYaeLneranrlarrLrelgvkpddrvavllerslelvvalLavlkaGaay 72 
+                                            f+e+++ +pda+A+++++q+l+Y eL+e+anrlarrL+++g+++d++va++++rslelv+++L+vlkaGaay
+  nrpspksdomains_ctg1_324_AMP-binding.1   1 FKEAVNVNPDAPALTYSGQTLSYCELDEEANRLARRLQKQGAGKDTVVALYTKRSLELVIGILGVLKAGAAY 72 
+                                            7899******************************************************************** PP
+
+                                Bac_leu  73 vpldpaypeeRlaylledsaakvvltqaelaerleeaeve..vldldeedleeeaeedpeveelesedlAyv 142
+                                            +p+dp+ pe+R++y+l+dsaa+++lt++e++e++++   +  +l +d+++  ee+++dp++ +++++d Ay+
+  nrpspksdomains_ctg1_324_AMP-binding.1  73 LPVDPKLPEDRISYMLADSAAACLLTHQEMKEKAAQLPYTgtTLIIDDQARFEEQASDPAA-AIDPDDPAYI 143
+                                            ********************************99976544225555555555555555555.6********* PP
+
+                                Bac_leu 143 iYTSGstGqPKGvmvehrslanlvewhaeafeltaedrvlsvaglafDasvwevwpalaaGatlvlapaeaa 214
+                                            +YTSG+tG+PKG + +h++++ lv+ h+++++++++d++lsv+++afDa++++++ ++++ a+l++a++++ 
+  nrpspksdomains_ctg1_324_AMP-binding.1 144 MYTSGTTGKPKGNITTHANIQGLVK-HVDYMAFSEKDTFLSVSNYAFDAFTFDFYASILNAARLIIADEHTL 214
+                                            *************************.********************************************** PP
+
+                                Bac_leu 215 ledleellelleaqkitvsflptalaellls..lekp.tLrtlliGGdrlr.elekellpef...elvnnYG 279
+                                            l++ e+l++l+++++++v+f +tal++ll++  +e+   Lr++l+GG+r +  + +++l+ +   +l+n+YG
+  nrpspksdomains_ctg1_324_AMP-binding.1 215 LDT-ERLTDLIRQENVNVMFATTALFNLLTDagEEWLkGLRCVLFGGERASvPHVRKALEIMgpgKLINCYG 285
+                                            *88.***************************7766658**********99966667767766888******* PP
+
+                                Bac_leu 280 PtEatvvatsgeveeeead.galsIGrpianarvyvLdeelqpvpvgvaGeLyigGagvarGYlnrpeltae 350
+                                            PtE tv+at++ v++  ++ ++l+IG+pi+na+vy+L+ ++q++p g++GeL+i+G gv++GYlnr++lt++
+  nrpspksdomains_ctg1_324_AMP-binding.1 286 PTEGTVFATAHVVHDIPDSlSSLPIGKPISNASVYILNGQNQLQPFGAVGELCISGMGVSKGYLNRHDLTKQ 357
+                                            *************87777799*************************************************** PP
+
+                                Bac_leu 351 rFladpfseepgarlYrtGDlarwladGnleylGRnDdqvkiR 393
+                                             F+++pf  +pg++lYrtGDlarwl+dG++ey+GR+DdqvkiR
+  nrpspksdomains_ctg1_324_AMP-binding.1 358 TFIPNPF--KPGETLYRTGDLARWLPDGTIEYAGRIDDQVKIR 398
+                                            *******..78*******************************9 PP
+
+>> nrpspksdomains_ctg1_323_AMP-binding.1  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  452.4   0.0  1.7e-138  5.1e-137       1     393 [.       1     394 []       1     394 [] 0.95
+
+  Alignments for each domain:
+  == domain 1  score: 452.4 bits;  conditional E-value: 1.7e-138
+                                Bac_leu   1 feeqaaktpdavAvvaedqkltYaeLneranrlarrLrelgvkpddrvavllerslelvvalLavlkaGaay 72 
+                                            fe+qa++tp ++A+ + ++++tY+e+ne anrlar+L++ g++++++ a++ +rs+e+vv++LavlkaG+ay
+  nrpspksdomains_ctg1_323_AMP-binding.1   1 FEAQANRTPASIAIKEAGREWTYREVNEAANRLARHLVKSGLEKGRTAAIMNDRSAETVVGMLAVLKAGGAY 72 
+                                            89********************************************************************** PP
+
+                                Bac_leu  73 vpldpaypeeRlaylledsaakvvltqaelaerleeaevevldldeedleeeaeedpeveelesedlAyviY 144
+                                            vp+dpa+pe+Rl+++ eds+ ++vlt ++ +e++ + +v+v+ lde++ e+ + +d +++ +  +dlAy++Y
+  nrpspksdomains_ctg1_323_AMP-binding.1  73 VPIDPAFPEDRLRFMAEDSSIRLVLTVQDYQEQAGALQVPVVMLDESADETVSGTDLNLP-AGGNDLAYIMY 143
+                                            ********************************************7777776666676666.899******** PP
+
+                                Bac_leu 145 TSGstGqPKGvmvehrslanlvewhaeafeltaedrvlsvaglafDasvwevwpalaaGatlvlapaeaale 216
+                                            TSGstG+PKGvm+ehr++++lv+ h +++ +++edr++++  ++fDa ++ev+ al++Ga+l+ +++e+ l+
+  nrpspksdomains_ctg1_323_AMP-binding.1 144 TSGSTGKPKGVMIEHRNIIRLVK-HSNYVPVHEEDRMAQTGAVSFDAGTFEVFGALLNGASLHPVKKETLLD 214
+                                            ***********************.***********************************************8 PP
+
+                                Bac_leu 217 dleellelleaqkitvsflptalaelllslekp...tLrtlliGGd....rlrelekellpefelvnnYGPt 281
+                                               +++++l++q+it++ l+++l+++l++++     tLr+l+iGGd    ++ +  +++ pe++l n YGPt
+  nrpspksdomains_ctg1_323_AMP-binding.1 215 A-GQFAQFLKEQRITTMWLTSPLFNQLAQKDAGmfnTLRHLIIGGDalvpHIVSKVRKASPELSLWNGYGPT 285
+                                            8.***************************6654567**********55554456677778999********* PP
+
+                                Bac_leu 282 EatvvatsgeveeeeadgalsIGrpianarvyvLdeelqpvpvgvaGeLyigGagvarGYlnrpeltaerFl 353
+                                            E+t+++ts  + +++ dg+++IG+pi n ++y++de+++++p+g++GeL++gG+gvarGY+n pelt+++F+
+  nrpspksdomains_ctg1_323_AMP-binding.1 286 ENTTFSTSFLI-DQDYDGSVPIGKPIGNSTAYIMDENRNLQPIGAPGELCVGGSGVARGYVNLPELTEKQFV 356
+                                            ***********.888899****************************************************** PP
+
+                                Bac_leu 354 adpfseepgarlYrtGDlarwladGnleylGRnDdqvkiR 393
+                                            +dpf  +p++ +YrtGDla+wl+dG++e+lGR+D+qvk+R
+  nrpspksdomains_ctg1_323_AMP-binding.1 357 RDPF--RPDEMIYRTGDLAKWLPDGTIEFLGRIDNQVKVR 394
+                                            ****..79*******************************9 PP
+
+>> nrpspksdomains_ctg1_1759_AMP-binding.1  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  451.8   0.0  2.6e-138    8e-137       2     393 ..       2     407 .]       1     407 [] 0.92
+
+  Alignments for each domain:
+  == domain 1  score: 451.8 bits;  conditional E-value: 2.6e-138
+                                 Bac_leu   2 eeqaaktpdavAvvaedqkltYaeLneranrlarrLrelgvkpddrvavllerslelvvalLavlkaGaay 72 
+                                             eeqa++tpd++Avv+ed++ltY+eLneran+lar+L+++gv+pd+ v++++ersl+++v++ ++lkaG+ay
+  nrpspksdomains_ctg1_1759_AMP-binding.1   2 EEQAERTPDQTAVVYEDSRLTYRELNERANQLARTLQSEGVQPDQPVGIMAERSLDMIVGIFGILKAGGAY 72 
+                                             89********************************************************************* PP
+
+                                 Bac_leu  73 vpldpaypeeRlaylledsaakvvltqaelaerleeaevevldldeedleeeaeedpeveelesedlAyvi 143
+                                             vp+dp ypeeR++y+leds  k++l+q++ +er++  + +vld+++ +   e+  ++  +++ +++lAyvi
+  nrpspksdomains_ctg1_1759_AMP-binding.1  73 VPIDPGYPEERVRYILEDSDTKLLLVQNQSQERVP-FTGKVLDMKDPQNFCED-GSNVEPAAGPDHLAYVI 141
+                                             ***********************************.67999999666555554.445555689******** PP
+
+                                 Bac_leu 144 YTSGstGqPKGvmvehrslanlvewhaeafeltaedrvlsvaglafDasvwevwpalaaGatlvlapaeaa 214
+                                             YTSGstG+PKGvmvehrs++n + w +e++ l+++d++l+ + ++fD+svwe+++  ++G++lvl+p+  +
+  nrpspksdomains_ctg1_1759_AMP-binding.1 142 YTSGSTGKPKGVMVEHRSVINRLVWMQEKYPLDERDAILQKTAITFDVSVWELFWWTISGSRLVLLPNGGE 212
+                                             *********************************************************************99 PP
+
+                                 Bac_leu 215 ledleellelleaqkit.vsflptalaelllslekp..........tLrtlliGGdrlrelekellpef.. 272
+                                             +++ e +l++++++ ++ + f+p++l   l s++++          +Lr+++  G++l+ ++ + ++++  
+  nrpspksdomains_ctg1_1759_AMP-binding.1 213 KNP-ELILDTIAQKGVStMHFVPAMLHAFLESMDQKpsgmlkqklaSLRHVFASGEALKPVHVAGFKRIit 282
+                                             999.999*********956677777777777744444777888899**********999777766666566 PP
+
+                                 Bac_leu 273 .....elvnnYGPtEatvvatsgeveeeeadgalsIGrpianarvyvLdeelq.pvpvgvaGeLyigGagv 337
+                                                  +++n YGPtEat+  +   +++ee+ ++++IG+pi+n ++y+L ++l+ ++p+gvaGeL+i+G g+
+  nrpspksdomains_ctg1_1759_AMP-binding.1 283 svsqaQIINLYGPTEATIDVSYFDCQTEETYASIPIGKPISNIQLYILHADLEhMQPIGVAGELCIAGDGL 353
+                                             66777********************999999******************9976156*************** PP
+
+                                 Bac_leu 338 arGYlnrpeltaerFladpfseepgarlYrtGDlarwladGnleylGRnDdqvkiR 393
+                                             arGYlnrpeltae+F+++p+++  g+r+YrtGDlarwl+dGn+eylGR+D+qvkiR
+  nrpspksdomains_ctg1_1759_AMP-binding.1 354 ARGYLNRPELTAEKFVNHPIAS--GERIYRTGDLARWLPDGNIEYLGRIDHQVKIR 407
+                                             ********************66..*******************************9 PP
+
+>> nrpspksdomains_ctg1_1760_AMP-binding.2  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  444.7   0.0  3.7e-136  1.1e-134       1     393 [.       1     395 []       1     395 [] 0.92
+
+  Alignments for each domain:
+  == domain 1  score: 444.7 bits;  conditional E-value: 3.7e-136
+                                 Bac_leu   1 feeqaaktpdavAvvaedqkltYaeLneranrlarrLrelgvkpddrvavllerslelvvalLavlkaGaa 71 
+                                             feeq+++tpd+ Av+++d++ltY eLn+ranrlar+Lr++gv++d+ va++++ s+e vv++Lavlk+G+a
+  nrpspksdomains_ctg1_1760_AMP-binding.2   1 FEEQSQRTPDQAAVIDKDRQLTYGELNKRANRLARTLRAKGVQTDQPVAIITRNSIESVVGILAVLKSGGA 71 
+                                             89********************************************************************* PP
+
+                                 Bac_leu  72 yvpldpaypeeRlaylledsaakvvltqaelaerleeaevevldldeedleeeaeedpeveelesedlAyv 142
+                                             yvp+dp+yp++R++y+l+ds+a +vl+q++++++l+ + v+vl  de +++++ ++   ++  ++++lAyv
+  nrpspksdomains_ctg1_1760_AMP-binding.2  72 YVPIDPEYPQDRIRYMLDDSQAGIVLMQRDVRKQLAYEGVTVLLDDEGSYHQDGSD--LAPINDASHLAYV 140
+                                             ************************************88777766666665555544..444569******* PP
+
+                                 Bac_leu 143 iYTSGstGqPKGvmvehrslanlvewhaeafeltaedrvlsvaglafDasvwevwpalaaGatlvlapaea 213
+                                             iYTSGstG+PKGv++ehr+l+n + w +e +   ++ ++  +++++fD +v  +++ l++G+++++++ e 
+  nrpspksdomains_ctg1_1760_AMP-binding.2 141 IYTSGSTGRPKGVLIEHRGLTNYIWWAKEVYVKGEKANFPLYSSISFDLTVTSIFTPLVTGNAIIVYDGED 211
+                                             *******************************************************************9997 PP
+
+                                 Bac_leu 214 aledleellelleaqkitvsflptalaellls...lekptLrtlliGGdrlr.elekellpef....elvn 276
+                                             +++    l +++++ +++++ l++a +++l +    +++++r +++GG++l+ +l ++ +++f    e++n
+  nrpspksdomains_ctg1_1760_AMP-binding.2 212 KTA---LLESIVRDPRVDIIKLTPAHLQVLKEmniADQTAVRRMIVGGENLStRLARSIHEQFegriEICN 279
+                                             774...5899999*******9999999998885544556**********877445555445545556**** PP
+
+                                 Bac_leu 277 nYGPtEatvvatsgeveeeead.galsIGrpianarvyvLdeelqpvpvgvaGeLyigGagvarGYlnrpe 346
+                                             +YGPtE+ v +  ++++++++  ++++IG + an+++yvLde+++p p+gv+Ge+yi+GagvarGYlnrpe
+  nrpspksdomains_ctg1_1760_AMP-binding.2 280 EYGPTETVVGCMIYRYDAAKDRrESVPIGTAAANTSIYVLDENMKPAPIGVPGEIYISGAGVARGYLNRPE 350
+                                             ****************88777779*********************************************** PP
+
+                                 Bac_leu 347 ltaerFladpfseepgarlYrtGDlarwladGnleylGRnDdqvkiR 393
+                                             ltae+F++dpf  epga++Y+tGDla+wladGn+ey+GR+D+qvkiR
+  nrpspksdomains_ctg1_1760_AMP-binding.2 351 LTAEKFVDDPF--EPGAKMYKTGDLAKWLADGNIEYAGRIDEQVKIR 395
+                                             ***********..79*******************************9 PP
+
+>> nrpspksdomains_ctg1_1759_AMP-binding.2  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  439.6   0.0  1.3e-134  4.1e-133       1     393 [.       1     399 []       1     399 [] 0.94
+
+  Alignments for each domain:
+  == domain 1  score: 439.6 bits;  conditional E-value: 1.3e-134
+                                 Bac_leu   1 feeqaaktpdavAvvaedqkltYaeLneranrlarrLrelgvkpddrvavllerslelvvalLavlkaGaa 71 
+                                             feeqa++tp++ A+v+ed+k+tY+ +neran+lar+L+++g++++++v++++ers+e+v+++La+lkaG+ 
+  nrpspksdomains_ctg1_1759_AMP-binding.2   1 FEEQAERTPEQAAIVFEDKKMTYRIVNERANQLARTLVAKGLQAEELVGIMAERSPEMVIGILAILKAGGV 71 
+                                             89********************************************************************* PP
+
+                                 Bac_leu  72 yvpldpaypeeRlaylledsaakvvltqaelaerleeaevevldldeedleeeaeedpeveelesedlAyv 142
+                                             yvp+dp+yp+eR++y+leds+++++l q++l e ++ ++ +++ ld+ +   +++++ +++ + +++lAyv
+  nrpspksdomains_ctg1_1759_AMP-binding.2  72 YVPIDPDYPKERIHYMLEDSNVSILLLQHHLLEGTD-YQSHTVFLDDPSSYGAEASNLKLN-VMPNQLAYV 140
+                                             *********************************999.678888998888777776777765.99******* PP
+
+                                 Bac_leu 143 iYTSGstGqPKGvmvehrslanlvewhaeafeltaedrvlsvaglafDasvwevwpalaaGatlvlapaea 213
+                                             iYTSG+tG+PKG ++eh+++++l+  +++ f+++a+d+ + + ++ fD svwe++ al+ G +lv++p+++
+  nrpspksdomains_ctg1_1759_AMP-binding.2 141 IYTSGTTGNPKGTLIEHKNVVRLLFNNKNVFDFNASDTWTLFHSFCFDFSVWEMYGALLYGGKLVIIPKQI 211
+                                             *********************************************************************** PP
+
+                                 Bac_leu 214 aledleellelleaqkitvsflptalaelllslekp......tLrtlliGGdrlr.elekellpef...el 274
+                                             a+++ e+ l+ll+++ +t+   +++ + +l+++e++      ++r +++GG++l+ ++ k+   ++   +l
+  nrpspksdomains_ctg1_1759_AMP-binding.2 212 AKNP-ERYLQLLKSEAVTILNQTPSYFYQLMQEERAdpesnlNIRKIIFGGEALNpSFLKDWKLKYpltQL 281
+                                             ****.*************9998888888888855444578889*********99977777655444555** PP
+
+                                 Bac_leu 275 vnnYGPtEatvvatsgeveeeead.galsIGrpianarvyvLdeelqpvpvgvaGeLyigGagvarGYlnr 344
+                                             +n+YG tE+tv  t +e++e+e d g  +IG+pi   ++y+Lde ++++ +g++GeLy++G+g+arGYlnr
+  nrpspksdomains_ctg1_1759_AMP-binding.2 282 INMYGITETTVHVTYKEITEREIDeGRSNIGQPIPTLQAYILDEYQRIQVMGIPGELYVAGEGLARGYLNR 352
+                                             ******************99998889********************************************* PP
+
+                                 Bac_leu 345 peltaerFladpfseepgarlYrtGDlarwladGnleylGRnDdqvkiR 393
+                                             pelt e+F+++pf++  g+++Y+tGD+arwl+dGn+eylGR+D+qvkiR
+  nrpspksdomains_ctg1_1759_AMP-binding.2 353 PELTGEKFVEHPFAA--GEKMYKTGDVARWLPDGNIEYLGRIDHQVKIR 399
+                                             *************55..*******************************9 PP
+
+>> nrpspksdomains_ctg1_322_AMP-binding.2  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  438.2   0.0  3.5e-134  1.1e-132       1     393 [.       1     397 []       1     397 [] 0.94
+
+  Alignments for each domain:
+  == domain 1  score: 438.2 bits;  conditional E-value: 3.5e-134
+                                Bac_leu   1 feeqaaktpdavAvvaedqkltYaeLneranrlarrLrelgvkpddrvavllerslelvvalLavlkaGaay 72 
+                                            feeqa+k+pd++A+++e+++l+Y++Lneranrlar+++++g + +++ avl+ers++++v+++avlkaG+ay
+  nrpspksdomains_ctg1_322_AMP-binding.2   1 FEEQARKNPDRTALQFEGETLSYQQLNERANRLARHILSVG-GGGKTAAVLCERSMDMIVSIMAVLKAGSAY 71 
+                                            89**************************************9.667999************************ PP
+
+                                Bac_leu  73 vpldpaypeeRlaylledsaakvvltqaelaerleeaeve.vldldeedleeeaeedpeveelesedlAyvi 143
+                                            vp+dp++p +R++++++ds+a+v+ltq++l+  +e+a  + v+ l++++++ e+++++ +   +s+ +A + 
+  nrpspksdomains_ctg1_322_AMP-binding.2  72 VPIDPEHPVQRIQHFFRDSGANVLLTQQSLKPLAEKAGFQgVIVLADDEASYEKDSRNPALPFDSKTIANLT 143
+                                            ***********************************999764666666666666655555556********** PP
+
+                                Bac_leu 144 YTSGstGqPKGvmvehrslanlvewhaeafeltaedrvlsvaglafDasvwevwpalaaGatlvlapaeaal 215
+                                            YTSG+tG+PKG +v+h++++++v+ +++++++++ed+vl ++++ fDa++++++ +l++Ga+lv++p+++ l
+  nrpspksdomains_ctg1_322_AMP-binding.2 144 YTSGTTGTPKGNIVTHANILRTVK-NTNYLTVSEEDTVLGLSNYVFDAFMFDMFGSLLNGAKLVIVPKDTVL 214
+                                            ************************.99******************************************999 PP
+
+                                Bac_leu 216 edleellelleaqkitvsflptalaelllslekp...tLrtlliGGdrlr.elekellpef...elvnnYGP 280
+                                             d+++l+++++++++++ +++tal++ll+++e +   tLr +++GG+r + e+ k++l+++   +l+++YGP
+  nrpspksdomains_ctg1_322_AMP-binding.2 215 -DMSRLSRVIKRENVSILMITTALFHLLVDMEPScltTLRKIMFGGERASvEHVKKALAAVgkgRLLHMYGP 285
+                                            .56***************************8866788**********99877888878777888******** PP
+
+                                Bac_leu 281 tEatvvatsgeveeeead.galsIGrpianarvyvLdeelqpvpvgvaGeLyigGagvarGYlnrpeltaer 351
+                                            +E+tv+at ++v+  e+d  +++IG+p++n++v++++++++++p g+aGeL+++G+g+  GY+nrpelt+e+
+  nrpspksdomains_ctg1_322_AMP-binding.2 286 SESTVFATYHPVDVIEEDtLSVPIGKPVSNTEVFIMNSAGRIQPAGIAGELCVSGEGLVEGYYNRPELTEEK 357
+                                            ************998888799*************************************************** PP
+
+                                Bac_leu 352 FladpfseepgarlYrtGDlarwladGnleylGRnDdqvkiR 393
+                                            F+++pf+e  g+r+Y+tGDlarwl++G++e++GR+D+qvkiR
+  nrpspksdomains_ctg1_322_AMP-binding.2 358 FVKHPFKE--GERMYKTGDLARWLPNGDIEFIGRIDHQVKIR 397
+                                            ******55..*******************************9 PP
+
+>> nrpspksdomains_ctg1_2831_AMP-binding.1  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  428.8   0.0  2.5e-131  7.4e-130       1     393 [.       1     399 []       1     399 [] 0.92
+
+  Alignments for each domain:
+  == domain 1  score: 428.8 bits;  conditional E-value: 2.5e-131
+                                 Bac_leu   1 feeqaaktpdavAvvaedqkltYaeLneranrlarrLrelgvkpddrvavllerslelvvalLavlkaGaa 71 
+                                             f eqa ktpd++A+++e+++l+YaeLn+ran+la  L+e+g++p++  a+ll rs +l v++Lavlk+Gaa
+  nrpspksdomains_ctg1_2831_AMP-binding.1   1 FYEQAVKTPDRPAIITENEELSYAELNKRANQLAGMLKEKGLGPEQFAALLLPRSQDLAVSMLAVLKTGAA 71 
+                                             6789******************************************************************* PP
+
+                                 Bac_leu  72 yvpldpaypeeRlaylledsaakvvltqaelaerleeae.vevldldeedleeea.eedpeve...elese 137
+                                             y+pldp++p+eR++y+l+d+++++++t+ el+ r++e++ ++++ ld+ d+ ++  +++++ +   e ++ 
+  nrpspksdomains_ctg1_2831_AMP-binding.1  72 YLPLDPDFPSERITYMLKDAQPACLITTMELSGRMPEDSdAKRIILDDPDTVKTVaAQNADCPaqtECSPL 142
+                                             ***********************************987658999997665544442333333322378899 PP
+
+                                 Bac_leu 138 dlAyviYTSGstGqPKGvmvehrslanlvewhaeafeltaedrvlsvaglafDasvwevwpalaaGatlvl 208
+                                             + Ay+iYTSGstG+PKGv+v+ +s++n++   +e+f l ++dr+l v++ afD s +e++  l++Ga +v+
+  nrpspksdomains_ctg1_2831_AMP-binding.1 143 HPAYIIYTSGSTGKPKGVVVTLKSVSNFLLSMREMFPLGEQDRLLAVTTAAFDISGLELFLPLISGAGCVI 213
+                                             *********************************************************************** PP
+
+                                 Bac_leu 209 apaeaaledleellelleaqkitvsflptalaelllslekptLrtl..liGGdrlr.elekell.pefelv 275
+                                             a++e+ +e+ ++l++++++  i+++  +++l + l++ e ++Lr l  l+GG++l  +l+++ll ++++++
+  nrpspksdomains_ctg1_2831_AMP-binding.1 214 ARKETIQEP-RALAHMIHSYGISIMQATPTLWHSLVTNEPDSLRALqvLVGGEALPnALMHALLeSGCTVT 283
+                                             *********.*****************999******99988999643389*****9444444441345*** PP
+
+                                 Bac_leu 276 nnYGPtEatvvatsgeveeeeadgalsIGrpianarvyvLdeelqpvpvgvaGeLyigGagvarGYlnrpe 346
+                                             n YGPtE+t+ ++++++ +++++ga++IG+pi n+rvyvLd++lqpvp+g+aGeLyi+G+g+arGY+nrp+
+  nrpspksdomains_ctg1_2831_AMP-binding.1 284 NLYGPTETTIWSAAQPL-AKDHTGAPPIGKPIWNTRVYVLDAALQPVPPGIAGELYIAGEGLARGYYNRPD 353
+                                             *****************.888889*********************************************** PP
+
+                                 Bac_leu 347 ltaerFladpfseepgarlYrtGDlarwladGnleylGRnDdqvkiR 393
+                                             ltaerF+adp+   +gar+YrtGDl+rw++dG+l+y+ R+D+q+kiR
+  nrpspksdomains_ctg1_2831_AMP-binding.1 354 LTAERFIADPYGP-AGARMYRTGDLVRWREDGSLDYISRADHQIKIR 399
+                                             ***********77.9*******************************9 PP
+
+>> nrpspksdomains_ctg1_1761_AMP-binding.1  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  427.8   0.0  5.1e-131  1.5e-129       1     393 [.       1     395 []       1     395 [] 0.94
+
+  Alignments for each domain:
+  == domain 1  score: 427.8 bits;  conditional E-value: 5.1e-131
+                                 Bac_leu   1 feeqaaktpdavAvvaedqkltYaeLneranrlarrLrelgvkpddrvavllerslelvvalLavlkaGaa 71 
+                                             fe qa+++pd+ Av+++++++tY++Lneranrlar+Lr++gv++d+ va+++ + +el+v++LavlkaG+a
+  nrpspksdomains_ctg1_1761_AMP-binding.1   1 FEMQAEQSPDHEAVIFGNERYTYRQLNERANRLARTLRTKGVQADQFVAIICPHRIELIVGILAVLKAGGA 71 
+                                             899******************************************************************** PP
+
+                                 Bac_leu  72 yvpldpaypeeRlaylledsaakvvltqaelaerleeaevevldldeedleeeaeedpeveelesedlAyv 142
+                                             yvp+dp+ype+R++y+l+ds+a+vvltq++l ++l+ ++ +v+ ldee+  +e++++ e +  +++dlAy+
+  nrpspksdomains_ctg1_1761_AMP-binding.1  72 YVPIDPEYPEDRIQYMLRDSRAEVVLTQRSLLDQLP-YDGDVVLLDEENSYHEEHSNLESD-SDAHDLAYM 140
+                                             ************************************.789999998888888876666665.99******* PP
+
+                                 Bac_leu 143 iYTSGstGqPKGvmvehrslanlvewhaeafeltaedrvlsvaglafDasvwevwpalaaGatlvlapaea 213
+                                             iYTSGstG+PKGv++eh++la+ + w +e +   +++++  +++++fD +v  +++ l++G+t+++ + e 
+  nrpspksdomains_ctg1_1761_AMP-binding.1 141 IYTSGSTGNPKGVLIEHQGLADYIWWAKEVYVRGEKTNFPLYSSISFDLTVTSIFTPLVTGNTIIVFDGED 211
+                                             ********************************************************************998 PP
+
+                                 Bac_leu 214 aledleellelleaqkitvsflptalaelllslekp...tLrtlliGGdrlr.elekellpef....elvn 276
+                                             ++   + l+e++++++i+++ l++a ++++ +++ +   ++r +++GG++l+ +l k+  ++f    +++n
+  nrpspksdomains_ctg1_1761_AMP-binding.1 212 KS---AVLSEIMRDSRIDMIKLTPAHLHVIKEMNIAggtAIRKMIVGGENLStRLAKSVSEQFkgrlDIFN 279
+                                             77...4599***********9999988888887665677**********7774444444444455569*** PP
+
+                                 Bac_leu 277 nYGPtEatvvatsgeveeeead.galsIGrpianarvyvLdeelqpvpvgvaGeLyigGagvarGYlnrpe 346
+                                             +YGPtEa v +  +++++e+++ + ++IG p an+ +yv d+++++vp+gv+Ge+yi+G gvarGY+nrp+
+  nrpspksdomains_ctg1_1761_AMP-binding.1 280 EYGPTEAVVGCMIYQFDAERDKrEFVPIGTPAANTDIYVADASRNLVPIGVIGEIYISGPGVARGYWNRPD 350
+                                             ****************988887799********************************************** PP
+
+                                 Bac_leu 347 ltaerFladpfseepgarlYrtGDlarwladGnleylGRnDdqvkiR 393
+                                             ltae+F+++p+   pga++Y++GDla++l+dGnl y+GR+D+qvkiR
+  nrpspksdomains_ctg1_1761_AMP-binding.1 351 LTAEKFVENPY--VPGAKMYKSGDLAKRLKDGNLVYIGRVDEQVKIR 395
+                                             ***********..89*******************************9 PP
+
+>> nrpspksdomains_ctg1_1787_AMP-binding.2  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  422.1   0.0  2.7e-129  8.1e-128       1     393 [.       1     393 []       1     393 [] 0.94
+
+  Alignments for each domain:
+  == domain 1  score: 422.1 bits;  conditional E-value: 2.7e-129
+                                 Bac_leu   1 feeqaaktpdavAvvaedqkltYaeLneranrlarrLrelgvkpddrvavllerslelvvalLavlkaGaa 71 
+                                             fe+qa++tpda Avv+++q ltY+eLneranr+a+ Lr++ v+p+++va+l+ r +el  ++L++lkaG+a
+  nrpspksdomains_ctg1_1787_AMP-binding.2   1 FERQAKETPDARAVVYDGQILTYRELNERANRIAAALRSNSVGPESVVALLTGRTTELASGILGILKAGGA 71 
+                                             89********************************************************************* PP
+
+                                 Bac_leu  72 yvpldpaypeeRlaylledsaakvvltqaelaerleeaevevldldeedleeeaeedpeveelesedlAyv 142
+                                             y+p+  + p+eR + +l+d++a ++l++ +l   l+  + ++l +++ ++++  ++++  +   +e+lAy+
+  nrpspksdomains_ctg1_1787_AMP-binding.2  72 YLPIGDDVPRERAEWMLKDCKADILLQSDKLDG-LP-LSGKRLFIEDIQTKAGLSSENPEPLGGPESLAYM 140
+                                             ************************999988665.55.367788887888888888888888899******* PP
+
+                                 Bac_leu 143 iYTSGstGqPKGvmvehrslanlvewhaeafeltaedrvlsvaglafDasvwevwpalaaGatlvlapaea 213
+                                             iYTSGstG+PKGvm+e+rs+++lv+ + +++++t+edr+l +++l+fD++++e++  l++Ga+l++ ++e+
+  nrpspksdomains_ctg1_1787_AMP-binding.2 141 IYTSGSTGAPKGVMIEQRSVIRLVK-NSNYIDFTPEDRLLFTSSLGFDVTTFEIFGPLLNGASLYVSDQET 210
+                                             *************************.99******************************************* PP
+
+                                 Bac_leu 214 aledleellelleaqkitvsflptalaelllslekp...tLrtlliGGdrlr....elekellpefelvnn 277
+                                              l++ + l ++++++ it+  l+++l+++l +++++    L  l+iGG++l+    ++ +++lp++++ n 
+  nrpspksdomains_ctg1_1787_AMP-binding.2 211 YLDS-DVLETFIQQNGITTLWLTSSLFNHLSEQNEHvfsGLSRLIIGGEALSpshvNRVRNALPHLSVWNG 280
+                                             **99.**************************95544588**********88753234456778999***** PP
+
+                                 Bac_leu 278 YGPtEatvvatsgeveeeeadgalsIGrpianarvyvLdeelqpvpvgvaGeLyigGagvarGYlnrpelt 348
+                                             YGPtE+t+++t   + e++ d++++IGrp+ n ++y++++++ p+p+gv+GeL+ gG gvarGY++rpelt
+  nrpspksdomains_ctg1_1787_AMP-binding.2 281 YGPTENTTFSTYFLI-EQSYDHSIPIGRPVGNSTAYIINSRGTPQPIGVIGELCTGGDGVARGYFGRPELT 350
+                                             ***************.888889************************************************* PP
+
+                                 Bac_leu 349 aerFladpfseepgarlYrtGDlarwladGnleylGRnDdqvkiR 393
+                                             +e+F+++pf   pg+r+YrtGDlarwl+dG++ey+GR+DdqvkiR
+  nrpspksdomains_ctg1_1787_AMP-binding.2 351 EEKFVPNPF--VPGERMYRTGDLARWLPDGTIEYAGRMDDQVKIR 393
+                                             *********..89*******************************9 PP
+
+>> nrpspksdomains_ctg1_1645_AMP-binding.1  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  419.2   0.0    2e-128  6.2e-127       1     393 [.       1     395 []       1     395 [] 0.93
+
+  Alignments for each domain:
+  == domain 1  score: 419.2 bits;  conditional E-value: 2e-128
+                                 Bac_leu   1 feeqaaktpdavAvvaedqkltYaeLneranrlarrLrelgvkpddrvavllerslelvvalLavlkaGaa 71 
+                                             fe+qaa+tpda+Avv+e+q+ltY+eL+e++ +la +L+++g++pdd+++++++rsl++ v+lL++lkaG+a
+  nrpspksdomains_ctg1_1645_AMP-binding.1   1 FERQAAETPDACAVVYEQQQLTYRELDEKSTKLALYLQAHGAGPDDLIGIYTDRSLHMAVGLLGILKAGGA 71 
+                                             89********************************************************************* PP
+
+                                 Bac_leu  72 yvpldpaypeeRlaylledsaakvvltqaelaerleeaevevldldeedleeeaeedpeve....elesed 138
+                                             yvpldp+yp++Rl+y+++ds+ +++lt+a+l+++l+   v++ ++ ++d+++ +++++e++     ++++d
+  nrpspksdomains_ctg1_1645_AMP-binding.1  72 YVPLDPSYPADRLEYMIADSRISMCLTTADLEHSLNWGGVQTTAI-DRDWSHIESTAAERTslkrLVTPDD 141
+                                             ************************************999999988.5666666644333332335788*** PP
+
+                                 Bac_leu 139 lAyviYTSGstGqPKGvmvehrslanlvewhaeafeltaedrvlsvaglafDasvwevwpalaaGatlvla 209
+                                             lAyviYTSGstG+PKGvm+ hr+l+n++   a++  l++ed++l v+++ fD +++e++  l++Ga++ + 
+  nrpspksdomains_ctg1_1645_AMP-binding.1 142 LAYVIYTSGSTGKPKGVMIPHRALTNFLISMANEPGLSSEDKLLAVTTYCFDIAALELYLPLIKGAECNIC 212
+                                             *********************************************************************** PP
+
+                                 Bac_leu 210 paeaaledleellelleaqkitvsflptalaelllslekp..tLrtlliGGdrlr.elekellpef.elvn 276
+                                             ++e++++  ++l+el+++ k t++  ++   ++l++  ++  +   +l+GG++l+ +l+++ l +  e  n
+  nrpspksdomains_ctg1_1645_AMP-binding.1 213 KTEVTKDA-RKLKELIQEYKPTIMQATPFTWKMLFHSGWSneENVKILCGGEALSeQLKQQFLDTKsEAWN 282
+                                             ***99988.***************************6666555566899*****96666665544359*** PP
+
+                                 Bac_leu 277 nYGPtEatvvatsgeveeeeadgalsIGrpianarvyvLdeelqpvpvgvaGeLyigGagvarGYlnrpel 347
+                                             ++GPtE+t+ ++ +++  +e+++al+IGrpian+rvy++d+ l+pv  gv+GeL+i+G g+arGY+n+pel
+  nrpspksdomains_ctg1_1645_AMP-binding.1 283 MFGPTETTIWSAVQRI--TENESALTIGRPIANTRVYIMDSGLNPVLEGVPGELCIAGDGLARGYFNKPEL 351
+                                             ****************..777789*********************************************** PP
+
+                                 Bac_leu 348 taerFladpfseepgarlYrtGDlarwladGnleylGRnDdqvkiR 393
+                                             t++ F+++    e g +lY+tGD+ar+l+ G++ey+GR+D qvkiR
+  nrpspksdomains_ctg1_1645_AMP-binding.1 352 TDKAFVSHRL--ELGSKLYKTGDMARFLPGGRIEYMGRMDTQVKIR 395
+                                             *******999..56*******************************9 PP
+
+>> nrpspksdomains_ctg1_323_AMP-binding.2  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  418.8   0.0  2.7e-128  8.2e-127       1     393 [.       1     402 []       1     402 [] 0.93
+
+  Alignments for each domain:
+  == domain 1  score: 418.8 bits;  conditional E-value: 2.7e-128
+                                Bac_leu   1 feeqaaktpdavAvvaedqkltYaeLneranrlarrLrelgvkpddrvavllerslelvvalLavlkaGaay 72 
+                                            fe+qa+ktpd +Av+ ++ +ltY+eL+er+nr+ar+L++ g++++d+va++++rs++l+ a+L+v+kaGaa+
+  nrpspksdomains_ctg1_323_AMP-binding.2   1 FERQAQKTPDLTAVA-GGISLTYRELDERSNRFARHLQACGTGSEDIVAIMMDRSADLITAILGVMKAGAAF 71 
+                                            89*********9985.7899**************************************************** PP
+
+                                Bac_leu  73 vpldpaypeeRlaylledsaakvvltqaelaerleeaevevldldeedleeeaeedpeveelesedlAyviY 144
+                                            +p+dp+ peeR++y leds+ k+++++++ +++++ ++ +++ +++ ++++e++++ e+e    ++lAy+iY
+  nrpspksdomains_ctg1_323_AMP-binding.2  72 LPIDPETPEERIRYSLEDSGTKLLVVNERNMTAAAVYKGNTVVMEDGEWQNESADRLETE-PGFDQLAYIIY 142
+                                            *****************************99999999*************9996655554.7899******* PP
+
+                                Bac_leu 145 TSGstGqPKGvmvehrslanlvewhaeafeltaedrvlsvaglafDasvwevwpalaaGatlvlapaeaale 216
+                                            TSG+tG+PKGv +ehr+l+n v+w  ++  lt+ d+ + ++++afD     ++p l aG +l+++p+e+ ++
+  nrpspksdomains_ctg1_323_AMP-binding.2 143 TSGTTGKPKGVQLEHRNLINYVTWFSREAGLTEADKSVLLSSYAFDLGYTAIFPILQAGGELHIVPKETYTA 214
+                                            ************************************************************************ PP
+
+                                Bac_leu 217 dleellelleaqkitvsflptalaellls.....lekp....tLrtlliGGdrlrelekellpef....elv 275
+                                            + ++l e+++++ it++ l+++l++++++        +     Lr +++GG+++ +   ++++++    +++
+  nrpspksdomains_ctg1_323_AMP-binding.2 215 P-DQLGEYIQKNGITYMKLTPSLFHMIVNtarfaA--ErrfsPLRLVVLGGEKIITSDVRKFHDVyahtDFI 283
+                                            *.***********************9999765542..145779*********77654444444333444*** PP
+
+                                Bac_leu 276 nnYGPtEatvvatsgeveeeead...galsIGrpianarvyvLdeelqpvpvgvaGeLyigGagvarGYlnr 344
+                                            n+YGPtE+t+ a +g+++ e+ d   + + IGrpian+ + vLd ++q+vp+g+ GeLyi+G+g+arGYl+r
+  nrpspksdomains_ctg1_323_AMP-binding.2 284 NHYGPTETTIGAIAGRINMERLDqyeQRPVIGRPIANTGALVLDGAMQLVPPGASGELYIAGKGLARGYLHR 355
+                                            ***************998876555568999****************************************** PP
+
+                                Bac_leu 345 peltaerFladpfseepgarlYrtGDlarwladGnleylGRnDdqvkiR 393
+                                            p+ltae+Fl++pf  +p+  +Y+tGD++r+l+dG++e++GR+DdqvkiR
+  nrpspksdomains_ctg1_323_AMP-binding.2 356 PQLTAEKFLSNPF--SPDSLMYKTGDVVRRLPDGTIEFIGRADDQVKIR 402
+                                            *************..68*******************************9 PP
+
+>> nrpspksdomains_ctg1_1648_AMP-binding.1  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  417.6   0.0  6.4e-128  1.9e-126       4     393 ..       2     402 .]       1     402 [] 0.92
+
+  Alignments for each domain:
+  == domain 1  score: 417.6 bits;  conditional E-value: 6.4e-128
+                                 Bac_leu   4 qaaktpdavAvvaedqkltYaeLneranrlarrLrelgvkpddrvavllerslelvvalLavlkaGaayvp 74 
+                                             +a ++pd+ Av++++++ltY+eL+er+ +la +L+e+gv+p+  v++++ers e+v+++La+lkaG+ayvp
+  nrpspksdomains_ctg1_1648_AMP-binding.1   2 KAGRHPDREAVTFGENSLTYRELDERSTALAVYLQEKGVTPECPVGICTERSFEMVIGILAILKAGGAYVP 72 
+                                             6889******************************************************************* PP
+
+                                 Bac_leu  75 ldpaypeeRlaylledsaakvvltqaelaerleeaevevldldeedleeea.eedpeveelesedlAyviY 144
+                                             ldpa+p+eR+a++l+ds++++vltq++++  +e+ ++  ++  e + + ++ + ++ +++ ++++lAy++Y
+  nrpspksdomains_ctg1_1648_AMP-binding.1  73 LDPAFPNERMAHVLTDSGVSIVLTQEKTRGMIEQLAIGGVSTVEIENSGRSvSGAKLTPRSKPHHLAYILY 143
+                                             *********************************9997766654444444443677777899********** PP
+
+                                 Bac_leu 145 TSGstGqPKGvmvehrslanlvewhaeafeltaedrvlsvaglafDasvwevwpalaaGatlvlapaeaal 215
+                                             TSGstG+PKGvmvehr+++n++++  +++ + +ed+ l  +++ fD+s+ e++  ++   +lv++p+ a++
+  nrpspksdomains_ctg1_1648_AMP-binding.1 144 TSGSTGKPKGVMVEHRAIMNTLQFLEAEYPVAQEDAYLLKTNYVFDVSISELFGWFIGNGRLVILPPGAEK 214
+                                             *********************************************************9999*****99999 PP
+
+                                 Bac_leu 216 edleellelleaqkitvsflptalaellls..lekp......tLrtlliGGd....rlrelekellpefel 274
+                                             ++ +  +e+++++++t+  +++a+++++l+  ++++       ++ +++ G+    +l + + + +++ ++
+  nrpspksdomains_ctg1_1648_AMP-binding.1 215 NP-QLCMEYIQTHQVTHLNFAPAVFNVFLEtvKRHTaftedgPVKYVMVAGEafpkDLVKKSVSIFKHARI 284
+                                             99.9999*********************997633336778889*********55555555555666777** PP
+
+                                 Bac_leu 275 vnnYGPtEatvvatsgeveeeead.galsIGrpianarvyvLdeelqpvpvgvaGeLyigGagvarGYlnr 344
+                                              n YGPtE++++a+ +++ ++e + ++++IG+pi+n+r+y++de+l pvp gvaGeL+++Gag+arGY+n+
+  nrpspksdomains_ctg1_1648_AMP-binding.1 285 ENIYGPTETSIYAAYYSCGQKEITsRNTPIGKPIHNTRLYIVDEKLSPVPDGVAGELCVAGAGLARGYYNQ 355
+                                             ******************88888779********************************************* PP
+
+                                 Bac_leu 345 peltaerFladpfseepgarlYrtGDlarwladGnleylGRnDdqvkiR 393
+                                             pelta  F+++pfse  g++lY+tGDlarwl+dGn+ey+GR+D+qvkiR
+  nrpspksdomains_ctg1_1648_AMP-binding.1 356 PELTAASFIDNPFSE--GEKLYKTGDLARWLPDGNIEYAGRIDSQVKIR 402
+                                             *************66..*******************************9 PP
+
+>> nrpspksdomains_ctg1_1760_AMP-binding.4  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  417.5   0.0  6.7e-128    2e-126       1     393 [.       1     407 []       1     407 [] 0.90
+
+  Alignments for each domain:
+  == domain 1  score: 417.5 bits;  conditional E-value: 6.7e-128
+                                 Bac_leu   1 feeqaaktpdavAvvaedqkltYaeLneranrlarrLrelgvkpddrvavllerslelvvalLavlkaGaa 71 
+                                             feeqa++tp+++A+v+e++++tY+eLneranrlar Lr++gv+pd+ v++l+ersle++v+++a+lkaG+a
+  nrpspksdomains_ctg1_1760_AMP-binding.4   1 FEEQAERTPEHTAAVYEKSRFTYRELNERANRLARILRSEGVQPDQPVGILAERSLEMIVGIMAILKAGGA 71 
+                                             89********************************************************************* PP
+
+                                 Bac_leu  72 yvpldpaypeeRlaylledsaakvvltqaelaerleeaevevldldeedleeeaeedpeveelesedlAyv 142
+                                             yvp+dp+ p+eR++y+leds+akv+l+q +l++r++  + e+l l++e++++ +  ++ v+++ +++lAyv
+  nrpspksdomains_ctg1_1760_AMP-binding.4  72 YVPMDPDSPQERIRYILEDSGAKVLLAQPHLQDRVS-FAGEILLLNDERMNSGD-GSNLVTAAGPDHLAYV 140
+                                             ************************************.67888888787777776.55666679******** PP
+
+                                 Bac_leu 143 iYTSGstGqPKGvmvehrslanlvewhaeaf..eltaedrvlsvaglafDasvwevwpalaaGatlvlapa 211
+                                             iYTSG+tG+PKG ++ehr++++l+e  + ++  + +++ rv+ +a + fDasv +++ al+ G++l+++p+
+  nrpspksdomains_ctg1_1760_AMP-binding.4 141 IYTSGTTGKPKGTLIEHRQVLHLMEGLRGQVygAYDSGLRVSLLAPYYFDASVKQIFAALLGGHALYIVPK 211
+                                             ************************987665423577899******************************** PP
+
+                                 Bac_leu 212 eaaledleellelleaqkitvsflptalaelllslekp...tLrtlliGGdrlrelekellpef....... 272
+                                             +  ++   +l+++ ++++i+v+  +++ ++ll++ ++    t+r++liGG++l +++ ++l e+       
+  nrpspksdomains_ctg1_1760_AMP-binding.4 212 ASVSDG-YALSNYYRTHRIDVTDGTPSHLQLLIAADSLhgvTIRHMLIGGEALPQATVAQLLELfasngss 281
+                                             *99988.9************998888877777773333356**********99866555444444777777 PP
+
+                                 Bac_leu 273 ..elvnnYGPtEatvvat.....sgeveeeeadgalsIGrpianarvyvLdeelqpvpvgvaGeLyigGag 336
+                                                ++n YGPtE+ v a+       ++++++++g ++IG+p+ n+rvy++d++ +++p+gv GeL+i+G g
+  nrpspksdomains_ctg1_1760_AMP-binding.4 282 mpLITNVYGPTETCVDASvfhivPETLASADDGGYVPIGKPLGNNRVYIVDSHDRMLPIGVKGELCIAGDG 352
+                                             77789*************4433323333455569************************************* PP
+
+                                 Bac_leu 337 varGYlnrpeltaerFladpfseepgarlYrtGDlarwladGnleylGRnDdqvkiR 393
+                                             v rGYln pelt  +F+adpf    g+r+Y+tGDlar+l+dGn+ey+GR+D+qvkiR
+  nrpspksdomains_ctg1_1760_AMP-binding.4 353 VGRGYLNLPELTGVKFVADPF--VIGERMYKTGDLARYLPDGNIEYAGRKDHQVKIR 407
+                                             *********************..66*******************************9 PP
+
+>> nrpspksdomains_ctg1_322_AMP-binding.1  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  415.1   0.2  3.7e-127  1.1e-125       1     393 [.       1     402 []       1     402 [] 0.89
+
+  Alignments for each domain:
+  == domain 1  score: 415.1 bits;  conditional E-value: 3.7e-127
+                                Bac_leu   1 feeqaaktpdavAvvaedqkltYaeLneranrlarrLrelgvkpddrvavllerslelvvalLavlkaGaay 72 
+                                            fee++++  d++Avv+e+++l+Y+ L+e++ r+a rL++ g+++d+ vavll rs ++++a+L++lkaG+ay
+  nrpspksdomains_ctg1_322_AMP-binding.1   1 FEEKVKSLSDKPAVVYEGRTLSYRTLHEQSGRIAGRLLQAGISADSPVAVLLGRSERVIAAILGILKAGGAY 72 
+                                            89********************************************************************** PP
+
+                                Bac_leu  73 vpldpaypeeRlaylledsaakvvltqaelaerleeaevevldldeedleeeaeedpeveelesedlAyviY 144
+                                            vp+dp++p++R++y+leds+ak+vlt+a +++ ++  ++e++d d e+++ e+++d     ++s++lAy+iY
+  nrpspksdomains_ctg1_322_AMP-binding.1  73 VPIDPDFPADRIQYILEDSGAKAVLTEAGIQAPAA--DAERIDFD-EAVQYETAADGVS--TQSDRLAYIIY 139
+                                            *****************************999888..78999994.4455555444443..689******** PP
+
+                                Bac_leu 145 TSGstGqPKGvmvehrslanlvewhaea.feltae.drvlsvaglafDasvwevwpalaaGatlvlapaeaa 214
+                                            TSG+tG+PKGvm+ehr++++lv+  +++ ++  ++  r++ +a ++fDasv +++ +l+ G+tl+++p+++ 
+  nrpspksdomains_ctg1_322_AMP-binding.1 140 TSGTTGRPKGVMIEHRQVHHLVQSLQQEiYQCGEQtLRMALLAPFHFDASVKQIFASLLLGQTLYIVPKTTV 211
+                                            **********************9866551666554279999*****************************99 PP
+
+                                Bac_leu 215 ledleellelleaqkitvsflptalaellls...lekp..tLrtlliGGdrlrelekellpef........e 273
+                                            ++  ++ll++ ++++i+++  ++a ++++++      +  +Lr++liGG+ l+++ +e+l ++        +
+  nrpspksdomains_ctg1_322_AMP-binding.1 212 TNG-SALLDYYRQNRIEATDGTPAHLQMMVAagdV--SgiELRHMLIGGEGLSAAVAEQLMALfhqsgrtpR 280
+                                            999.*************888777777777774433..356**********888555555444447778888* PP
+
+                                Bac_leu 274 lvnnYGPtEatvvatsgeveeeead....galsIGrpianarvyvLdeelqpvpvgvaGeLyigGagvarGY 341
+                                            l+n YGPtE+ v a+ ++v++++      + ++IG+p+ nar+y+Ld++++++p g aGeLyi+G gv rGY
+  nrpspksdomains_ctg1_322_AMP-binding.1 281 LTNVYGPTETCVDASVHQVSADNGMnqqaAYVPIGKPLGNARLYILDKHQRLQPDGTAGELYIAGDGVGRGY 352
+                                            *****************997653222224789**************************************** PP
+
+                                Bac_leu 342 lnrpeltaerFladpfseepgarlYrtGDlarwladGnleylGRnDdqvkiR 393
+                                            ln p+ltae+Fl+dpf+   + r+YrtGD+arwl+dG++ey+GR Ddqvk+R
+  nrpspksdomains_ctg1_322_AMP-binding.1 353 LNLPDLTAEKFLQDPFNG--SGRMYRTGDMARWLPDGTIEYIGREDDQVKVR 402
+                                            ****************66..9******************************9 PP
+
+>> nrpspksdomains_ctg1_1786_AMP-binding.2  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  413.9   0.0  8.8e-127  2.7e-125       2     393 ..       2     401 .]       1     401 [] 0.92
+
+  Alignments for each domain:
+  == domain 1  score: 413.9 bits;  conditional E-value: 8.8e-127
+                                 Bac_leu   2 eeqaaktpdavAvvaedqkltYaeLneranrlarrLrelgvkpddrvavllerslelvvalLavlkaGaay 72 
+                                             e+qa+ktpd++A+ ++d ++tY+eLneran+la++L+++g++ +d+ a++ +rs+++++++ avlkaG+ay
+  nrpspksdomains_ctg1_1786_AMP-binding.2   2 EQQAEKTPDRPAILTDDISITYQELNERANELAHQLIKRGIRLEDKTAIMGRRSPDMLIGIYAVLKAGGAY 72 
+                                             89********************************************************************* PP
+
+                                 Bac_leu  73 vpldpaypeeRlaylledsaakvvltqaelaerleeaevevldldeedleeeaeedpeveelesedlAyvi 143
+                                             +p+dp+ypeeR+++ll+ds++k +l++ el +     e e+++l++ ++ + +++++ +  +++++lAy+i
+  nrpspksdomains_ctg1_1786_AMP-binding.2  73 LPIDPDYPEERIRFLLKDSGVKFLLAEPELFAPDL-FEGETISLKSGQTGNPESAANPNVPVKPDSLAYII 142
+                                             *****************************987766.5789999988887777755555556********** PP
+
+                                 Bac_leu 144 YTSGstGqPKGvmvehrslanlvewhaeafeltaedrvlsvaglafDasvwevwpalaaGatlvlapaeaa 214
+                                             YTSGstG+PKGv vehrs +n++   ++++ l+ +d +l+ ++++fDas+we+++  +aGa+++l+p+  +
+  nrpspksdomains_ctg1_1786_AMP-binding.2 143 YTSGSTGRPKGVQVEHRSAVNFLYSLQTRYGLSDSDIILHKTSYSFDASIWELFWWPIAGASVFLLPQGGE 213
+                                             *********************************************************************99 PP
+
+                                 Bac_leu 215 ledleellelleaqkit.vsflptalaellls...lekp....tLrtlliGGd....rlrelekellpefe 273
+                                             +++ e +l+ le+++it + f+p++l   l     +++p     L+ ++ GG+    +l ++  +llp++e
+  nrpspksdomains_ctg1_1786_AMP-binding.2 214 KDP-EMILNALENNRITaAHFVPSMLHAFLEYinsRKQPikktCLKRVFAGGEqlgpHLVSRFYDLLPGTE 283
+                                             999.*************55677777654443354455557788**********55555556666779999* PP
+
+                                 Bac_leu 274 lvnnYGPtEatvvatsgeveeeeadgalsIGrpianarvyvLdeelqpvpvgvaGeLyigGagvarGYlnr 344
+                                             l+n YGPtEatv a+   + + ++ ++++IG   +n r+y+L+++++++p+g +GeLyi+G+gvarGYlnr
+  nrpspksdomains_ctg1_1786_AMP-binding.2 284 LTNSYGPTEATVEAAYFDLPQGKEFHNVPIGISGHNMRLYILNQKKRLLPPGCIGELYIAGTGVARGYLNR 354
+                                             *******************776767********************************************** PP
+
+                                 Bac_leu 345 peltaerFladpfseepgarlYrtGDlarwladGnleylGRnDdqvkiR 393
+                                             pelt+erFl+dpf   pg+r+Y+tGD+arw+++G +e+lGR D qvk+R
+  nrpspksdomains_ctg1_1786_AMP-binding.2 355 PELTEERFLDDPF--YPGERMYQTGDIARWTEEGLVEWLGRSDGQVKVR 401
+                                             *************..79*******************************9 PP
+
+>> nrpspksdomains_ctg1_1787_AMP-binding.1  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  412.2   0.0  2.7e-126  8.3e-125       1     393 [.       1     405 []       1     405 [] 0.92
+
+  Alignments for each domain:
+  == domain 1  score: 412.2 bits;  conditional E-value: 2.7e-126
+                                 Bac_leu   1 feeqaaktpdavAvvaedqkltYaeLneranrlarrLrelgvkpddrvavllerslelvvalLavlkaGaa 71 
+                                             f+++aa +p+++A+ + +  ltYaeL++  +rla rLr++gv+++++v+vl+ers+e+vv++LavlkaG+a
+  nrpspksdomains_ctg1_1787_AMP-binding.1   1 FARRAALSPHRPALRFPGGMLTYAELDQYTDRLAVRLRQKGVRKESMVGVLAERSPEMVVSVLAVLKAGGA 71 
+                                             78999****************************************************************** PP
+
+                                 Bac_leu  72 yvpldpaypeeRlaylledsaakvvltqaelaerleeaevevldldeedleeeaeedpeveelesedlAyv 142
+                                             yvpldp+ype+Rl+y+l+d++a ++l+q  l+ +    + e+l+++ ++l++eae+ +  ee+++++lAy+
+  nrpspksdomains_ctg1_1787_AMP-binding.1  72 YVPLDPEYPEDRLRYMLDDCGACLLLAQPGLSVS--GFSGETLEVSLSALTSEAETGAVSEEADADSLAYI 140
+                                             *****************************97654..4578888898899999999999999********** PP
+
+                                 Bac_leu 143 iYTSGstGqPKGvmvehrslanlvewhaeafeltaedrvlsvaglafDasvwevwpalaaGatlvlapaea 213
+                                             iYTSGstG+PKGv vehr+ a +++  + +f lt+ed ++  ++++fDas+w++++  ++Ga+++l+pa  
+  nrpspksdomains_ctg1_1787_AMP-binding.1 141 IYTSGSTGTPKGVAVEHRQAAAFLSGMQGQFPLTEEDIIVLKSSFSFDASIWQLFWWTMSGASVYLLPAGW 211
+                                             *********************************************************************** PP
+
+                                 Bac_leu 214 aledleellelleaqkit.vsflptalaelllslekp..........tLrtlliGGdrlrelek....ell 269
+                                             +++++ +++e ++++k+t + f+p+++ + l +le++          tL  ++ GG++l+ l++    +ll
+  nrpspksdomains_ctg1_1787_AMP-binding.1 212 EKDPV-RMIEAFASEKVTtAHFIPAMVNSFLDALETEpaetrtrlgrTLTRVFAGGEALSPLTAarfaDLL 281
+                                             ****5.66666777777637788877777666644333677889999**********99866551111556 PP
+
+                                 Bac_leu 270 pefelvnnYGPtEatvvatsgeveeeead..galsIGrpianarvyvLdeelqpvpvgvaGeLyigGagva 338
+                                             pe+ l++ YGPtEatv a+ + +++++++  + l+IG+p+ +ar+yvLd+ + ++p gvaGeLyi+G+gva
+  nrpspksdomains_ctg1_1787_AMP-binding.1 282 PETVLIHGYGPTEATVDAAFYVCDRKRDSgrTRLPIGKPVPGARLYVLDSGGTIQPAGVAGELYIAGTGVA 352
+                                             777********************88777667899************************************* PP
+
+                                 Bac_leu 339 rGYlnrpeltaerFladpfseepgarlYrtGDlarwladGnleylGRnDdqvkiR 393
+                                             rGYlnrpelt+erFl+dpf   pg+r+Y+tGD+arw++dG +e+lGR D qvk+R
+  nrpspksdomains_ctg1_1787_AMP-binding.1 353 RGYLNRPELTEERFLDDPF--YPGERMYQTGDIARWTEDGLVEWLGRSDGQVKVR 405
+                                             *******************..79*******************************9 PP
+
+>> nrpspksdomains_ctg1_1789_AMP-binding.1  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  411.9   0.0  3.4e-126    1e-124       1     393 [.       1     405 []       1     405 [] 0.91
+
+  Alignments for each domain:
+  == domain 1  score: 411.9 bits;  conditional E-value: 3.4e-126
+                                 Bac_leu   1 feeqaaktpdavAvvaedqkltYaeLneranrlarrLrelgvkpddrvavllerslelvvalLavlkaGaa 71 
+                                             f ++aa +p+++A+ + +  ltYaeL++  +rla+rLr++gv+++++v+vl+ers+e+vv++LavlkaG+a
+  nrpspksdomains_ctg1_1789_AMP-binding.1   1 FTRRAALSPHRPALRFPGGMLTYAELDQYTDRLAARLRQKGVRKESMVGVLAERSPEMVVSVLAVLKAGGA 71 
+                                             77899****************************************************************** PP
+
+                                 Bac_leu  72 yvpldpaypeeRlaylledsaakvvltqaelaerleeaevevldldeedleeeaeedpeveelesedlAyv 142
+                                             yvpldp+ype+Rl+y+l+d++a ++l+q  l+ +    + e+l+++ ++l+ e+e+ +  ee++s++lAy+
+  nrpspksdomains_ctg1_1789_AMP-binding.1  72 YVPLDPEYPEDRLRYMLDDCGACLLLAQPGLSVS--GFSGETLEVSLSALTGETETGAVSEEADSNSLAYI 140
+                                             *****************************97654..4578888898899999999999999********** PP
+
+                                 Bac_leu 143 iYTSGstGqPKGvmvehrslanlvewhaeafeltaedrvlsvaglafDasvwevwpalaaGatlvlapaea 213
+                                             iYTSGstG+PKGv vehr+ a +++  + +f lt+ed ++  ++++fDas+w++++  ++Ga+++l+pa  
+  nrpspksdomains_ctg1_1789_AMP-binding.1 141 IYTSGSTGTPKGVAVEHRQAAAFLSGMQGQFPLTEEDVIVLKSSFSFDASIWQLFWWTMSGASVYLLPAGW 211
+                                             *********************************************************************** PP
+
+                                 Bac_leu 214 aledleellelleaqkit.vsflptalaelllslekp..........tLrtlliGGdrlrelek....ell 269
+                                             +++++ ++++ ++++k+t + f+p+++ + l +le++          tL  ++ GG++l+ l++    +ll
+  nrpspksdomains_ctg1_1789_AMP-binding.1 212 EKDPV-RMIKAFASEKVTtAHFIPAMVNSFLDALETEpaetrtrlgrTLTRVFAGGEALSPLTAarfaDLL 281
+                                             ****6.56666666666637788887777766644333677889999**********99866551111556 PP
+
+                                 Bac_leu 270 pefelvnnYGPtEatvvatsgeveeeead..galsIGrpianarvyvLdeelqpvpvgvaGeLyigGagva 338
+                                             pe+ l++ YGPtEatv a+ + +++++++  + l+IG+p+ +ar+yvLd+ + ++p gvaGeLyi+G+gva
+  nrpspksdomains_ctg1_1789_AMP-binding.1 282 PETVLIHGYGPTEATVDAAFYVCDRKRDSgrTRLPIGKPVPGARLYVLDSGGTIQPAGVAGELYIAGTGVA 352
+                                             777********************88777667899************************************* PP
+
+                                 Bac_leu 339 rGYlnrpeltaerFladpfseepgarlYrtGDlarwladGnleylGRnDdqvkiR 393
+                                             rGYlnrpelt+erFl+dpf   pg+r+Y+tGD+arw++dG +e+lGR D qvk+R
+  nrpspksdomains_ctg1_1789_AMP-binding.1 353 RGYLNRPELTEERFLDDPF--YPGERMYQTGDIARWTEDGLVEWLGRSDGQVKVR 405
+                                             *******************..79*******************************9 PP
+
+>> nrpspksdomains_ctg1_1786_AMP-binding.3  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  411.3   0.0  5.3e-126  1.6e-124       4     393 ..       3     392 .]       1     392 [] 0.92
+
+  Alignments for each domain:
+  == domain 1  score: 411.3 bits;  conditional E-value: 5.3e-126
+                                 Bac_leu   4 qaaktpdavAvvaedqkltYaeLneranrlarrLrelgvkpddrvavllerslelvvalLavlkaGaayvp 74 
+                                             qa+ktpda A++ +++ +tY+eL++ +n++ar L++++++pd  v++++ rs+e v+a+ +v+kaG+ayvp
+  nrpspksdomains_ctg1_1786_AMP-binding.3   3 QARKTPDAAALISGETLITYKELDDWSNKIARALQKRQIGPDAAVGIVIPRSPEQVAAVFGVWKAGGAYVP 73 
+                                             89********************************************************************* PP
+
+                                 Bac_leu  75 ldpaypeeRlaylledsaakvvltqaelaerleea.evevldldeedleeeaeedpeveelesedlAyviY 144
+                                             +dp+ypeeR +y+++ds+ +++lt +   e++++  + evl+l  ed++e++ ++p ++   +edlAy+iY
+  nrpspksdomains_ctg1_1786_AMP-binding.3  74 IDPEYPEERKQYIISDSGTALLLTAHGAIEQVPDRfNGEVLAL--EDIQEQD-ASPVQSLSAPEDLAYIIY 141
+                                             **************************99999996524667766..5555555.556666789********* PP
+
+                                 Bac_leu 145 TSGstGqPKGvmvehrslanlvewhaeafeltaedrvlsvaglafDasvwevwpalaaGatlvlapaeaal 215
+                                             TSG+tG+PKGvmvehrs++++++w+   ++l+++d++l++ +++fD +v  +++ l++Ga+ +++ +++a+
+  nrpspksdomains_ctg1_1786_AMP-binding.3 142 TSGTTGRPKGVMVEHRSVSQTLQWRSGFYDLNEKDTILQLFSFSFDGFVTSMFTPLISGAKAAVLAEDEAR 212
+                                             ***************************************************************99999776 PP
+
+                                 Bac_leu 216 edleellelleaqkitvsflptalaelllslekp....tLrtlliGGdrlr....elekellpefelvnnY 278
+                                              d+ +++++l++ +it++++++ l+++ll+  +p    +Lr++++ G+++     +++ + +p++el n+Y
+  nrpspksdomains_ctg1_1786_AMP-binding.3 213 -DILAIKHYLASYRITHMIIVPVLYRTLLDVLEPgdaeSLRIVTLAGEAVDqniiSRSLSVCPHTELANEY 282
+                                             .789**************************55455667**********77631113445567888****** PP
+
+                                 Bac_leu 279 GPtEatvvatsgeveeeeadgalsIGrpianarvyvLdeelqpvpvgvaGeLyigGagvarGYlnrpelta 349
+                                             GPtE++v++t+ +    e++++++IGrpi++ +vy+L+   +p+p+gv+GeL+i+G+g+arGY n p++ta
+  nrpspksdomains_ctg1_1786_AMP-binding.3 283 GPTENSVATTAARH--IEQSENITIGRPIEHSHVYILNG-DHPQPIGVTGELCISGSGLARGYRNLPKQTA 350
+                                             **********9988..577789***************97.579**************************** PP
+
+                                 Bac_leu 350 erFladpfseepgarlYrtGDlarwladGnleylGRnDdqvkiR 393
+                                             + F++dpf  ++++r+YrtGDla+wl+dG+l+y+GR+D+qvkiR
+  nrpspksdomains_ctg1_1786_AMP-binding.3 351 QAFVQDPF--QKNRRMYRTGDLAKWLPDGTLQYIGRIDEQVKIR 392
+                                             ********..55*******************************9 PP
+
+>> nrpspksdomains_ctg1_1788_AMP-binding.2  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  407.5   0.0  7.4e-125  2.3e-123       1     393 [.       1     396 []       1     396 [] 0.92
+
+  Alignments for each domain:
+  == domain 1  score: 407.5 bits;  conditional E-value: 7.4e-125
+                                 Bac_leu   1 feeqaaktpdavAvvaedqkltYaeLneranrlarrLrelgvkpddrvavllerslelvvalLavlkaGaa 71 
+                                             fe+qa+k p+++A+v+++++ltY+eLne+a+r+a  L e+g++++++v++++ers+++++++L++lkaG+a
+  nrpspksdomains_ctg1_1788_AMP-binding.2   1 FEAQAEKMPNQIAAVMSHERLTYRELNEKADRIADMLSENGIRSGQIVGIMTERSPDMLIGILGILKAGGA 71 
+                                             89********************************************************************* PP
+
+                                 Bac_leu  72 yvpldpaypeeRlaylledsaakvvltqaelaerleeaevevldldeedleeeaeedpeveelesedlAyv 142
+                                             y+p+dp+yp+eR++++l+ds+a+++ltq+ l  +   + ++vl +d+ +   + ++d++ e +++e+ Ayv
+  nrpspksdomains_ctg1_1788_AMP-binding.2  72 YLPIDPDYPDERISFMLTDSGARALLTQSGLGISGM-DGLPVLYIDKPE---SVSADRTKEMITPEQPAYV 138
+                                             *****************************9766555.689***996555...445566677789******* PP
+
+                                 Bac_leu 143 iYTSGstGqPKGvmvehrslanlvewhaeafeltaedrvlsvaglafDasvwevwpalaaGatlvlapaea 213
+                                             iYTSG+tG+PKGvm ehr++++l++ +   f++ +ed  + + ++ fD svwe++ al+ G ++v++p+++
+  nrpspksdomains_ctg1_1788_AMP-binding.2 139 IYTSGTTGKPKGVMTEHRNVISLITHKGLPFDFGSEDVWTLFHSYCFDFSVWEIFGALLYGGKVVIVPKDT 209
+                                             *********************************************************************** PP
+
+                                 Bac_leu 214 aledleellelleaqkitvsflptalaellls....lekp...tLrtlliGGdrlr....elekellpefe 273
+                                             a+++ +  ++ll+++ +tv   +++ ++ l++       +   +Lr +++GG++l+    +  ke+ pe+e
+  nrpspksdomains_ctg1_1788_AMP-binding.2 210 ARDP-HLYRQLLQSEGVTVLNQTPTAFSGLIHeeagH--TdklKLRYVIFGGEALQpgmlKSWKEKYPETE 277
+                                             **99.8889999******8766555555555534321..2667**********77653335667778999* PP
+
+                                 Bac_leu 274 lvnnYGPtEatvvatsgeveeeead.galsIGrpianarvyvLdeelqpvpvgvaGeLyigGagvarGYln 343
+                                             lvn+YG tE+tv  t+++++ ++ + ++ +IGrp++  +++v+d+ ++p+p+g++GeLyigG+gvarGY+n
+  nrpspksdomains_ctg1_1788_AMP-binding.2 278 LVNMYGITETTVHVTCKKLNMDDIErNKSNIGRPLETLHAFVMDAYMNPQPIGIPGELYIGGEGVARGYVN 348
+                                             *******************998888799******************************************* PP
+
+                                 Bac_leu 344 rpeltaerFladpfseepgarlYrtGDlarwladGnleylGRnDdqvkiR 393
+                                             r++lta+rF+++p+    g rlYrtGD+a++l +G+ley+GR+D qvk+R
+  nrpspksdomains_ctg1_1788_AMP-binding.2 349 RDDLTASRFITNPH--VSGMRLYRTGDIAKRLLNGELEYVGRKDAQVKVR 396
+                                             **************..56*******************************9 PP
+
+>> nrpspksdomains_ctg1_1786_AMP-binding.1  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  407.0   0.0  1.1e-124  3.2e-123       1     393 [.       1     397 []       1     397 [] 0.92
+
+  Alignments for each domain:
+  == domain 1  score: 407.0 bits;  conditional E-value: 1.1e-124
+                                 Bac_leu   1 feeqaaktpdavAvvaedqkltYaeLneranrlarrLrelgvkpddrvavllerslelvvalLavlkaGaa 71 
+                                             fe+qaaktpd++A+ +e++++tY+eLne an+lar L+++g+k+++ v+v+l rs++l +a+L++lkaG+a
+  nrpspksdomains_ctg1_1786_AMP-binding.1   1 FERQAAKTPDQIAIRYEGESVTYKELNESANKLARLLQKRGLKREEPVGVMLGRSPSLAAAVLGILKAGGA 71 
+                                             89********************************************************************* PP
+
+                                 Bac_leu  72 yvpldpaypeeRlaylledsaakvvltqaelaerleeaevevldldeedleeeaeedpeveelesedlAyv 142
+                                             +vp+dp  p+eR++y++e+s+ + v+t+++ +  +e ++++v  ++++ +e++   ++ ++  +++dl y+
+  nrpspksdomains_ctg1_1786_AMP-binding.1  72 FVPIDPGSPKERIRYVIENSGCVHVVTERHQSVPAE-QTLQVTYIEDAGTEADG--SNVQSINTADDLLYM 139
+                                             ***************************999666665.56888888555555555..44444569******* PP
+
+                                 Bac_leu 143 iYTSGstGqPKGvmvehrslanlvewhaeafeltaedrvlsvaglafDasvwevwpalaaGatlvlapaea 213
+                                             iYTSG+tG+PKGv++eh+++anl++ + ++ +++  ++vl++a++afD++  e+++ l++G tl+++p+++
+  nrpspksdomains_ctg1_1786_AMP-binding.1 140 IYTSGTTGKPKGVLLEHKNMANLLSHQLTNTDIDFCTNVLQYASVAFDVCYQELFSVLLSGGTLCIVPESI 210
+                                             **********************************************************************9 PP
+
+                                 Bac_leu 214 aledleellelleaqkitvsflptalaelllslekp......tLrtlliGGdrlr..elekel..lpefel 274
+                                             ++ d+++l +++ +++ +v+f+pta +++l+++e         ++++++ G++l+  +l +++  l++++l
+  nrpspksdomains_ctg1_1786_AMP-binding.1 211 KR-DVSQLFSFIDQHNTEVVFFPTAFVKMLFNEEGYaqsfprCVKHVITAGEQLTvsRLFRQTlrLHGMHL 280
+                                             88.77***************************5433344669**********77643555554115677** PP
+
+                                 Bac_leu 275 vnnYGPtEatvvatsgeveeeeadgalsIGrpianarvyvLdeelqpvpvgvaGeLyigGagvarGYlnrp 345
+                                             +n+YGP+E+ vv+t +  + ++  ++++IG+pi+++++y+L +++q++p+g+aGeLyi+Ga   rGY+n+p
+  nrpspksdomains_ctg1_1786_AMP-binding.1 281 HNHYGPSETHVVSTYTISAGDDIPEHPPIGKPIHHNKMYILSKNRQLQPLGIAGELYISGANTGRGYVNNP 351
+                                             ***************999788888*********************************************** PP
+
+                                 Bac_leu 346 eltaerFladpfseepgarlYrtGDlarwladGnleylGRnDdqvkiR 393
+                                             +lt+e+Fl+dpf++  +a +YrtGDlar +adG++ey+GR+DdqvkiR
+  nrpspksdomains_ctg1_1786_AMP-binding.1 352 ALTEEKFLPDPFRT--DAVMYRTGDLARLRADGQIEYIGRTDDQVKIR 397
+                                             ************55..*******************************9 PP
+
+>> nrpspksdomains_ctg1_1760_AMP-binding.3  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  404.2   0.0  7.7e-124  2.3e-122       1     393 [.       1     397 []       1     397 [] 0.93
+
+  Alignments for each domain:
+  == domain 1  score: 404.2 bits;  conditional E-value: 7.7e-124
+                                 Bac_leu   1 feeqaaktpdavAvvaedqkltYaeLneranrlarrLrelgvkpddrvavllerslelvvalLavlkaGaa 71 
+                                             fe+qaa+tp+++A+++e+++++Y+eLne an+lar Lr++gvk+++ vav++ rs++l +a+L++lkaG+a
+  nrpspksdomains_ctg1_1760_AMP-binding.3   1 FERQAAQTPQEIAIQYEGAEISYKELNETANKLARILRKRGVKHQEPVAVIAGRSPSLAIAVLGILKAGGA 71 
+                                             89********************************************************************* PP
+
+                                 Bac_leu  72 yvpldpaypeeRlaylledsaakvvltqaelaerleeaevevldldeedleeeaeedpeveelesedlAyv 142
+                                              vp+dp++p+eR++y++e+s+ + v+t+++  ++++ea++++++   e++e+e + ++ ++  ++edl yv
+  nrpspksdomains_ctg1_1760_AMP-binding.3  72 IVPIDPSHPAERIRYIIENSSCTHVVTEKD--RSVPEAATQIVTF-IEEAETEPDGSNVQTINTAEDLLYV 139
+                                             ***************************999..6667667777777.556666776777777789******* PP
+
+                                 Bac_leu 143 iYTSGstGqPKGvmvehrslanlvewhaeafeltaedrvlsvaglafDasvwevwpalaaGatlvlapaea 213
+                                             iYTSG+tG+PKGv++ehr++anl+  + ++  ++ +++vl++a+ afD++  e+++al++G tl+++p+++
+  nrpspksdomains_ctg1_1760_AMP-binding.3 140 IYTSGTTGKPKGVLLEHRNMANLLYDQFTNSGIDFKTNVLQYASPAFDVCYQELFSALLSGGTLHIVPESI 210
+                                             *********************************************************************** PP
+
+                                 Bac_leu 214 aledleellelleaqkitvsflptalaelllslekp......tLrtlliGGdrlr..elekellpef..el 274
+                                             +++  ++l +++++++ +++f+pta a++l+++e+        +++l++ G++l+  +l ++ l++   +l
+  nrpspksdomains_ctg1_1760_AMP-binding.3 211 KRDA-AQLFSFINKHQTDIVFFPTAFAKMLFNEESYaysfprCVKHLITAGEQLTvsRLFQQVLRTHglHL 280
+                                             9988.***************************6654567779**********77643555555443344** PP
+
+                                 Bac_leu 275 vnnYGPtEatvvatsgeveeeeadgalsIGrpianarvyvLdeelqpvpvgvaGeLyigGagvarGYlnrp 345
+                                             +n+YGP+E+ vv+t +    ++  + ++IG+pi ++++yv+++++q++p g+aGeLyi+Ga   rGY+n+p
+  nrpspksdomains_ctg1_1760_AMP-binding.3 281 HNHYGPSETHVVSTYTIQPGDDIPEYPPIGKPICHNNMYVINKNKQLQPFGIAGELYISGANTGRGYVNNP 351
+                                             **************9998777777*********************************************** PP
+
+                                 Bac_leu 346 eltaerFladpfseepgarlYrtGDlarwladGnleylGRnDdqvkiR 393
+                                             +lt e+Fl+dpf+  +ga +YrtGDlar ++dG++ey+GR+Ddq kiR
+  nrpspksdomains_ctg1_1760_AMP-binding.3 352 ALTGEKFLPDPFR--EGAVMYRTGDLARLREDGQIEYIGRIDDQAKIR 397
+                                             ************5..5*******************************9 PP
+
+>> nrpspksdomains_ctg1_2831_AMP-binding.2  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  401.7   0.0  4.4e-123  1.3e-121       1     393 [.       1     416 []       1     416 [] 0.89
+
+  Alignments for each domain:
+  == domain 1  score: 401.7 bits;  conditional E-value: 4.4e-123
+                                 Bac_leu   1 feeqaaktpdavAvvaedqkltYaeLneranrlarrLrelgvkpddrvavllerslelvvalLavlkaGaa 71 
+                                             fe qaa++ d++A+v+e++ ltY+eLne+an+la+ ++++gv+p++ va+ l rsl+++v+lLavlk+Gaa
+  nrpspksdomains_ctg1_2831_AMP-binding.2   1 FEIQAAAKSDETAAVFEESGLTYKELNEKANQLAHMMIARGVGPEQFVALALPRSLDMIVGLLAVLKTGAA 71 
+                                             889******************************************************************** PP
+
+                                 Bac_leu  72 yvpldpaypeeRlaylledsaakvvltqaelaerleeae.vevldldeedleeea........eedpevee 133
+                                             y+pldp+yp++R+a++l+d++++ +lt++e a++l+ ++ ++++ ld+ + +e+         +++++++ 
+  nrpspksdomains_ctg1_2831_AMP-binding.2  72 YLPLDPDYPADRIAFMLHDAKPVFMLTNREGASKLSIESgMPAFILDDPQNKETLeryavknpADADRIRP 142
+                                             ******************************99999855448988885544444332222222233334447 PP
+
+                                 Bac_leu 134 lesedlAyviYTSGstGqPKGvmvehrslanlvewhaeafeltaedrvlsvaglafDasvwevwpalaaGa 204
+                                             l++ + AyviYTSGstG PKGv++ h+++++l+e +++ ++++++d  +++ ++afD svwe+w  l+ G 
+  nrpspksdomains_ctg1_2831_AMP-binding.2 143 LSPLHPAYVIYTSGSTGVPKGVIIPHSNVIRLFESTRHWYHFHSDDVWTMFHSYAFDFSVWEMWGPLLHGG 213
+                                             88********************************************************************* PP
+
+                                 Bac_leu 205 tlvlapaeaaledleellelleaqkitvsflptalaellls..lekp......tLrtlliGGd.....rlr 262
+                                             +lv++p+++++++ +++l+ll ++++tv   +++ + +l++  +e++      +Lr +++GG+     rl+
+  nrpspksdomains_ctg1_2831_AMP-binding.2 214 RLVVVPHDISRSP-SAFLHLLVKERVTVLNQTPSAFYQLMHaeKEHKelgrqlALRYIIFGGEalelsRLE 283
+                                             *************.*************98887777777777453444899999**********66555555 PP
+
+                                 Bac_leu 263 elekellpef.elvnnYGPtEatvvatsgeveeeead..galsIGrpianarvyvLdeelqpvpvgvaGeL 330
+                                             +  ++++ +   lvn+YG tE+tv  +  e++++ a+  ++  IG  i + +vyvLd++l+pvp+g++Ge+
+  nrpspksdomains_ctg1_2831_AMP-binding.2 284 DWYSRHADNQpVLVNMYGITETTVHVSYLELDKNIAElrANSLIGCGIPDLNVYVLDDRLEPVPPGITGEM 354
+                                             444443333359*******************999888878888**************************** PP
+
+                                 Bac_leu 331 yigGagvarGYlnrpeltaerFladpfseepgarlYrtGDlarwladGnleylGRnDdqvkiR 393
+                                             y++G gvarGYl+r++ltaerF+adp+   pg+r+YrtGDlar ++dG+l+y+GR+D+q+kiR
+  nrpspksdomains_ctg1_2831_AMP-binding.2 355 YVAGGGVARGYLGRQSLTAERFVADPYGP-PGTRMYRTGDLARLRTDGSLDYMGRADHQIKIR 416
+                                             ***************************77.********************************9 PP
+
+>> nrpspksdomains_ctg1_1785_AMP-binding.1  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  401.5   0.0  4.8e-123  1.5e-121       1     393 [.       1     393 []       1     393 [] 0.94
+
+  Alignments for each domain:
+  == domain 1  score: 401.5 bits;  conditional E-value: 4.8e-123
+                                 Bac_leu   1 feeqaaktpdavAvvaedqkltYaeLneranrlarrLrelgvkpddrvavllerslelvvalLavlkaGaa 71 
+                                             f++q++ktpd+ A+ a++ ++tY+eL+er+ ++ar+L+e+g+ p  + ++l+ers+e+++a+LavlkaG++
+  nrpspksdomains_ctg1_1785_AMP-binding.1   1 FSRQVKKTPDHQALHAGGLTMTYRELDERSTAFARTLLENGLAPKGIAGILAERSPEFIIAVLAVLKAGGT 71 
+                                             789******************************************************************** PP
+
+                                 Bac_leu  72 yvpldpaypeeRlaylledsaakvvltqaelaerleeaevevldldeedleeeaeedpeveelesedlAyv 142
+                                             y+pld++ p++R+a +l++s+a+++ +q+ +++ ++    +++++ +++ +++ ++ + ++ + ++dlAy+
+  nrpspksdomains_ctg1_1785_AMP-binding.1  72 YLPLDAELPTDRIADMLTESGAQLLTVQKGIETDID--FSHIISIPAAAEKQTPDAGKLNTDTAPDDLAYI 140
+                                             **********************************99..56778886666666678888888999******* PP
+
+                                 Bac_leu 143 iYTSGstGqPKGvmvehrslanlvewhaeafeltaedrvlsvaglafDasvwevwpalaaGatlvlapaea 213
+                                             +YTSGstG+PKGvm++ r++++lv+ + ++ +   +dr+  + +++fDa+++e++ al++Ga l+++++++
+  nrpspksdomains_ctg1_1785_AMP-binding.1 141 MYTSGSTGKPKGVMISNRNVVSLVS-NSNYTSAGMSDRLILTGSIGFDAVTFEIFGALLNGACLHVVDRST 210
+                                             ************************9.99999**************************************** PP
+
+                                 Bac_leu 214 aledleellelleaqkitvsflptalaelllslekp...tLrtlliGGd....rlrelekellpefelvnn 277
+                                              l++ e++ ++l +++it+ fl+tal++++++ + +    L+tl +GG+    +l +  ++ +p+++l+n 
+  nrpspksdomains_ctg1_1785_AMP-binding.1 211 MLAP-ERFGNYLSSNRITILFLTTALFNQFAQADPEmfsGLHTLYVGGEalspALINKVRHRCPNLSLYNI 280
+                                             ****.**************************95544466**********55555556778889999***** PP
+
+                                 Bac_leu 278 YGPtEatvvatsgeveeeeadgalsIGrpianarvyvLdeelqpvpvgvaGeLyigGagvarGYlnrpelt 348
+                                             YGPtE+t+++t +e+ +++ ++ ++IG+pi+n ++y++d+++ + p+gv+GeL++gG gva+GYlnrp+lt
+  nrpspksdomains_ctg1_1785_AMP-binding.1 281 YGPTENTTFSTFYEI-RHDFSQPIPIGKPISNSTAYIIDKNGGLAPIGVPGELCVGGDGVAKGYLNRPDLT 350
+                                             ***************.556669************************************************* PP
+
+                                 Bac_leu 349 aerFladpfseepgarlYrtGDlarwladGnleylGRnDdqvkiR 393
+                                              e F+++p+  +p++++Y+tGDla+wl+dG++ y+ R+D+q kiR
+  nrpspksdomains_ctg1_1785_AMP-binding.1 351 SEAFVSHPV--HPEEKIYKTGDLAHWLPDGSIGYISRIDRQFKIR 393
+                                             *********..79*******************************9 PP
+
+>> nrpspksdomains_ctg1_1788_AMP-binding.1  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  399.9   0.0  1.5e-122  4.7e-121       1     393 [.       1     393 []       1     393 [] 0.93
+
+  Alignments for each domain:
+  == domain 1  score: 399.9 bits;  conditional E-value: 1.5e-122
+                                 Bac_leu   1 feeqaaktpdavAvvaedqkltYaeLneranrlarrLrelgvkpddrvavllerslelvvalLavlkaGaa 71 
+                                             feeqaaktpd+ A+ +++ +++Y++Ln+ran++a+ Lre+g++pd++ av+l+rs+++v+alL+++k+G+a
+  nrpspksdomains_ctg1_1788_AMP-binding.1   1 FEEQAAKTPDQEALRYNGVSWSYKKLNQRANQIAHALREKGARPDQITAVMLRRSMSTVAALLGIWKSGSA 71 
+                                             89********************************************************************* PP
+
+                                 Bac_leu  72 yvpldpaypeeRlaylledsaakvvltqaelaerleeaevevldldeedleeeaeedpeveelesedlAyv 142
+                                             y+p+d+++p eR+++ll+ds+a++++t+++l   ++ +    + + ee++++++  +p  +  +s + Ayv
+  nrpspksdomains_ctg1_1788_AMP-binding.1  72 YMPIDAEFPPERISFLLRDSEASLLVTEKDLLPLIPPHFKGSVVIMEETVSQQT--APLPPVSDSGNWAYV 140
+                                             ***********************************9887666666566666555..45555669******* PP
+
+                                 Bac_leu 143 iYTSGstGqPKGvmvehrslanlvewhaeafeltaedrvlsvaglafDasvwevwpalaaGatlvlapaea 213
+                                             iYTSG+tG+PKGv+v+h++++n+++w++e++ +t++d +l++ ++ fD s+  +++ l++Ga ++l +++ 
+  nrpspksdomains_ctg1_1788_AMP-binding.1 141 IYTSGTTGRPKGVLVQHKAISNTLQWRREEYGMTEGDIALHLFSYVFDGSLTSLFTPLLSGACVLLTDEDD 211
+                                             ****************************************************************9999987 PP
+
+                                 Bac_leu 214 aledleellelleaqkitvsflptalaellls....lekptLrtlliGGd....rlrelekellpefelvn 276
+                                             a+ d+ ++++ ++++ +++ +++++l+++ll+    ++ +tLr +++ G+    ++ e+++  +p+ el+n
+  nrpspksdomains_ctg1_1788_AMP-binding.1 212 AK-DVLSIKQKITRHGVSHLLIVPSLYRVLLDsltkKDAQTLRAVTFAGEaatpDIVEASRGICPNAELLN 281
+                                             66.7799***********************9986434444**********77777788999999******* PP
+
+                                 Bac_leu 277 nYGPtEatvvatsgeveeeeadgalsIGrpianarvyvLdeelqpvpvgvaGeLyigGagvarGYlnrpel 347
+                                             +YGPtE++v++t  +    ++++ ++IGrpian++vy++    +++pvg++GeL+i+G+g+a GY++++el
+  nrpspksdomains_ctg1_1788_AMP-binding.1 282 EYGPTENSVATTILRN--LQKSSRITIGRPIANTSVYIMHG-DRLQPVGAVGELCISGKGLADGYFQQKEL 349
+                                             ************8877..566789***************75.689************************** PP
+
+                                 Bac_leu 348 taerFladpfseepgarlYrtGDlarwladGnleylGRnDdqvkiR 393
+                                             t++ F+++pf+  +g+rlYrtGD ar+l+dG++ey+GR Ddqvk+R
+  nrpspksdomains_ctg1_1788_AMP-binding.1 350 TDKVFTPHPFR--EGERLYRTGDAARFLPDGTIEYMGRFDDQVKVR 393
+                                             **********5..5*******************************9 PP
+
+>> nrpspksdomains_ctg1_1789_AMP-binding.2  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  373.4   0.0  1.7e-114  5.2e-113       1     393 [.       1     405 []       1     405 [] 0.88
+
+  Alignments for each domain:
+  == domain 1  score: 373.4 bits;  conditional E-value: 1.7e-114
+                                 Bac_leu   1 feeqaaktpdavAvvaedqkltYaeLneranrlarrLrelgvkpddrvavllerslelvvalLavlkaGaa 71 
+                                             fee+a++tp+++Av+++ q+++Y++Lneranrlar+L ++g +p++r a+l++rs+e +v++Lav+k+G+a
+  nrpspksdomains_ctg1_1789_AMP-binding.2   1 FEEKAEETPHQTAVIEGAQQISYSQLNERANRLARTLHKNGFGPGKRAAILANRSIEAIVSVLAVMKSGGA 71 
+                                             89********************************************************************* PP
+
+                                 Bac_leu  72 yvpldpaypeeRlaylledsaakvvltqaelaerleeaevevldldeedleeea..eedpeveelesedlA 140
+                                             y+p+d++ypeeR++yll+dsaa+v+++q+e +e +++ + + l l + dle++    +++ +++++++d A
+  nrpspksdomains_ctg1_1789_AMP-binding.2  72 YIPVDSHYPEERIRYLLKDSAASVLMVQSEYKELASQLTDHNLFLIQLDLEDQYdiCAKNIQPSASPDDTA 142
+                                             ****************************99888777665554444444444444234555566899***** PP
+
+                                 Bac_leu 141 yviYTSGstGqPKGvmvehrslanlvewhaeafeltae.drvlsvaglafDasvwevwpalaaGatlvlap 210
+                                             y+iYTSG+tG+PKGv v  rs ++ +   ++ +el+    rvl++a+++fD++  ++  al++G tlv+ p
+  nrpspksdomains_ctg1_1789_AMP-binding.2 143 YIIYTSGTTGTPKGVEVRNRSFTHAALAWRRIYELDLIpVRVLQMASFSFDVFSGDLARALLNGGTLVICP 213
+                                             ***********************99999999999996438******************************* PP
+
+                                 Bac_leu 211 aeaaledleellelleaqkitvsflptalaellls......lekptLrtlliGGd.....rlrelekellp 270
+                                             ++++le+ ++l +l+ +++it++  ++al+  +++      l+ +++++l++G d     +  +l+++  +
+  nrpspksdomains_ctg1_1789_AMP-binding.2 214 DDVRLEP-QQLYRLIDQHRITFMESTPALVVPFMEyiyrrkLALQSVKILVLGSDmiksqDFYTLHERFGK 283
+                                             *******.*************987666666555555433444445**********5544433456677777 PP
+
+                                 Bac_leu 271 efelvnnYGPtEatvvatsgeveeeead..galsIGrpianarvyvLdeelqpvpvgvaGeLyigGagvar 339
+                                             e++++n YG tEat+ ++ +e e +e+   ++++IG p+ n+++yvL++++q++p+gv GeLyigGagva+
+  nrpspksdomains_ctg1_1789_AMP-binding.2 284 EMRIINSYGVTEATIDSSYYEAEMSEEPreDDVPIGVPLPNVQMYVLNKDKQVQPIGVFGELYIGGAGVAK 354
+                                             88****************8877655443459**************************************** PP
+
+                                 Bac_leu 340 GYlnrpeltaerFladpfseepgarlYrtGDlarwladGnleylGRnDdqvkiR 393
+                                             GY+++pelt+  F  dp   + g++lYrtGD a wl+dG+l++ GR+D+qvkiR
+  nrpspksdomains_ctg1_1789_AMP-binding.2 355 GYWGQPELTEGAFS-DPL--QMGETLYRTGDQACWLPDGTLRFQGRIDKQVKIR 405
+                                             ************95.699..56*******************************9 PP
+
+>> nrpspksdomains_ctg1_2695_AMP-binding.1  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  313.5   0.0   2.6e-96   7.8e-95       1     393 [.       1     391 []       1     391 [] 0.92
+
+  Alignments for each domain:
+  == domain 1  score: 313.5 bits;  conditional E-value: 2.6e-96
+                                 Bac_leu   1 feeqaaktpdavAvvaedqkltYaeLneranrlarrLrelgvkpddrvavllerslelvvalLavlkaGaa 71 
+                                             f++q  ktp+++A+ ++++++tY+eL+  +nr++  L e+g++p++ v+v+++r +e+++++Lavlk Gaa
+  nrpspksdomains_ctg1_2695_AMP-binding.1   1 FARQTIKTPENIAIECQGRAVTYQELQVMSNRISSFLEEKGIQPNEYVGVIVDREIETIASILAVLKIGAA 71 
+                                             788999***************************************************************** PP
+
+                                 Bac_leu  72 yvpldpaypeeRlaylledsaakvvltqaelaerleeaevevldldeedleeeaeedpeveelesedlAyv 142
+                                             y+p++p++p+eR +y+l+d   kvvlt + +++ ++            +++e+++e+     + +e++Ay 
+  nrpspksdomains_ctg1_2695_AMP-binding.1  72 YIPINPEFPKERQSYILKDGDCKVVLTAELVKTIVS------------SYKESKRESV----AVPEQIAYA 126
+                                             ***************************877655555............2233332333....3579***** PP
+
+                                 Bac_leu 143 iYTSGstGqPKGvmvehrslanlvewhaeafeltaedrvlsvaglafDasvwevwpalaaGatlvlapaea 213
+                                             iYTSGstG+PKGv+++ ++++n++   +e+++++++dr+  +++++fD s+++++ a++aGatlv+++++ 
+  nrpspksdomains_ctg1_2695_AMP-binding.1 127 IYTSGSTGKPKGVIIKNEAVTNTILDINEKYSVNETDRFIGLSSMSFDLSIYDIFGAFSAGATLVMIEDQ- 196
+                                             *******************************************************************998. PP
+
+                                 Bac_leu 214 aledleellelleaqkitvsflptalaellls....lekp..............tLrtlliGGd....rlr 262
+                                               +d+++++++++++kitv   +++++e+l++    +  +              +Lr +l+ Gd    +l 
+  nrpspksdomains_ctg1_2695_AMP-binding.1 197 --RDIKKIHDIVKEEKITVWNSVPMIMEMLVNymdeT--EnksnagvinydelpELRLVLLSGDwipvHLP 263
+                                             ..467889*************99****9999986552..134678899999999**********8877777 PP
+
+                                 Bac_leu 263 elekellpefelvnnYGPtEatvvatsgeveeeead.galsIGrpianarvyvLdeelqpvpvgvaGeLyi 332
+                                             e+ k+++ e e++   G tEa++ +  +++++ +a+ ++++ G p++n++ yvL+ e++p+p+gv GeL+i
+  nrpspksdomains_ctg1_2695_AMP-binding.1 264 ERIKDHFVESEVISLGGATEASIWSIYYPIKTVKAEwTSIPYGYPLSNQTYYVLNYENDPCPIGVKGELFI 334
+                                             7777778888********************9999999********************************** PP
+
+                                 Bac_leu 333 gGagvarGYlnrpeltaerFladpfseepgarlYrtGDlarwladGnleylGRnDdqvkiR 393
+                                             gG+gva GYln++e t+  F+++p       r+YrtGD+   +++G +e+lGR+D+q+k+R
+  nrpspksdomains_ctg1_2695_AMP-binding.1 335 GGKGVAEGYLNDKEKTEASFIDHPDF----GRIYRTGDMGVLTQEGYIEFLGRKDHQIKVR 391
+                                             ************************84....5*****************************9 PP
+
+>> nrpspksdomains_ctg1_2695_AMP-binding.2  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  313.1   0.0   3.4e-96     1e-94       1     393 [.       1     391 []       1     391 [] 0.92
+
+  Alignments for each domain:
+  == domain 1  score: 313.1 bits;  conditional E-value: 3.4e-96
+                                 Bac_leu   1 feeqaaktpdavAvvaedqkltYaeLneranrlarrLrelgvkpddrvavllerslelvvalLavlkaGaa 71 
+                                             f++q  ktp+++A+ ++++++tY+eL+  +nr++  L e+g++p++ v+v+++r +e+++++Lavlk Gaa
+  nrpspksdomains_ctg1_2695_AMP-binding.2   1 FARQTIKTPENIAIECQGRAVTYQELQVMSNRISSFLEEKGIQPNEYVGVIVDREIETIASILAVLKIGAA 71 
+                                             788999***************************************************************** PP
+
+                                 Bac_leu  72 yvpldpaypeeRlaylledsaakvvltqaelaerleeaevevldldeedleeeaeedpeveelesedlAyv 142
+                                             y+p++p++p+eR +y+++d + kvvlt + +++ ++            +++e+++e+     + +e++Ay 
+  nrpspksdomains_ctg1_2695_AMP-binding.2  72 YIPINPEFPKERQSYIVKDGNCKVVLTAELVKTIVS------------SYKESKRESV----AVPEQIAYA 126
+                                             ***************************877655555............2233332333....3579***** PP
+
+                                 Bac_leu 143 iYTSGstGqPKGvmvehrslanlvewhaeafeltaedrvlsvaglafDasvwevwpalaaGatlvlapaea 213
+                                             iYTSGstG+PKGv+++ ++++n++   +e+++++++dr+  +++++fD s+++++ a++aGatlv+++++ 
+  nrpspksdomains_ctg1_2695_AMP-binding.2 127 IYTSGSTGKPKGVIIKNEAVTNTILDINEKYSVNETDRFIGLSSMSFDLSIYDIFGAFSAGATLVMIEDQ- 196
+                                             *******************************************************************998. PP
+
+                                 Bac_leu 214 aledleellelleaqkitvsflptalaellls....lekp..............tLrtlliGGd....rlr 262
+                                               +d+++++++++++kitv   +++++e+l++    +  +              +Lr +l+ Gd    +l 
+  nrpspksdomains_ctg1_2695_AMP-binding.2 197 --RDIKKIHDIVKEEKITVWNSVPMIMEMLVNymdeT--EnksnagvinydelpELRLVLLSGDwipvHLP 263
+                                             ..467889*************99****9999986552..134678899999999**********8877777 PP
+
+                                 Bac_leu 263 elekellpefelvnnYGPtEatvvatsgeveeeead.galsIGrpianarvyvLdeelqpvpvgvaGeLyi 332
+                                             e+ k+++ e e++   G tEa++ +  +++++ +a+ ++++ G p++n++ yvL+ e++p+p+gv GeL+i
+  nrpspksdomains_ctg1_2695_AMP-binding.2 264 ERIKDHFVESEVISLGGATEASIWSIYYPIKTVKAEwTSIPYGYPLSNQTYYVLNYENDPCPIGVKGELFI 334
+                                             7777778888********************9999999********************************** PP
+
+                                 Bac_leu 333 gGagvarGYlnrpeltaerFladpfseepgarlYrtGDlarwladGnleylGRnDdqvkiR 393
+                                             gG+gva GYln++e t+  F+++p       r+YrtGD+   +++G +e+lGR+D+q+k+R
+  nrpspksdomains_ctg1_2695_AMP-binding.2 335 GGKGVAEGYLNDKEKTEASFIDHPDF----GRIYRTGDMGVLTQEGYIEFLGRKDHQIKVR 391
+                                             ************************84....5*****************************9 PP
+
+>> nrpspksdomains_ctg1_2695_AMP-binding.3  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  313.1   0.0   3.4e-96     1e-94       1     393 [.       1     391 []       1     391 [] 0.92
+
+  Alignments for each domain:
+  == domain 1  score: 313.1 bits;  conditional E-value: 3.4e-96
+                                 Bac_leu   1 feeqaaktpdavAvvaedqkltYaeLneranrlarrLrelgvkpddrvavllerslelvvalLavlkaGaa 71 
+                                             f++q  ktp+++A+ ++++++tY+eL+  +nr++  L e+g++p++ v+v+++r +e+++++Lavlk Gaa
+  nrpspksdomains_ctg1_2695_AMP-binding.3   1 FARQTIKTPENIAIECQGRAVTYQELQVMSNRISSFLEEKGIQPNEYVGVIVDREIETIASILAVLKIGAA 71 
+                                             788999***************************************************************** PP
+
+                                 Bac_leu  72 yvpldpaypeeRlaylledsaakvvltqaelaerleeaevevldldeedleeeaeedpeveelesedlAyv 142
+                                             y+p++p++p+eR +y+++d + kvvlt + +++ ++            +++e+++e+     + +e++Ay 
+  nrpspksdomains_ctg1_2695_AMP-binding.3  72 YIPINPEFPKERQSYIVKDGNCKVVLTAELVKTIVS------------SYKESKRESV----AVPEQIAYA 126
+                                             ***************************877655555............2233332333....3579***** PP
+
+                                 Bac_leu 143 iYTSGstGqPKGvmvehrslanlvewhaeafeltaedrvlsvaglafDasvwevwpalaaGatlvlapaea 213
+                                             iYTSGstG+PKGv+++ ++++n++   +e+++++++dr+  +++++fD s+++++ a++aGatlv+++++ 
+  nrpspksdomains_ctg1_2695_AMP-binding.3 127 IYTSGSTGKPKGVIIKNEAVTNTILDINEKYSVNETDRFIGLSSMSFDLSIYDIFGAFSAGATLVMIEDQ- 196
+                                             *******************************************************************998. PP
+
+                                 Bac_leu 214 aledleellelleaqkitvsflptalaellls....lekp..............tLrtlliGGd....rlr 262
+                                               +d+++++++++++kitv   +++++e+l++    +  +              +Lr +l+ Gd    +l 
+  nrpspksdomains_ctg1_2695_AMP-binding.3 197 --RDIKKIHDIVKEEKITVWNSVPMIMEMLVNymdeT--EnksnagvinydelpELRLVLLSGDwipvHLP 263
+                                             ..467889*************99****9999986552..134678899999999**********8877777 PP
+
+                                 Bac_leu 263 elekellpefelvnnYGPtEatvvatsgeveeeead.galsIGrpianarvyvLdeelqpvpvgvaGeLyi 332
+                                             e+ k+++ e e++   G tEa++ +  +++++ +a+ ++++ G p++n++ yvL+ e++p+p+gv GeL+i
+  nrpspksdomains_ctg1_2695_AMP-binding.3 264 ERIKDHFVESEVISLGGATEASIWSIYYPIKTVKAEwTSIPYGYPLSNQTYYVLNYENDPCPIGVKGELFI 334
+                                             7777778888********************9999999********************************** PP
+
+                                 Bac_leu 333 gGagvarGYlnrpeltaerFladpfseepgarlYrtGDlarwladGnleylGRnDdqvkiR 393
+                                             gG+gva GYln++e t+  F+++p       r+YrtGD+   +++G +e+lGR+D+q+k+R
+  nrpspksdomains_ctg1_2695_AMP-binding.3 335 GGKGVAEGYLNDKEKTEASFIDHPDF----GRIYRTGDMGVLTQEGYIEFLGRKDHQIKVR 391
+                                             ************************84....5*****************************9 PP
+
+>> nrpspksdomains_ctg1_1781_AMP-binding.1  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   44.5   0.0   1.4e-14   4.2e-13       2     105 ..       2     107 ..       1     132 [. 0.89
+   2 !   90.2   0.0   1.7e-28   5.3e-27     117     387 ..     158     428 ..     147     433 .] 0.81
+
+  Alignments for each domain:
+  == domain 1  score: 44.5 bits;  conditional E-value: 1.4e-14
+                                 Bac_leu   2 eeqaaktpdavAvvaedq..kltYaeLneranrlarrLrelgvkpddrvavllerslelvvalLavlkaGa 70 
+                                             e++a+  pd+ Avv+ ++  ++tYae+++  ++ a+ L++lgv+++d+va+ ++  +e ++a  a  k Ga
+  nrpspksdomains_ctg1_1781_AMP-binding.1   2 ERTAELFPDREAVVYPERglRYTYAEFDRLCRQTAKGLMKLGVEKGDHVAIWASNIPEWLAAQFATAKIGA 72 
+                                             789999********7665226799*********************************************** PP
+
+                                 Bac_leu  71 ayvpldpaypeeRlaylledsaakvvltqaelaer 105
+                                               v +++++  + l+yll++s +++++   + +++
+  nrpspksdomains_ctg1_1781_AMP-binding.1  73 VLVTINTNFQIAELDYLLAHSDVSALIIMDSYRQT 107
+                                             *************************9988776665 PP
+
+  == domain 2  score: 90.2 bits;  conditional E-value: 1.7e-28
+                                 Bac_leu 117 deedleeeaeedpeveelesedlAyviYTSGstGqPKGvmvehrslanlvewhaeafeltaedrvls.vag 186
+                                             d++++ ++a+ d ++++l+++d+  + YTSG+tG PKGvm++h +++n ++  ae ++lt++dr+   v  
+  nrpspksdomains_ctg1_1781_AMP-binding.1 158 DNAEAVTDATLDGRMDSLKKDDCIHMQYTSGTTGFPKGVMLSHFNIVNNAANIAECMKLTSSDRLCIpVPF 228
+                                             56666677778889999********************************************9997651666 PP
+
+                                 Bac_leu 187 lafDasvwevwpalaaGatlvlapaeaaledleellelleaqkit.vsflptalaelllslekp..tLrtl 254
+                                             ++   +v+ v   ++aGa+++ +++   + +  ++l+++e++  t +  +pt+ + ll + + +  +L ++
+  nrpspksdomains_ctg1_1781_AMP-binding.1 229 FHCFGCVLGVLACVSAGAAMIPIEQ--FSPP--AVLKTVEQEACTaLHGVPTMFIALLNDSRFSeyDLSHV 295
+                                             788899************9844433..3434..67788888888746778999888888855444555555 PP
+
+                                 Bac_leu 255 liG...Gdrlr.elekellpef...elvnnYGPtEatvvatsgeveeeeadgalsIGrpianarvyvLdee 318
+                                              +G   G  +  e+++e + ++   +++  YG tEa+ v t+++ +++ + ++ + Gr++ + +v ++   
+  nrpspksdomains_ctg1_1781_AMP-binding.1 296 RTGimaGSPCPaEVMREVIGKMgmtDITIAYGQTEASPVITQTRTDDSFERRVETAGRALPHIEVRIVRPG 366
+                                             55522144222244444444434459999****************999999*****************875 PP
+
+                                 Bac_leu 319 .lqpvpvgvaGeLyigGagvarGYlnrpeltaerFladpfseepgarlYrtGDlarwladGnleylGRnD 387
+                                              + + + g +GeL+  G  v++GY++++e t+e   +d           +tGDla + +dG  + +GR  
+  nrpspksdomains_ctg1_1781_AMP-binding.1 367 tSGEAARGEQGELCTRGYHVMKGYYKNQEATEEAIDKDGWL--------HTGDLAVMDEDGYCKITGRLK 428
+                                             1567899**************************99988884........5*****************975 PP
+
+>> nrpspksdomains_ctg1_2833_AMP-binding.1  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  123.7   0.0   1.2e-38   3.6e-37       3     390 ..       2     402 ..       1     403 [. 0.83
+
+  Alignments for each domain:
+  == domain 1  score: 123.7 bits;  conditional E-value: 1.2e-38
+                                 Bac_leu   3 eqaaktpdavAvvaedqkltYaeLneranrlarrLrelgvkpddrvavllerslelvvalLavlkaGaayv 73 
+                                             e+aa   +++Av+++d ++tY+eL+era+rla+ L +lg++++drv v l   +e++  + a ++ Ga  v
+  nrpspksdomains_ctg1_2833_AMP-binding.1   2 ERAALYGNQTAVTCKDVHWTYKELDERADRLAAGLHKLGIQKEDRVVVQLPNIAEFFEVIFALFRLGALPV 72 
+                                             56788889*************************************************************** PP
+
+                                 Bac_leu  74 pldpaypeeRlaylledsaakvvltqaelaerle...eaeve.......vldl....deedleeea...ee 127
+                                                p++ ++ ++y+ e ++ak+ +    ++       + +v+          +    ++e+++e +   +e
+  nrpspksdomains_ctg1_2833_AMP-binding.1  73 FALPSHRSSEITYFCEFAEAKAYIIPDMHSGFDYralARQVKdklpdlaH--VivagEAEEFQELSslhRE 141
+                                             ****************9999988865433221111111122222223331..1444666666666644355 PP
+
+                                 Bac_leu 128 dpeveelesedlAyviYTSGstGqPKGvmvehrslanlvewhaeafeltaedrvlsvaglafD..asvwev 196
+                                               ++e ++++++A++    GstG  K +  +h+  +  +++ ae + l++++  l    +a     s   v
+  nrpspksdomains_ctg1_2833_AMP-binding.1 142 PVQLEDISPAEVAFLQLSGGSTGLSKLIPRTHDDYIYSLRISAEICGLDQHSVYLAALPTAHNypLSSPGV 212
+                                             55666999*******************************************9999887776551167788* PP
+
+                                 Bac_leu 197 wpalaaGatlvlapaeaaledleellelleaqkitvsflptalaellls...lekp.....tLrtlliGGd 259
+                                               +l+aG ++vl p+     + ++   l+e++++t++ l+++la + ++      +     +L++l +GG 
+  nrpspksdomains_ctg1_2833_AMP-binding.1 213 LGTLYAGGRVVLSPTPS---P-DDCFPLIEKERVTITALVPPLAMVWMDasgS--RsddlsSLQVLQVGGA 277
+                                             ***********999884...4.467999********************96551..145678********** PP
+
+                                 Bac_leu 260 rlr.elekellpef..elvnnYGPtEatvvatsgeveeeeadgalsIGrpian.arvyvLdeelqpvpvgv 326
+                                             + + e+ ++  ++f  +l   +G +E  v  t       e+  + + Grp++   +v vLd++++ v++g 
+  nrpspksdomains_ctg1_2833_AMP-binding.1 278 KFSaEAARRVKSAFgcTLQQVFGMAEGLVNYTRLDD--PEEIIVNTQGRPMSPfDEVRVLDDDGRDVAPGE 346
+                                             9995555554454577************99887655..555588899****96369*************** PP
+
+                                 Bac_leu 327 aGeLyigGagvarGYlnrpeltaerFladpfseepgarlYrtGDlarwladGnleylGRnDdqv 390
+                                             aG L+  G    rGY++ pe ++  F+ad f        Y+tGD+++ +adG +   GR+ dq+
+  nrpspksdomains_ctg1_2833_AMP-binding.1 347 AGHLFTRGPYTIRGYYKAPEHNERSFTADGF--------YQTGDIVKLTADGYIIVEGRAKDQI 402
+                                             ******************************9........9**********************98 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (394 nodes)
+Target sequences:                         33  (13167 residues searched)
+Passed MSV filter:                        33  (1); expected 0.7 (0.02)
+Passed bias filter:                       33  (1); expected 0.7 (0.02)
+Passed Vit filter:                        33  (1); expected 0.0 (0.001)
+Passed Fwd filter:                        33  (1); expected 0.0 (1e-05)
+Initial search space (Z):               1000  [as set by --Z on cmdline]
+Domain search space  (domZ):              33  [number of targets reported over threshold]
+# CPU time: 0.09u 0.00s 00:00:00.09 Elapsed: 00:00:00.08
+# Mc/sec: 64.67
+//
+[ok]

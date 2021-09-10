@@ -1,0 +1,4 @@
+Chromosome ID	Coordinates of cluster	Strand	Substance	BGC ID	Putative linearized NRP sequence	Biosynthesis profile	Sln score	Mln score	Sdn score	Mdn score	Sdt score	Mdt score	Slt score	Mlt score	Relative score	Binary
+NC_009725.2	[1851543:1988981]	-	surfactin	BGC_proto_2_3_1	glu--leu--leu--val--asp--leu--leu	Type A	0.69	0.22	0.65	0.15	0.65	0.15	0.69	0.22	0.06304129916096722	0.0
+NC_009725.2	[1851543:1927894]	-	surfactin	BGC_cand_3_1	glu--leu--leu--val--asp--leu--leu	Type A	0.7	0.24	0.68	0.18	0.68	0.18	0.7	0.24	0.03819586905344033	0.0
+NC_009725.2	[322722:387582]	+	surfactin	BGC_cand_0	glu--leu--leu--val--asp--leu--leu	Type A	1.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0	0.9936989011563218	1.0

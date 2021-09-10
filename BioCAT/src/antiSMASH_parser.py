@@ -2,7 +2,7 @@ import argparse
 from json import load
 from pandas import DataFrame
 from pandas import read_csv
-from src.Get_AS_DF import get_df
+from BioCAT.src.Get_AS_DF import get_df
 
 """ This function construction correct NRPS clusters"""
 
