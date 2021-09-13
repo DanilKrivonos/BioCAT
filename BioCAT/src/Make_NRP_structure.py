@@ -6,7 +6,7 @@ from rdkit.DataStructs import BulkTanimotoSimilarity
 #Findind Euler tour with modified Fleury's algorithm
 def find_subgraph_tour(current_node, graph, tour):
     """
-    The function search subgraph structure in main geaph fragments.
+    The function search subgraph structure in main graph fragments.
 
     Parameters
     ----------
@@ -41,8 +41,8 @@ def find_subgraph_tour(current_node, graph, tour):
 def find_eulerian_tour(graph):
     """
     The function trying to fing path in graph, using modificated variant 
-    of Fleri algorithm (to find tour in unrelated fragments) of seqrcing Euler path, for every possible inner
-    subgrap structure.
+    of Fleri algorithm (to find tour in unrelated fragments) of seqrcing 
+    Euler path, for every possible inner subgraph structure.
 
     Parameters
     ----------
@@ -83,7 +83,7 @@ def find_eulerian_tour(graph):
 
 def macthing_templates(templates_peptide, templates_minipept):
     """
-    The function searching atoms of peptide bonds in small pepride pattern.
+    The function searching atoms of peptide bonds in small peptide pattern.
 
     Parameters
     ----------
@@ -262,19 +262,18 @@ def add_non_pept(EP, non_pept):
 
 def get_monomer_names(EP, space):
     """
-    The function check that all alpha amino acids in sequence,
-    else add this monomers.
+    The finction return monomers names.
 
     Parameters
     ----------
     EP : dict
         Variants of peptide sequences.
-    amino_acids : list
-        List of alpha amino acids.
+    space : dict
+        Part of rBAN json.
     Returns
     -------
-    EP : dict
-        Corrected variants of peptide sequences.
+    new_EP : dict
+        EP with renamed monomers.
     """
     new_EP = {}
 
@@ -301,8 +300,8 @@ def get_monomer_names(EP, space):
 # The function adding type B variant of biosynthesis to PeptideSeq
 def compare_type_B_tour(add_tour, compare, PeptideSeq_cop, bios_path, key):
     """
-    The function check that all alpha amino acids in sequence,
-    else add this monomers.
+    The function help to find alternative variants of type B 
+    biosynthetic pathways.
 
     Parameters
     ----------
@@ -312,8 +311,8 @@ def compare_type_B_tour(add_tour, compare, PeptideSeq_cop, bios_path, key):
         List of alpha amino acids.
     Returns
     -------
-    EP : dict
-        Corrected variants of peptide sequences.
+    PeptideSeq_cop : dict
+        Type B biosynthetic pathways.
     """
     if add_tour == compare:
         if add_tour not in PeptideSeq_cop[bios_path].values():
@@ -687,7 +686,7 @@ def Get_compare(smiles_dict):
 # The function return list of monomer, which not AA, but pupular compounds
 def find_not_aa_monomers(js):
     """
-    The function searchin non aminoacids monomers if anzlizyng molecule.
+    The function searching non amino acids monomers of analyzing molecule
 
     Parameters
     ----------

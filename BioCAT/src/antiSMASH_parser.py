@@ -11,10 +11,10 @@ def cluster_sort(df):
     """
     The function sorting clusters in table with meta inforamtion.
     Everything sorted from min to max coordinate, but it does not 
-    correct in case of negative strand. Thus it will reversed by 
-    reverse_neg function. Firstly sorting nucleotide sequence, 
-    chromosomes and genes, then sortin domain by location in protein
-    seques.
+    correct in case of negative strand. Thus, it will reversed by 
+    reverse_neg function. 
+    Firstly sorting nucleotide sequence, chromosomes and genes, 
+    then sortin domain by location in protein seques.
 
     Parameters
     ----------
@@ -285,9 +285,9 @@ def remove_modificate(remove):
                     
 def sort_cluster_seq(df):
     """
-    In most cases the domain of Thioesterase sould be in the end of NRPS, 
-    but it codding in the start of cluster. Thus, module with TE domain
-    removed to the end.
+    The most cases the  thioesterase should be in the end
+    of NRPS, but it coding in the start of cluster. So, 
+    module with TE domain removed to the end.
 
     Parameters
     ----------

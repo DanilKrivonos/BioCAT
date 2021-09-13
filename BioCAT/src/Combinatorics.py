@@ -167,7 +167,7 @@ def get_max_aminochain(bios_path):
 #Getting minimla size of putative sequence
 def get_minim_aminochain(PeptideSeq):
     """
-    The function return length of minimum fragmnt of core peptide chain.
+    The function return length of minimum fragment of core peptide chain.
 
     Parameters
     ----------
