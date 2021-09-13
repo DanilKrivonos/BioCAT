@@ -15,7 +15,8 @@ from BioCAT.src.Technical_functions import parse_smi_file, run_antiSMASH, run_rB
 from BioCAT.src.Calculating_scores import give_results
 
 def main():
-    parser = argparse.ArgumentParser(description='BioCAT is a tool, which find a NRP biosynthesis gene clusters')
+    parser = argparse.ArgumentParser(description='BioCAT is a tool, which estimates the' + 
+                                    'likelihood that a given orgnism is capable of producing of a given NRP')
     group1 = parser.add_argument_group("Genome arguments")
     group2 = parser.add_argument_group("Chemical arguments")
     group3 = parser.add_argument_group("Technical arguments")
