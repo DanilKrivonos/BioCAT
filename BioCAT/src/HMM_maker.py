@@ -6,7 +6,7 @@ from os import listdir, mkdir
 def HMM_make(path, output, cpu):
     """
     Firatly, function generate fasta file with all possible sequences of AMP-binding domain
-    and alighn its on hmm profile
+    and alighn its on hmm profile.
 
     Parameters
     ----------

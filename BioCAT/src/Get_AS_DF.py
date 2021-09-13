@@ -3,8 +3,8 @@ from pandas import DataFrame
 
 def get_info_dict(json_path):
     """
-    This function compile dictionary with cluster information from antiSMASH information.
-    This neccery only for comfort parsing of json.
+    This function compile dictionary with cluster information from
+    antiSMASH information. This necessary only for comfort parsing of json.
 
     Parameters
     ----------
@@ -124,8 +124,8 @@ def get_info_dict(json_path):
 
 def get_coord(gen_location):
     """
-    Finding the coordinates of cluster in genome. In eucariota it can be with 
-    exones, then we check it.
+    Finding the coordinates of cluster in genome. In eucariota it 
+    can be with exones, beacause we check it.
 
     Parameters
     ----------
