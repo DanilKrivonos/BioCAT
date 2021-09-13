@@ -27,7 +27,7 @@ There is no test data in the BioCAT package distributed via Pip. Several example
 
 ### Usage example:
 
-For a minimal run, the NRP structure in SMILES format and the genome in FASTA format must be specified with the `-smiles` and `-genome` parameters, respectively. Optionally, you can specify the output directory using the `-out` parameter and the name of the given NRP using `-name`.
+For a minimal run, an NRP structure in SMILES format and a genome in FASTA format must be specified with the `-smiles` and `-genome` parameters, respectively. Optionally, you can specify the output directory using the `-out` parameter and the name of the given NRP using `-name`.
 
 ``` 
 biocat -smiles '[H][C@@]1(CCC(O)=O)NC(=O)CC(CCCCCCCCCCC)OC(=O)[C@]([H])(CC(C)C)NC(=O)[C@@]([H])(CC(C)C)NC(=O)[C@]([H])(CC(O)=O)NC(=O)[C@@]([H])(NC(=O)[C@@]([H])(CC(C)C)NC(=O)[C@]([H])(CC(C)C)NC1=O)C(C)C' -name 'surfactin' -genome example/Surfactine/GCF_000015785.2_ASM1578v2_genomic.fna -out surfactin_results 
