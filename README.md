@@ -32,7 +32,7 @@ For a minimal run, an NRP structure in SMILES format and a genome in FASTA forma
 ``` 
 biocat -smiles '[H][C@@]1(CCC(O)=O)NC(=O)CC(CCCCCCCCCCC)OC(=O)[C@]([H])(CC(C)C)NC(=O)[C@@]([H])(CC(C)C)NC(=O)[C@]([H])(CC(O)=O)NC(=O)[C@@]([H])(NC(=O)[C@@]([H])(CC(C)C)NC(=O)[C@]([H])(CC(C)C)NC1=O)C(C)C' -name 'surfactin' -genome example/Surfactine/GCF_000015785.2_ASM1578v2_genomic.fna -out surfactin_results 
 ```
-In this case, the given chemical structure of surfactin is processed by rBAN and the given genome is processed by antiSMASH 6. Next, the resulting files are used for the alignment process. The main feature of BioCAT is the PSSM-based alignment algorithm, which includes an artificial shuffling of PSSMs to calculate the final score, so, the alignment process might be time-consuming in some cases (usually less than 1 minute).
+In this case, the given chemical structure of surfactin is processed by rBAN and the given genome is processed by antiSMASH 6. Next, the resulting files are used for the alignment process. The main feature of BioCAT is a PSSM-based alignment algorithm, which includes an artificial shuffling of PSSMs to calculate the final score, so, the alignment process might be time-consuming in some cases (usually less than 1 minute).
 
 The output directory `surfactin_results` contains the rBAN and the antiSMASH resulting files, PSSM matrices generated for BGCs which were aligned during the analysis, and the resulting file `Results.tsv`.
 This file contains a detailed information about each possible NRP to BGC alignment, but in this minimal example we are interested only in the last two columns `Relative score` and `Binary`. Rows with relative score more than 0.5 are interpreted as successful alignments, thus, the given organism can be considered as a potential producer of surfactin.
@@ -105,4 +105,4 @@ Advanced arguments:
 
 ## Reference
 
-will be added
+D.N. Konanov, D.V. Krivonos, E.N. Ilina, V.V. Babenko. BioCAT: PSSM-based algorithm to search biosynthetic gene clusters producing nonribosomal peptides with known structure. bioRxiv 2021.09.13.460047; doi: https://doi.org/10.1101/2021.09.13.460047
