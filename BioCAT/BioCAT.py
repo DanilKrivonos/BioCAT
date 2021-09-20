@@ -42,7 +42,7 @@ def main():
     group2.add_argument('-file_smiles',
                         type=str,
                         help='.smi file with one or more NRPs. Each row should contain two ' + 
-                        'columns: name of the NRP and SMILES string. Columns shoulb be separated' +  
+                        'columns: name of the NRP and SMILES string. Columns should be separated ' +  
                         'by tabulation. (Either -smiles or -file_smiles parameter should be specified.)',
                         default=None)
     group2.add_argument('-rBAN',

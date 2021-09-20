@@ -30,7 +30,7 @@ There is no test data in the BioCAT package distributed via Pip. Several example
 For a minimal run, an NRP structure in SMILES format and a genome in FASTA format must be specified with the `-smiles` and `-genome` parameters, respectively. Optionally, you can specify the output directory using the `-out` parameter and the name of the given NRP using `-name`.
 
 ``` 
-biocat -smiles '[H][C@@]1(CCC(O)=O)NC(=O)CC(CCCCCCCCCCC)OC(=O)[C@]([H])(CC(C)C)NC(=O)[C@@]([H])(CC(C)C)NC(=O)[C@]([H])(CC(O)=O)NC(=O)[C@@]([H])(NC(=O)[C@@]([H])(CC(C)C)NC(=O)[C@]([H])(CC(C)C)NC1=O)C(C)C' -name 'surfactin' -genome example/Surfactine/GCF_000015785.2_ASM1578v2_genomic.fna -out surfactin_results 
+biocat -smiles '[H][C@@]1(CCC(O)=O)NC(=O)CC(CCCCCCCCCCC)OC(=O)[C@]([H])(CC(C)C)NC(=O)[C@@]([H])(CC(C)C)NC(=O)[C@]([H])(CC(O)=O)NC(=O)[C@@]([H])(NC(=O)[C@@]([H])(CC(C)C)NC(=O)[C@]([H])(CC(C)C)NC1=O)C(C)C' -name 'surfactin' -genome example/Surfactin/GCF_000015785.2_ASM1578v2_genomic.fna -out surfactin_results 
 ```
 In this case, the given chemical structure of surfactin is processed by rBAN and the given genome is processed by antiSMASH 6. Next, the resulting files are used for the alignment process. The main feature of BioCAT is a PSSM-based alignment algorithm, which includes an artificial shuffling of PSSMs to calculate the final score, so, the alignment process might be time-consuming in some cases (usually less than 1 minute).
 
@@ -42,12 +42,12 @@ This file contains a detailed information about each possible NRP to BGC alignme
 ```
 usage: biocat [-h] [-antismash ANTISMASH] [-genome GENOME] [-name NAME]
               [-smiles SMILES] [-file_smiles FILE_SMILES] [-rBAN RBAN]
-              [-NRPS_type NRPS_TYPE] [-iterations ITERATIONS]
-              [-delta DELTA] [-cpu CPU] [-out OUT] [-skip SKIP]
-              [--disable_pushing_type_B] [--disable_dif_strand]
-              [--disable_exploration]
+              [-NRPS_type NRPS_TYPE] [-iterations ITERATIONS] [-delta DELTA]
+              [-cpu CPU] [-out OUT] [-skip SKIP] [--disable_pushing_type_B]
+              [--disable_dif_strand] [--disable_exploration]
 
-BioCAT is a tool, which find a NRP biosynthesis gene clusters
+BioCAT is a tool, which estimates the likelihood that a given orgnism is
+capable of producing of a given NRP
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -66,7 +66,7 @@ Chemical arguments:
   -file_smiles FILE_SMILES
                         .smi file with one or more NRPs. Each row should
                         contain two columns: name of the NRP and SMILES
-                        string. Columns shoulb be separatedby tabulation.
+                        string. Columns should be separated by tabulation.
                         (Either -smiles or -file_smiles parameter should be
                         specified.)
   -rBAN RBAN            rBAN peptideGraph.json output file
@@ -105,4 +105,4 @@ Advanced arguments:
 
 ## Reference
 
-D.N. Konanov, D.V. Krivonos, E.N. Ilina, V.V. Babenko. BioCAT: PSSM-based algorithm to search biosynthetic gene clusters producing nonribosomal peptides with known structure. bioRxiv 2021.09.13.460047; doi: https://doi.org/10.1101/2021.09.13.460047
+D.N. Konanov, D.V. Krivonos, E.N. Ilina, V.V. Babenko. BioCAT: a novel tool to search biosynthetic gene clusters producing nonribosomal peptides with known structure. bioRxiv 2021.09.13.460047; doi: https://doi.org/10.1101/2021.09.13.460047
