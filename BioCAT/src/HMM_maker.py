@@ -19,7 +19,7 @@ def HMM_make(path, output, cpu):
         Number of threads used.
     """
 
-    hmms = os.path.dirname(os.path.abspath(__file__)) + '../HMM/Bacteria_HMM'
+    hmms = os.path.dirname(os.path.abspath(__file__)) + '/../HMM/Bacteria_HMM'
 
     table = read_csv(path + '/table.tsv', sep='\t')
     #making work directory to fasta files
