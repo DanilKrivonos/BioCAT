@@ -69,8 +69,8 @@ def PSSM_make(search, aminochain, out, delta, substance_name):
     substance_name : str
         Name of analyzing substance.
     """
-    hmms = os.path.dirname(os.path.abspath(__file__)) + '/HMM/Bacteria_HMM'
-    neg= os.path.dirname(os.path.abspath(__file__)) + '/HMM/Bac_negative.tsv'
+    hmms = os.path.dirname(os.path.abspath(__file__)) + '/../HMM/Bacteria_HMM'
+    neg = os.path.dirname(os.path.abspath(__file__)) + '/../HMM/Bac_negative.tsv'
     negative = read_csv(neg, sep='\t')
     output = out
     path = out + '/table.tsv'
