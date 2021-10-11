@@ -215,7 +215,7 @@ def make_standard(PeptideSeq):
     PeptideSeq : dict
         Corrected core peptide chains for different biosynthesis types (e.g. A, B, or C).
     """
-    hmms = './HMM/Bacteria_HMM'
+    hmms = os.path.dirname(os.path.abspath(__file__)) + '/../HMM/Bacteria_HMM'
     monomers_names_tax = listdir(hmms) #standardized list of possible to compare substrates 
     monomers_names = []
 
