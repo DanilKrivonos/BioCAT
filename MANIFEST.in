@@ -1,4 +1,5 @@
 include BioCAT/data/*
 include BioCAT/external/*
 include BioCAT/HMM/*
+include BioCAT/HMM/Bacteria_HMM/*
 include BioCAT/src/*
