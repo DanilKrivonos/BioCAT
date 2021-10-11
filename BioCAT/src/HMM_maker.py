@@ -1,4 +1,5 @@
 import argparse
+import os
 from pandas import read_csv
 from subprocess import call
 from os import listdir, mkdir
@@ -18,7 +19,7 @@ def HMM_make(path, output, cpu):
         Number of threads used.
     """
 
-    hmms = './HMM/Bacteria_HMM'
+    hmms = os.path.dirname(os.path.abspath(__file__)) + '/HMM/Bacteria_HMM'
 
     table = read_csv(path + '/table.tsv', sep='\t')
     #making work directory to fasta files
