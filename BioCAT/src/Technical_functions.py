@@ -141,7 +141,7 @@ def run_rBAN(rBAN, ID, SMI, output):
         #idsmi = ID.replace(' ', '_').replace('(', '').replace(')', '')
         rBAN_path = output + '/{}_peptideGraph.json'.format(ID)
         # Run rBAN with discoveryMode
-        call('java -jar ./external/rBAN-1.0.jar -inputId {} -inputSmiles {} -outputFolder {}/{}_ -discoveryMode'.format(ID, smiles, output, ID), shell=True)
+        call('java -jar {}/../external/rBAN-1.0.jar -inputId {} -inputSmiles {} -outputFolder {}/{}_ -discoveryMode'.format(os.path.dirname(os.path.abspath(__file__)), ID, smiles, output, ID), shell=True)
         
     else:
 
