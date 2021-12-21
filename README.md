@@ -16,7 +16,7 @@ rBAN is included into the BioCAT package.
 ## **Installation:**
 
 ```
-conda create -n biocat_env -c bioconda -c rdkit antismash hmmer rdkit
+conda create -n biocat_env -c bioconda -c rdkit antismash=6 hmmer rdkit
 conda activate biocat_env
 pip install biocat
 ```

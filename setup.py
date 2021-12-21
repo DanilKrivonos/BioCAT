@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="BioCAT",
-    version="0.9.18",
+    version="0.9.24",
     author="D.N. Kononov, D.V. Krivonos",
     author_email="konanovdmitriy@gmail.com",
     description="NRP biosynthesis  Cluster  Analysis  Tool)",
