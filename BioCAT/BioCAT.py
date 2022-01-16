@@ -248,7 +248,7 @@ def main():
         dict_res = give_results(dict_res, folder, files, table, ids[smi], PeptideSeq, skip, cpu, iterations)                                     
         #Recording Data Frame
         get_results_to_csv(dict_res, output, ids[smi])
-        ('Results file for {} is recorded!'.format(ids[smi]))
+        a_logger.debug('Results file for {} is recorded!'.format(ids[smi]))
 
     a_logger.debug('BioCAT processing is done!')
 if __name__ == "__main__":
