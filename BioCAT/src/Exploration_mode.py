@@ -1,9 +1,13 @@
+import logging
 from os import listdir
 from BioCAT.src.Make_NRP_structure import parse_rBAN
 from BioCAT.src.Combinatorics import get_max_aminochain, get_minim_aminochain
 from BioCAT.src.Technical_functions import make_standard
 from BioCAT.src.antiSMASH_parser import generate_table_from_antismash
 from BioCAT.src.PSSM_maker import PSSM_make
+
+a_logger = logging.getLogger()
+a_logger.setLevel(logging.DEBUG)
 
 # The exploratin mode try to find every possible combinations, with the exception of skipping
 
@@ -41,13 +45,25 @@ def exploration_mode(rBAN_path, output, json_path, delta, substance_name):
     dont_dif_strand = False
 
     while check != 1:
-        print('Peptide sequence exceeds cluster landing attachment\nTry to check type C NRPS...')
+        
+        a_logger.debug('Peptide sequence exceeds cluster landing attachment\nTry to check type C NRPS...')
         PeptideSeq = parse_rBAN(rBAN_path, NRPS_type, off_push_B)
         
         for BS_type in PeptideSeq:
 
-            print('For {} biosynthetic paths'.format(BS_type))
-            print('Variant of amino sequence of your substance:', BS_type, PeptideSeq[BS_type])
+            a_logger.debug('Variants of fragments for Type {} biosynthetic path:'.format(BS_type))
+            
+            if PeptideSeq[BS_type] == {}:
+        
+                print('\tNone variants')
+                continue
+
+            for i in PeptideSeq[BS_type]:
+                
+                variant = str(PeptideSeq[BS_type][i]).replace('], [', ' & ')
+                variant = variant.replace('[', '').replace(']', '').replace(', ', '--')
+                variant = variant.replace("'", '')
+                a_logger.debug('\t' + str(int(i) + 1) + ': ' + variant)
 
         # Standartization of monomer names
         PeptideSeq = make_standard(PeptideSeq)
@@ -66,7 +82,7 @@ def exploration_mode(rBAN_path, output, json_path, delta, substance_name):
             NRPS_type = 'A+B'
             off_push_B = True
             dont_dif_strand = False
-            print('Trying to find putative cluster from different strands ...')
+            a_logger.debug('Trying to find putative cluster from different strands ...')
             generate_table_from_antismash(json_path, output, dont_dif_strand)
 
         files = listdir(folder)
@@ -74,7 +90,7 @@ def exploration_mode(rBAN_path, output, json_path, delta, substance_name):
         if len(files) == 0 and dont_dif_strand == False:
             if NRPS_type != 'A+B':
 
-                print('Trying to find putative cluster from different strands ...')
+                a_logger.debug('Trying to find putative cluster from different strands ...')
                 dont_dif_strand = True
                 generate_table_from_antismash(json_path, output, dont_dif_strand)
         

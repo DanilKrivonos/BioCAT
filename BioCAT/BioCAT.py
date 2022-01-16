@@ -1,6 +1,7 @@
 import argparse 
 import os 
 import sys
+import logging
 import numpy as np
 from json import load
 from subprocess import call 
@@ -57,7 +58,7 @@ def main():
     group3.add_argument('-iterations',
                         type=int,
                         help='Count of shuffling iterations (default 100)',
-                        default=100)
+                        default=500)
     group3.add_argument('-delta',
                         type=str,
                         help='The maximum number of gaps in the molecule (default 3). Gaps are assigned as "nan".',
@@ -98,6 +99,9 @@ def main():
                             'to the given options strictly.',
                         action='store_true',
                         default=False)
+    if len(sys.argv)==1:
+        parser.print_help(sys.stderr)
+        sys.exit(1)
     args = parser.parse_args()
     # Parsing agruments
     cpu = args.cpu
@@ -122,17 +126,26 @@ def main():
 
     except FileExistsError:
 
-        print('The output directory already exists!')   
-    # Checking have the programm have a smiles or file with fmiles
+        print('The output directory already exists!')
+    
+    a_logger = logging.getLogger()
+    a_logger.setLevel(logging.DEBUG)
+
+    output_file_handler = logging.FileHandler("{}/BioCAT.log".format(output))
+    stdout_handler = logging.StreamHandler(sys.stdout)
+
+    a_logger.addHandler(output_file_handler)
+    a_logger.addHandler(stdout_handler)
+    # Checking have the programm have a smiles or file with smiles
     if args.smiles is not None and args.file_smiles is not None:
         
-        print('Give a smiles or file if smi format!')
+        a_logger.debug('Give a smiles or file if smi format!')
         sys.exit() # if have not aborting runs
     # Getting smiles and names of substances
     if args.rBAN == None:
         smile_list, ids = parse_smi_file(args.smiles, args.name, args.file_smiles)
     # Call antiSMASH to take BGC
-    print('Finding biosynthesis gene clusters with antiSMASH ...\n')
+    a_logger.debug('Finding biosynthesis gene clusters with antiSMASH ...\n')
     # Run antiSMASH if it neccecery or return path to directory 
     json_path = run_antiSMASH(args.antismash, output, genome, cpu)
     # Making antiSMASH dataes to table
@@ -140,7 +153,7 @@ def main():
     # Making of fasta files and hmmserching 
     HMM_make(output, output, cpu)
     # Getting substance name if we have only rBAN json
-    print('Biosynthesis clusters have been successfully discovered!')
+    a_logger.debug('Biosynthesis clusters have been successfully discovered!')
     if args.rBAN is not None:
         """
         If we have rBAN json we make empty smile_list,
@@ -171,15 +184,15 @@ def main():
                 'Relative score': [],
                 'Binary': []
                 }
-        print('Calculating probability for {}'.format(ids[smi]))
+        a_logger.debug('Calculating probability for {}'.format(ids[smi]))
         # Run rBAN if it neccecery or return path to directory 
-        print('Buildung amino graph')
+        a_logger.debug('Buildung amino graph')
         rBAN_path = run_rBAN(args.rBAN, ids[smi], smile_list[smi], output)
         PeptideSeq = parse_rBAN(rBAN_path, NRPS_type, off_push_type_B)
         #if structure doesnt contain aminoacids
         if PeptideSeq is None:
 
-            print('Unparseable structure!')
+            a_logger.debug('Unparseable structure!')
             get_results_to_csv(dict_res, output, ids[smi])# Make empty Results.csv
             continue 
         # Standartization of monomer names
@@ -189,7 +202,7 @@ def main():
 
         if PeptideSeq is None:
 
-            print('Unparseable structure!')
+            a_logger.debug('Unparseable structure!')
             get_results_to_csv(dict_res, output, ids[smi])# Make empty Results.csv
             continue 
         
@@ -197,9 +210,20 @@ def main():
         length_min = get_minim_aminochain(PeptideSeq)
         for BS_type in PeptideSeq:
 
-            print('For {} biosynthetic paths'.format(BS_type))
-            [print(PeptideSeq[BS_type][i]) for i in PeptideSeq[BS_type]]
+            a_logger.debug('Variants of fragments for Type {} biosynthetic path:'.format(BS_type))
 
+            if PeptideSeq[BS_type] == {}:
+    
+                print('\tNone variants')
+                continue
+
+            for i in PeptideSeq[BS_type]:
+                
+                variant = str(PeptideSeq[BS_type][i]).replace('], [', ' & ')
+                variant = variant.replace('[', '').replace(']', '').replace(', ', '--')
+                variant = variant.replace("'", '')
+                a_logger.debug('\t' + str(int(i) + 1) + ': ' + variant)
+        
         # Making PSSMs
         PSSM_make(search = output + '/HMM_results/', aminochain=length_min, out = output, delta=delta, substance_name=ids[smi])
         #Importing all PSSMs
@@ -216,7 +240,7 @@ def main():
 
         if len(files) == 0: 
 
-            print('Organism has no putative cluster') 
+            a_logger.debug('Organism has no putative cluster') 
             get_results_to_csv(dict_res, output, ids[smi])# Make empty Results.csv
             continue# If have no cluster -> brake it
         # Importing table with information about cluster
@@ -226,6 +250,6 @@ def main():
         get_results_to_csv(dict_res, output, ids[smi])
         ('Results file for {} is recorded!'.format(ids[smi]))
 
-    print('BioCAT processing is done!')
+    a_logger.debug('BioCAT processing is done!')
 if __name__ == "__main__":
     main()

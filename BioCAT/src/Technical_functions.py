@@ -1,8 +1,12 @@
 import os
+import logging
 from os import listdir
 from json import load
 from subprocess import call
 from pandas import DataFrame
+
+a_logger = logging.getLogger()
+a_logger.setLevel(logging.DEBUG)
 """
 This if the technical function, which using to run external softs and getting metha information about 
 anlizyng substance.
@@ -73,9 +77,9 @@ def run_antiSMASH(antismash, output, genome, cpu):
         
         except FileExistsError:
 
-            print('The output directory already exists')
+            a_logger.debug('The output directory already exists')
         # Run antiSMASH with loose mode
-        print('Running antiSMASH ...')
+        a_logger.debug('Running antiSMASH ...')
         call('antismash {} --cb-general --output-dir {} --genefinding-tool prodigal --skip-zip-file --enable-nrps-pks --minimal --cpus {}'.format(genome, anti_out, cpu), shell=True)
         json_path = anti_out + ('.').join(os.path.split(genome)[1].split('.')[0: -1]) + '.json'
 
@@ -134,7 +138,7 @@ def run_rBAN(rBAN, ID, SMI, output):
     rBAN_path : str
         Path to rBANs peptideGraph.json output file.
     """
-    print('Hydrolizing of substrate with rBAN ...')
+    a_logger.debug('Hydrolizing of substrate with rBAN ...')
     if rBAN is None:
 
         smiles = '"' + SMI + '"'

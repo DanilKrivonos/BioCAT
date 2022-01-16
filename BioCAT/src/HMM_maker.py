@@ -1,8 +1,12 @@
 import argparse
 import os
+import logging
 from pandas import read_csv
 from subprocess import call
 from os import listdir, mkdir
+
+a_logger = logging.getLogger()
+a_logger.setLevel(logging.DEBUG)
 
 def HMM_make(path, output, cpu):
     """
@@ -32,9 +36,9 @@ def HMM_make(path, output, cpu):
         
     except:
         
-        print('Exist!')
+        a_logger.debug('Exist!')
         
-    print('Gereing of fasta files ...')
+    a_logger.debug('Generation of fasta files ...')
     headers = []
     with open('{}/nrps_domains.fasta'.format(path), 'w') as fasta:
         for ind in table[table['Domain name'].str.contains('AMP-binding')].index:
@@ -51,10 +55,10 @@ def HMM_make(path, output, cpu):
 
             headers.append('>{}'.format(DOMAIN))
 
-    print('Fasta files were generated successfully!')
+    a_logger.debug('Fasta files were generated successfully!')
 
     #Importtant to set on all hmms
-    print('Searching values of sequense with HMM ...')
+    a_logger.debug('Searching values of sequense with HMM ...')
     hmms_s = listdir(hmms)
 
     for sub in hmms_s:
@@ -68,4 +72,4 @@ def HMM_make(path, output, cpu):
                                                                                         hmm_out, 
                                                                                         substrate), shell=True)
 
-    print('Searching is done successfully!')
+    a_logger.debug('Searching is done successfully!')

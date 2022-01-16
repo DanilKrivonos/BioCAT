@@ -1,9 +1,13 @@
 import numpy as np
+import logging
 from subprocess import call 
 import os
 from os import listdir
 from pandas import read_csv
 from Bio.SearchIO import parse
+
+a_logger = logging.getLogger()
+a_logger.setLevel(logging.DEBUG)
 
 """ The main role of this functions is generate PSSM """
 
@@ -45,7 +49,7 @@ def check_cluster_duplicates(pssm_path):
             try:
                 if all(CC_pssm == proto_pssm) == True:
                     
-                    print(p_pssm, ' is duplicate')
+                    a_logger.debug(p_pssm + ' is duplicate')
                     call('rm ' + pssm_path + p_pssm, shell=True)
 
             except ValueError: # if the cluster was splited, its will differ
@@ -111,7 +115,7 @@ def PSSM_make(search, aminochain, out, delta, substance_name):
             continue       
     
     # Generator of ratio
-    print('Calculation ratio scores for PSSM ...')
+    a_logger.debug('Calculation ratio scores for PSSM ...')
 
     for sub in substr:
         
@@ -132,7 +136,7 @@ def PSSM_make(search, aminochain, out, delta, substance_name):
                 ratio_metric = len(TN[TN <= TP])/ len(TN)
                 subst_eval[substance][module][sub] = ratio_metric
 
-    print('Recording PSSM ...\n')
+    a_logger.debug('Recording PSSM ...\n')
     
     #Making directory for PSSMs
     PSSMs_out = output + '/PSSM_{}/'.format(substance_name)
@@ -142,7 +146,7 @@ def PSSM_make(search, aminochain, out, delta, substance_name):
 
     except FileExistsError:
 
-        print('The output directory is already exists')
+        a_logger.debug('The output directory is already exists')
     #Recording PSSMs
     for substance in subst_eval.keys():
         with open('{}/PSSM_A_{}.csv'.format(PSSMs_out, substance), 'w') as test:
@@ -160,6 +164,6 @@ def PSSM_make(search, aminochain, out, delta, substance_name):
                     test.write('{}'.format(subst_eval[substance][module][sub]))
                     
                 test.write('\n')
-    print('Checking cluster duplicates ...')
+    a_logger.debug('Checking cluster duplicates ...')
     check_cluster_duplicates(PSSMs_out)# delete duplicate 
-    print('All PSSM were recorded sucessfully!')
+    a_logger.debug('All PSSM were recorded sucessfully!')
