@@ -65,7 +65,7 @@ def main():
                         default=3)
     group3.add_argument('-threads',
                         type=int,
-                        help='Number of treads (default 8)',
+                        help='Number of threads (default 8)',
                         default=8)
     group3.add_argument('-out',
                         type=str,
