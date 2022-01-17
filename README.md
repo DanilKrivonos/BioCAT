@@ -77,7 +77,7 @@ Technical arguments:
                         Count of shuffling iterations (default 100)
   -delta DELTA          The maximum number of gaps in the molecule (default
                         3). Gaps are assigned as "nan".
-  -threads THREADS      Number of treads (default 8)
+  -threads THREADS      Number of threads (default 8)
   -out OUT              Output directory (default ./BioCAT_output)
 
 Advanced arguments:
