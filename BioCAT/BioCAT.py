@@ -63,7 +63,7 @@ def main():
                         type=str,
                         help='The maximum number of gaps in the molecule (default 3). Gaps are assigned as "nan".',
                         default=3)
-    group3.add_argument('-cpu',
+    group3.add_argument('-threads',
                         type=int,
                         help='Number of treads (default 8)',
                         default=8)
@@ -104,7 +104,7 @@ def main():
         sys.exit(1)
     args = parser.parse_args()
     # Parsing agruments
-    cpu = args.cpu
+    cpu = args.threads
     disable_exploration = args.disable_exploration
     output = args.out    
     skip = args.skip
