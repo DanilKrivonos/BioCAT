@@ -43,7 +43,7 @@ This file contains a detailed information about each possible NRP to BGC alignme
 usage: biocat [-h] [-antismash ANTISMASH] [-genome GENOME] [-name NAME]
               [-smiles SMILES] [-file_smiles FILE_SMILES] [-rBAN RBAN]
               [-NRPS_type NRPS_TYPE] [-iterations ITERATIONS] [-delta DELTA]
-              [-cpu CPU] [-out OUT] [-skip SKIP] [--disable_pushing_type_B]
+              [-threads THREADS] [-out OUT] [-skip SKIP] [--disable_pushing_type_B]
               [--disable_dif_strand] [--disable_exploration]
 
 BioCAT is a tool, which estimates the likelihood that a given orgnism is
