@@ -156,10 +156,10 @@ def main():
     a_logger.debug('Biosynthesis clusters have been successfully discovered!')
     if args.rBAN is not None:
         """
-        If we have rBAN json we make empty smile_list,
-        because we should not run rBAN yet and we can 
-        only parse existing json output. Especialy, we
-        gets name of the substance from peptideGraph.json.
+        If we have rBAN json we make an empty smile_list, 
+        because we should not run rBAN yet and we can only 
+        parse existing json output. Especially, we get the 
+        name of the substance from peptideGraph.json.
         """
         smile_list = ['smi']
         ids = [get_ids(args.rBAN)]

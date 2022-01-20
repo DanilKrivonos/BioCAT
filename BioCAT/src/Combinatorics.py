@@ -397,12 +397,10 @@ def multi_thread_calculating_scores(MaxSeq, ShuffledMatrix, type_value, iteratio
     manager = Manager()
     return_dict = manager.dict()
     #thread_iterations = [int((len(ShuffledMatrix))/threads)] * threads    
-    batches = linspace(0, len(ShuffledMatrix), threads)
+    batches = linspace(0, len(ShuffledMatrix), threads + 1)
     #thread_iterations[0] += iterations - sum(thread_iterations)
+    edges = [(batches[i], batches[i+1]) for i in range(len(batches) - 1)]
 
-    edges = [
-        (batches[i], batches[i+1]) for i in range(len(batches) - 1)
-    ]
     for i in range(len(edges)):
 
         proc = Process(target=get_shuffled_scores, args=(MaxSeq, return_dict, ShuffledMatrix[int(edges[i][0]): int(edges[i][1])], type_value))
