@@ -55,8 +55,8 @@ def HMM_make(path, output, cpu):
 
             headers.append('>{}'.format(DOMAIN))
 
-    a_logger.debug('Fasta files were generated successfully!')
-    a_logger.debug('Searching values of sequence with HMM ...')
+    a_logger.debug('fasta files have been generated successfully!')
+    a_logger.debug("Calculating sequences' specificity using HMMs ...")
     hmms_s = listdir(hmms)
 
     for sub in hmms_s:
