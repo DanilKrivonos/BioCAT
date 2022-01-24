@@ -138,7 +138,7 @@ def run_rBAN(rBAN, ID, SMI, output):
     rBAN_path : str
         Path to rBANs peptideGraph.json output file.
     """
-    a_logger.debug('Hydrolizing of substrate with rBAN ...')
+    a_logger.debug('Hydrolizing of the substrate with rBAN ...')
     if rBAN is None:
 
         smiles = '"' + SMI + '"'

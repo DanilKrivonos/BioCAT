@@ -56,9 +56,7 @@ def HMM_make(path, output, cpu):
             headers.append('>{}'.format(DOMAIN))
 
     a_logger.debug('Fasta files were generated successfully!')
-
-    #Importtant to set on all hmms
-    a_logger.debug('Searching values of sequense with HMM ...')
+    a_logger.debug('Searching values of sequence with HMM ...')
     hmms_s = listdir(hmms)
 
     for sub in hmms_s:
@@ -72,4 +70,4 @@ def HMM_make(path, output, cpu):
                                                                                         hmm_out, 
                                                                                         substrate), shell=True)
 
-    a_logger.debug('Searching is done successfully!')
+    a_logger.debug('The search has been done successfully!')

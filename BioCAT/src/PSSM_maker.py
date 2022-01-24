@@ -146,7 +146,7 @@ def PSSM_make(search, aminochain, out, delta, substance_name):
 
     except FileExistsError:
 
-        a_logger.debug('The output directory is already exists')
+        a_logger.debug('The output directory already exists')
     #Recording PSSMs
     for substance in subst_eval.keys():
         with open('{}/PSSM_A_{}.csv'.format(PSSMs_out, substance), 'w') as test:
@@ -166,4 +166,4 @@ def PSSM_make(search, aminochain, out, delta, substance_name):
                 test.write('\n')
     a_logger.debug('Checking cluster duplicates ...')
     check_cluster_duplicates(PSSMs_out)# delete duplicate 
-    a_logger.debug('All PSSM were recorded sucessfully!')
+    a_logger.debug('All PSSMs were recorded!')
