@@ -104,5 +104,4 @@ Advanced arguments:
 ```
 
 ## Reference
-
-D.N. Konanov, D.V. Krivonos, E.N. Ilina, V.V. Babenko. BioCAT: a novel tool to search biosynthetic gene clusters producing nonribosomal peptides with known structure. bioRxiv 2021.09.13.460047; doi: https://doi.org/10.1101/2021.09.13.460047
+Konanov, D. N., Krivonos, D. V., Ilina, E. N., & Babenko, V. V. (2022). BioCAT: search for biosynthetic gene clusters producing nonribosomal peptides with known structure. Computational and Structural Biotechnology Journal.
