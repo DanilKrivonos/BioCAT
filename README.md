@@ -46,7 +46,7 @@ usage: biocat [-h] [-antismash ANTISMASH] [-genome GENOME] [-name NAME]
               [-threads THREADS] [-out OUT] [-skip SKIP] [--disable_pushing_type_B]
               [--disable_dif_strand] [--disable_exploration]
 
-BioCAT is a tool, which estimates the likelihood that a given orgnism is
+BioCAT is a tool, which estimates the likelihood that a given organism is
 capable of producing of a given NRP
 
 optional arguments:
