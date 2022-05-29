@@ -74,7 +74,7 @@ Chemical arguments:
 
 Technical arguments:
   -iterations ITERATIONS
-                        Count of shuffling iterations (default 100)
+                        Count of shuffling iterations (default 500)
   -delta DELTA          The maximum number of gaps in the molecule (default
                         3). Gaps are assigned as "nan".
   -threads THREADS      Number of threads (default 8)
