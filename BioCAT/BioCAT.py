@@ -57,7 +57,7 @@ def main():
     # Group of technical arguments
     group3.add_argument('-iterations',
                         type=int,
-                        help='Count of shuffling iterations (default 100)',
+                        help='Count of shuffling iterations (default 500)',
                         default=500)
     group3.add_argument('-delta',
                         type=str,
